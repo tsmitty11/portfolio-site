@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{ partial "head.html" . }}
+    <body>
+        {{ partial "header.html" . }}
+        <main class="max-w-screen-xl mx-auto pt-[68px]">
+            {{ block "main" . }}{{ end }}
+        </main>
+        {{ partial "footer.html" . }}
+        <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+    </body>
+</html>
+

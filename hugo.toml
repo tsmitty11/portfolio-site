@@ -1,0 +1,9 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My Hugo Site"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+

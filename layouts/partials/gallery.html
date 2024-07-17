@@ -45,3 +45,19 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+            });
+            img.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+            });
+            img.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
+        });
+    });
+</script>
+

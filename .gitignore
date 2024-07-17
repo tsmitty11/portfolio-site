@@ -1,1 +1,16 @@
+# Hugo generated content
 public/
+resources/_gen/
+assets/jsconfig.json
+
+# Node dependencies
+node_modules/
+
+# Optional OS files
+.DS_Store
+Thumbs.db
+
+# Optional IDE files
+.vscode/
+.idea/
+

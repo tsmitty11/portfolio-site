@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My Hugo Site"
+title = "Tom Smith Design"
 
 [taxonomies]
   tag = "tags"

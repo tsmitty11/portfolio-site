@@ -1,5 +1,5 @@
 <section>
-    <div class="container flex flex-col items-center justify-center p-20 sm:py-24 md:py-36 lg:py-48">
+    <div class="container flex flex-col items-center justify-center p-20 sm:py-24 md:py-36 lg:py-40">
         <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300 mb-10">Full site coming soon</span>
         <h1 class="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             <span id="carousel-text">Hello</span>, I'm Tom.
@@ -33,7 +33,7 @@
                 if (!isDeleting && charIndex === currentText.length) {
                     setTimeout(() => {
                         isDeleting = true;
-                    }, 1000); // Pause before deleting
+                    }, 2000); // Pause before deleting
                 } else if (isDeleting && charIndex === 0) {
                     isDeleting = false;
                     index = (index + 1) % texts.length;

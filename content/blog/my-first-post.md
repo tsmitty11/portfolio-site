@@ -2,6 +2,7 @@
 title: "My First Post"
 date: 2024-07-23T12:00:00Z
 author: "Tom Smith"
+type: "post"
 author_image: "https://flowbite.com/docs/images/people/profile-picture-2.jpg"
 author_bio: "Graphic Designer, educator & CEO Flowbite"
 category: "Tutorial"

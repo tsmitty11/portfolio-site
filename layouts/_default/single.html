@@ -110,28 +110,21 @@
           </form>
         </div>
         <div class="p-4 mb-6 rounded-lg border border-gray-200 dark:border-gray-700">
-          <h4 class="mb-4 text-sm font-bold text-gray-900 dark:text-white uppercase">Latest news</h4>
-          <div class="mb-6">
-            <h5 class="mb-2 text-lg font-bold leading-tight text-gray-900 dark:text-white">Our first office</h5>
-            <p class="mb-2 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-            <a href="#" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-              Read in 9 minutes
-            </a>
-          </div>
-          <div class="mb-6">
-            <h5 class="mb-2 text-lg font-bold leading-tight text-gray-900 dark:text-white">Enterprise Design tips</h5>
-            <p class="mb-2 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-            <a href="#" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-              Read in 14 minutes
-            </a>
-          </div>
-          <div class="mb-6">
-            <h5 class="mb-2 text-lg font-bold leading-tight text-gray-900 dark:text-white">Our first project with React</h5>
-            <p class="mb-2 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-            <a href="#" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-              Read in 4 minutes
-            </a>
-          </div>
+          <h4 class="mb-4 text-sm font-bold text-gray-900 dark:text-white uppercase">Latest posts</h4>
+          {{ $latestPosts := first 3 (where .Site.RegularPages "Type" "post") }}
+          {{ if $latestPosts }}
+            {{ range $latestPosts }}
+              <div class="mb-6">
+                <h5 class="mb-2 text-lg font-bold leading-tight text-gray-900 dark:text-white">{{ .Title }}</h5>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
+                  Read in {{ .ReadingTime }} minutes
+                </a>
+              </div>
+            {{ end }}
+          {{ else }}
+            <p class="text-gray-500 dark:text-gray-400">No recent posts available.</p>
+          {{ end }}
         </div>
         <div>
           <div class="flex justify-center items-center mb-3 w-full h-48 bg-gray-100 rounded-lg dark:bg-gray-800">

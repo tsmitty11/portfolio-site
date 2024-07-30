@@ -26,9 +26,9 @@ title = "Tom Smith Design"
     weight = 3
 
   [[menu.main]]
-    identifier = "features"
-    name = "Features"
-    url = "/features/"
+    identifier = "terms-and-conditions"
+    name = "Terms and Conditions"
+    url = "/terms-and-conditions/"
     weight = 4
 
   [[menu.main]]

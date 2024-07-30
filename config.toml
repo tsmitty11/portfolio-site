@@ -20,9 +20,9 @@ title = "Tom Smith Design"
     weight = 2
 
   [[menu.main]]
-    identifier = "marketplace"
-    name = "Marketplace"
-    url = "/marketplace/"
+    identifier = "privacy-policy"
+    name = "Privacy Policy"
+    url = "/privacy-policy/"
     weight = 3
 
   [[menu.main]]

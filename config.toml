@@ -8,8 +8,8 @@ title = "Tom Smith Design"
 
 [menu]
   [[menu.main]]
-    identifier = "home"
-    name = "Home"
+    identifier = "portfolio"
+    name = "Portfolio"
     url = "/"
     weight = 1
 
@@ -20,25 +20,13 @@ title = "Tom Smith Design"
     weight = 2
 
   [[menu.main]]
-    identifier = "privacy-policy"
-    name = "Privacy Policy"
-    url = "/privacy-policy/"
+    identifier = "about"
+    name = "About"
+    url = "#about"
     weight = 3
-
-  [[menu.main]]
-    identifier = "terms-and-conditions"
-    name = "Terms and Conditions"
-    url = "/terms-and-conditions/"
-    weight = 4
-
-  [[menu.main]]
-    identifier = "team"
-    name = "Team"
-    url = "/team/"
-    weight = 5
 
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "/contact/"
-    weight = 6
+    weight = 4

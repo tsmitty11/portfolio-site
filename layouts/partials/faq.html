@@ -2,7 +2,7 @@
     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-24 lg:px-6 ">
         <h2 class="mb-6 lg:mb-8 text-3xl lg:text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Frequently asked questions</h2>
         <div class="mx-auto max-w-screen-md">
-            <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+            <div id="accordion-flush" class="accordion-custom" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
                 <h2 id="accordion-flush-heading-1">
                     <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-900 bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
                         <span>Can I use Flowbite in open-source projects?</span>
@@ -65,3 +65,10 @@
         </div>               
     </div>
 </section>
+
+<style>
+    /* Custom class to ensure consistent background color */
+    .accordion-custom button[aria-expanded="true"] {
+        background-color: inherit; /* Keeps the background color the same as the collapsed state */
+    }
+  </style>

@@ -7,5 +7,12 @@
     <script>
         document.head.insertAdjacentHTML("afterbegin", '<link rel="stylesheet" type="text/css" href="https://unpkg.com/flowbite-typography@1.0.3/dist/typography.min.css">');
     </script>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ .Params.ogimage | default '/images/default-og-image.jpg' }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
 </head>
 

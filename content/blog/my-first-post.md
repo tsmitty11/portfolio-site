@@ -1,13 +1,13 @@
 ---
-title: "My First Post"
-date: 2024-07-23T12:00:00Z
+title: "How I Built My Portfolio Site for the Cost of a Domain"
+date: 2024-08-30T12:00:00Z
 author: "Tom Smith"
 type: "post"
-author_image: "https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-author_bio: "Graphic Designer, educator & CEO Flowbite"
-category: "Tutorial"
+author_image: "/images/avatar-top.png"
+author_bio: "Creative Director & Designer"
+category: "Education"
 featured_image: "/images/gallery-01.png"
-summary: "This is a summary of my first post."
+summary: "How I built this website for the cost of a domain."
 reading_time: 5
 ---
 

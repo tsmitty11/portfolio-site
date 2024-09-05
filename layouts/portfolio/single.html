@@ -32,41 +32,53 @@
         </div>
       </div>
 
+      <!-- Gallery Section: Only display if there are gallery images -->
+      {{ with .Params.gallery }}
         <div class="max-w-5xl mx-auto mt-8 lg:mt-16 grid grid-cols-2 gap-2">
-          {{ range .Params.gallery }}
+          {{ range . }}
             <div>
                 <img class="h-auto max-w-full rounded-lg" src="{{ .src }}" alt="{{ .alt }}">
             </div>
           {{ end }}
         </div>
+      {{ end }}
 
       <div class="grid grid-cols-1 gap-8 mt-8 lg:gap-16 lg:grid-cols-2 lg:mt-16">
         <div>
+          <!-- Overview Section: Only display if overview is provided -->
+          {{ with .Params.overview }}
           <div>
             <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
               Overview
             </h3>
             <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
-              {{ .Params.overview }}
+              {{ . }}
             </p>
           </div>
+          {{ end }}
   
+          <!-- Features Section: Only display if features exist and are non-empty -->
+          {{ with .Params.features }}
           <ul class="grid grid-cols-1 mt-8 sm:grid-cols-2 gap-x-4 gap-y-3">
-            {{ range .Params.features }}
-            <li class="flex items-center gap-2.5">
-              <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span class="text-base font-normal text-gray-500 dark:text-gray-400">
-                {{ . }}
-              </span>
-            </li>
+            {{ range . }}
+              {{ if . }}
+              <li class="flex items-center gap-2.5">
+                <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span class="text-base font-normal text-gray-500 dark:text-gray-400">
+                  {{ . }}
+                </span>
+              </li>
+              {{ end }}
             {{ end }}
           </ul>
+          {{ end }}
 
+          <!-- Video Section: Only display if a video URL is provided -->
           {{ with .Params.videoURL }}
           <video class="w-full h-auto max-w-full border border-gray-200 rounded-lg dark:border-gray-700 mt-8" controls>
               <source src="{{ . }}" type="video/mp4">
@@ -77,23 +89,29 @@
         </div>
   
         <div class="space-y-8">
+          <!-- Background Section: Only display if background is provided -->
+          {{ with .Params.background }}
           <div>
             <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
               Background
             </h3>
             <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
-              {{ .Params.background }}
+              {{ . }}
             </p>
           </div>
+          {{ end }}
   
+          <!-- Challenge Section: Only display if challenge is provided -->
+          {{ with .Params.challenge }}
           <div>
             <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
-              The challenge
+              The Challenge
             </h3>
             <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
-              {{ .Params.challenge }}
+              {{ . }}
             </p>
           </div>
+          {{ end }}
 
         </div>
       </div>

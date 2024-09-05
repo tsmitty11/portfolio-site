@@ -20,8 +20,8 @@ features:
   - "Art Direction"
   - "Creative Direction"
   - "Adobe Illustrator"
-  - "Figma"
-videoURL: "/docs/videos/flowbite.mp4"
+  - ""
+videoURL: ""
 background: "Max tasked me with developing the branding for PKGX. We had worked together on projects in the past, as well as on tea Protocol, so I was pretty familiar with his tastes and aesthetic sensibilities. Nevertheless, branding the successor to Homebrew, a package manager used by millions of developers worldwide, was still a daunting task. I wasn't given much direction, other than the humble request that it not be an icon of a package."
 challenge: "The initial ideation for PKGX was tricky. It had to be timeless (at least in the eyes of the developer community), it had to draw a stark contrast between itself and its predecessor, and it needed to go beyond the obvious visual solutions. PKGX's tagline, coined by Max, is 'run anything' (referring to open source software). This gave me the idea to incorporate an infinity symbol. In addition to that, I wanted to break immediately circumvent the low-hanging fruit of any package or box imagery. Instead, I thought about the process of making a box... you know, the flat piece of card you get from the post office. That resonated well because it also served as a nod to the process of developing software. And then that led me to the idea of Origami--taking something simple (a piece of paper) and making something amazing. Similarly, developers take lines of code and create amazing pieces of software. So I got to sketching, and after severl rounds of revisions, the PKGX mark was finalized."
 ---

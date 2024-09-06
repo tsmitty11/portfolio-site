@@ -10,7 +10,7 @@ gallery:
     lightbox: "/images/portfolio/tea-hoodie/tea-lisbon-poster.jpg"
     alt: "Alaeris logo - horizontal on dark background"
   - src: "/images/portfolio/tea-hoodie/tea-website.jpg"
-    lightbox: "static/images/portfolio/tea-hoodie/tea-website.jpg"
+    lightbox: "/images/portfolio/tea-hoodie/tea-website.jpg"
     alt: "Alaeris primary logo on green background"
   - src: "/images/portfolio/alaeris/alaeris-portfolio-02.jpg"
     lightbox: "/images/portfolio/alaeris/alaeris-portfolio-02.jpg"

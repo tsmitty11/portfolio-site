@@ -1,6 +1,6 @@
 ---
 title: "PKGX INC."
-websiteURL: "https://example.com"
+websiteURL: "https://pkgx.dev"
 contactURL: "https://example.com/contact"
 gallery:
   - src: "/images/portfolio/pkgx/pkgx-portfolio-02.jpg"

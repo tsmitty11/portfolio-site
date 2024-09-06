@@ -14,5 +14,10 @@
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:image" content="{{ with .Params.ogimage }}{{ . }}{{ else }}/images/default-og-image.jpg{{ end }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
+    <!-- GLightbox CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+    
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 </head>
 

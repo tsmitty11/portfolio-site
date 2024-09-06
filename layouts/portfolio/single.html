@@ -36,8 +36,10 @@
       {{ with .Params.gallery }}
         <div class="max-w-5xl mx-auto mt-8 lg:mt-16 grid grid-cols-2 gap-2">
           {{ range . }}
-            <div class="h-64 w-full max-w-xs rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
-            </div>
+            <a href="{{ .src }}" class="glightbox" data-gallery="gallery">
+              <div class="h-64 w-full max-w-xs rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
+              </div>
+            </a>
           {{ end }}
         </div>
       {{ end }}
@@ -116,4 +118,20 @@
       </div>
     </div>
   </section>
+
+  <style>
+    .gslide-image img {
+      border-radius: 5px !important; /* Custom overlay background color */
+    }
+</style>
+
+  <!-- GLightbox JS Initialization -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true
+    });
+  </script>
 {{ end }}

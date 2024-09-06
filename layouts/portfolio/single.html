@@ -37,7 +37,7 @@
         <div class="max-w-5xl mx-auto mt-8 lg:mt-16 grid grid-cols-2 gap-2">
           {{ range . }}
             <a href="{{ .lightbox }}" class="glightbox" data-gallery="gallery">
-              <div class="h-64 w-full max-w-xs rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
+              <div class="h-64 w-full border border-gray-200 rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
               </div>
             </a>
           {{ end }}

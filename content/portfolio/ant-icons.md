@@ -2,9 +2,9 @@
 title: "Vector Illustration Ant Icons"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:
-  - src: "/images/portfolio/alaeris/alaeris-03.jpg"
-    lightbox: "/images/portfolio/alaeris/alaeris-03.jpg"
-    alt: "Alaeris logo with clearspace"
+  - src: "/images/portfolio/ant-icons/ant_icons_portfolio.jpg"
+    lightbox: "/images/portfolio/ant-icons/vector-ants-portfolio.mp4"
+    alt: "Set of Ant Icons"
   - src: "/images/portfolio/alaeris/alaeris-04.jpg"
     lightbox: "/images/portfolio/alaeris/alaeris-04.jpg"
     alt: "Alaeris logo - horizontal on dark background"

@@ -15,6 +15,12 @@ gallery:
   - src: "/images/portfolio/alaeris/alaeris-portfolio-02.jpg"
     lightbox: "/images/portfolio/alaeris/alaeris-portfolio-02.jpg"
     alt: "Alaeris primary logo on light background"
+  - src: "/images/portfolio/alaeris/alaeris-technical-illustration.jpg"
+    lightbox: "/images/portfolio/alaeris/alaeris-technical-illustration.jpg"
+    alt: "Alaeris technical illustration"
+  - src: "/images/portfolio/alaeris/alaeris-bitcoin-illustration.jpg"
+    lightbox: "/images/portfolio/alaeris/alaeris-bitcoin-illustration.jpg"
+    alt: "Alaeris vs. Bitcoin illustration"
 overview: "Alaeris was a web3/blockchain initiative that I co-founded back in 2021 aimed at offsetting carbon emissions and empowering global communities by incentivizing the planting of trees. The project unfortunately never amounted to anything (we attempted bootstrapping the company right as Crypto Winter was taking shape), but it was certainly fun to work on. I served as 'Chief Creative Officer' and helped staff a creative team via Upwork and AngelList (now Wellfound). I also ideated the name 'Alaeris', finalized the logo design, developed an executive summary and pitch deck, and drafted technical illustrations."
 features:
   - "Creative Direction"

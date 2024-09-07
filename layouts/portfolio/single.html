@@ -5,7 +5,7 @@
         <h1 class="text-4xl font-bold">{{ .Title }}</h1>
         <div class="flex flex-col items-center justify-center gap-4 mt-4 sm:mt-5 sm:gap-8 sm:flex-row">
           {{ with .Params.websiteURL }}
-          <a href="{{ . }}" title=""
+          <a href="{{ . }}" title="" target="_blank"
             class="inline-flex items-center text-base font-semibold leading-tight text-primary-600 hover:underline dark:text-primary-500">
             Visit the website
             <svg aria-hidden="true" class="w-4 h-4 ml-1.5" fill="currentColor" viewBox="0 0 20 20"

@@ -15,7 +15,7 @@ gallery:
   - src: "/images/portfolio/canopy/canopy-mockup.jpg"
     lightbox: "/images/portfolio/canopy/canopy-mockup.jpg"
     alt: "Canopy 04"
-overview: "PKGX is a dev shop founded by Homebrew creator, Max Howell. Its flagship products are a package manager (the successor to Homebrew) and a visual package manager (OSSAPP) that enables anyone to easily interact with open source software. PKGX is also a core contributor to tea Protocol, a web3 initiative which aims to remunerate developers for their open source contributions."
+overview: "Canopy was a desktop app developed by Homebrew creator Max Howell that offered real-time notifications for GitHub. "
 features:
   - "Brand Design"
   - "Logo Design"

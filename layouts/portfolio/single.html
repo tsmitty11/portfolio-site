@@ -33,7 +33,7 @@
       {{ with .Params.banner }}
       <div class="max-w-5xl mx-auto mt-8 lg:mt-16">
         <a href="{{ .lightbox }}" class="glightbox" data-gallery="banner">
-          <div class="h-64 w-full border border-gray-200 rounded-lg h-[427px] sm:h-[600px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center;">
+          <div class="h-64 w-full border border-gray-200 rounded-lg h-[427px] sm:h-[790px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center;">
           </div>
         </a>
       </div>
@@ -41,15 +41,27 @@
 
       <!-- Gallery Section: Only display if there are gallery images -->
       {{ with .Params.gallery }}
-        <div class="max-w-5xl mx-auto mt-8 lg:mt-16 grid grid-cols-2 gap-2">
-          {{ range . }}
-            <a href="{{ .lightbox }}" class="glightbox" data-gallery="gallery">
-              <div class="h-64 w-full border border-gray-200 rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
-              </div>
-            </a>
-          {{ end }}
-        </div>
-      {{ end }} 
+      <div class="max-w-5xl mx-auto mt-8 lg:mt-16 grid grid-cols-2 gap-2">
+        {{ range . }}
+          <a href="{{ .lightbox }}" class="glightbox" data-gallery="gallery">
+            <div class="relative h-64 w-full border border-gray-200 rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
+              {{ if .video }}
+                <!-- Play button overlay if it's a video -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <!-- Blue circle background -->
+                  <div class="flex items-center justify-center bg-[#00b3ff] bg-opacity-95 rounded-full w-16 h-16">
+                    <!-- Play button SVG with rounded corners -->
+                    <img class="w-5 h-5 ml-[5px]" src="/images/play-button.svg" alt="play-button">
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+    
+     
 
       <div class="grid grid-cols-1 gap-8 mt-8 lg:gap-16 lg:grid-cols-2 lg:mt-16">
         <div>

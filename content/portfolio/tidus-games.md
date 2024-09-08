@@ -19,7 +19,6 @@ gallery:
     lightbox: "/images/portfolio/tidus_games/tidus-games-desktop.jpg"
     alt: "Tidus Games Landing Page"
     video: false
-
 overview: "The Tidus Games are a Roman-themed Airdrop event held by Tidus Wallet/NYCrypto. Users are able to sign-in with their crypto wallet and then complete tasks in-app in exchage for points, which are tracked on-chain. I animated a promotional video, designed the landing page, made the necessary UI additons to the mobile app, and developed a suite of marketing collateral."
 features:
   - "Adobe AfterEffects"
@@ -31,6 +30,6 @@ features:
   - "UI/UX Design"
   - "Figma"
 videoURL: ""
-background: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum commodo arcu nec semper. Fusce in elementum dui. Praesent vitae dignissim arcu. Aenean dictum diam vitae nisl consectetur, ac aliquam nibh vulputate. Cras eu enim ullamcorper, porta dolor quis, facilisis nisl. Integer egestas neque dui, ut rutrum massa iaculis quis. Donec at diam elementum nisl aliquam luctus. Mauris vestibulum dui mi, et ullamcorper est ultrices in. Maecenas ut nulla non dolor molestie semper eu id erat. Quisque a dictum sem. Nulla lobortis orci vel varius cursus. Etiam vitae tellus nulla. Donec cursus euismod elementum. Fusce suscipit volutpat lectus, at ullamcorper turpis pulvinar semper."
-challenge: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum commodo arcu nec semper. Fusce in elementum dui. Praesent vitae dignissim arcu. Aenean dictum diam vitae nisl consectetur, ac aliquam nibh vulputate. Cras eu enim ullamcorper, porta dolor quis, facilisis nisl. Integer egestas neque dui, ut rutrum massa iaculis quis. Donec at diam elementum nisl aliquam luctus. Mauris vestibulum dui mi, et ullamcorper est ultrices in. Maecenas ut nulla non dolor molestie semper eu id erat. Quisque a dictum sem. Nulla lobortis orci vel varius cursus. Etiam vitae tellus nulla. Donec cursus euismod elementum. Fusce suscipit volutpat lectus, at ullamcorper turpis pulvinar semper."
+background: "Tidus is a relatively new crypto wallet, and they wanted to launch these games in order to drive engagement. We started with the animated video (my favorite part of this project) to build excitement on social media. Then we moved on to the landing page, got that up and running, and finally fleshed out a suite of marketing graphics for social media and paid advertising."
+challenge: "As with any startup, Tidus had a quick deadline to launch the games. I had to find spots in the process where I could make 'quick-wins' in regards to efficiency. I couldn't find many shortcuts for the video animation, but for the landing page, I started with a component library and made small modifications to fit the Tidus brand. I used Figma for the marketing collateral so enable anyone on the team to come in and add comment, add copy, or export assets as needed."
 ---

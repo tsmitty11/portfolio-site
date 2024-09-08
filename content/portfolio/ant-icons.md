@@ -1,13 +1,10 @@
 ---
 title: "Vector Illustration Ant Icons"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
-gallery:
-  - src: "/images/portfolio/ant-icons/ant_icons_portfolio.jpg"
-    lightbox: "/images/portfolio/ant-icons/vector-ants-portfolio.mp4"
-    alt: "Set of Ant Icons"
-  - src: "/images/portfolio/ant-icons/ant_icons_portfolio-02.jpg"
-    lightbox: "/images/portfolio/ant-icons/ant_icons_portfolio-02.jpg"
-    alt: "Alaeris logo - horizontal on dark background"
+banner:
+  src: "/images/portfolio/ant-icons/ants-thumbnail.jpg"
+  lightbox: "/images/portfolio/ant-icons/ant_icons_portfolio.jpg"
+  alt: "Banner image description"
 overview: "Would you believe that I illustrated 366 of these guys!? These were made for an Australian ecommerce company that sold... you guessed it!... ants! They wanted an icon for every species of ant that they carried for use on their website and packaging. This was one of my earlier freelance projects, but it remains one of my favorite. Not just because of how well they turned out, but because of what a unique brief this was!"
 features:
   - "Illustration"

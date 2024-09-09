@@ -15,6 +15,9 @@ gallery:
   - src: "/images/portfolio/gui/gui-04.jpg"
     lightbox: "/images/portfolio/gui/gui-04.jpg"
     alt: "Image description 4"
+  - src: "/images/portfolio/gui/gui-05.jpg"
+    lightbox: "/images/portfolio/gui/gui-05.jpg"
+    alt: "Image description 4"
 overview: "PKGX is a dev shop founded by Homebrew creator, Max Howell. Its flagship products are a package manager (the successor to Homebrew) and a visual package manager (OSSAPP) that enables anyone to easily interact with open source software. PKGX is also a core contributor to tea Protocol, a web3 initiative which aims to remunerate developers for their open source contributions."
 features:
   - "Brand Design"

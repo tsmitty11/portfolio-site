@@ -2,8 +2,8 @@
 title: "Iconography & Badges"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:
-  - src: "/images/portfolio/ant-icons/ant_icons_portfolio.jpg"
-    lightbox: "/images/portfolio/ant-icons/ant_icons_portfolio.jpg"
+  - src: "/images/portfolio/icons-badges/ant_icons_portfolio.jpg"
+    lightbox: "/images/portfolio/icons-badges/ant_icons_portfolio.jpg"
     alt: ""
     video: false
   - src: "/images/portfolio/icons-badges/enginato_icons_portfolio.jpg"

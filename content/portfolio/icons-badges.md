@@ -1,5 +1,7 @@
 ---
 title: "Iconography & Badges"
+Description: "A selection of icon and achievement badge sets from over the years."
+ogimage: "/images/ants-og-image.jpg"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:
   - src: "/images/portfolio/icons-badges/ant_icons_portfolio.jpg"

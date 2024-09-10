@@ -1,5 +1,7 @@
 ---
 title: "PKGX INC."
+Description: "Logo and brand design for PKGX, a dev shop founded by Max Howell, the creator of Homebrew."
+ogimage: "/images/pkgx-og-image.jpg"
 websiteURL: "https://pkgx.dev"
 contactURL: "https://example.com/contact"
 gallery:

@@ -1,5 +1,7 @@
 ---
 title: "Tea.xyz Collateral (Pre-rebrand)"
+Description: "A suite of collateral for tea.xyz (now tea Protocol)."
+ogimage: "/images/teaxyz-og-image.jpg"
 websiteURL: "https://tea.xyz"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:

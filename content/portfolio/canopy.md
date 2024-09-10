@@ -1,5 +1,7 @@
 ---
 title: "Canopy"
+Description: "MacOS icon for an app that enables real-time GitHub notifications."
+ogimage: "/images/canopy-og-image.jpg"
 websiteURL: "https://mxcl.dev/canopy/"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:

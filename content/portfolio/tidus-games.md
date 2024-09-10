@@ -1,5 +1,7 @@
 ---
 title: "Tidus Games"
+Description: "Marketing colateral for Tidus Games, an airdrop event held by Tidus Wallet."
+ogimage: "/images/tidus-games-og-image.jpg"
 websiteURL: "https://games.tidus.com"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:

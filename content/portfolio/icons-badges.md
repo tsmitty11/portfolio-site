@@ -18,7 +18,7 @@ gallery:
     lightbox: "/images/portfolio/icons-badges/isecret-shop-badges.mp4"
     alt: ""
     video: true
-overview: "Would you believe that I illustrated 366 of these guys!? These were made for an Australian ecommerce company that sold... you guessed it!... ants! They wanted an icon for every species of ant that they carried for use on their website and packaging. This was one of my earlier freelance projects, but it remains one of my favorite. Not just because of how well they turned out, but because of what a unique brief this was!"
+overview: "Iconography is, in my opinion, the epitome of Graphic Design: the purely visual communication of concepts. They're one of my favorite things to design because each one is like a little illustration. So, in honor of all things iconography, I've currated some of my favorite sets from over the years for your enjoyment."
 features:
   - "Illustration"
   - "Vector Illustration"
@@ -26,6 +26,6 @@ features:
   - "Adobe Illustrator"
   - "Graphic Design"
 videoURL: ""
-background: "The client wanted to use these icons on their website, as well as their packaging. They provided me with a spreadsheet containing the scientific names for each ant and a few illustration examples that resonated with them in terms of style. I began by sourcing images for each ant to use as reference, and then drafted the first few and ran them by the client for approval. Once I had the go-ahead, I got to work on the daunting task of illustrating the other ~300 or so ants."
-challenge: "The challenge here was finding a good balance between quality and efficiency, so as not to lose (too much) money on this job. Of course, I could have spent six months meticuously illustrating these ants, but would not have been financially practical. So, I noted similarities across the different ant species (furry versus shiny, long atenas versus short antenas, eye shape, and so forth) and created repeatable patterns and shapes that could be used for each instance. I would change the colors, overall shape, and defining characteristics of each ant, but I had this library of 'patterns' that I could draw from to expedite the process as much as possible. They still forver to complete, as one would expect, but ultimately I love the way they turned out... and so did the client!"
+background: "Above, you'll see a set of ant icons, robot-themed icons for a 9gag-esc media site, achivement badges for an secret shopper platform, and an minimalistic set for an engineering platform. Quite the variety if I do say so myself! I have a soft spot for the ants--they were one of my first independent freelance projects, and they took absolutely forever to finish!"
+challenge: "The challenge with icons is that they say what need to say (they shouldn't be supurfluous to the written text) and they all need to have an equal visual impact. That means really thinking about each and every mark you make, while also paying close attention to line weights, color choices, and the how the icons present next to each other."
 ---

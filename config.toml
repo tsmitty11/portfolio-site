@@ -10,7 +10,7 @@ title = "Tom Smith Design"
   [[menu.main]]
     identifier = "portfolio"
     name = "Portfolio"
-    url = "/"
+    url = "/#portfolio"
     weight = 1
 
   [[menu.main]]

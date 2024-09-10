@@ -1,0 +1,150 @@
+{{ define "main" }}
+<section class="bg-white dark:bg-gray-900">
+    <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold">{{ .Title }}</h1>
+        <div class="flex flex-col items-center justify-center gap-4 mt-4 sm:mt-5 sm:gap-8 sm:flex-row">
+          {{ with .Params.websiteURL }}
+          <a href="{{ . }}" title="" target="_blank"
+            class="inline-flex items-center text-base font-semibold leading-tight text-primary-600 hover:underline dark:text-primary-500">
+            Visit the website
+            <svg aria-hidden="true" class="w-4 h-4 ml-1.5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+            </svg>
+          </a>
+          {{ end }}
+
+          <a href="https://calendly.com/hiretomsmith/hiretomsmith" title=""
+            class="inline-flex items-center text-base font-semibold leading-tight text-primary-600 hover:underline dark:text-primary-500">
+            Let's work together
+            <svg aria-hidden="true" class="w-4 h-4 ml-1.5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      {{ with .Params.banner }}
+      <div class="max-w-5xl mx-auto mt-8 lg:mt-16">
+        <a href="{{ .lightbox }}" class="glightbox" data-gallery="banner">
+          <div class="h-64 w-full border border-gray-200 rounded-lg h-[427px] sm:h-[790px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center;">
+          </div>
+        </a>
+      </div>
+     {{ end }}   
+
+      <!-- Gallery Section: Only display if there are gallery images -->
+      {{ with .Params.gallery }}
+      <div class="max-w-5xl mx-auto mt-8 lg:mt-16 grid grid-cols-2 gap-2">
+        {{ range . }}
+          <a href="{{ .lightbox }}" class="glightbox" data-gallery="gallery">
+            <div class="relative h-64 w-full border border-gray-200 rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
+              {{ if .video }}
+                <!-- Play button overlay if it's a video -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <!-- Blue circle background -->
+                  <div class="flex items-center justify-center bg-[#00b3ff] bg-opacity-95 rounded-full w-16 h-16">
+                    <!-- Play button SVG with rounded corners -->
+                    <img class="w-5 h-5 ml-[5px]" src="/images/play-button.svg" alt="play-button">
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+    
+     
+
+      <div class="grid grid-cols-1 gap-8 mt-8 lg:gap-16 lg:grid-cols-2 lg:mt-16">
+        <div>
+          <!-- Overview Section: Only display if overview is provided -->
+          {{ with .Params.overview }}
+          <div>
+            <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
+              Overview
+            </h3>
+            <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+              {{ . }}
+            </p>
+          </div>
+          {{ end }}
+  
+          <!-- Features Section: Only display if features exist and are non-empty -->
+          {{ with .Params.features }}
+          <ul class="grid grid-cols-1 mt-8 sm:grid-cols-2 gap-x-4 gap-y-3">
+            {{ range . }}
+              {{ if . }}
+              <li class="flex items-center gap-2.5">
+                <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span class="text-base font-normal text-gray-500 dark:text-gray-400">
+                  {{ . }}
+                </span>
+              </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+          {{ end }}
+
+          <!-- Video Section: Only display if a video URL is provided -->
+          {{ with .Params.videoURL }}
+          <video class="w-full h-auto max-w-full border border-gray-200 rounded-lg dark:border-gray-700 mt-8" controls>
+              <source src="{{ . }}" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          {{ end }}
+
+        </div>
+  
+        <div class="space-y-8">
+          <!-- Background Section: Only display if background is provided -->
+          {{ with .Params.background }}
+          <div>
+            <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
+              Background
+            </h3>
+            <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+              {{ . }}
+            </p>
+          </div>
+          {{ end }}
+  
+          <!-- Challenge Section: Only display if challenge is provided -->
+          {{ with .Params.challenge }}
+          <div>
+            <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
+              The Challenge
+            </h3>
+            <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+              {{ . }}
+            </p>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLightbox JS Initialization -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true
+    });
+  </script>
+{{ end }}

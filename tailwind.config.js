@@ -22,7 +22,7 @@ module.exports = {
           "950":"#172554"
         },
         gunmetal: '#22333B',  // Gunmetal
-        whiteSmoke: '#F2F4F3', // White Smoke
+        whiteSmoke: '#F4F3EF', // White Smoke
         coral: '#FF8552', // Coral
       }
     },

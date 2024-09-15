@@ -1,8 +1,8 @@
 {{ define "main" }}
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-whiteSmoke dark:bg-gray-900">
     <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
       <div class="text-center">
-        <h1 class="text-4xl font-bold">{{ .Title }}</h1>
+        <h1 class="text-4xl font-bold text-gunmetal">{{ .Title }}</h1>
         <div class="flex flex-col items-center justify-center gap-4 mt-4 sm:mt-5 sm:gap-8 sm:flex-row">
           {{ with .Params.websiteURL }}
           <a href="{{ . }}" title="" target="_blank"
@@ -44,7 +44,7 @@
       <div class="max-w-5xl mx-auto mt-8 lg:mt-16 grid grid-cols-2 gap-2">
         {{ range . }}
           <a href="{{ .lightbox }}" class="glightbox" data-gallery="gallery">
-            <div class="relative h-64 w-full border border-gray-200 rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
+            <div class="relative h-64 w-full border border-gunmetal rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
               {{ if .video }}
                 <!-- Play button overlay if it's a video -->
                 <div class="absolute inset-0 flex items-center justify-center">
@@ -68,10 +68,10 @@
           <!-- Overview Section: Only display if overview is provided -->
           {{ with .Params.overview }}
           <div>
-            <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
+            <h3 class="text-2xl font-extrabold text-gunmetal dark:text-white">
               Overview
             </h3>
-            <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+            <p class="mt-2 text-lg font-normal text-gunmetal dark:text-gray-400">
               {{ . }}
             </p>
           </div>
@@ -89,7 +89,7 @@
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                     clip-rule="evenodd" />
                 </svg>
-                <span class="text-base font-normal text-gray-500 dark:text-gray-400">
+                <span class="text-base font-normal text-gunmetal dark:text-gray-400">
                   {{ . }}
                 </span>
               </li>
@@ -112,10 +112,10 @@
           <!-- Background Section: Only display if background is provided -->
           {{ with .Params.background }}
           <div>
-            <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
+            <h3 class="text-2xl font-extrabold text-gunmetal dark:text-white">
               Background
             </h3>
-            <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+            <p class="mt-2 text-lg font-normal text-gunmetal dark:text-gray-400">
               {{ . }}
             </p>
           </div>
@@ -124,10 +124,10 @@
           <!-- Challenge Section: Only display if challenge is provided -->
           {{ with .Params.challenge }}
           <div>
-            <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
+            <h3 class="text-2xl font-extrabold text-gunmetal dark:text-white">
               The Challenge
             </h3>
-            <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+            <p class="mt-2 text-lg font-normal text-gunmetal dark:text-gray-400">
               {{ . }}
             </p>
           </div>

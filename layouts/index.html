@@ -1,12 +1,12 @@
 {{ define "main" }}
     {{partial "hero.html" }}
-    {{partial "tldr-about.html" }}
-    {{ partial "features.html" }}
+    <hr class="border-gunmetal max-w-screen-xl mx-auto">
     {{ partial "portfolio-alt.html" }}
-    <hr class="max-w-screen-xl mx-auto">
-    {{ partial "testimonials.html" }}
-    {{ partial "faq.html" }}
-    {{ partial "contact-form-main.html" }}
+    <style>
+        main{
+            padding-top: 0px !important;
+        }
+    </style>
 {{ end }}
 
 

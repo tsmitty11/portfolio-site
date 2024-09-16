@@ -11,7 +11,11 @@ summary: "How I built this website for the cost of a domain."
 reading_time: 5
 ---
 
-## This is my header
+<h2 class="text-3xl font-bold text-gunmetal">Life got cheaper once I learned how to code.</h2>
+
+<p class="text-gunmetal">This is some text.</p>
+
+<h3 class="text-2xl text-gunmetal">Hugo for CMS & templating</h3>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus, sem sed pretium luctus, libero dolor hendrerit est, sed tempor lorem turpis non sapien. Sed quis tellus a leo egestas hendrerit vel sit amet ante. Ut id finibus ex. Nulla placerat accumsan porta. Fusce sed elit odio. Cras sit amet gravida arcu, eu lobortis quam. Curabitur sagittis consectetur tellus, sit amet dignissim quam vulputate vel. Sed nibh est, luctus vel porttitor sit amet, dapibus quis urna. Fusce sagittis lacus quis nisi faucibus ullamcorper. Pellentesque neque arcu, dignissim at augue nec, lobortis condimentum tellus. Fusce euismod sollicitudin lobortis. Quisque pretium efficitur nibh id feugiat. Proin nec interdum nisl, ac dapibus nunc. Curabitur sit amet felis arcu. Aenean tempus euismod tellus eget lobortis. Etiam id mi et nulla tristique sodales vitae at lacus.\
 \

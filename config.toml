@@ -2,6 +2,11 @@ baseURL = "https://tomsmith.design/"
 languageCode = "en-us"
 title = "Tom Smith Design"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [taxonomies]
   tag = "tags"
   category = "categories"

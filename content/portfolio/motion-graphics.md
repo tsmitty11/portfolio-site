@@ -1,7 +1,7 @@
 ---
 title: "Motion Graphics"
 Description: "An assortment of Adobe AfterEffects animations (various clients)."
-ogimage: "/images/tidus-games-og-image.jpg"
+ogimage: "/images/motion-graphics-og-image.jpg"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:
   - src: "/images/portfolio/tidus_games/tidus-games-thumbnail.jpg"

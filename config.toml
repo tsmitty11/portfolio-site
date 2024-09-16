@@ -22,7 +22,7 @@ title = "Tom Smith Design"
   [[menu.main]]
     identifier = "about"
     name = "About"
-    url = "#about"
+    url = "/about/"
     weight = 3
 
   [[menu.main]]

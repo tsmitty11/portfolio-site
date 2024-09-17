@@ -8,17 +8,17 @@ gallery:
     lightbox: "/images/portfolio/Tidus Games - Final Cut - Now LIve.mp4"
     alt: "Tidus Games Promotional Video"
     video: true
-  - src: "/images/portfolio/tidus_games/tidus-games-social-thumbnail.jpg"
-    lightbox: "/images/portfolio/tidus_games/tidus-games-instagram-carousel.jpg"
-    alt: "Tidus Games Instagram Carousel"
+  - src: "/images/portfolio/motion graphics/tidus-swaps-thumbnail.jpg"
+    lightbox: "/images/portfolio/motion graphics/tidus-swaps-portfolio.mp4"
+    alt: "Tidus Swaps Video"
     video: true
-  - src: "/images/portfolio/tidus_games/intract-x-tidus.jpg"
-    lightbox: "/images/portfolio/tidus_games/intract-x-tidus.jpg"
-    alt: "Tidus Games Instagram/X Graphic"
+  - src: "/images/portfolio/motion graphics/happy-holidays-thumbnail.jpg"
+    lightbox: "/images/portfolio/motion graphics/tea-happy-holidays.mp4"
+    alt: "Happy Holidays from tea Protocol"
     video: true
-  - src: "/images/portfolio/tidus_games/tidus-games-page-thumbnail.jpg"
-    lightbox: "/images/portfolio/tidus_games/tidus-games-desktop.jpg"
-    alt: "Tidus Games Landing Page"
+  - src: "/images/portfolio/motion graphics/tea-mainnet-thumbnail.jpg"
+    lightbox: "/images/portfolio/motion graphics/Mainnet_Annoucement.mp4"
+    alt: "tea Mainnet Animation"
     video: true
 overview: "The Tidus Games are a Roman-themed Airdrop event held by Tidus Wallet/NYCrypto. Users are able to sign-in with their crypto wallet and then complete tasks in-app in exchage for points, which are tracked on-chain. I animated a promotional video, designed the landing page, made the necessary UI additons to the mobile app, and developed a suite of marketing collateral."
 features:

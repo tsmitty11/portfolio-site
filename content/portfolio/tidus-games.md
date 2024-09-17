@@ -1,6 +1,6 @@
 ---
 title: "Tidus Games"
-Description: "Marketing colateral for Tidus Games, an airdrop event held by Tidus Wallet."
+Description: "Marketing collateral for Tidus Games, an airdrop event held by Tidus Wallet."
 ogimage: "/images/tidus-games-og-image.jpg"
 websiteURL: "https://games.tidus.com"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
@@ -21,7 +21,7 @@ gallery:
     lightbox: "/images/portfolio/tidus_games/tidus-games-desktop.jpg"
     alt: "Tidus Games Landing Page"
     video: false
-overview: "The Tidus Games are a Roman-themed Airdrop event held by Tidus Wallet/NYCrypto. Users are able to sign-in with their crypto wallet and then complete tasks in-app in exchage for points, which are tracked on-chain. I animated a promotional video, designed the landing page, made the necessary UI additons to the mobile app, and developed a suite of marketing collateral."
+overview: "The Tidus Games are a Roman-themed Airdrop event held by Tidus Wallet/NYCrypto. Users are able to sign-in with their crypto wallet and then complete tasks in-app in exchange for points, which are tracked on-chain. I animated a promotional video, designed the landing page, made the necessary UI additions to the mobile app, and developed a suite of marketing collateral."
 features:
   - "Adobe AfterEffects"
   - "Motion Graphics"

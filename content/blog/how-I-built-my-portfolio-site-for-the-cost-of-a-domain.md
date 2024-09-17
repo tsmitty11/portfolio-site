@@ -1,5 +1,6 @@
 ---
 title: "How I Built My Portfolio Site for the Cost of a Domain"
+Description: "I built and deployed my portfolio site for the cost of a domain using Hugo, Tailwind CSS, Flowbite, and Netlify."
 date: 2024-08-30T12:00:00Z
 author: "Tom Smith"
 type: "post"
@@ -7,7 +8,7 @@ author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Education"
 featured_image: "/images/gallery-01.png"
-summary: "How I built this website for the cost of a domain."
+summary: "I built and deployed my portfolio site for the cost of a domain using Hugo, Tailwind CSS, Flowbite, and Netlify."
 reading_time: 5
 ---
 

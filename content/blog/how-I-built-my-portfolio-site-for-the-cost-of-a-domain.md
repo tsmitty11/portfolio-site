@@ -54,3 +54,8 @@ reading_time: 5
 <p class="text-gunmetal">I've been sitting on this domain for years. I was advertised the .design TLD's at one point or another, and so I snatched up the 'Tom Smith' URL before one of the other Tom Smiths did. I'm sure I've paid renewal costs and what not, but in essence, that's been the only major cost with building this portfolio site!</p>
 
 <p class="text-gunmetal">Anyway, hope you found this post interesting. If you'd like to check out the site on Github, <a href="https://github.com/tsmitty11/portfolio-site" target="_blank" class="text-blue-700">you can do so here</a>. See you in the next post!</p>
+
+<h2 class="text-2xl text-gunmetal">Also: A quick note about the design inspiration for this site.</h2>
+
+<p class="text-gunmetal">My creative process has always started with a Moleskin sketchbook. In fact, I have stacks of them at this point. I wanted this website to look like an elevated sketchbook page. The Ivory background color is a direct tie-back to Moleskin. Furthermore, the singular color, separated only by the black line work, is very similar to how my sketchbooks look: no color, just mechanical pencil and sometimes pen. </p>
+

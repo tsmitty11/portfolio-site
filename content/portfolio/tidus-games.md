@@ -6,7 +6,7 @@ websiteURL: "https://games.tidus.com"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:
   - src: "/images/portfolio/tidus_games/tidus-games-thumbnail.jpg"
-    lightbox: "/images/portfolio/Tidus Games - Final Cut - Now LIve.mp4"
+    lightbox: "/images/portfolio/tidusGames-portfolio-reducedSize.mp4"
     alt: "Tidus Games Promotional Video"
     video: true
   - src: "/images/portfolio/tidus_games/tidus-games-social-thumbnail.jpg"

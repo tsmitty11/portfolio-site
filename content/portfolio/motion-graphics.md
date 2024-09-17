@@ -5,7 +5,7 @@ ogimage: "/images/motion-graphics-og-image.jpg"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:
   - src: "/images/portfolio/tidus_games/tidus-games-thumbnail.jpg"
-    lightbox: "/images/portfolio/Tidus Games - Final Cut - Now LIve.mp4"
+    lightbox: "/images/portfolio/tidusGames-portfolio-reducedSize.mp4"
     alt: "Tidus Games Promotional Video"
     video: true
   - src: "/images/portfolio/motion graphics/tidus-swaps-thumbnail.jpg"

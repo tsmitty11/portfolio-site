@@ -28,7 +28,7 @@
             </svg>
             Tweet
           </a>
-          <button type="button" class="inline-flex items-center py-2 px-6 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+          <button onclick="copyToClipboard('{{ .Permalink }}')" type="button" class="inline-flex items-center py-2 px-6 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
             <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.013 7.962a3.519 3.519 0 0 0-4.975 0l-3.554 3.554a3.518 3.518 0 0 0 4.975 4.975l.461-.46m-.461-4.515a3.518 3.518 0 0 0 4.975 0l3.553-3.554a3.518 3.518 0 0 0-4.974-4.975L10.3 3.7"/>
             </svg>
@@ -53,12 +53,21 @@
             </svg>
             Tweet
           </a>
-          <button type="button" class="inline-flex items-center py-2 px-6 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+          <button onclick="copyToClipboard('{{ .Permalink }}')" type="button" class="inline-flex items-center py-2 px-6 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
             <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.013 7.962a3.519 3.519 0 0 0-4.975 0l-3.554 3.554a3.518 3.518 0 0 0 4.975 4.975l.461-.46m-.461-4.515a3.518 3.518 0 0 0 4.975 0l3.553-3.554a3.518 3.518 0 0 0-4.974-4.975L10.3 3.7"/>
             </svg>
             Copy link
           </button>
+          <script>
+            function copyToClipboard(url) {
+              navigator.clipboard.writeText(url).then(function() {
+                alert('Link copied to clipboard!');
+              }, function(err) {
+                console.error('Error copying text: ', err);
+              });
+            }
+          </script>
         </aside>
         <div class="not-format">
           <button data-tooltip-target="tooltip-save" class="inline-flex border border-gunmetal items-center p-2 text-sm font-medium text-gunmetal bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-gray-400 focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600" type="button">

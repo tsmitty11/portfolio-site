@@ -1,5 +1,7 @@
 ---
 title: "Visual Package Manager"
+Description: "A desktop app that empowers casual users to interact with the terminal and install open source software."
+ogimage: "/images/gui-og-image.jpg"
 websiteURL: "https://www.producthunt.com/products/pkgx"
 contactURL: "https://example.com/contact"
 gallery:

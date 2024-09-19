@@ -64,7 +64,7 @@ reading_time: 8
 
 <h2 class="text-2xl font-bold text-gunmetal">Know the value you provide.</h2>
 
-<p class="text-gunmetal">This last point is more of a feel-good romp than anything else, but it holds true. Know your value as a designer. Oftentimes, it feels like designers get the short end of the stick and end up standing in the shadow of engineers and developers (I mean, this is the reason I learned how to code in the first place).</p>
+<p class="text-gunmetal">This last point is more of a feel-good romp than anything else, but it holds true. Know your value as a designer. Oftentimes, it feels like designers get the short end of the stick and end up standing in the shadow of engineers and developers (I mean, this is the reason <a href="/blog/how-I-built-my-portfolio-site-for-the-cost-of-a-domain.md" class="text-blue-700">I learned how to code</a> in the first place).</p>
 
 <p class="text-gunmetal">But it shouldn’t be that way! We literally create something from nothing. We can create a brand and website and all of a sudden, the company has life! Our packaging sells products, our reels earn subscriptions, and our interfaces create user experiences that convert.</p>
 

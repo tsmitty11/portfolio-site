@@ -30,6 +30,6 @@ features:
   - "Adobe Photoshop"
   - "Layout Design"
 videoURL: ""
-background: "I kind of love designing for print. Back in the day, I really dragged my feet about getting into digital design. I loved posters, packaging, and everything in between. Also, there's something really liberating about the self-contained nature of a flyer. Especially if it's a one-off attention grabber... no component libraries to reckon with, no Figma styles and variables... just a blank canvas and unlimited possibilities."
+background: "I kind of love designing for print. Back in the day, I really dragged my feet about getting into digital design. I love posters, packaging, and everything in between. Also, there's something really liberating about the self-contained nature of a flyer. Especially if it's a one-off attention grabber... no component libraries to reckon with, no Figma styles and variables... just a blank canvas and unlimited possibilities."
 challenge: "In my opinion, the most difficult aspect of print design is anticipating difference in output versus the on-screen preview. There's a reduction in brightness that needs to be accounted for, the paper weight and consistency play a significant role, and design flares such as gradients may or may not present they way you intend. With that being said, there's a certain joy that accompanies seeing your design come to life in the real world... and that's the beauty of print."
 ---

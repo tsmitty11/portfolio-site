@@ -22,9 +22,9 @@ reading_time: 5
 
 <h2 class="text-2xl text-gunmetal">I used Hugo for CMS & templating (zero dollars).</h2>
 
-<p class="text-gunmetal">Hugo is a static site generator and is now my favorite method for DRY (don't repeat yourself) development. The I loved most about Hugo was that, aside from Hugo itself, I didn't need to learn some new syntax like JSX in order to get started. I could use my my trusty HTML and vanilla Javascript and still create reusable components via Hugo partials.</p>
+<p class="text-gunmetal">Hugo is a static site generator and is now my favorite method for DRY (don't repeat yourself) development. The thing I loved most about Hugo was that, aside from Hugo itself, I didn't need to learn some new syntax like JSX in order to get started. I could use my my trusty HTML and vanilla Javascript and still create reusable components via Hugo partials.</p>
 
-<p class="text-gunmetal">The other great thing about Hugo is that it's built for blogging. This made it a great spiritual successor to my affinity for Wordpress, and also gave us a CMS solution is pump out shareable content and really shine a spotlight on the company. Hugo's Markdown syntax for posts and content files further lowers the barrier to entry for anyone to contribute, but were I to implement a Hugo site at another company in the future, I would certainly add some sort of headless CMS or facilitate contributions form anyone in the company (regardless technical aptitude).</p>
+<p class="text-gunmetal">The other great thing about Hugo is that it's built for blogging. This made it a great spiritual successor to my affinity for Wordpress, and also gave us a CMS solution is pump out shareable content and really shine a spotlight on the company. Hugo's Markdown syntax for posts and content files further lowers the barrier to entry for anyone to contribute, but were I to implement a Hugo site at another company in the future, I would certainly add some sort of headless CMS or facilitate contributions form anyone in the company (regardless of technical aptitude).</p>
 
 <p class="text-gunmetal">Hugo has been great for this site because its powered this blog (which you're reading now) and has enabled me to build a site that's personal to me with a stack that I truly enjoy using.</p>
 
@@ -38,7 +38,7 @@ reading_time: 5
 
 <h2 class="text-2xl text-gunmetal">Flowbite provided the beautiful components (zero dollars*).</h2>
 
-<p class="text-gunmetal"><a href="https://flowbite.com/docs/getting-started/introduction/" target="_blank" class="text-blue-700">Flowbite</a> is a library of components built with Tailwind. They've really got a fantastic repository of starter components and layouts, especially in regards to their marketing UI. I used to be a purest when it came to UI, not wanting to design with any pre-existing libraries and instead scrutinize the border radius of my own custom-made cards for hours on end. But when you're on a small team or just going at it on your own, it really gives your a big head-start to take these tried-and-true design elements and put your own spin on them.</p>
+<p class="text-gunmetal"><a href="https://flowbite.com/docs/getting-started/introduction/" target="_blank" class="text-blue-700">Flowbite</a> is a library of components built with Tailwind. They've really got a fantastic repository of starter components and layouts, especially in regards to their marketing UI. I used to be a purest when it came to UI, not wanting to design with any pre-existing libraries and instead scrutinize the border radius of my own custom-made cards for hours on end. But when you're on a small team or just going at it on your own, it really gives you a big head-start to take these tried-and-true design elements and put your own spin on them.</p>
 
 <p class="text-gunmetal">From a design perspective, one of the best things about Flowbite is how comprehensive and in-sync their Figma file are with their actual components. It's been a breeze to design and ideate my site, wire the code up, and have it look exactly the same without a ton of leg work.</p>
 
@@ -52,7 +52,7 @@ reading_time: 5
 
 <h2 class="text-2xl text-gunmetal">I purchased the tomsmith.design domain years ago (30 dollars).</h2>
 
-<p class="text-gunmetal">I've been sitting on this domain for years. I was advertised the .design TLD's at one point or another, and so I snatched up the 'Tom Smith' URL before one of the other Tom Smiths did. I'm sure I've paid renewal costs and what not, but in essence, that's been the only major cost with building this portfolio site!</p>
+<p class="text-gunmetal">I've been sitting on this domain for years. The .design TLD was advertised to me at one point or another, and so I snatched up the 'Tom Smith' URL before one of the other Tom Smiths did. I'm sure I've paid renewal costs and what not, but in essence, that's been the only major cost with building this portfolio site!</p>
 
 <p class="text-gunmetal">Anyway, hope you found this post interesting. If you'd like to check out the site on Github, <a href="https://github.com/tsmitty11/portfolio-site" target="_blank" class="text-blue-700">you can do so here</a>. See you in the next post!</p>
 

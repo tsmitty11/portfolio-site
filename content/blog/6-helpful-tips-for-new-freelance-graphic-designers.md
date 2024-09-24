@@ -60,7 +60,7 @@ reading_time: 8
 
 <p class="text-gunmetal">This one may seem obvious, but perhaps not. The amount of money funneling into the industry in which you’re designing is usually indicative of how much you can reliably bill. Think healthcare, insurance, tech, blockchain… all cash cow industries. The companies therein will most likely have deeper pockets and thus it’s going to be a much lighter lift to sell them on the rates you want.</p>
 
-<p class="text-gunmetal">That’s not to say you shouldn’t throw in a branding project for the local coffee shop every once in a while (those projects tend to be a lot of fun), but just no that you want to be buying the good eggs at the grocery store, it’s going to be easier to occupy the industries that have large influxes of cash.</p>
+<p class="text-gunmetal">That’s not to say you shouldn’t throw in a branding project for the local coffee shop every once in a while (those projects tend to be a lot of fun), but just know that you want to be buying the good eggs at the grocery store, it’s going to be easier to occupy the industries that have large influxes of cash.</p>
 
 <h2 class="text-2xl font-bold text-gunmetal">Know the value you provide.</h2>
 

@@ -8,7 +8,7 @@ author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Education"
 featured_image: "/images/gallery-01.png"
-summary: "I've strung together some amazing tips for new freelance designers that I've learned of the course of 10 years doing freelance graphic design."
+summary: "I've strung together some amazing tips for new freelance designers that I've learned over the course of 10 years doing freelance graphic design."
 reading_time: 8
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Tidus Wallet Website Design And Development"
+title: "Tidus Wallet Website Design & Development"
 Description: "Website design and development for Tidus Wallet, a mobile crypto wallet."
 ogimage: "/images/tidus-games-og-image.jpg"
 websiteURL: "https://tiduswallet.com/"
@@ -21,7 +21,7 @@ gallery:
     lightbox: "/images/portfolio/tidus_games/tidus-games-desktop.jpg"
     alt: "Tidus Games Landing Page"
     video: false
-overview: "Tidus Wallet is a user-friendly crypto wallet that's available as a mobile app, as well as a Google Chrome browser extension."
+overview: "Tidus Wallet is a user-friendly crypto wallet that's available as a mobile app and Google Chrome browser extension. As part of my suite of deliverables for Tidus, I designed and developed this nifty website for them. The goal was to not only elevate the visual design, but to also streamline and emphasize the core messaging. I revamped the design from the ground-up in Figma, illustrated some whimsical vector graphics in Adobe Illustrator to make the concepts more approachable, and I developed a light-weight, high-performance website using Astro.js and Tailwind CSS."
 features:
   - "Figma"
   - "Adobe Illustrator"
@@ -32,6 +32,6 @@ features:
   - "HTML/CSS/Javascript"
   - "Vector Illustration"
 videoURL: ""
-background: "Tidus is a relatively new crypto wallet, and they wanted to launch these games to drive engagement. We started with the animated video (my favorite part of the project) to build excitement on social media. Then we moved on to the landing page, got that up and running, and finally fleshed out a suite of marketing graphics for social media and paid advertising."
-challenge: "As with any startup, Tidus had a quick deadline to launch the games. I had to find spots in the process where I could make 'quick wins' in terms of efficiency. I couldn't find many shortcuts for the video animation, but for the landing page, I started with a component library and made small modifications to fit the Tidus brand. I used Figma for the marketing collateral to enable anyone on the team to come in, add comments, make copy edits, or export assets as needed."
+background: "Tidus already had a website when I came onboard and we did an initial 'face-lift' to get things off the ground. But as we developed a more robust visual suite of brand assets, it came time to revisit the website once more. In addition to its visual deficits, the site was also overly complex and utilized messaging and imagery that didn't quite resonate with the target demographic. For the design, I used Flowbite components as a 'jumping-off' point and adapted them to match Tidus' brand aesthetic. I also collaborated with Tidus' CEO and marketing team in Figma to finalize the content and copy, and to get sign-off on the design itself. The existing site was built using Astro.js and the engineering team requested that it be retained in the new build. The site was also using Tailwind, which I adapted to reflect my design styles, and I added Flowbite as per my Figma workflow."
+challenge: "This was my first time using Astro.js, and as such, there was a minor learning curve from the get-go. Additionally, isolating the true target demographic and veering away from past assumptions proved to be a bit of a lift as well. The previous aesthetic utilized popular internet memes, which would be expected for other crypto projects, but it alienated the casual user that Tidus' UX appeals to. Instead, I opted for high-contrast and bold typography, bright and whimsical illustrations, and a minimalistic layout that places all of the emphasis on user benefits."
 ---

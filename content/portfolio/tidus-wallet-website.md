@@ -17,6 +17,14 @@ gallery:
     lightbox: "/images/portfolio/tidus-website-portfolio-03.jpg"
     alt: "Screenshot of working file in Figma for Tidus Wallet website."
     video: false
+  - src: "/images/portfolio/tidus-website-portfolio-05.jpg"
+    lightbox: "/images/portfolio/tidus-website-portfolio-04.jpg"
+    alt: "Page speed performance report for Tidus Wallet website."
+    video: false
+  - src: "/images/portfolio/tidus-website-portfolio-06.jpg"
+    lightbox: "/images/portfolio/tidus-website-portfolio-06.jpg"
+    alt: "Components screenshot from Figma."
+    video: false
   - src: "/images/portfolio/tidus-website-portfolio-04.jpg"
     lightbox: "/images/portfolio/tidus-website-portfolio-04.jpg"
     alt: "Full Tidus Wallet landing page."

@@ -1,7 +1,7 @@
 ---
 title: "Tidus Wallet Website Design & Development"
 Description: "Website design and development for Tidus Wallet, a mobile crypto wallet."
-ogimage: "/images/tidus-games-og-image.jpg"
+ogimage: "/images/tidus-website-og-image.jpg"
 websiteURL: "https://tiduswallet.com/"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:

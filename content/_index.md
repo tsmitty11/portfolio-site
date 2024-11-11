@@ -7,9 +7,13 @@ gallery:
   - src: "/images/portfolio/alaeris/alaeris-04.jpg"
     lightbox: "/images/portfolio/alaeris/alaeris-04.jpg"
     alt: "Alaeris logo - horizontal on dark background"
-    video: true
+    video: false
   - src: "/images/portfolio/alaeris/alaeris-04.jpg"
     lightbox: "/images/portfolio/alaeris/alaeris-04.jpg"
     alt: "Alaeris logo - horizontal on dark background"
-    video: true
+    video: false
+  - src: "/images/portfolio/alaeris/alaeris-04.jpg"
+    lightbox: "/images/portfolio/alaeris/alaeris-04.jpg"
+    alt: "Alaeris logo - horizontal on dark background"
+    video: false
 ---

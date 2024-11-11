@@ -2,41 +2,27 @@
     <div class="max-w-screen-xl px-4 mx-auto lg:px-6 pb-24">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+                <a href="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                    <div class="h-64 w-full rounded-lg bg-cover bg-center" style="background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg');"></div>
+                </a>
             </div>
             <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+                <a href="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                    <div class="h-64 w-full rounded-lg bg-cover bg-center" style="background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg');"></div>
+                </a>
             </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt="">
-            </div>
+            <!-- Repeat for each thumbnail -->
+            <!-- Add other images in the same pattern -->
         </div>
     </div>
-  </section>
+</section>
+
+<!-- GLightbox JS Initialization -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+    const lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true
+    });
+</script>

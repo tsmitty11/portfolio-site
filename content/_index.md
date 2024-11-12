@@ -109,11 +109,13 @@ gallery:
     alt: "Mockup of some products for a side-hustle I started with my girlfriend."
   - src: "/images/pizzanaut.jpg"
     lightbox: "/images/pizzanaut.jpg"
-    alt: "Mockup of some products for a side-hustle I started with my girlfriend."
-  - src: "/images/encouraging-cryptids-mockup.jpg"
-    lightbox: "/images/encouraging-cryptids-mockup.jpg"
-    alt: "Mockup of some products for a side-hustle I started with my girlfriend."
-  - src: "/images/encouraging-cryptids-mockup.jpg"
-    lightbox: "/images/encouraging-cryptids-mockup.jpg"
-    alt: "Mockup of some products for a side-hustle I started with my girlfriend."
+    alt: "A whimsical illustration of an astronaut in their underwear, holding a pizza and beer."
+  - src: "/images/portfolio/tidus-website-portfolio-02.jpg"
+    lightbox: "/images/portfolio/tidus-website-portfolio-02.jpg"
+    alt: "Vector illustrations for Tidus Wallet websites."
+    video: false
+  - src: "/images/portfolio/icons-badges/robot_icons_portfolio.jpg"
+    lightbox: "/images/portfolio/icons-badges/robot_icons_portfolio.jpg"
+    alt: "Robot achievement badges."
+    video: false
 ---

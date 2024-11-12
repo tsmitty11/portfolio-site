@@ -24,7 +24,10 @@ module.exports = {
         gunmetal: '#22333B',  // Gunmetal
         whiteSmoke: '#F4F3EF', // White Smoke
         coral: '#FF8552', // Coral
-      }
+      },
+      aspectRatio: {
+        '1.29': '1.29', // Adds aspect-[1.29] for a 413:320 ratio
+      },
     },
     fontFamily: {
       'body': [

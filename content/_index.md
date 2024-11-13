@@ -1,13 +1,13 @@
 ---
 title: "Tom Smith Design"
 gallery:
+  - src: "/images/belvedere-grand-logo-mockup.jpg"
+    lightbox: "/images/belvedere-grand-logo-mockup.jpg"
+    alt: "Logo design for the Belvedere Grand in Curtis, MI."
   - src: "/images/tidus-x-wormhole-thumbnail.jpg"
     lightbox: "/images/tidus-x-wormhole-final-reduced-size.mp4"
     alt: "Tidus Games Promotional Video"
     video: true
-  - src: "/images/belvedere-grand-logo-mockup.jpg"
-    lightbox: "/images/belvedere-grand-logo-mockup.jpg"
-    alt: "Logo design for the Belvedere Grand in Curtis, MI."
   - src: "/images/portfolio/alaeris/alaeris-portfolio-01.jpg"
     lightbox: "/images/portfolio/alaeris/alaeris-portfolio-01.jpg"
     alt: "Alaeris primary logo on green background"

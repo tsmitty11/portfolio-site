@@ -14,7 +14,7 @@ title = "Tom Smith Design"
 [menu]
   [[menu.main]]
     identifier = "portfolio"
-    name = "Case Studies"
+    name = "Portfolio"
     url = "/portfolio/"
     weight = 1
 

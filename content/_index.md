@@ -4,6 +4,10 @@ gallery:
   - src: "/images/belvedere-grand-logo-mockup.jpg"
     lightbox: "/images/belvedere-grand-logo-mockup.jpg"
     alt: "Logo design for the Belvedere Grand in Curtis, MI."
+  - src: "/images/tidus-x-wormhole-thumbnail.jpg"
+    lightbox: "/images/tidus-x-wormhole-final-reduced-size.mp4"
+    alt: "Tidus Games Promotional Video"
+    video: true
   - src: "/images/portfolio/alaeris/alaeris-portfolio-01.jpg"
     lightbox: "/images/portfolio/alaeris/alaeris-portfolio-01.jpg"
     alt: "Alaeris primary logo on green background"
@@ -118,4 +122,13 @@ gallery:
     lightbox: "/images/portfolio/icons-badges/robot_icons_portfolio.jpg"
     alt: "Robot achievement badges."
     video: false
+  - src: "/images/coffee-packaging.jpg"
+    lightbox: "/images/coffee-packaging.jpg"
+    alt: "Coffee Packaging"
+    video: false
+  - src: "/images/coffee-packaging-02.jpg"
+    lightbox: "/images/coffee-packaging-02.jpg"
+    alt: "Coffee Packaging vector illustrations"
+    video: false
+  
 ---

@@ -122,4 +122,13 @@ gallery:
     lightbox: "/images/portfolio/icons-badges/robot_icons_portfolio.jpg"
     alt: "Robot achievement badges."
     video: false
+  - src: "/images/coffee-packaging.jpg"
+    lightbox: "/images/coffee-packaging.jpg"
+    alt: "Coffee Packaging"
+    video: false
+  - src: "/images/coffee-packaging-02.jpg"
+    lightbox: "/images/coffee-packaging-02.jpg"
+    alt: "Coffee Packaging vector illustrations"
+    video: false
+  
 ---

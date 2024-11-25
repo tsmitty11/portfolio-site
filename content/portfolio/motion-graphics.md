@@ -20,6 +20,10 @@ gallery:
     lightbox: "/images/portfolio/motion graphics/Mainnet_Annoucement.mp4"
     alt: "tea Mainnet Animation"
     video: true
+  - src: "/images/tidus-x-wormhole-thumbnail.jpg"
+    lightbox: "/images/tidus-x-wormhole-final-reduced-size.mp4"
+    alt: "Tidus Wallet x Wormhole Motion Graphic"
+    video: true
 overview: "I finally broke down and taught myself AfterEffects a few months ago. As social media becomes more and more inundated with content, it's become imperative to capture peoples' attention with the power of motion. I've been having a ton of fun with it! Having dabbled in animation back when I was a teenager, the concept has come somewhat easily to me. It's a blast to see designs really come to life. Above are a few motion graphics I've done for various clients. If you like what you see, get in touch and let's and bring your vision to life."
 features:
   - "Adobe AfterEffects"

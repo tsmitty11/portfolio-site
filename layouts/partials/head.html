@@ -16,6 +16,10 @@
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:image" content="{{ with .Params.ogimage }}{{ . }}{{ else }}/images/default-og-image.jpg{{ end }}">
 
+    <!-- Prevent AI Training -->
+
+    <meta name="robots" content="noai, noimageai">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQJTLR2P7S"></script>
     <script>

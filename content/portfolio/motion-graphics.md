@@ -8,13 +8,17 @@ gallery:
     lightbox: "/images/portfolio/tidusGames-portfolio-reducedSize.mp4"
     alt: "Tidus Games Promotional Video"
     video: true
+  - src: "/images/portfolio/motion graphics/totalsynergy-x-factor-thumbnail.jpg"
+    lightbox: "/images/portfolio/motion graphics/totalsynergy-x-factor-v5-logo-change.mp4"
+    alt: "Total Synergy x Factor Animation"
+    video: true
   - src: "/images/portfolio/motion graphics/tidus-swaps-thumbnail.jpg"
     lightbox: "/images/portfolio/motion graphics/tidus-swaps-portfolio.mp4"
     alt: "Tidus Swaps Video"
     video: true
-  - src: "/images/portfolio/motion graphics/happy-holidays-thumbnail.jpg"
-    lightbox: "/images/portfolio/motion graphics/tea-happy-holidays.mp4"
-    alt: "Happy Holidays from tea Protocol"
+  - src: "/images/portfolio/motion graphics/ts-badges-thumbnail.png"
+    lightbox: "/images/portfolio/motion graphics/G2-Spring-Animation-V2.mp4"
+    alt: "Total Synergy G2 Badges Animation"
     video: true
   - src: "/images/portfolio/motion graphics/tea-mainnet-thumbnail.jpg"
     lightbox: "/images/portfolio/motion graphics/Mainnet_Annoucement.mp4"

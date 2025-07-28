@@ -8,6 +8,10 @@ gallery:
     lightbox: "/images/portfolio/tidusGames-portfolio-reducedSize.mp4"
     alt: "Tidus Games Promotional Video"
     video: true
+  - src: "/images/portfolio/motion graphics/totalsynergy-x-factor-thumbnail.jpg"
+    lightbox: "/images/portfolio/motion graphics/totalsynergy-x-factor-v5-logo-change.mp4"
+    alt: "Tidus Games Promotional Video"
+    video: true
   - src: "/images/portfolio/motion graphics/tidus-swaps-thumbnail.jpg"
     lightbox: "/images/portfolio/motion graphics/tidus-swaps-portfolio.mp4"
     alt: "Tidus Swaps Video"

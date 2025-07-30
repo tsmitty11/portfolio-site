@@ -12,11 +12,6 @@ title = "Tom Smith Design"
   category = "categories"
 
 [menu]
-  [[menu.main]]
-    identifier = "portfolio"
-    name = "Portfolio"
-    url = "/portfolio/"
-    weight = 1
 
   [[menu.main]]
     identifier = "list"

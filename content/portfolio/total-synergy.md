@@ -13,12 +13,12 @@ gallery:
     lightbox: "/images/portfolio/motion graphics/totalsynergy-x-factor-v5-logo-change.mp4"
     alt: "Total Synergy x Factor promotional motion graphic"
     video: true
-  - src: "/images/portfolio/alaeris/alaeris-portfolio-01.jpg"
-    lightbox: "/images/portfolio/alaeris/alaeris-portfolio-01.jpg"
-    alt: "Alaeris primary logo on green background"
-  - src: "/images/portfolio/alaeris/alaeris-portfolio-02.jpg"
-    lightbox: "/images/portfolio/alaeris/alaeris-portfolio-02.jpg"
-    alt: "Alaeris primary logo on light background"
+  - src: "/images/portfolio/total-synergy/total-synergy-portfolio-01.jpg"
+    lightbox: "/images/portfolio/total-synergy/total-synergy-portfolio-01.jpg"
+    alt: "Total Synergy social media post designs."
+  - src: "/images/portfolio/total-synergy/total-synergy-portfolio-02.jpg"
+    lightbox: "/images/portfolio/total-synergy/total-synergy-portfolio-02.jpg"
+    alt: "Total Synergy magazine cover mockup."
 overview: "Alaeris was a Web3/blockchain initiative that I co-founded in 2021, aimed at offsetting carbon emissions and empowering global communities by incentivizing tree planting. Unfortunately, the project never fully materialized (we attempted to bootstrap the company just as Crypto Winter was taking shape), but it was a fun experience nonetheless. I served as Chief Creative Officer, helping to staff a creative team via Upwork and AngelList (now Wellfound). I also came up with the name 'Alaeris', finalized the logo design, developed an executive summary and pitch deck, and created technical illustrations."
 features:
   - "Creative Direction"

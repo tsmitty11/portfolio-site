@@ -2,7 +2,7 @@
 title: "Total Synergy"
 Description: "Alaeris was a web3 concept that aimed to use blockchain technology to incentivize the planting of trees around the world."
 ogimage: "/images/alaeris-og-image.jpg"
-websiteURL: "https://alaeris.com/"
+websiteURL: "https://totalsynergy.com/"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:
   - src: "/images/portfolio/motion graphics/ts-badges-thumbnail.png"

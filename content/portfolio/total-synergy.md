@@ -1,7 +1,7 @@
 ---
 title: "Total Synergy"
 Description: "Total Synergy is an Australian project management software designed for architects and engineers."
-ogimage: "/images/alaeris-og-image.jpg"
+ogimage: "/images/total-synergy-og-image.jpg"
 websiteURL: "https://totalsynergy.com/"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:

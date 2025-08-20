@@ -16,11 +16,11 @@
       </div>
   
       <!-- Slide 2 -->
-      <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="product-1-image-2" role="tabpanel" aria-labelledby="product-1-image-2-tab">
+      <div class="hidden rounded-lg bg-white dark:bg-gray-900" id="product-1-image-2" role="tabpanel" aria-labelledby="product-1-image-2-tab">
         <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover dark:hidden"
-          style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back.svg');"></div>
+          style="background-image:url('/images/hoodie-tag.jpg');"></div>
         <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover hidden dark:block"
-          style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back-dark.svg');"></div>
+          style="background-image:url('/images/hoodie-tag.jpg');"></div>
       </div>
   
       <!-- Slide 3 -->
@@ -64,7 +64,7 @@
       </li>
   
       <li role="presentation">
-        <button class="h-20 w-full overflow-hidden border-2 rounded-lg p-2 cursor-pointer"
+        <button class="h-24 w-full overflow-hidden border-2 rounded-lg p-1 cursor-pointer"
           id="product-1-image-2-tab"
           data-tabs-target="#product-1-image-2"
           type="button"
@@ -72,9 +72,9 @@
           aria-controls="product-1-image-2"
           aria-selected="false">
           <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover dark:hidden"
-            style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back.svg');"></div>
+            style="background-image:url('/images/hoodie-tag.jpg');"></div>
           <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover hidden dark:block"
-            style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back-dark.svg');"></div>
+            style="background-image:url('/images/hoodie-tag.jpg');"></div>
         </button>
       </li>
   
@@ -122,15 +122,15 @@
             <p
               class="text-2xl font-extrabold text-gray-900 sm:text-2xl dark:text-white"
             >
-              $79.99 USD*
+              $59.99 USD*
             </p>
           </div>
           <p class="mb-4 mt-4 text-gunmetal text-lg font-normal dark:text-gray-400">
-            Drop your email/size to be notified when we launch.
+            We're doing a limited run of 200 screen-printed hoodies. Once they're gone, they're gone.
           </p>
 
 
-
+          <!-- Comment out form
         <form class="mt-4">
             <div class="mb-4">
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
@@ -156,15 +156,12 @@
             </div>
             <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
             </div>
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Reserve my hoodie</button>
         </form>
 
+        -->
 
-  
-
-          <!-- Comment out buttons for now
-
-          <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
+          <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8 mb-4">
             <a
               href="#"
               title=""
@@ -188,7 +185,7 @@
                   d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
                 />
               </svg>
-              Add to favorites
+              Share
             </a>
 
             <a
@@ -215,19 +212,60 @@
                 />
               </svg>
 
-              Add to cart
+              Reserve for $1.99 USD
             </a>
           </div>
 
-          -->
+          <p class="text-sm font-normal text-gunmetal">This is a non-refundable deposit. Once the run is ready, you'll be notified via email and will have <span class="font-bold">one week</span> to purchase your hoodie. </p>
 
           <hr class="my-6 md:my-8 border-gunmetal dark:border-gray-800" />
 
-          <p class="mb-6 text-gunmetal text-base font-normal dark:text-gray-400">
-            Studio quality three mic array for crystal clear calls and voice
-            recordings. Six-speaker sound system for a remarkably robust and
-            high-quality audio experience. Up to 256GB of ultrafast SSD storage.
-          </p>
+          <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-whiteSmoke dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+            <h2 id="accordion-flush-heading-1">
+              <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                <span>About the art</span>
+                <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">The product is a high-quality, durable solution designed to meet the needs of modern consumers. It features advanced technology and ergonomic design for optimal performance and comfort.</p>
+                <p class="text-gray-500 dark:text-gray-400">Key features include a sleek interface, customizable settings, and compatibility with various devices. It is ideal for professionals and enthusiasts alike.</p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-2">
+              <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                <span>Specifications</span>
+                <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Specifications include advanced processor capabilities, extensive storage options, and seamless connectivity. The product is designed to handle demanding tasks efficiently.</p>
+                <p class="text-gray-500 dark:text-gray-400">Additional features include high-resolution display, long-lasting battery life, and intuitive user interface for enhanced productivity.</p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-3">
+              <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                <span>Warranty</span>
+                <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">The product comes with a comprehensive warranty that covers manufacturing defects and malfunctions. It provides peace of mind and assurance of product quality.</p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Customers can enjoy reliable support and prompt assistance for any issues related to the product during the warranty period.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
         </div>
       </div>
     </div>

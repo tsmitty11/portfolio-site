@@ -1,0 +1,236 @@
+{{ define "main" }}
+
+<section class="py-8 bg-whiteSmoke md:py-16 dark:bg-gray-900 antialiased">
+  <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+      
+      <!-- Full-width Carousel -->
+<div class="w-full">
+    <div id="product-1-tab-content">
+      <!-- Slide 1 -->
+      <div class="rounded-lg bg-white dark:bg-gray-900" id="product-1-image-1" role="tabpanel" aria-labelledby="product-1-image-1-tab">
+        <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover dark:hidden"
+          style="background-image:url('/images/hoodie-lifestyle-mockup-web-cropped.jpg');"></div>
+        <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover hidden dark:block"
+          style="background-image:url('hoodie-lifestyle-mockup-web-cropped.jpg');"></div>
+      </div>
+  
+      <!-- Slide 2 -->
+      <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="product-1-image-2" role="tabpanel" aria-labelledby="product-1-image-2-tab">
+        <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover dark:hidden"
+          style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back.svg');"></div>
+        <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover hidden dark:block"
+          style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back-dark.svg');"></div>
+      </div>
+  
+      <!-- Slide 3 -->
+      <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="product-1-image-3" role="tabpanel" aria-labelledby="product-1-image-3-tab">
+        <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover dark:hidden"
+          style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-components.svg');"></div>
+        <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover hidden dark:block"
+          style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-components-dark.svg');"></div>
+      </div>
+  
+      <!-- Slide 4 -->
+      <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="product-1-image-4" role="tabpanel" aria-labelledby="product-1-image-4-tab">
+        <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover dark:hidden"
+          style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-side.svg');"></div>
+        <div class="w-full aspect-[4/3] rounded-lg bg-center bg-no-repeat bg-cover hidden dark:block"
+          style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-side-dark.svg');"></div>
+      </div>
+    </div>
+  
+    <!-- Thumbnails -->
+    <ul class="grid grid-cols-4 gap-4 mt-8"
+      id="product-1-tab"
+      data-tabs-toggle="#product-1-tab-content"
+      data-tabs-active-classes="border-gray-200 dark:border-gray-700"
+      data-tabs-inactive-classes="border-transparent hover:border-gray-200 dark:hover:dark:border-gray-700 dark:border-transparent"
+      role="tablist">
+      
+      <li role="presentation">
+        <button class="h-30 w-full overflow-hidden border-2 rounded-lg p-1 cursor-pointer"
+          id="product-1-image-1-tab"
+          data-tabs-target="#product-1-image-1"
+          type="button"
+          role="tab"
+          aria-controls="product-1-image-1"
+          aria-selected="true">
+          <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover dark:hidden"
+            style="background-image:url('/images/hoodie-lifestyle-mockup-web-cropped.jpg');"></div>
+          <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover hidden dark:block"
+            style="background-image:url('/images/hoodie-lifestyle-mockup-web-cropped.jpg');"></div>
+        </button>
+      </li>
+  
+      <li role="presentation">
+        <button class="h-20 w-full overflow-hidden border-2 rounded-lg p-2 cursor-pointer"
+          id="product-1-image-2-tab"
+          data-tabs-target="#product-1-image-2"
+          type="button"
+          role="tab"
+          aria-controls="product-1-image-2"
+          aria-selected="false">
+          <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover dark:hidden"
+            style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back.svg');"></div>
+          <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover hidden dark:block"
+            style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back-dark.svg');"></div>
+        </button>
+      </li>
+  
+      <li role="presentation">
+        <button class="h-20 w-full overflow-hidden border-2 rounded-lg p-2 cursor-pointer"
+          id="product-1-image-3-tab"
+          data-tabs-target="#product-1-image-3"
+          type="button"
+          role="tab"
+          aria-controls="product-1-image-3"
+          aria-selected="false">
+          <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover dark:hidden"
+            style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-components.svg');"></div>
+          <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover hidden dark:block"
+            style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-components-dark.svg');"></div>
+        </button>
+      </li>
+  
+      <li role="presentation">
+        <button class="h-20 w-full overflow-hidden border-2 rounded-lg p-2 cursor-pointer"
+          id="product-1-image-4-tab"
+          data-tabs-target="#product-1-image-4"
+          type="button"
+          role="tab"
+          aria-controls="product-1-image-4"
+          aria-selected="false">
+          <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover dark:hidden"
+            style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-side.svg');"></div>
+          <div class="w-full h-full aspect-square rounded bg-center bg-no-repeat bg-cover hidden dark:block"
+            style="background-image:url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-side-dark.svg');"></div>
+        </button>
+      </li>
+    </ul>
+  </div>
+  
+  
+
+        <div class="mt-6 sm:mt-8 lg:mt-0">
+          <h1
+            class="text-xl font-extrabold text-gray-900 sm:text-4xl dark:text-white"
+          >
+            TSD #001: On The Rocks – Limited Run Hoodie
+          </h1>
+          <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
+            <p
+              class="text-2xl font-extrabold text-gray-900 sm:text-2xl dark:text-white"
+            >
+              $79.99 USD*
+            </p>
+          </div>
+          <p class="mb-4 mt-4 text-gunmetal text-lg font-normal dark:text-gray-400">
+            Drop your email/size to be notified when we launch.
+          </p>
+
+
+
+        <form class="mt-4">
+            <div class="mb-4">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+            <input type="email" id="email" class="bg-gray-50 border border-gunmetal text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
+            </div>
+            <div class="mb-5">
+            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hoodie size</label>
+            <select id="countries" class="bg-gray-50 border border-gunmetal text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            
+                <option>XS</option>
+                <option>SM</option>
+                <option>MD</option>
+                <option>LG</option>
+                <option>XL</option>
+                <option>2XL</option>
+                <option>3XL</option>
+            </select>
+            </form>
+            </div>
+            <div class="flex items-start mb-5">
+            <div class="flex items-center h-5">
+                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+            </div>
+            <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+            </div>
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+        </form>
+
+
+  
+
+          <!-- Comment out buttons for now
+
+          <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
+            <a
+              href="#"
+              title=""
+              class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+              role="button"
+            >
+              <svg
+                class="w-5 h-5 -ms-2 me-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                />
+              </svg>
+              Add to favorites
+            </a>
+
+            <a
+              href="#"
+              title=""
+              class="text-white mt-4 sm:mt-0 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
+              role="button"
+            >
+              <svg
+                class="w-5 h-5 -ms-2 me-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
+                />
+              </svg>
+
+              Add to cart
+            </a>
+          </div>
+
+          -->
+
+          <hr class="my-6 md:my-8 border-gunmetal dark:border-gray-800" />
+
+          <p class="mb-6 text-gunmetal text-base font-normal dark:text-gray-400">
+            Studio quality three mic array for crystal clear calls and voice
+            recordings. Six-speaker sound system for a remarkably robust and
+            high-quality audio experience. Up to 256GB of ultrafast SSD storage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{{ end }}

@@ -1,78 +1,100 @@
-<section class="relative overflow-hidden ">
+<section class="relative overflow-hidden">
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-xl text-center lg:px-12">
   
-      <!-- Marquee wrapper (positioned so overlays can sit on top) -->
-      <div class="relative overflow-hidden">
+      <div class="relative overflow-hidden group">
         <!-- LEFT fade -->
-        <div
-          class="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-28 z-10
-                 bg-gradient-to-r from-[#F2F4F3] to-transparent"
-          aria-hidden="true" role="presentation"></div>
-  
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-28 z-10
+                    bg-gradient-to-r from-[#F2F4F3] to-transparent" aria-hidden="true"></div>
         <!-- RIGHT fade -->
-        <div
-          class="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-28 z-10
-                 bg-gradient-to-l from-[#F2F4F3] to-transparent"
-          aria-hidden="true" role="presentation"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-28 z-10
+                    bg-gradient-to-l from-[#F2F4F3] to-transparent" aria-hidden="true"></div>
   
-        <!-- Track: duplicate the set once for perfect loop -->
-        <ul
-        class="flex gap-12 md:gap-16 items-center
-               [--marquee-duration:12s] md:[--marquee-duration:30s]
-               [animation:marquee_var(--marquee-duration,30s)_linear_infinite]
-               hover:[animation-play-state:paused] will-change-transform"
-        aria-label="Logo marquee"
-      >
-          <!-- --- Set A (your logos) --- -->
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/pkgx-logo.svg" alt="Client 1" class="h-10 md:h-7 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/tidus-logo.svg" alt="Client 2" class="h-10 md:h-12 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/verizon-logo.svg" alt="Client 3" class="h-7 md:h-7 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/vivitar-logo.svg" alt="Client 4" class="h-7 md:h-7 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/candor-logo.svg" alt="Client 5" class="h-10 md:h-12 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/tea-logo.svg" alt="Client 6" class="h-10 md:h-7 w-auto" loading="lazy">
-          </li>
+        <!-- Tracks wrapper -->
+        <!-- Tracks wrapper -->
+<div class="flex overflow-hidden" style="--marquee-duration: 30s;">
+    <!-- Track A -->
+    <ul
+      class="inline-flex gap-12 md:gap-16 pr-12 md:pr-16 items-center shrink-0 whitespace-nowrap
+             will-change-transform [animation:marqueeX_var(--marquee-duration)_linear_infinite]
+             group-hover:[animation-play-state:paused]"
+      aria-label="Logo marquee"
+    >
+      <li class="flex-none opacity-80 hover:opacity-100 transition">
+        <img src="/images/pkgx-logo.svg" alt="Client 1" class="h-10 md:h-7 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 hover:opacity-100 transition">
+        <img src="/images/total-synergy-logo.svg" alt="Client 1" class="h-10 md:h-10 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 hover:opacity-100 transition">
+        <img src="/images/tidus-logo.svg" alt="Client 2" class="h-10 md:h-12 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 hover:opacity-100 transition">
+        <img src="/images/verizon-logo.svg" alt="Client 3" class="h-7 md:h-7 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 hover:opacity-100 transition">
+        <img src="/images/vivitar-logo.svg" alt="Client 4" class="h-7 md:h-7 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 hover:opacity-100 transition">
+        <img src="/images/candor-logo.svg" alt="Client 5" class="h-10 md:h-12 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 hover:opacity-100 transition">
+        <img src="/images/tea-logo.svg" alt="Client 6" class="h-7 md:h-7 w-auto" loading="lazy">
+      </li>
+    </ul>
   
-          <!-- --- Set B (duplicate of Set A) --- -->
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/pkgx-logo.svg" alt="Client 1" class="h-10 md:h-7 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/tidus-logo.svg" alt="Client 2" class="h-10 md:h-12 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/verizon-logo.svg" alt="Client 3" class="h-10 md:h-7 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/vivitar-logo.svg" alt="Client 4" class="h-10 md:h-7 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/candor-logo.svg" alt="Client 5" class="h-10 md:h-12 w-auto" loading="lazy">
-          </li>
-          <li class="flex-none opacity-80 hover:opacity-100 transition">
-            <img src="/images/tea-logo.svg" alt="Client 6" class="h-10 md:h-7 w-auto" loading="lazy">
-          </li>
-        </ul>
+    <!-- Track B (exact duplicate) -->
+    <ul
+      class="inline-flex gap-12 md:gap-16 pr-12 md:pr-16 items-center shrink-0 whitespace-nowrap
+             will-change-transform [animation:marqueeX_var(--marquee-duration)_linear_infinite]
+             group-hover:[animation-play-state:paused]"
+      aria-hidden="true"
+    >
+      <li class="flex-none opacity-80 transition">
+        <img src="/images/pkgx-logo.svg" alt="" class="h-10 md:h-7 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 hover:opacity-100 transition">
+        <img src="/images/total-synergy-logo.svg" alt="Client 1" class="h-10 md:h-10 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 transition">
+        <img src="/images/tidus-logo.svg" alt="" class="h-10 md:h-12 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 transition">
+        <img src="/images/verizon-logo.svg" alt="" class="h-7 md:h-7 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 transition">
+        <img src="/images/vivitar-logo.svg" alt="" class="h-7 md:h-7 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 transition">
+        <img src="/images/candor-logo.svg" alt="" class="h-10 md:h-12 w-auto" loading="lazy">
+      </li>
+      <li class="flex-none opacity-80 transition">
+        <img src="/images/tea-logo.svg" alt="" class="h-7 md:h-7 w-auto" loading="lazy">
+      </li>
+    </ul>
+  </div>
+  
       </div>
     </div>
   
     <style>
-      @keyframes marquee {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); } /* duplicate makes this seamless */
+      /* Mobile-only speed up: faster on < md, default on ≥ md */
+      @media (max-width: 767.98px) {
+        [style*="--marquee-duration"] { --marquee-duration: 12s; }
       }
+  
+      /* Seamless loop by moving each track its full width */
+      @keyframes marqueeX {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-100%); }
+      }
+  
+      /* Reduced motion respect */
       @media (prefers-reduced-motion: reduce) {
-        [aria-label="Logo marquee"] { animation: none !important; transform: none !important; }
+        [aria-label="Logo marquee"],
+        [aria-hidden="true"] {
+          animation: none !important;
+          transform: none !important;
+        }
       }
     </style>
   </section>

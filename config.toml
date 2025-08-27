@@ -36,9 +36,3 @@ title = "Tom Smith Design"
     name = "Contact"
     url = "/contact/"
     weight = 5
-
-  [[menu.main]]
-    identifier = "shop"
-    name = "Shop"
-    url = "/shop/"
-    weight = 6

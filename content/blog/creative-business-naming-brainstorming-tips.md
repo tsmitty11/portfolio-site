@@ -7,7 +7,7 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Education"
-featured_image: "/images/gallery-01.png"
+featured_image: "/images/7-tips-banner.jpg"
 summary: "Coming up with your business name should be a fun and exciting process. I've compiled a few tips to help you get to that 'a-ha' moment."
 reading_time: 8
 ---

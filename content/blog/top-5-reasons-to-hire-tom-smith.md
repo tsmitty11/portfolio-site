@@ -7,10 +7,13 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Information"
-featured_image: "/images/gallery-01.png"
+featured_image: "/images/5-reasons-banner.jpg"
+ogimage: "/images/5-reasons-og-image.jpg"
 summary: "Tom Smith is an evergreen talent and 'Jack-of-All-Trades' who can occupy any cog within the creative pipeline and supercharge your creative output."
 reading_time: 4
 ---
+
+<img class="rounded-lg" src="/images/5-reasons-og-image.jpg" alt="Tom Smith Design logo plus the word 'you'.">
 
 <h2 class="text-2xl font-bold text-gunmetal">1. Tom Smith is an evergreen talent; as valuable in 10 years as he is today.</h2>
 

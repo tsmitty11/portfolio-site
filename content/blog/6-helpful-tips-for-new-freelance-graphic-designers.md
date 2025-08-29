@@ -7,7 +7,8 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Education"
-featured_image: "/images/gallery-01.png"
+featured_image: "/images/beginner-tips-banner.jpg"
+ogimage: "/images/beginner-tips-og-image.jpg"
 summary: "I've strung together some amazing tips for new freelance designers that I've learned over the course of 10 years doing freelance graphic design."
 reading_time: 8
 ---

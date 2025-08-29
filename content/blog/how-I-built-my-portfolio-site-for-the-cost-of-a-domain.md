@@ -7,7 +7,8 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Education"
-featured_image: "/images/gallery-01.png"
+featured_image: "/images/how-i-built-this-banner.jpg"
+ogimage: "/images/how-i-built-this-og-image.jpg"
 summary: "I built and deployed my portfolio site for the cost of a domain using Hugo, Tailwind CSS, Flowbite, and Netlify."
 reading_time: 5
 ---

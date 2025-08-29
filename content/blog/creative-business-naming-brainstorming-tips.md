@@ -7,10 +7,12 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Education"
-featured_image: "/images/gallery-01.png"
+featured_image: "/images/7-tips-banner.jpg"
+ogimage: "/images/7-tips-og-image.jpg"
 summary: "Coming up with your business name should be a fun and exciting process. I've compiled a few tips to help you get to that 'a-ha' moment."
 reading_time: 8
 ---
+<img class="rounded-lg" src="/images/7-tips-og-image.jpg" alt="An illustration of a light bulb with a '7' inside, representing the seven brainstorming tips.">
 
 <p class="text-gunmetal">Coming up with a good business name is often the most exciting part of any new venture. It’s that quintessential, epiphanic moment that hits you while you’re grabbing a beer with friends or while you’re scrubbing up in the shower. Of course it’s great when it just comes to you, but the creative process is seldom so convenient. Sometimes, you really need to work at and grind on the proverbial drawing board.</p>
 

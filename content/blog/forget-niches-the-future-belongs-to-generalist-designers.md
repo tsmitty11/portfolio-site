@@ -7,8 +7,8 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Opinion"
-featured_image: "/images/beginner-tips-banner.jpg"
-ogimage: "/images/beginner-tips-og-image.jpg"
+featured_image: "/images/generalist-banner.jpg"
+ogimage: "/images/generalist-og-image.jpg"
 summary: "'AI is the intern. The generalist is the creative director.' Why the era of niche designers is ending, and how generalists are taking the lead."
 reading_time: 8
 ---

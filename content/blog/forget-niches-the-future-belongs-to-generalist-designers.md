@@ -9,7 +9,7 @@ author_bio: "Creative Director & Designer"
 category: "Opinion"
 featured_image: "/images/beginner-tips-banner.jpg"
 ogimage: "/images/beginner-tips-og-image.jpg"
-summary: "I've strung together some amazing tips for new freelance designers that I've learned over the course of 10 years doing freelance graphic design."
+summary: "'AI is the intern. The generalist is the creative director.' Why the era of niche designers is ending, and how generalists are taking the lead."
 reading_time: 8
 ---
 
@@ -46,5 +46,28 @@ reading_time: 8
 <h2 class="text-2xl font-bold text-gunmetal">The generalist advantage</h2>
 
 <p class="text-gunmetal">The generalist isn’t just a “jack of all trades.” In 2025, the generalist is:</p>
+
+<ul class="class=text-gunmetal prose list-disc">
+    <li><strong>A strategist</strong> who understands business context.</li>
+    <li><strong>A creative</strong> who can shift between mediums without losing cohesion.</li>
+    <li><strong>A builder</strong> who can ship ideas, not just sketch them.</li>
+    <li><strong>An orchestrator</strong> who leverages AI like an intern—fast, tireless, but always guided by a human with taste and judgment.</li>
+</ul>
+
+<p class="text-gunmetal">In other words, AI has made the breadth of the generalist more valuable, not less.</p>
+
+<h2 class="text-2xl font-bold text-gunmetal">Closing thought</h2>
+
+<p class="text-gunmetal">The advice to “niche down” made sense in an era when tools were slower and labor was the bottleneck. But in a world where AI fills the cracks, what’s scarce is not execution—it’s synthesis. The designers who can span disciplines, direct the flow of work, and shape coherent outcomes are the ones who will define the next decade of design.</p>
+
+<p class="text-gunmetal">The future doesn’t belong to UX designers or motion designers or packaging designers.
+It just belongs to designers... period.</p>
+
+<p class="text-gunmetal">And more often than not, those designers will be generalists.</p>
+
+
+
+
+
 
 

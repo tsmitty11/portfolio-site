@@ -30,3 +30,21 @@ reading_time: 8
 <p class="text-gunmetal">So with that being said, is there really the same need for specialists? Will businesses want to piece-meal a design team together and pay individually for UX designers, product designers, and motion designers? I think not. I think the future of the design industry belongs to the generalists—‘jacks of all trades,’ capable of taking products from concept to shipment and wielding AI to augment their output along the way.</p>
 
 <p class="text-gunmetal">It’s like a cobblestone road. Each stone represents a different creative discipline (UX, motion design, web development, etc.). A generalist designer will have at least a small stone for each… and AI is the sand that gets poured into the crevices in between, bridging those skill gaps and yielding a smooth path forward.</p>
+
+<h2 class="text-2xl font-bold text-gunmetal">Let’s take a tangible look at what AI can replace</h2>
+
+<ul class="class=text-gunmetal prose list-disc">
+    <li><strong>Repetitive production tasks</strong> → resizing assets, formatting pitch decks, mocking up wireframes, repurposing content.</li>
+    <li><strong>Surface-level strategy</strong> → competitor audits, heuristic UX reviews, trend analysis.</li>
+    <li><strong>Mid-fidelity visuals</strong> → logo concepts, UI kits, even motion snippets generated in minutes.</li>
+</ul>
+
+<p class="text-gunmetal">These are the activities that once justified entire specialized roles. AI doesn’t just help with them—it excels at them.</p>
+
+<p class="text-gunmetal">What AI cannot replace is the integrator: the person who can align these moving parts into a vision, who can understand the brand, the audience, and the business goals—and then pull the right tools, people, and outputs together to make it real. That’s where the generalist thrives.</p>
+
+<h2 class="text-2xl font-bold text-gunmetal">The generalist advantage</h2>
+
+<p class="text-gunmetal">The generalist isn’t just a “jack of all trades.” In 2025, the generalist is:</p>
+
+

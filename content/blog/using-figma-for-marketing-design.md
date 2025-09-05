@@ -19,7 +19,7 @@ reading_time: 8
 
 <p class="text-gunmetal">I used to keep Figma in its own lane… product design and websites… but now it’s probably one of my most-used apps. Here are a few reasons why you might consider branching out and using Figma for a wider breadth of graphic design tasks.</p>
 
-<h2 class="text-2xl font-bold text-gunmetal">Online Figma collaboration: Enabling non-designers to critique, edit, and export design assets</h2>
+<h2 class="text-3xl font-bold text-gunmetal">Online Figma collaboration: Enabling non-designers to critique, edit, and export design assets</h2>
 
 <p class="text-gunmetal">Many of my clients are, and have been, marketing teams. Marketers like to move fast… they get passionate about ideas and want to bring them to life as quickly as possible.</p>
 
@@ -27,7 +27,7 @@ reading_time: 8
 
 <p class="text-gunmetal">With Online Figma, I can build a massive repository of marketing assets that my clients can export at their leisure. Thanks to Figma variables and auto-layout, they can duplicate artboards, adjust colors and content, and get moving quickly… all without designer intervention.</p>
 
-<h2 class="text-2xl font-bold text-gunmetal">Figma can be accessed via the web browser/Figma site… creating a very low barrier to entry for non-designers</h2>
+<h2 class="text-3xl font-bold text-gunmetal">Figma can be accessed via the web browser/Figma site… creating a very low barrier to entry for non-designers</h2>
 
 <p class="text-gunmetal">With all of the design tools out there, it’s becoming increasingly rare to find small teams that “run on Adobe.” In other words, the marketing teams at the small-to-mid-sized businesses I work with are unlikely to have access to Illustrator, Photoshop, and InDesign.</p>
 
@@ -37,7 +37,7 @@ reading_time: 8
 
 <p class="text-gunmetal">This way, they reap the benefits of using Figma for cross-collaboration without needing to push for premium account approval from higher-ups.</p>
 
-<h2 class="text-2xl font-bold text-gunmetal">Using Figma auto-layout enables clients to edit without sacrificing quality</h2>
+<h2 class="text-3xl font-bold text-gunmetal">Using Figma auto-layout enables clients to edit without sacrificing quality</h2>
 
 <p class="text-gunmetal">One of the worst experiences as a designer is handing off the source files for carefully crafted layouts and watching them drift further and further away from the precision you were once so satisfied with.</p>
 
@@ -45,10 +45,10 @@ reading_time: 8
 
 <p class="text-gunmetal">It’s a feature primarily intended for designing responsive apps and websites… but it’s exceedingly useful for ensuring the designs maintain their intended beauty while being used by people who may not fully appreciate tracking, line-height, and overall spacing.</p>
 
-<h2 class="text-2xl font-bold text-gunmetal">This is not a plug, just a non-conventional way of using Figma beyond UI/UX</h2>
+<h2 class="text-3xl font-bold text-gunmetal">This is not a plug, just a non-conventional way of using Figma beyond UI/UX</h2>
 
 <p class="text-gunmetal">Figma has become the backbone of my standard operating procedure for working with marketing teams. It’s a collaborative way to increase productivity and reduce friction in a time when getting things out fast is paramount to success.</p>
 
-<p class="text-gunmetal">Want me to revolutionize your marketing team’s creative output with Online Figma? If so, book a 30-minute call with me and we’ll put something together. Whether you’re starting fresh or already working inside the Figma site, I can help your team get the most out of it.</p>
+<p class="text-gunmetal">Want me to revolutionize your marketing team’s creative output with Online Figma? If so, <a href="https://calendly.com/hiretomsmith/hiretomsmith" class="text-primary-600">book a 30-minute call with me</a> and we’ll put something together. Whether you’re starting fresh or already working inside the Figma site, I can help your team get the most out of it.</p>
 
 <p class="text-gunmetal">Until next time!</p>

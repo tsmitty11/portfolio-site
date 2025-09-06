@@ -7,17 +7,21 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Opinion"
-featured_image: "/images/generalist-banner.jpg"
-ogimage: "/images/generalist-og-image.jpg"
+featured_image: "/images/generalistfigma-marketing-design-banner.jpg"
+ogimage: "/images/figma-marketing-design-og-image.jpg"
 summary: "'Figma isn’t just for UI/UX… it’s a powerful tool for marketing teams too. Explore how Online Figma and the Figma site make collaboration simple, fast, and effective."
 reading_time: 8
 ---
+
+<img src="/images/figma-marketing-design-og-image.jpg" class="rounded-lg" alt="Figma for Marketing Design"></img>
 
 <p class="text-gunmetal">Thought Figma was just for UI/UX?</p>
 
 <p class="text-gunmetal">Think again! While interfaces and website designs are definitely Figma’s bread and butter, it’s also a tremendous tool for marketing design. I’m talking display ads, social graphics, blog images… the whole nine yards.</p>
 
 <p class="text-gunmetal">I used to keep Figma in its own lane… product design and websites… but now it’s probably one of my most-used apps. Here are a few reasons why you might consider branching out and using Figma for a wider breadth of graphic design tasks.</p>
+
+<img src="/images/figma-screenshot-inline-image.jpg" class="rounded-lg" alt="Figma used for marketing design - screenshot"></img>
 
 <h2 class="text-3xl font-bold text-gunmetal">Online Figma collaboration: Enabling non-designers to critique, edit, and export design assets</h2>
 

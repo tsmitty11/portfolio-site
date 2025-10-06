@@ -14,6 +14,12 @@ title = "Tom Smith Design"
 [menu]
 
   [[menu.main]]
+    identifier = "Quick-View Portfolio"
+    name = "Quick-View Portfolio"
+    url = "/quick-view-portfolio/"
+    weight = 1
+
+  [[menu.main]]
     identifier = "list"
     name = "Blog"
     url = "/blog/"

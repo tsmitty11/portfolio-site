@@ -131,4 +131,8 @@ gallery:
     lightbox: "/images/coffee-packaging-02.jpg"
     alt: "Coffee Packaging vector illustrations"
     video: false
+  - src: "/images/hoodie-lifestyle-mockup-web-cropped.jpg"
+    lightbox: "/images/hoodie-lifestyle-mockup-web-cropped.jpgg"
+    alt: "Tom Smith Design Hoodie Mockup"
+    video: false
 ---

@@ -4,10 +4,6 @@ Description: "An assortment of Adobe AfterEffects animations (various clients)."
 ogimage: "/images/motion-graphics-og-image.jpg"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:
-  - src: "/images/portfolio/tidus_games/tidus-games-thumbnail.jpg"
-    lightbox: "/images/portfolio/tidusGames-portfolio-reducedSize.mp4"
-    alt: "Tidus Games Promotional Video"
-    video: true
   - src: "/images/portfolio/motion graphics/totalsynergy-x-factor-thumbnail.jpg"
     lightbox: "/images/portfolio/motion graphics/totalsynergy-x-factor-v5-logo-change.mp4"
     alt: "Total Synergy x Factor Animation"

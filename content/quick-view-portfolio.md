@@ -12,10 +12,6 @@ gallery:
   - src: "/images/portfolio/alaeris/alaeris-portfolio-01.jpg"
     lightbox: "/images/portfolio/alaeris/alaeris-portfolio-01.jpg"
     alt: "Alaeris primary logo on green background"
-  - src: "/images/portfolio/tidus_games/tidus-games-thumbnail.jpg"
-    lightbox: "/images/portfolio/tidusGames-portfolio-reducedSize.mp4"
-    alt: "Tidus Games Promotional Video"
-    video: true
   - src: "/images/tidus-website-thumbnail.jpg"
     lightbox: "/images/portfolio/tidus-website-portfolio-04.jpg"
     alt: "Full Tidus Wallet landing page."

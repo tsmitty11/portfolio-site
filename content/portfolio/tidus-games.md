@@ -5,10 +5,6 @@ ogimage: "/images/tidus-games-og-image.jpg"
 websiteURL: "https://games.tidus.com"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:
-  - src: "/images/portfolio/tidus_games/tidus-games-thumbnail.jpg"
-    lightbox: "/images/portfolio/tidusGames-portfolio-reducedSize.mp4"
-    alt: "Tidus Games Promotional Video"
-    video: true
   - src: "/images/portfolio/tidus_games/tidus-games-social-thumbnail.jpg"
     lightbox: "/images/portfolio/tidus_games/tidus-games-instagram-carousel.jpg"
     alt: "Tidus Games Instagram Carousel"
@@ -16,10 +12,6 @@ gallery:
   - src: "/images/portfolio/tidus_games/intract-x-tidus.jpg"
     lightbox: "/images/portfolio/tidus_games/intract-x-tidus.jpg"
     alt: "Tidus Games Instagram/X Graphic"
-    video: false
-  - src: "/images/portfolio/tidus_games/tidus-games-page-thumbnail.jpg"
-    lightbox: "/images/portfolio/tidus_games/tidus-games-desktop.jpg"
-    alt: "Tidus Games Landing Page"
     video: false
 overview: "The Tidus Games are a Roman-themed airdrop event held by Tidus Wallet/NYCrypto. Users can sign in with their crypto wallet and complete tasks in-app in exchange for points, which are tracked on-chain. I animated a promotional video, designed the landing page, made the necessary UI additions to the mobile app, and developed a suite of marketing collateral."
 features:

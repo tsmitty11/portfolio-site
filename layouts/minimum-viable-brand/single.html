@@ -1,6 +1,32 @@
 {{ define "main" }}
 <div class="dark">
 
+    <nav id="navbar" class="bg-whiteSmoke dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-transparent transition-colors duration-300 z-50">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="{{ .Site.BaseURL }}" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/tomsmith-design-logo-white.svg" class="h-8" alt="Tom Smith Design">
+          </a>
+          <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="https://calendly.com/hiretomsmith/hiretomsmith"><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get a Free Business Name</button></a>
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gunmetal rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+            </button>
+          </div>
+          <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gunmetal rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-whiteSmoke dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              {{ range .Site.Menus.main }}
+                <li>
+                  <a href="{{ .URL }}" class="block py-2 px-3 text-gunmetal rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">{{ .Name }}</a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
 <section class="bg-white dark:bg-gray-900">
     <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-32 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-7">
@@ -14,14 +40,13 @@
             <a href="#" class="inline-flex items-center justify-center px-10 py-3 text-base font-medium text-center text-gunmetal border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                 Get Started for $1,999
             </a> 
+            <p class="text-sm dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolorem necessitatibus, beatae optio eaque nulla harum sapiente porro nisi minus exercitationem vero veritatis. Ex in fuga corporis numquam, optio nostrum?</p>
         </div>
         <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
         </div>                
     </div>
 </section>
-
-</div>
 
 <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-center sm:py-24 lg:px-6">
@@ -56,129 +81,147 @@
     </div>
   </section>
 
-  <!-- Alternating Features -->
+    <!-- Alternating Features -->
 
-  <section class="bg-whiteSmoke dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto space-y-12 max-w-screen-xl lg:space-y-20 sm:py-16 lg:px-6">
-        <!-- Row -->
-        <div class="gap-8 items-center lg:grid lg:grid-cols-2 xl:gap-16">
-            <div class="text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Minimum Viable Brand</h2>
-                <p class="mb-8 text-normal lg:text-xl">This is the 'spark notes' of your brand: a logo, a type pairing, and a color palette (plus some other goodies). That's all you need to launch and test viability. 
-                <!-- List -->
-                <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Logo Design (PNG & SVG)</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Favicon</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Font Pairing</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Color Palette</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Graphic Elements</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Business Card Design</span>
-                    </li>
-                </ul>
+    <section class="bg-whiteSmoke dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto space-y-12 max-w-screen-xl lg:space-y-20 sm:py-16 lg:px-6">
+            <!-- Row -->
+            <div class="gap-8 items-center lg:grid lg:grid-cols-2 xl:gap-16">
+                <div class="text-gray-500 sm:text-lg dark:text-gray-400">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Minimum Viable Brand</h2>
+                    <p class="mb-8 text-normal lg:text-xl">This is the 'spark notes' of your brand: a logo, a type pairing, and a color palette (plus some other goodies). That's all you need to launch and test viability. 
+                    <!-- List -->
+                    <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Logo Design (PNG & SVG)</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Favicon</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Font Pairing</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Color Palette</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Graphic Elements</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Business Card Design</span>
+                        </li>
+                    </ul>
+                </div>
+                <img class="hidden mb-4 w-full lg:mb-0 lg:flex rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/features/feature-office-1.png" alt="office feature image">
             </div>
-            <img class="hidden mb-4 w-full lg:mb-0 lg:flex rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/features/feature-office-1.png" alt="office feature image">
-        </div>
-        <!-- Row -->
-        <div class="gap-8 items-center lg:grid lg:grid-cols-2 xl:gap-16">
-            <img class="hidden mb-4 w-full lg:mb-0 lg:flex rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/features/feature-office-2.png" alt="office feature image 2">
-            <div class="text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Landing Page</h2>
-                <p class="mb-8 text-normal lg:text-xl">The front-facing persona of your brand. I'll help you establish a KPI or goal conversion, and then engineer a slick landing page to hit that target and prove viability.</p>
-                <!-- List -->
-                <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">One-Page Site</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Optimized for KPI/Goal Conversion</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Google Analytics & Search Indexing</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Free Hosting*</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Codebase Owned By You</span>
-                    </li>
-                </ul>
-                <p class="text-sm text-normal leading-tight">*Hosting provided by Netlify. Free to you up to a certain bandwidth. </p>
+            <!-- Row -->
+            <div class="gap-8 items-center lg:grid lg:grid-cols-2 xl:gap-16">
+                <img class="hidden mb-4 w-full lg:mb-0 lg:flex rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/features/feature-office-2.png" alt="office feature image 2">
+                <div class="text-gray-500 sm:text-lg dark:text-gray-400">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Landing Page</h2>
+                    <p class="mb-8 text-normal lg:text-xl">The front-facing persona of your brand. I'll help you establish a KPI or goal conversion, and then engineer a slick landing page to hit that target and prove viability.</p>
+                    <!-- List -->
+                    <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">One-Page Site</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Optimized for KPI/Goal Conversion</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Google Analytics & Search Indexing</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Free Hosting*</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Codebase Owned By You</span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-normal leading-tight">*Hosting provided by Netlify. Free to you up to a certain bandwidth. </p>
+                </div>
+            </div>
+            <!-- Row -->
+            <div class="gap-8 items-center lg:grid lg:grid-cols-2 xl:gap-16">
+                <div class="text-gray-500 sm:text-lg dark:text-gray-400">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Marketing Kit</h2>
+                    <p class="mb-8 text-normal lg:text-xl">Think of this as a starter kit to get your brand out there. Social media posts and banners, pitch deck template, and a 30-60s promo animation to send investors/clients.
+                    <!-- List -->
+                    <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Social Media Banners</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Social Media Avatar</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">9 Social Media Post Designs</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Display Ads</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Pitch Deck Design (Figma/Google Slides)*</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">30-60s Promo Animation*</span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-normal leading-tight"><span class="text-bold">*Choose one.</span> The nature of your business dictates the best vehicle for reaching investors and potential clients/customers. Ask me about additional add-ons.</p>
+                </div>
+                <img class="hidden mb-4 w-full lg:mb-0 lg:flex rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/features/feature-office-1.png" alt="office feature image">
             </div>
         </div>
-        <!-- Row -->
-        <div class="gap-8 items-center lg:grid lg:grid-cols-2 xl:gap-16">
-            <div class="text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Marketing Kit</h2>
-                <p class="mb-8 text-normal lg:text-xl">This is the 'spark notes' of your brand: a logo, a type pairing, and a color palette (plus some other goodies). That's all you need to launch and test viability. 
-                <!-- List -->
-                <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Logo Design (PNG & SVG)</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Favicon</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Font Pairing</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Color Palette</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Graphic Elements</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <!-- Icon -->
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Business Card Design</span>
-                    </li>
-                </ul>
-            </div>
-            <img class="hidden mb-4 w-full lg:mb-0 lg:flex rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/features/feature-office-1.png" alt="office feature image">
-        </div>
-    </div>
-  </section>
+      </section>
+
+</div>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar.classList.remove('border-transparent');
+      navbar.classList.add('border-gunmetal', 'dark:border-gray-600');
+    } else {
+      navbar.classList.add('border-transparent');
+      navbar.classList.remove('border-gunmetal', 'dark:border-gray-600');
+    }
+  });
+</script>
 {{ end }}

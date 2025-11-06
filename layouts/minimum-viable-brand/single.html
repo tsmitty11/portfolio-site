@@ -31,7 +31,11 @@
 
       <!-- Hero Section -->
     
-<section class="bg-white dark:bg-gray-900 bg-[url('/images/hero-image-desktop.webp')] bg-contain bg-no-repeat bg-right-bottom">
+<section class="bg-white dark:bg-gray-900 bg-[url('/images/hero-image-desktop.webp')] 
+xl:bg-contain
+lg:bg-[length:500px] 
+bg-contain
+bg-no-repeat bg-right-bottom">
     <div class="grid max-w-screen-xl px-4 pt-8 pb-[400px] mx-auto lg:gap-8 xl:gap-0 lg:py-32 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-7">
             <p class="uppercase mb-4 text-white font-medium tracking-widest">Be the first to market</p>
@@ -44,7 +48,6 @@
             <a href="#" class="inline-flex items-center justify-center px-10 py-3 text-base font-medium text-center text-gunmetal border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mb-4">
                 Get Started for $1,999
             </a> 
-            <p class="text-sm dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolorem necessitatibus, beatae optio eaque nulla harum sapiente porro nisi minus exercitationem vero veritatis. Ex in fuga corporis numquam, optio nostrum?</p>
         </div>              
     </div>
 </section>
@@ -380,6 +383,9 @@
 <style>
     #footer{
         display:none;
+    }
+    html,body{
+        background-color: black!important;
     }
 </style>
 

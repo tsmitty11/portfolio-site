@@ -3,7 +3,7 @@
 
     <!-- Navbar -->
 
-    <nav id="navbar" class="fixed w-full z-50 top-0 start-0 border-b border-transparent transition-all duration-300 backdrop-blur-sm">
+    <nav id="navbar" class="fixed w-full z-50 top-0 start-0 border-b border-transparent transition-all duration-300">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="{{ .Site.BaseURL }}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="/images/tomsmith-design-logo-white.svg" class="h-8" alt="Tom Smith Design">
@@ -32,11 +32,12 @@
       <!-- Hero Section -->
     
 <section class="bg-white dark:bg-gray-900 bg-[url('/images/hero-image-desktop.webp')] 
+2xl:bg-[length:800px] 
 xl:bg-[length:650px] 
 lg:bg-[length:500px] 
 bg-contain
-bg-no-repeat bg-right-bottom">
-    <div class="grid max-w-screen-xl px-4 pt-8 pb-[425px] mx-auto lg:gap-8 xl:gap-0 lg:py-32 lg:grid-cols-12">
+bg-no-repeat bg-right-bottom pt-[68px]">
+    <div class="grid max-w-screen-xl px-4 pt-8 pb-[425px] sm:pb-[800px] mx-auto lg:gap-8 xl:gap-0 lg:py-32 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-7">
             <p class="uppercase mb-4 text-white font-medium tracking-widest">Be the first to market</p>
             <h1 class="max-w-2xl mb-4 text-5xl font-extrabold tracking-tight leading-none xl:text-6xl dark:text-white">Rapid brand and landing page development.</h1>
@@ -57,7 +58,7 @@ bg-no-repeat bg-right-bottom">
 <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-center sm:py-24 lg:px-6">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">The Solution for entrepreneurs who need to launch yesterday.</h2>
-        <p class="text-gray-500 text-xl dark:text-gray-400">Brand it. Develop it. Launch it.</p>
+        <p class="text-gray-500 text-xl dark:text-gray-400 mb-2">Brand it. Develop it. Launch it.</p>
         <div class="mt-8 lg:mt-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
             <div>
                 <svg class="w-12 h-12 text-gray-800 mx-auto mb-4 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -389,6 +390,9 @@ bg-no-repeat bg-right-bottom">
     }
     html,body{
         background-color: #121826 !important;
+    }
+    main{
+        padding-top: 0px !important;
     }
 </style>
 

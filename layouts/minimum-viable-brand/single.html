@@ -88,9 +88,14 @@
                     <label for="full-name-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Full Name</label>
                     <input type="text" id="full-name-paid" name="full-name" class="block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Jane Doe" required>
                 </div>
-                <div class="sm:col-span-2 mb-6">
-                    <label for="business-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tell me about your business</label>
-                    <textarea id="business-paid" name="business" rows="6" class="block w-full text-base text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Share what you’re building and how fast you need to launch." required></textarea>
+                <div class="mb-6">
+                    <label for="business-name-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Business Name</label>
+                    <input type="text" id="business-name-paid" name="business-name" class="mb-2 block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Acme Innovations" required>
+                    <p class="text-xs font-normal text-gray-400">It's okay if you don't have a business name; I can help with that. Just use a generic name to describe your business, product, or idea.</p>
+                </div>
+                <div class="mb-6">
+                    <label for="launch-date-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ideal Brand Launch</label>
+                    <input type="date" id="launch-date-paid" name="launch-date" class="date-picker-white block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                 </div>
                 <div class="mb-6">
                     <div data-netlify-recaptcha="true"></div>
@@ -584,6 +589,9 @@ bg-no-repeat bg-right-bottom pt-[68px]">
     }
     main{
         padding-top: 0px !important;
+    }
+    .date-picker-white::-webkit-calendar-picker-indicator{
+        filter: invert(1);
     }
 </style>
 

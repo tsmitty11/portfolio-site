@@ -56,6 +56,63 @@
     </div>
 </div>
 
+<!-- Get Started modal -->
+<div id="get-started-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-800">
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Get Your Minimum Viable Brand
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="get-started-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <div class="p-4 md:p-5 space-y-4">
+              <form name="mvb-get-started" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+                <input type="hidden" name="form-name" value="mvb-get-started">
+                <div class="hidden mb-6">
+                    <label class="block text-sm">
+                        Don’t fill this out
+                        <input name="bot-field" class="mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                    </label>
+                </div>
+                <div class="mb-6">
+                    <label for="email-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                    <input type="email" id="email-paid" name="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full px-4 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@email.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="full-name-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Full Name</label>
+                    <input type="text" id="full-name-paid" name="full-name" class="block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Jane Doe" required>
+                </div>
+                <div class="mb-6">
+                    <label for="business-name-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Business Name</label>
+                    <input type="text" id="business-name-paid" name="business-name" class="mb-2 block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Acme Innovations" required>
+                    <p class="text-xs font-normal text-gray-400">It's okay if you don't have a business name; I can help with that. Just use a generic name to describe your business, product, or idea.</p>
+                </div>
+                <div class="mb-6">
+                    <label for="launch-date-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ideal Brand Launch</label>
+                    <input type="date" id="launch-date-paid" name="launch-date" class="date-picker-white block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                </div>
+                <div class="mb-6">
+                    <div data-netlify-recaptcha="true"></div>
+                </div>
+                <button type="submit" class="mb-4 py-3 px-20 text-sm font-medium text-center text-white rounded-full bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send Message</button>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                    By submitting this form, you agree to our
+                    <a href="/privacy-policy/" class="text-primary-600 hover:underline dark:text-primary-400">Privacy Policy</a>
+                    and
+                    <a href="/terms-and-conditions/" class="text-primary-600 hover:underline dark:text-primary-400">Terms of Service</a>.
+                </p>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
  
 <!-- drawer component -->
 <div
@@ -85,7 +142,7 @@
 
 
   <!-- Push menu to the bottom -->
-  <div class="mt-auto pt-6 dark:border-gray-700">
+  <div class="pt-6 dark:border-gray-700">
     <nav aria-label="Mobile site menu">
       <ul class="space-y-1">
         {{ range .Site.Menus.main }}
@@ -162,9 +219,9 @@ bg-no-repeat bg-right-bottom pt-[68px]">
                 Get a Free Business Name
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </button>
-            <a href="https://tally.so/r/Bz4AJ1" class="inline-flex items-center justify-center px-10 py-3 text-base font-medium text-center text-gunmetal border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mb-4">
+            <button type="button" data-modal-target="get-started-modal" data-modal-toggle="get-started-modal" class="inline-flex items-center justify-center px-10 py-3 text-base font-medium text-center text-gunmetal border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mb-4">
                 Get Started for $1,999
-            </a> 
+            </button> 
         </div>              
     </div>
 </section>
@@ -191,7 +248,7 @@ bg-no-repeat bg-right-bottom pt-[68px]">
                     <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5Zm16 14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2ZM4 13a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6Zm16-2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6Z"/>
                   </svg>                  
                 <h3 class="mb-2 text-xl text-gunmetal font-bold dark:text-white">Landing Page</h3>
-                <p class="mb-4 text-gray-500 dark:text-gray-400">A slick, one-page site dedicate to funneling users towards your goal KPI or conversion.</p>
+              <p class="mb-4 text-gray-500 dark:text-gray-400">A slick, one-page site dedicated to funneling users towards your goal KPI or conversion.</p>
                 <a href="/blog/how-i-built-my-portfolio-site-for-the-cost-of-a-domain/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400" target="_blank">
                     Learn about my preferred tech stack <svg class="ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
                 </a>
@@ -219,7 +276,7 @@ bg-no-repeat bg-right-bottom pt-[68px]">
           <!-- Row 1 -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
             <img
-              class="block w-full rounded-lg mb-6 lg:mb-0 order-1 lg:order-2"
+              class="block w-full rounded-lg mb-2 lg:mb-0 order-1 lg:order-2"
               src="/images/logos-comp.webp"
               alt="office feature image">
       
@@ -259,7 +316,7 @@ bg-no-repeat bg-right-bottom pt-[68px]">
           <!-- Row 2 -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
             <img
-              class="block w-full rounded-lg mb-6 lg:mb-0 order-1 lg:order-1"
+              class="block w-full rounded-lg mb-2 lg:mb-0 order-1 lg:order-1"
               src="/images/landingpages-comp.jpg"
               alt="Landing Page Designs">
       
@@ -297,7 +354,7 @@ bg-no-repeat bg-right-bottom pt-[68px]">
           <!-- Row 3 -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
             <img
-              class="block w-full rounded-lg mb-6 lg:mb-0 order-1 lg:order-2"
+              class="block w-full rounded-lg mb-2 lg:mb-0 order-1 lg:order-2"
               src="/images/marketing-comp.jpg"
               alt="Marketing Design Examples">
       
@@ -353,10 +410,12 @@ bg-no-repeat bg-right-bottom pt-[68px]">
                     Start with a Free Business Name
                   </button>
                 
-                  <a href="https://tally.so/r/Bz4AJ1"
+                  <button type="button"
+                     data-modal-target="get-started-modal"
+                     data-modal-toggle="get-started-modal"
                      class="text-sm px-5 py-2.5 font-medium text-center text-gunmetal border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 w-full">
                     Get Started for $1,999
-                  </a>
+                  </button>
                 
                 </div>
                 
@@ -371,14 +430,14 @@ bg-no-repeat bg-right-bottom pt-[68px]">
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
             <h2 class="mb-6 lg:mb-8 text-3xl lg:text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white sr-only">Frequently asked questions</h2>
             <div class="mx-auto max-w-screen-md">
-                <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                <div id="accordion-flush">
                     <h2 id="accordion-flush-heading-1">
                         <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-900 bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
                             <span>What is a Minimum Viable Brand?</span>
-                            <svg data-accordion-icon="" class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </button>
                     </h2>
-                    <div id="accordion-flush-body-1" class="" aria-labelledby="accordion-flush-heading-1">
+                    <div id="accordion-flush-body-1" class="accordion-panel" aria-hidden="false" aria-labelledby="accordion-flush-heading-1">
                         <div class="py-5 border-b border-gray-200 dark:border-gray-700">
                             <p class="mb-2 text-gray-500 dark:text-gray-400">A Minimum Viable Brand (MVB) is the core essentials of your visual brand identity. More established companies will often have a 60-page "brand bible", but that's a little overkill when you're just starting out, or when you're just testing an idea.</p>
                             <p class="mb-2 text-gray-500 dark:text-gray-400">The intention behind the MVB is to make your business look good enough for customers to trust and hit that first goal conversion.</p>
@@ -387,10 +446,10 @@ bg-no-repeat bg-right-bottom pt-[68px]">
                     <h2 id="accordion-flush-heading-2">
                         <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
                             <span>Are revisions included?</span>
-                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </button>
                     </h2>
-                    <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                    <div id="accordion-flush-body-2" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-2">
                         <div class="py-5 border-b border-gray-200 dark:border-gray-700">
                             <p class="mb-2 text-gray-500 dark:text-gray-400">Yes! You get two rounds of revisions per deliverable. In examples, two revisions on the logo, two revisions on the color scheme, two revisions on the landing page design, and so forth.</p>
                         </div>
@@ -398,10 +457,10 @@ bg-no-repeat bg-right-bottom pt-[68px]">
                     <h2 id="accordion-flush-heading-3">
                         <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
                             <span>Who is this service best suited for?</span>
-                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </button>
                     </h2>
-                    <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                    <div id="accordion-flush-body-3" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-3">
                         <div class="py-5 border-b border-gray-200 dark:border-gray-700">
                             <p class="mb-2 text-gray-500 dark:text-gray-400">Anyone who wants/needs to move quickly. But the MVB could be particularly useful for venture studios, entrepreneurs, marketing teams, venture capital, and 9-to-5ers who want to test a business idea without leaving their day job.</p>
                         </div>
@@ -409,13 +468,24 @@ bg-no-repeat bg-right-bottom pt-[68px]">
                     <h2 id="accordion-flush-heading-4">
                         <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-4" aria-expanded="false" aria-controls="accordion-flush-body-4">
                             <span>Who is Tom Smith?</span>
-                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </button>
                     </h2>
-                    <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-4">
+                    <div id="accordion-flush-body-4" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-4">
                         <div class="py-5 border-b border-gray-200 dark:border-gray-700">
                             <p class="mb-2 text-gray-500 dark:text-gray-400">I'm a SCAD alumni with over a decade of experience in helping entrepreneurs, visionaries, and startups to develop dynamic brands and agile digital presences.</p>
                             <a href="/about" class="text-primary-600 dark:text-primary-500 hover:underline" target="_blank">Learn more about me</a>
+                        </div>
+                    </div>
+                    <h2 id="accordion-flush-heading-5">
+                        <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-5" aria-expanded="false" aria-controls="accordion-flush-body-5">
+                            <span>How do payments work?</span>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-5" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-5">
+                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">After our discovery call, you'll be invoiced for 50% of the total project cost. Upon project completion, you'll be invoiced for the remaining second half. Payments can be made via ACH bank transfer, credit card, or USDC (ETH).</p>
                         </div>
                     </div>
                 </div> 
@@ -531,6 +601,18 @@ bg-no-repeat bg-right-bottom pt-[68px]">
     main{
         padding-top: 0px !important;
     }
+    .date-picker-white::-webkit-calendar-picker-indicator{
+        filter: invert(1);
+    }
+    .accordion-panel{
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+    .accordion-panel.open{
+        opacity: 1;
+    }
 </style>
 
 <script>
@@ -546,6 +628,80 @@ bg-no-repeat bg-right-bottom pt-[68px]">
       }
     });
   </script>
+
+<script>
+  (function () {
+    const accordion = document.getElementById('accordion-flush');
+    if (!accordion) return;
+
+    const buttons = accordion.querySelectorAll('[data-accordion-target]');
+    const panels = accordion.querySelectorAll('.accordion-panel');
+
+    const updateIcon = (button, isOpen) => {
+      const icon = button.querySelector('[data-accordion-icon]');
+      if (!icon) return;
+      icon.classList.toggle('rotate-180', isOpen);
+    };
+
+    const closePanel = (button, panel) => {
+      panel.style.maxHeight = 0;
+      panel.setAttribute('aria-hidden', 'true');
+      panel.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+      updateIcon(button, false);
+    };
+
+    const openPanel = (button, panel) => {
+      panels.forEach((otherPanel) => {
+        if (otherPanel === panel) return;
+        const otherButton = accordion.querySelector(
+          `[data-accordion-target="#${otherPanel.id}"]`
+        );
+        if (otherButton && otherPanel.getAttribute('aria-hidden') === 'false') {
+          closePanel(otherButton, otherPanel);
+        }
+      });
+      panel.setAttribute('aria-hidden', 'false');
+      panel.classList.add('open');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      button.setAttribute('aria-expanded', 'true');
+      updateIcon(button, true);
+    };
+
+    buttons.forEach((button) => {
+      const selector = button.getAttribute('data-accordion-target');
+      const panel = selector ? document.querySelector(selector) : null;
+      if (!panel) return;
+
+      if (button.getAttribute('aria-expanded') === 'true') {
+        panel.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        panel.setAttribute('aria-hidden', 'false');
+        updateIcon(button, true);
+      } else {
+        panel.style.maxHeight = 0;
+        panel.setAttribute('aria-hidden', 'true');
+        updateIcon(button, false);
+      }
+
+      button.addEventListener('click', () => {
+        if (button.getAttribute('aria-expanded') === 'true') {
+          closePanel(button, panel);
+        } else {
+          openPanel(button, panel);
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      panels.forEach((panel) => {
+        if (panel.getAttribute('aria-hidden') === 'false') {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+</script>
 
 
 {{ end }}

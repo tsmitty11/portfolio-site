@@ -2,7 +2,7 @@
 <div class="dark">
  
  <!-- drawer component -->
- <div id="drawer-right-example" class="fixed top-0 right-0 z-50 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-right-label">
+ <div id="drawer-right-example" class="fixed top-0 right-0 z-50 h-screen w-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-right-label">
      <h5 id="drawer-right-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
    </svg>Right drawer</h5>
@@ -33,7 +33,7 @@
             <a href="https://calendly.com/hiretomsmith/hiretomsmith"><button type="button" class="hidden md:inline-block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get a Free Business Name</button></a>
             <button
             type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gunmetal rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gunmetal rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example" data-drawer-backdrop="false"
           >
             <span class="sr-only">Open menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -450,32 +450,6 @@ bg-no-repeat bg-right-bottom pt-[68px]">
       }
     });
   </script>
-
-  <script>
-  // --- Fallback/guarantee for the drawer ---
-  const drawer = document.getElementById('drawer-right-example');
-
-  // Openers (mobile burger etc.)
-  document.querySelectorAll('[data-drawer-show="drawer-right-example"], [data-drawer-target="drawer-right-example"]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      drawer.classList.remove('translate-x-full');
-    });
-  });
-
-  // Closers (the X button, or anything else you tag)
-  document.querySelectorAll('[data-drawer-hide="drawer-right-example"]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      drawer.classList.add('translate-x-full');
-    });
-  });
-
-  // Optional: close on ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') drawer.classList.add('translate-x-full');
-  });
-</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/flowbite/dist/flowbite.min.js"></script>

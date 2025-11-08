@@ -450,5 +450,34 @@ bg-no-repeat bg-right-bottom pt-[68px]">
       }
     });
   </script>
+
+  <script>
+  // --- Fallback/guarantee for the drawer ---
+  const drawer = document.getElementById('drawer-right-example');
+
+  // Openers (mobile burger etc.)
+  document.querySelectorAll('[data-drawer-show="drawer-right-example"], [data-drawer-target="drawer-right-example"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      drawer.classList.remove('translate-x-full');
+    });
+  });
+
+  // Closers (the X button, or anything else you tag)
+  document.querySelectorAll('[data-drawer-hide="drawer-right-example"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      drawer.classList.add('translate-x-full');
+    });
+  });
+
+  // Optional: close on ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') drawer.classList.add('translate-x-full');
+  });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite/dist/flowbite.min.js"></script>
   
 {{ end }}

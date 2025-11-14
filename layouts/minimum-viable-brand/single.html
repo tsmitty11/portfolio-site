@@ -431,9 +431,7 @@ bg-no-repeat bg-right-bottom pt-[68px]">
   <div class="grid gap-4">
       <div class="gallery-card rounded-lg" style="--aspect: 135%; background-image:url('/images/portfolio/pkgx/pkgx-portfolio-02.jpg');" role="img" aria-hidden="true"></div>
       <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 180%;" aria-label="Tidus Website Walkthrough">
-        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline disablepictureinpicture aria-hidden="true">
-          <source src="/images/tidus-website-portfolio.mp4" type="video/mp4">
-        </video>
+        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/tidus-website-portfolio.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
       </div>
       <div class="gallery-card rounded-lg" style="--aspect: 125%; background-image:url('/images/portfolio/universitea/mockup.jpg');" role="img" aria-hidden="true"></div>
   </div>
@@ -445,15 +443,11 @@ bg-no-repeat bg-right-bottom pt-[68px]">
   <div class="grid gap-4">
     <!-- this one -->
       <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 170%;" aria-label="Tea Website Scroll">
-        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline disablepictureinpicture aria-hidden="true">
-          <source src="/images/tea-website-portfolio-02.mp4" type="video/mp4">
-        </video>
+        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/tea-website-portfolio-02.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
       </div>
       <div class="gallery-card rounded-lg" style="--aspect: 115%; background-image:url('/images/portfolio/belvedere-grand/belvedere-grand-logo-green-gold.jpg');" role="img" aria-hidden="true"></div>
       <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 145%;" aria-label="G2 Spring Animation">
-        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline disablepictureinpicture aria-hidden="true">
-          <source src="/images/portfolio/motion%20graphics/G2-Spring-Animation-V2.mp4" type="video/mp4">
-        </video>
+        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/portfolio/motion%20graphics/G2-Spring-Animation-V2.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
       </div>
   </div>
   <div class="grid gap-4">
@@ -752,6 +746,40 @@ bg-no-repeat bg-right-bottom pt-[68px]">
         }
       });
     });
+  })();
+</script>
+
+<script>
+  (function () {
+    const videos = document.querySelectorAll('.lazy-motion');
+    if (!videos.length) return;
+
+    const loadVideo = (video) => {
+      if (video.dataset.loaded === 'true') return;
+      const src = video.dataset.src;
+      if (!src) return;
+      video.src = src;
+      video.dataset.loaded = 'true';
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadVideo(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '100px' });
+
+      videos.forEach((video) => observer.observe(video));
+    } else {
+      videos.forEach(loadVideo);
+    }
   })();
 </script>
 

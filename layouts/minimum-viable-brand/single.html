@@ -430,23 +430,36 @@ bg-no-repeat bg-right-bottom pt-[68px]">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
   <div class="grid gap-4">
       <div class="gallery-card rounded-lg" style="--aspect: 135%; background-image:url('/images/portfolio/pkgx/pkgx-portfolio-02.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-lg" style="--aspect: 180%; background-image:url('/images/portfolio/tidus-website-portfolio-04.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 180%;" aria-label="Tidus Website Walkthrough">
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline disablepictureinpicture aria-hidden="true">
+          <source src="/images/tidus-website-portfolio.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="gallery-card rounded-lg" style="--aspect: 125%; background-image:url('/images/portfolio/universitea/mockup.jpg');" role="img" aria-hidden="true"></div>
   </div>
   <div class="grid gap-4">
       <div class="gallery-card rounded-lg" style="--aspect: 105%; background-image:url('/images/portfolio/alaeris/alaeris-portfolio-01.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-lg" style="--aspect: 165%; background-image:url('https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-lg" style="--aspect: 130%; background-image:url('https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg" style="--aspect: 165%; background-image:url('/images/boadroom-lunch-series.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg" style="--aspect: 130%; background-image:url('/images/logos-comp.webp');" role="img" aria-hidden="true"></div>
   </div>
   <div class="grid gap-4">
-      <div class="gallery-card rounded-lg" style="--aspect: 170%; background-image:url('/images/tea-website-portfolio-02.gif');" role="img" aria-hidden="true"></div>
+    <!-- this one -->
+      <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 170%;" aria-label="Tea Website Scroll">
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline disablepictureinpicture aria-hidden="true">
+          <source src="/images/tea-website-portfolio-02.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="gallery-card rounded-lg" style="--aspect: 115%; background-image:url('/images/portfolio/belvedere-grand/belvedere-grand-logo-green-gold.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-lg" style="--aspect: 145%; background-image:url('https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 145%;" aria-label="G2 Spring Animation">
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline disablepictureinpicture aria-hidden="true">
+          <source src="/images/portfolio/motion%20graphics/G2-Spring-Animation-V2.mp4" type="video/mp4">
+        </video>
+      </div>
   </div>
   <div class="grid gap-4">
       <div class="gallery-card rounded-lg" style="--aspect: 120%; background-image:url('/images/portfolio/canopy/canopy-ig-03.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-lg" style="--aspect: 175%; background-image:url('https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-lg" style="--aspect: 130%; background-image:url('https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg" style="--aspect: 175%; background-position: top; background-image:url('/images/become-remote-landing-page-reduced-size.webp');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg" style="--aspect: 130%; background-image:url('/images/become-remote-gallery.jpg');" role="img" aria-hidden="true"></div>
   </div>
 </div>
 
@@ -645,9 +658,11 @@ bg-no-repeat bg-right-bottom pt-[68px]">
     .gallery-card{
         display:block;
         width:100%;
+        position:relative;
         background-size:cover;
         background-position:center;
         background-repeat:no-repeat;
+        overflow:hidden;
         padding-bottom:var(--aspect,130%);
     }
 </style>

@@ -18,33 +18,27 @@ title = "Tom Smith Design"
     name = "Quick-View Portfolio"
     url = "/quick-view-portfolio/"
     weight = 1
-  
-  [[menu.main]]
-    identifier = "minimum-viable-brand"
-    name = "Minimum Viable Brand"
-    url = "/minimum-viable-brand/"
-    weight = 2
 
   [[menu.main]]
     identifier = "list"
     name = "Blog"
     url = "/blog/"
-    weight = 3
+    weight = 2
 
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 4
+    weight = 3
 
    [[menu.main]]
     identifier = "resume"
     name = "Resume"
     url = "/media/thomas%20smith%20resum%C3%A9%202025.pdf"
-    weight = 5
+    weight = 4
 
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "/contact/"
-    weight = 6
+    weight = 5

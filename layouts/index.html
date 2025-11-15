@@ -1,13 +1,835 @@
 {{ define "main" }}
-    {{ partial "hero.html" }}
-    <div class="mx-auto px-4 lg:px-8 hidden md:block">
-        <hr class="border-[#D9D9D9] opacity-80">
+
+<div class="dark">
+
+<!-- Main modal -->
+<div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-800">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Get a Free Business Name
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="static-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+              <form name="mvb-modal-contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="mvb-modal-contact">
+                <div class="hidden mb-6">
+                    <label class="block text-sm">
+                        Don’t fill this out
+                        <input name="bot-field" class="mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                    </label>
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                    <input type="email" id="email" name="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full px-4 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@email.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="full-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" class="block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Jane Doe" required>
+                </div>
+                <div class="sm:col-span-2 mb-6">
+                    <label for="business" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tell me about your business</label>
+                    <textarea id="business" name="business" rows="6" class="block w-full text-base text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Be vague if you don't want to share proprietary information." required></textarea>
+                </div>
+                <button type="submit" class="mb-4 py-3 px-20 text-sm font-medium text-center text-white rounded-full bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                    By submitting this form, you agree to our
+                    <a href="/privacy-policy/" class="text-primary-600 hover:underline dark:text-primary-400">Privacy Policy</a>
+                    and
+                    <a href="/terms-and-conditions/" class="text-primary-600 hover:underline dark:text-primary-400">Terms of Service</a>.
+                </p>
+            </form>
+            </div>
+        </div>
     </div>
-    {{ partial "logo-carousel.html" }}
-    {{ partial "portfolio-alt.html" }}
-    {{ partial "single-testimonial.html" }}
-    {{ partial "divider.html" }}
-    {{ partial "feature-bullets.html" }}
-    {{ partial "divider.html" }}
-    {{ partial "simple-cta.html" }}
+</div>
+
+<!-- Get Started modal -->
+<div id="get-started-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-800">
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Get Your Minimum Viable Brand
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="get-started-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <div class="p-4 md:p-5 space-y-4">
+              <p class="mb-4 font-normal text-gray-500 text-sm dark:text-gray-400">Drop your info below and I'll reach out in 1 business day or so with next steps.</p>
+              <form name="mvb-get-started" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+                <input type="hidden" name="form-name" value="mvb-get-started">
+                <div class="hidden mb-6">
+                    <label class="block text-sm">
+                        Don’t fill this out
+                        <input name="bot-field" class="mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                    </label>
+                </div>
+                <div class="mb-6">
+                    <label for="email-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                    <input type="email" id="email-paid" name="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full px-4 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@email.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="full-name-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Full Name</label>
+                    <input type="text" id="full-name-paid" name="full-name" class="block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Jane Doe" required>
+                </div>
+                <div class="mb-6">
+                    <label for="business-name-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Business Name</label>
+                    <input type="text" id="business-name-paid" name="business-name" class="mb-2 block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Acme Innovations" required>
+                    <p class="text-xs font-normal text-gray-400">It's okay if you don't have a business name; I can help with that. Just use a generic name to describe your business, product, or idea.</p>
+                </div>
+                <div class="mb-6">
+                    <label for="launch-date-paid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ideal Brand Launch</label>
+                    <input type="date" id="launch-date-paid" name="launch-date" class="date-picker-white block w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm px-4 py-3 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                </div>
+                <div class="mb-6">
+                    <div data-netlify-recaptcha="true"></div>
+                </div>
+                <button type="submit" class="mb-4 py-3 px-20 text-sm font-medium text-center text-white rounded-full bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send Message</button>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                    By submitting this form, you agree to our
+                    <a href="/privacy-policy/" class="text-primary-600 hover:underline dark:text-primary-400">Privacy Policy</a>
+                    and
+                    <a href="/terms-and-conditions/" class="text-primary-600 hover:underline dark:text-primary-400">Terms of Service</a>.
+                </p>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+<!-- drawer component -->
+<div
+  id="drawer-right-example"
+  class="fixed top-0 right-0 z-50 h-screen p-4 overflow-y-auto w-full transition-transform translate-x-full bg-white w-80 dark:bg-gray-900 flex flex-col"
+  tabindex="-1"
+  aria-labelledby="drawer-right-label"
+>
+  <h5 id="drawer-right-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
+    <svg class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+    </svg>
+    Menu
+  </h5>
+
+  <button
+    type="button"
+    data-drawer-hide="drawer-right-example"
+    aria-controls="drawer-right-example"
+    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+  >
+    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+    </svg>
+    <span class="sr-only">Close menu</span>
+  </button>
+
+
+  <!-- Push menu to the bottom -->
+  <div class="pt-6 dark:border-gray-700">
+    <nav aria-label="Mobile site menu">
+      <ul class="space-y-1">
+        {{ range .Site.Menus.main }}
+          <li>
+            <a
+              href="{{ .URL }}"
+              class="block py-3 px-1 text-base font-medium text-gunmetal dark:text-white hover:text-blue-700 dark:hover:text-blue-500 rounded"
+              data-drawer-hide="drawer-right-example"
+            >
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</div>
+
+ 
+
+    <!-- Navbar -->
+
+    <nav id="navbar" class="fixed w-full z-40 top-0 start-0 border-b border-transparent transition-all duration-300">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="{{ .Site.BaseURL }}" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/tomsmith-design-logo-white.svg" class="h-8" alt="Tom Smith Design">
+          </a>
+          <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button
+              type="button"
+              class="hidden md:inline-block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hiretomsmith/minimum-viable-brand-strategy-call'});return false;"
+            >
+            Book Your MVB Strategy Call
+            </button>
+            <button
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gunmetal rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example" data-drawer-backdrop="false"
+          >
+            <span class="sr-only">Open menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+          </button>
+          
+          </div>
+          <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gunmetal rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
+              {{ range .Site.Menus.main }}
+                <li>
+                  <a href="{{ .URL }}" class="block py-2 px-3 text-gunmetal rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">{{ .Name }}</a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+    
+<section class="bg-white dark:bg-gray-900 bg-[url('/images/hero-image-desktop.webp')] 
+2xl:bg-[length:800px] 
+xl:bg-[length:650px] 
+lg:bg-[length:500px] 
+bg-contain
+bg-no-repeat bg-right-bottom pt-[68px]">
+    <div class="grid max-w-screen-xl px-4 pt-8 pb-[425px] sm:pb-[800px] mx-auto lg:gap-8 xl:gap-0 lg:py-32 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+            <p class="uppercase mb-4 text-white font-medium tracking-widest">Need to Test a Business Idea?</p>
+            <h1 class="max-w-2xl mb-4 text-5xl font-extrabold tracking-tight leading-none xl:text-6xl dark:text-white">Rapid brand and landing page development.</h1>
+            <p class="max-w-2xl mb-6 font-normal text-gray-500 lg:mb-8 text-lg lg:text-xl dark:text-gray-400">Life is moving fast and there's no time for 60-page brand bibles. Get the essentials you need to launch your business fast.</p>
+            <button class="inline-flex items-center justify-center px-10 py-3 mr-3 text-base font-medium text-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 rounded-full mb-4" type="button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hiretomsmith/minimum-viable-brand-strategy-call'});return false;">
+              Book Your MVB Strategy Call
+                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+            <button type="button" data-modal-target="get-started-modal" data-modal-toggle="get-started-modal" class="inline-flex items-center justify-center px-10 py-3 text-base font-medium text-center text-gunmetal border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mb-4">
+                Get Started for $1,999
+            </button> 
+        </div>              
+    </div>
+</section>
+
+<!-- Features -->
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center sm:py-24 lg:px-6">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">The Solution for entrepreneurs who need to launch yesterday.</h2>
+        <p class="text-gray-500 text-xl dark:text-gray-400 mb-2">Brand it. Develop it. Launch it.</p>
+        <div class="mt-8 lg:mt-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+            <div>
+                <svg class="w-12 h-12 text-gray-800 mx-auto mb-4 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7h.01m3.486 1.513h.01m-6.978 0h.01M6.99 12H7m9 4h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 3.043 12.89 9.1 9.1 0 0 0 8.2 20.1a8.62 8.62 0 0 0 3.769.9 2.013 2.013 0 0 0 2.03-2v-.857A2.036 2.036 0 0 1 16 16Z"/>
+                  </svg>                  
+                <h3 class="mb-2 text-xl text-gunmetal font-bold dark:text-white">Light Brand</h3>
+                <p class="mb-4 text-gray-500 dark:text-gray-400">Just a logo, color palette, font pairing, and graphic elements. That's all you need to make a splash.</p>
+                <a href="/portfolio/pkgx/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400" target="_blank">
+                    See an example of a light brand <svg class="ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+            <div>
+                <svg class="w-12 h-12 mb-4 mx-auto text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5Zm16 14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2ZM4 13a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6Zm16-2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6Z"/>
+                  </svg>                  
+                <h3 class="mb-2 text-xl text-gunmetal font-bold dark:text-white">Landing Page</h3>
+              <p class="mb-4 text-gray-500 dark:text-gray-400">A slick, one-page site dedicated to funneling users towards your goal KPI or conversion.</p>
+                <a href="/blog/how-i-built-my-portfolio-site-for-the-cost-of-a-domain/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400" target="_blank">
+                    Learn about my preferred tech stack <svg class="ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+            <div>
+                <svg class="w-12 h-12 mx-auto mb-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v15a1 1 0 0 0 1 1h15M8 16l2.5-5.5 3 3L17.273 7 20 9.667"/>
+                  </svg>
+                  
+                <h3 class="mb-2 text-xl text-gunmetal font-bold dark:text-white">Marketing Kit</h3>
+                <p class="mb-4 text-gray-500 dark:text-gray-400">A helpful marketing toolkit to assist you in broadcasting your new brand around the world.</p>
+                <a href="/blog/using-figma-for-marketing-design/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400" target="_blank">
+                    How I use Figma for Marketing Design <svg class="ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+    <!-- Alternating Features -->
+
+    <section class="bg-whiteSmoke dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto space-y-12 max-w-screen-xl lg:space-y-20 sm:py-16 lg:px-6">
+      
+          <!-- Row 1 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
+            <img
+              class="block w-full rounded-lg mb-2 lg:mb-0 order-1 lg:order-2"
+              src="/images/logos-comp.webp"
+              alt="office feature image">
+      
+            <div class="text-gray-500 sm:text-lg dark:text-gray-400 order-2 lg:order-1">
+              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Minimum Viable Brand</h2>
+              <p class="mb-8 text-normal lg:text-xl">This is the 'spark notes' of your brand: a logo, a type pairing, and a color palette (plus some other goodies). That's all you need to launch and test viability.</p>
+      
+              <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Logo Design (PNG & SVG)</span>
+                </li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Favicon</span>
+                </li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Font Pairing</span>
+                </li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Color Palette</span>
+                </li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Graphic Elements</span>
+                </li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Business Card Design</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Row 2 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
+            <img
+              class="block w-full rounded-lg mb-2 lg:mb-0 order-1 lg:order-1"
+              src="/images/landingpages-comp.jpg"
+              alt="Landing Page Designs">
+      
+            <div class="text-gray-500 sm:text-lg dark:text-gray-400 order-2 lg:order-2">
+              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Landing Page</h2>
+              <p class="mb-8 text-normal lg:text-xl">The front-facing persona of your brand. I'll help you establish a KPI or goal conversion, and then engineer a slick landing page to hit that target and prove viability.</p>
+      
+              <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">One-Page Site</span>
+                </li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Optimized for KPI/Goal Conversion</span>
+                </li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Google Analytics & Search Indexing</span>
+                </li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Free Hosting*</span>
+                </li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Codebase Owned By You</span>
+                </li>
+              </ul>
+      
+              <p class="text-sm text-normal leading-tight">*Hosting provided by Netlify. Free to you up to a certain bandwidth.</p>
+            </div>
+          </div>
+      
+          <!-- Row 3 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
+            <img
+              class="block w-full rounded-lg mb-2 lg:mb-0 order-1 lg:order-2"
+              src="/images/marketing-comp.jpg"
+              alt="Marketing Design Examples">
+      
+            <div class="text-gray-500 sm:text-lg dark:text-gray-400 order-2 lg:order-1">
+              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Marketing Kit</h2>
+              <p class="mb-8 text-normal lg:text-xl">Think of this as a starter kit to get your brand out there. Social media posts and banners, pitch deck template, and a 30-60s promo animation to send investors/clients.</p>
+      
+              <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 130">
+                  </path></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Social Media Banners</span></li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 130"></path></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Social Media Avatar</span></li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 130"></path></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">9 Social Media Post Designs</span></li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 130"></path></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Display Ads</span></li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 130"></path></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Pitch Deck Design (Figma/Google Slides)*</span></li>
+                <li class="flex space-x-3">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 130"></path></svg>
+                  <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">30–60s Promo Animation <a class="text-primary-500" href="/portfolio/motion-graphics/" target="_blank">(See Examples)</a>*</span></li>
+              </ul>
+      
+              <p class="text-sm text-normal leading-tight"><span class="font-semibold">*Choose one.</span> The nature of your business dictates the best vehicle for reaching investors and potential clients.</p>
+            </div>
+          </div>
+      
+        </div>
+      </section>
+      
+
+      <!-- Final CTA -->
+
+      <section class="bg-white dark:bg-gray-900">
+        <div class="py-24 px-4 mx-auto max-w-screen-xl sm:py-48 lg:px-6">
+          <div class="max-w-screen-xl mx-auto">
+            <div class="cta-steam-bg rounded-3xl shadow-sm px-8 py-16 sm:px-16 sm:py-20 transition-colors duration-300">
+              <div class="mx-auto max-w-screen-sm text-center">
+                  <h2 class="mb-6 text-3xl md:text-3xl tracking-tight font-extrabold leading-tight text-gray-900 dark:text-white">Get your Minimum Viable Brand today</h2>
+                  <p class="mb-6 font-extrabold text-5xl lg:text-6xl text-gray-500 dark:text-white">$1,999 USD</p> 
+                  <p class="mb-8 font-normal text-gray-500 dark:text-gray-400 md:text-lg">I'll have your brand up and running in 14 days or less. I only work on one to two projects at a time, so grab your spot now!</p>
+                  <div class="flex flex-col items-center max-w-fit md:max-w-[350px] mx-auto space-y-4">
+    
+                    <button
+                       type="button"
+                       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hiretomsmith/minimum-viable-brand-strategy-call'});return false;"
+                       class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-full text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 w-full">
+                       Book Your MVB Strategy Call
+                    </button>
+                  
+                    <button type="button"
+                       data-modal-target="get-started-modal"
+                       data-modal-toggle="get-started-modal"
+                       class="text-sm px-5 py-2.5 font-medium text-center text-gunmetal border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 w-full">
+                      Get Started for $1,999
+                    </button>
+                  
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="bg-whiteSmoke dark:bg-gray-900">
+      <div class="max-w-screen-xl px-4 py-16 mx-auto text-center lg:px-6">
+        <h2 class="sr-only">Testimonials</h2>
+        <figure class="max-w-screen-md mx-auto">
+          <svg class="h-12 mx-auto mb-3 text-gunmetal dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+          </svg>
+          <blockquote>
+            <p class="text-2xl font-medium text-gunmetal dark:text-white">"Thomas is a 10/10 designer! Crazy talented!"</p>
+          </blockquote>
+          <figcaption class="flex items-center justify-center mt-6 space-x-3">
+            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+              <div class="pr-3 font-medium text-gunmetal dark:text-white">Todd Stewart</div>
+              <div class="pl-3 text-sm font-normal text-gray-500 dark:text-gray-400">CMO at Total Synergy</div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+</section>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <!-- Masonry Gallery -->
+
+<section class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center sm:py-24 lg:px-6">
+      
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="grid gap-4">
+      <div class="gallery-card rounded-lg" style="--aspect: 135%; background-image:url('/images/portfolio/pkgx/pkgx-portfolio-02.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 180%;" aria-label="Tidus Website Walkthrough">
+        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/tidus-website-portfolio.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+      </div>
+      <div class="gallery-card rounded-lg" style="--aspect: 125%; background-image:url('/images/portfolio/universitea/mockup.jpg');" role="img" aria-hidden="true"></div>
+  </div>
+  <div class="grid gap-4">
+      <div class="gallery-card rounded-lg" style="--aspect: 105%; background-image:url('/images/portfolio/alaeris/alaeris-portfolio-01.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg" style="--aspect: 165%; background-image:url('/images/boadroom-lunch-series.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg" style="--aspect: 130%; background-image:url('/images/logos-comp.webp');" role="img" aria-hidden="true"></div>
+  </div>
+  <div class="grid gap-4">
+    <!-- this one -->
+      <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 170%;" aria-label="Tea Website Scroll">
+        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/tea-website-portfolio-02.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+      </div>
+      <div class="gallery-card rounded-lg" style="--aspect: 115%; background-image:url('/images/portfolio/belvedere-grand/belvedere-grand-logo-green-gold.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 145%;" aria-label="G2 Spring Animation">
+        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/portfolio/motion%20graphics/G2-Spring-Animation-V2.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+      </div>
+  </div>
+  <div class="grid gap-4">
+      <div class="gallery-card rounded-lg" style="--aspect: 120%; background-image:url('/images/portfolio/canopy/canopy-ig-03.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg" style="--aspect: 175%; background-position: top; background-image:url('/images/become-remote-landing-page-reduced-size.webp');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-lg" style="--aspect: 130%; background-image:url('/images/become-remote-gallery.jpg');" role="img" aria-hidden="true"></div>
+  </div>
+</div>
+
+<div class="mt-16">
+  <a href="/quick-view-portfolio/" class="inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300 transition-colors duration-200" target="_blank">
+    View Full Portfolio
+    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</div>
+
+  </div>
+</section>
+
+    <!-- FAQ -->
+
+    <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
+            <h2 class="mb-6 lg:mb-8 text-3xl lg:text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white sr-only">Frequently asked questions</h2>
+            <div class="mx-auto max-w-screen-md">
+                <div id="accordion-flush">
+                    <h2 id="accordion-flush-heading-1">
+                        <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-900 bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                            <span>What is a Minimum Viable Brand?</span>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-1" class="accordion-panel" aria-hidden="false" aria-labelledby="accordion-flush-heading-1">
+                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">A Minimum Viable Brand (MVB) is the core essentials of your visual brand identity. More established companies will often have a 60-page "brand bible", but that's a little overkill when you're just starting out, or when you're just testing an idea.</p>
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">The intention behind the MVB is to make your business look good enough for customers to trust and hit that first goal conversion.</p>
+                        </div>
+                    </div>
+                    <h2 id="accordion-flush-heading-2">
+                        <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                            <span>Are revisions included?</span>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-2" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-2">
+                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">Yes! You get two rounds of revisions per deliverable. In examples, two revisions on the logo, two revisions on the color scheme, two revisions on the landing page design, and so forth.</p>
+                        </div>
+                    </div>
+                    <h2 id="accordion-flush-heading-3">
+                        <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                            <span>Who is this service best suited for?</span>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-3" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-3">
+                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">Anyone who wants/needs to move quickly. But the MVB could be particularly useful for venture studios, entrepreneurs, marketing teams, venture capital, and 9-to-5ers who want to test a business idea without leaving their day job.</p>
+                        </div>
+                    </div>
+                    <h2 id="accordion-flush-heading-4">
+                        <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-4" aria-expanded="false" aria-controls="accordion-flush-body-4">
+                            <span>Who is Tom Smith?</span>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-4" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-4">
+                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">I'm a SCAD alumni with over a decade of experience in helping entrepreneurs, visionaries, and startups to develop dynamic brands and agile digital presences.</p>
+                            <a href="/about" class="text-primary-600 dark:text-primary-500 hover:underline" target="_blank">Learn more about me</a>
+                        </div>
+                    </div>
+                    <h2 id="accordion-flush-heading-5">
+                        <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-5" aria-expanded="false" aria-controls="accordion-flush-body-5">
+                            <span>How do payments work?</span>
+                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-5" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-5">
+                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">After our discovery call, you'll be invoiced for 50% of the total project cost. Upon project completion, you'll be invoiced for the remaining second half. Payments can be made via ACH bank transfer, credit card, or USDC (ETH).</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>               
+        </div>
+    </section>
+
+      <!-- Footer -->
+
+      <footer class="bg-whiteSmoke dark:bg-gray-900">
+        <div class="p-4 py-16 mx-auto max-w-screen-xl md:p-6 lg:-10">
+            <div class="grid grid-cols-2 gap-8 lg:grid-cols-7">
+                <div class="col-span-2 lg:col-span-3 lg:pr-40">
+                    <a href="#" class="flex items-center mb-2 text-2xl font-semibold text-gray-900 sm:mb-0 dark:text-white">
+                        <img class="h-7" src="/images/tomsmith-design-logo-white.svg" alt="TSD Logo Gray">
+                    </a>
+                    <p class="my-4 font-normal text-white">Tom Smith is a Graphic Artist currently based in Portland, Maine. He doesn't just make things cool, he makes them "cool cool".</p>
+                    <ul class="flex mt-5 space-x-6">
+                        <!--Instagram-->
+                        <li>
+                            <a href="https://www.instagram.com/tomsmith.design/" class="text-white hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                            </a>
+                        </li>
+                        <!--Github-->
+                        <li>
+                            <a href="https://github.com/tsmitty11" class="text-white hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:mx-auto">
+                    <h2 class="mb-6 text-sm font-semibold uppercase text-white">Company</h2>
+                    <ul class="text-gray-400">
+                        <li class="mb-4">
+                            <a href="/about/" class=" hover:underline">About</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="/#portfolio" class="hover:underline">Portfolio</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="/blog/" class="hover:underline">Blog</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="/contact/" class="hover:underline">Get in touch</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:mx-auto">
+                    <h2 class="mb-6 text-sm font-semibold uppercase text-white">Social Media</h2>
+                    <ul class="text-gray-400">
+                        <li class="mb-4">
+                            <a href="https://www.linkedin.com/in/thomas-smith-ab787645/" target="_blank" class="hover:underline">LinkedIn</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="https://www.instagram.com/tomsmith.design/" class="hover:underline">Instagram</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="https://github.com/tsmitty11" class="hover:underline">GitHub</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="https://www.behance.net/thomas-smith" class="hover:underline">Behance</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="https://www.upwork.com/freelancers/tomsmithdesign" class="hover:underline" target="_blank">Upwork</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="https://wellfound.com/u/thomas-smith-106" class="hover:underline" target="_blank">Wellfound</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="https://www.producthunt.com/@timtam_creative" class="hover:underline" target="_blank">Product Hunt</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:mx-auto">
+                    <h2 class="mb-6 text-sm font-semibold uppercase text-white">Tools</h2>
+                    <ul class="text-gray-400">
+                        <li class="mb-4">
+                            <a href="https://pngwebp.fun" class="hover:underline">PNG to WebP Converter</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:mx-auto">
+                    <h2 class="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
+                    <ul class="text-gray-400">
+                        <li class="mb-4">
+                            <a href="/privacy-policy/" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="/terms-and-conditions/" class="hover:underline">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-6 sm:mx-auto border-gunmetal lg:my-8">
+            <span class="block text-sm text-center text-white dark:text-gray-400">©{{ now.Format "2006" }} Tom Smith Design. All Rights Reserved.</span>
+        </div>
+      </footer>
+
+</div>
+
+<style>
+    #footer{
+        display:none;
+    }
+    #og-navbar{
+        display:none;
+    }
+    html,body{
+        background-color: #121826 !important;
+    }
+    main{
+        padding-top: 0px !important;
+    }
+    .date-picker-white::-webkit-calendar-picker-indicator{
+        filter: invert(1);
+    }
+    .accordion-panel{
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+    .accordion-panel.open{
+        opacity: 1;
+    }
+    .gallery-card{
+        display:block;
+        width:100%;
+        position:relative;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+        overflow:hidden;
+        padding-bottom:var(--aspect,130%);
+    }
+    .cta-steam-bg{
+        background-color:#f7f9fc;
+        background-image:
+            radial-gradient(circle at 20% 15%, rgba(255,255,255,0.9), rgba(247,249,252,0) 55%),
+            radial-gradient(circle at 80% 0%, rgba(255,255,255,0.8), rgba(247,249,252,0) 60%),
+            radial-gradient(circle at 50% 90%, rgba(255,255,255,0.7), rgba(247,249,252,0) 55%);
+    }
+    .dark .cta-steam-bg{
+        background-color:#111827;
+        background-image:
+            radial-gradient(circle at 20% 15%, rgba(255,255,255,0.12), rgba(17,24,39,0) 55%),
+            radial-gradient(circle at 80% 5%, rgba(255,255,255,0.08), rgba(17,24,39,0) 60%),
+            radial-gradient(circle at 50% 95%, rgba(255,255,255,0.1), rgba(17,24,39,0) 50%);
+    }
+</style>
+
+<script>
+    const navbar = document.getElementById('navbar');
+  
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        navbar.classList.add('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
+        navbar.classList.remove('border-transparent');
+      } else {
+        navbar.classList.remove('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
+        navbar.classList.add('border-transparent');
+      }
+    });
+  </script>
+
+<script>
+  (function () {
+    const accordion = document.getElementById('accordion-flush');
+    if (!accordion) return;
+
+    const buttons = accordion.querySelectorAll('[data-accordion-target]');
+    const panels = accordion.querySelectorAll('.accordion-panel');
+
+    const updateIcon = (button, isOpen) => {
+      const icon = button.querySelector('[data-accordion-icon]');
+      if (!icon) return;
+      icon.classList.toggle('rotate-180', isOpen);
+    };
+
+    const closePanel = (button, panel) => {
+      panel.style.maxHeight = 0;
+      panel.setAttribute('aria-hidden', 'true');
+      panel.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+      updateIcon(button, false);
+    };
+
+    const openPanel = (button, panel) => {
+      panels.forEach((otherPanel) => {
+        if (otherPanel === panel) return;
+        const otherButton = accordion.querySelector(
+          `[data-accordion-target="#${otherPanel.id}"]`
+        );
+        if (otherButton && otherPanel.getAttribute('aria-hidden') === 'false') {
+          closePanel(otherButton, otherPanel);
+        }
+      });
+      panel.setAttribute('aria-hidden', 'false');
+      panel.classList.add('open');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      button.setAttribute('aria-expanded', 'true');
+      updateIcon(button, true);
+    };
+
+    buttons.forEach((button) => {
+      const selector = button.getAttribute('data-accordion-target');
+      const panel = selector ? document.querySelector(selector) : null;
+      if (!panel) return;
+
+      if (button.getAttribute('aria-expanded') === 'true') {
+        panel.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        panel.setAttribute('aria-hidden', 'false');
+        updateIcon(button, true);
+      } else {
+        panel.style.maxHeight = 0;
+        panel.setAttribute('aria-hidden', 'true');
+        updateIcon(button, false);
+      }
+
+      button.addEventListener('click', () => {
+        if (button.getAttribute('aria-expanded') === 'true') {
+          closePanel(button, panel);
+        } else {
+          openPanel(button, panel);
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      panels.forEach((panel) => {
+        if (panel.getAttribute('aria-hidden') === 'false') {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const videos = document.querySelectorAll('.lazy-motion');
+    if (!videos.length) return;
+
+    const loadVideo = (video) => {
+      if (video.dataset.loaded === 'true') return;
+      const src = video.dataset.src;
+      if (!src) return;
+      video.src = src;
+      video.dataset.loaded = 'true';
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadVideo(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '100px' });
+
+      videos.forEach((video) => observer.observe(video));
+    } else {
+      videos.forEach(loadVideo);
+    }
+  })();
+</script>
+
 {{ end }}

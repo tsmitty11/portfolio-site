@@ -7,6 +7,65 @@
             {{ block "main" . }}{{ end }}
         </main>
         {{ partial "footer.html" . }}
+        <div id="cookie-banner" class="fixed bottom-0 left-0 z-50 w-full bg-gray-900 text-white border-t border-gray-800 shadow-2xl hidden">
+            <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row md:items-center gap-4 p-4 md:p-5">
+                <div class="flex-1">
+                    <h3 class="text-lg font-semibold mb-1">Privacy &amp; Cookies</h3>
+                    <p class="text-sm text-gray-200">We use essential cookies to make this site work. With your consent we use additional cookies for analytics. Review our <a href="/privacy-policy/" class="text-primary-300 underline">Privacy Policy</a>.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="cookie-decline" type="button" class="text-sm px-4 py-2 rounded-full border border-gray-500 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600">Decline</button>
+                    <button id="cookie-accept" type="button" class="text-sm px-4 py-2 rounded-full bg-primary-600 hover:bg-primary-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-400">Accept</button>
+                </div>
+            </div>
+        </div>
+        <button id="cookie-manage" class="cookie-manage-btn hidden" type="button">Cookie Preferences</button>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+        <script>
+            (function () {
+                const banner = document.getElementById('cookie-banner');
+                const manageBtn = document.getElementById('cookie-manage');
+                const acceptBtn = document.getElementById('cookie-accept');
+                const declineBtn = document.getElementById('cookie-decline');
+                if (!banner || !manageBtn || !acceptBtn || !declineBtn) return;
+
+                const showBanner = () => {
+                    banner.classList.remove('hidden');
+                    manageBtn.classList.add('hidden');
+                };
+                const hideBanner = () => {
+                    banner.classList.add('hidden');
+                    manageBtn.classList.remove('hidden');
+                };
+                const saveConsent = (value) => {
+                    localStorage.setItem('cookieConsent', value);
+                    window.cookieConsent = value;
+                    if (value === 'accepted' && typeof window.loadAnalytics === 'function') {
+                        window.loadAnalytics();
+                    }
+                };
+
+                const storedConsent = localStorage.getItem('cookieConsent');
+                if (!storedConsent) {
+                    showBanner();
+                } else {
+                    hideBanner();
+                }
+
+                acceptBtn.addEventListener('click', () => {
+                    saveConsent('accepted');
+                    hideBanner();
+                });
+
+                declineBtn.addEventListener('click', () => {
+                    saveConsent('declined');
+                    hideBanner();
+                });
+
+                manageBtn.addEventListener('click', () => {
+                    showBanner();
+                });
+            })();
+        </script>
     </body>
 </html>

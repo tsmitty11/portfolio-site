@@ -27,14 +27,26 @@
 
     <meta name="robots" content="noai, noimageai">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQJTLR2P7S"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    window.cookieConsent = localStorage.getItem('cookieConsent');
+    window.analyticsLoaded = false;
+    window.loadAnalytics = function () {
+        if (window.analyticsLoaded) return;
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-RQJTLR2P7S';
+        document.head.appendChild(gtagScript);
 
-    gtag('config', 'G-RQJTLR2P7S');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-RQJTLR2P7S');
+        window.analyticsLoaded = true;
+    };
+    if (window.cookieConsent === 'accepted') {
+        window.loadAnalytics();
+    }
     </script>
 
     <meta property="og:site_name" content="{{ .Site.Title }}">
@@ -43,5 +55,26 @@
     
     <!-- GLightbox JS -->
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <style>
+        .cookie-manage-btn{
+            position:fixed;
+            bottom:1rem;
+            left:1rem;
+            background:rgba(15,23,42,0.8);
+            color:#fff;
+            border:none;
+            border-radius:999px;
+            padding:0.4rem 1.2rem;
+            font-size:0.85rem;
+            cursor:pointer;
+            z-index:900;
+        }
+        .dark .cookie-manage-btn{
+            background:rgba(243,244,246,0.8);
+            color:#111827;
+        }
+        .cookie-manage-btn.hidden{
+            display:none;
+        }
+    </style>
 </head>
-

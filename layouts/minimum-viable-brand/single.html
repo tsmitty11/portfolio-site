@@ -1,5 +1,4 @@
 {{ define "main" }}
-<div class="dark">
 
 <!-- Main modal -->
 <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -657,21 +656,7 @@ bg-no-repeat bg-right-bottom pt-[68px]">
         </div>
       </footer>
 
-</div>
-
 <style>
-    #footer{
-        display:none;
-    }
-    #og-navbar{
-        display:none;
-    }
-    html,body{
-        background-color: #121826 !important;
-    }
-    main{
-        padding-top: 0px !important;
-    }
     .date-picker-white::-webkit-calendar-picker-indicator{
         filter: invert(1);
     }
@@ -709,20 +694,6 @@ bg-no-repeat bg-right-bottom pt-[68px]">
             radial-gradient(circle at 50% 95%, rgba(255,255,255,0.1), rgba(17,24,39,0) 50%);
     }
 </style>
-
-<script>
-    const navbar = document.getElementById('navbar');
-  
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        navbar.classList.add('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
-        navbar.classList.remove('border-transparent');
-      } else {
-        navbar.classList.remove('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
-        navbar.classList.add('border-transparent');
-      }
-    });
-  </script>
 
 <script>
   (function () {

@@ -818,12 +818,12 @@ bg-no-repeat bg-right-bottom pt-[68px]">
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
             loadVideo(entry.target);
             observer.unobserve(entry.target);
           }
         });
-      }, { rootMargin: '100px' });
+      }, { rootMargin: '600px 0px 600px 0px' });
 
       videos.forEach((video) => observer.observe(video));
     } else {

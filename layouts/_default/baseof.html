@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
     {{ partial "head.html" . }}
-    <body class="bg-whiteSmoke">
+    <body class="bg-[#121826] text-white pt-[68px]">
         {{ partial "header.html" . }}
-        <main class="pt-[68px]">
+        <main class="pt-0">
             {{ block "main" . }}{{ end }}
         </main>
         {{ partial "footer.html" . }}
@@ -21,6 +21,23 @@
         </div>
         <button id="cookie-manage" class="cookie-manage-btn hidden" type="button">Cookie Preferences</button>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+        <script>
+            (function () {
+                const navbar = document.getElementById('navbar');
+                if (!navbar) return;
+                const apply = () => {
+                    if (window.scrollY > 10) {
+                        navbar.classList.add('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
+                        navbar.classList.remove('border-transparent');
+                    } else {
+                        navbar.classList.remove('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
+                        navbar.classList.add('border-transparent');
+                    }
+                };
+                apply();
+                window.addEventListener('scroll', apply);
+            })();
+        </script>
         <script>
             (function () {
                 const banner = document.getElementById('cookie-banner');

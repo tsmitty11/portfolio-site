@@ -77,5 +77,71 @@
         .cookie-manage-btn.hidden{
             display:none;
         }
+        html,body{
+            background-color:#121826;
+            color:#f5f6fb;
+        }
+        main{
+            padding-top:0 !important;
+        }
+        .date-picker-white::-webkit-calendar-picker-indicator{
+            filter:invert(1);
+        }
+        .accordion-panel{
+            overflow:hidden;
+            max-height:0;
+            opacity:0;
+            transition:max-height 0.4s ease, opacity 0.3s ease;
+        }
+        .accordion-panel.open{
+            opacity:1;
+        }
+        .gallery-card{
+            display:block;
+            width:100%;
+            position:relative;
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            overflow:hidden;
+            padding-bottom:var(--aspect,130%);
+        }
+        .cta-steam-bg{
+            background-color:#f7f9fc;
+            background-image:
+                radial-gradient(circle at 20% 15%, rgba(255,255,255,0.9), rgba(247,249,252,0) 55%),
+                radial-gradient(circle at 80% 0%, rgba(255,255,255,0.8), rgba(247,249,252,0) 60%),
+                radial-gradient(circle at 50% 90%, rgba(255,255,255,0.7), rgba(247,249,252,0) 55%);
+        }
+        .dark .cta-steam-bg{
+            background-color:#111827;
+            background-image:
+                radial-gradient(circle at 20% 15%, rgba(255,255,255,0.12), rgba(17,24,39,0) 55%),
+                radial-gradient(circle at 80% 5%, rgba(255,255,255,0.08), rgba(17,24,39,0) 60%),
+                radial-gradient(circle at 50% 95%, rgba(255,255,255,0.1), rgba(17,24,39,0) 50%);
+        }
+        .dark .bg-white,
+        .dark .bg-whiteSmoke,
+        .dark .bg-gray-50,
+        .dark .bg-gray-100,
+        .dark .bg-gray-200{
+            background-color:#111827 !important;
+        }
+        .dark .text-gunmetal,
+        .dark .text-gray-900,
+        .dark .text-gray-800,
+        .dark .text-black{
+            color:#f5f6fb !important;
+        }
+        .dark .text-gray-700,
+        .dark .text-gray-600,
+        .dark .text-gray-500{
+            color:#d1d5db !important;
+        }
+        .dark .border-gray-200,
+        .dark .border-gray-300,
+        .dark .border-gunmetal{
+            border-color:#374151 !important;
+        }
     </style>
 </head>

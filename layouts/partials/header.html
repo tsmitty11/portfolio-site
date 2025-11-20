@@ -52,13 +52,22 @@
       <img src="/images/tomsmith-design-logo-white.svg" class="h-8" alt="Tom Smith Design">
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button
-        type="button"
-        class="hidden md:inline-block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hiretomsmith/minimum-viable-brand-strategy-call'});return false;"
-      >
-        Book Your MVB Strategy Call
-      </button>
+      {{ if .IsHome }}
+        <button
+          type="button"
+          class="hidden md:inline-block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hiretomsmith/minimum-viable-brand-strategy-call'});return false;"
+        >
+          Book Your MVB Strategy Call
+        </button>
+      {{ else }}
+        <a
+          href="/"
+          class="hidden md:inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Get a Brand for Two-Grand
+        </a>
+      {{ end }}
       <button
         type="button"
         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gunmetal rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"

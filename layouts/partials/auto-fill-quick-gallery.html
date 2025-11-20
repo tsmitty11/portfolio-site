@@ -1,18 +1,15 @@
 <section class="bg-whiteSmoke dark:bg-gray-900 antialiased" id="portfolio">
     <div class=" px-4 mx-auto lg:px-6 pb-8 md:pb-16">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="quick-gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {{ with .Params.gallery }}
                 {{ range . }}
                     <div>
                         <a href="{{ .lightbox }}" class="glightbox" data-gallery="portfolio-gallery">
-                            <div class="w-full rounded-lg bg-cover bg-center relative border border-gunmetal aspect-[1.29]" 
-                                 style="background-image: url('{{ .src }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                            <div class="w-full rounded-lg relative border border-gunmetal aspect-[1.29] overflow-hidden bg-gunmetal">
                                 {{ if .video }}
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <div class="flex items-center justify-center bg-[#00b3ff] bg-opacity-95 rounded-full w-16 h-16">
-                                            <img class="w-5 h-5 ml-[5px]" src="/images/play-button.svg" alt="play-button">
-                                        </div>
-                                    </div>
+                                    <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="{{ or .lightbox .src }}" poster="{{ .src }}" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+                                {{ else }}
+                                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ .src }}');"></div>
                                 {{ end }}
                             </div>
                         </a>
@@ -31,4 +28,37 @@
         touchNavigation: true,
         loop: true
     });
+</script>
+<script>
+    (function () {
+        const videos = document.querySelectorAll('.quick-gallery .lazy-motion');
+        if (!videos.length) return;
+
+        const loadVideo = (video) => {
+            if (video.dataset.loaded === 'true') return;
+            const src = video.dataset.src;
+            if (!src) return;
+            video.src = src;
+            video.dataset.loaded = 'true';
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(() => {});
+            }
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        loadVideo(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '100px' });
+
+            videos.forEach((video) => observer.observe(video));
+        } else {
+            videos.forEach(loadVideo);
+        }
+    })();
 </script>

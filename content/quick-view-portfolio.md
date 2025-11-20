@@ -109,9 +109,10 @@ gallery:
   - src: "/images/encouraging-cryptids-mockup.jpg"
     lightbox: "/images/encouraging-cryptids-mockup.jpg"
     alt: "Mockup of some products for a side-hustle I started with my girlfriend."
-  - src: "/images/pizzanaut.jpg"
-    lightbox: "/images/pizzanaut.jpg"
+  - src: "/images/pizzanaut-animated.mp4"
+    lightbox: "/images/pizzanaut-animated.mp4"
     alt: "A whimsical illustration of an astronaut in their underwear, holding a pizza and beer."
+    video: true
   - src: "/images/portfolio/tidus-website-portfolio-02.jpg"
     lightbox: "/images/portfolio/tidus-website-portfolio-02.jpg"
     alt: "Vector illustrations for Tidus Wallet websites."

@@ -130,7 +130,11 @@ gallery:
     alt: "Coffee Packaging vector illustrations"
     video: false
   - src: "/images/hoodie-lifestyle-mockup-web-cropped.jpg"
-    lightbox: "/images/hoodie-lifestyle-mockup-web-cropped.jpgg"
+    lightbox: "/images/hoodie-lifestyle-mockup-web-cropped.jpg"
     alt: "Tom Smith Design Hoodie Mockup"
     video: false
+  - src: "/images/2025-wrapped-teaser.mp4"
+    lightbox: "/images/2025-wrapped-teaser.mp4"
+    alt: "Total Synergy year wrapped teaser motion graphic"
+    video: true
 ---

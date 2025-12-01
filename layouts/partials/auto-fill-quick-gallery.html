@@ -3,11 +3,26 @@
         <div class="quick-gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {{ with .Params.gallery }}
                 {{ range . }}
+                    {{ $poster := "" }}
+                    {{ if .poster }}
+                        {{ $poster = .poster }}
+                    {{ else if .thumbnail }}
+                        {{ $poster = .thumbnail }}
+                    {{ else if .src }}
+                        {{ $srcLower := lower .src }}
+                        {{ if or (hasSuffix $srcLower ".jpg") (hasSuffix $srcLower ".jpeg") (hasSuffix $srcLower ".png") (hasSuffix $srcLower ".webp") (hasSuffix $srcLower ".gif") }}
+                            {{ $poster = .src }}
+                        {{ end }}
+                    {{ end }}
+                    {{ $videoSource := "" }}
+                    {{ if .video }}
+                        {{ $videoSource = or .lightbox .src }}
+                    {{ end }}
                     <div>
                         <a href="{{ .lightbox }}" class="glightbox" data-gallery="portfolio-gallery">
                             <div class="w-full rounded-lg relative border border-gunmetal aspect-[1.29] overflow-hidden bg-gunmetal">
                                 {{ if .video }}
-                                    <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="{{ or .lightbox .src }}" poster="{{ .src }}" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+                                    <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="{{ $videoSource }}" {{ if $poster }}poster="{{ $poster }}" data-poster="{{ $poster }}"{{ end }} autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
                                 {{ else }}
                                     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ .src }}');"></div>
                                 {{ end }}
@@ -34,31 +49,90 @@
         const videos = document.querySelectorAll('.quick-gallery .lazy-motion');
         if (!videos.length) return;
 
-        const loadVideo = (video) => {
-            if (video.dataset.loaded === 'true') return;
-            const src = video.dataset.src;
-            if (!src) return;
-            video.src = src;
-            video.dataset.loaded = 'true';
+        const mediaQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+        let reduceMotion = !!(mediaQuery && mediaQuery.matches);
+
+        const safelyPlay = (video) => {
             const playPromise = video.play();
             if (playPromise && typeof playPromise.catch === 'function') {
                 playPromise.catch(() => {});
             }
         };
 
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        loadVideo(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { rootMargin: '100px' });
+        const loadVideo = (video) => {
+            if (video.dataset.loaded === 'true') return;
+            const src = video.dataset.src;
+            if (!src) return;
+            video.src = src;
+            video.dataset.loaded = 'true';
+        };
 
-            videos.forEach((video) => observer.observe(video));
-        } else {
-            videos.forEach(loadVideo);
+        const pauseVideo = (video) => {
+            if (video.paused) return;
+            video.pause();
+        };
+
+        const handleIntersection = (entries) => {
+            entries.forEach((entry) => {
+                const video = entry.target;
+                if (reduceMotion) {
+                    pauseVideo(video);
+                    return;
+                }
+                if (entry.isIntersecting) {
+                    loadVideo(video);
+                    safelyPlay(video);
+                } else if (video.dataset.loaded === 'true') {
+                    pauseVideo(video);
+                }
+            });
+        };
+
+        const observerOptions = { rootMargin: '150px', threshold: 0.25 };
+        const supportsIntersectionObserver = 'IntersectionObserver' in window;
+        const observer = supportsIntersectionObserver ? new IntersectionObserver(handleIntersection, observerOptions) : null;
+
+        const startVideoHandling = () => {
+            if (reduceMotion) {
+                stopVideoHandling();
+                return;
+            }
+
+            if (observer) {
+                videos.forEach((video) => observer.observe(video));
+                return;
+            }
+
+            videos.forEach((video) => {
+                loadVideo(video);
+                safelyPlay(video);
+            });
+        };
+
+        const stopVideoHandling = () => {
+            if (observer) {
+                observer.disconnect();
+            }
+            videos.forEach(pauseVideo);
+        };
+
+        startVideoHandling();
+
+        if (mediaQuery) {
+            const handleMotionPreference = (event) => {
+                reduceMotion = event.matches;
+                if (reduceMotion) {
+                    stopVideoHandling();
+                } else {
+                    startVideoHandling();
+                }
+            };
+
+            if (typeof mediaQuery.addEventListener === 'function') {
+                mediaQuery.addEventListener('change', handleMotionPreference);
+            } else if (typeof mediaQuery.addListener === 'function') {
+                mediaQuery.addListener(handleMotionPreference);
+            }
         }
     })();
 </script>

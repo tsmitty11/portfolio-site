@@ -1,10 +1,5 @@
 {{ define "main" }}
 
-<div id="quick-portfolio-preloader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#121826] text-white gap-4 transition-opacity duration-500">
-    <div class="w-10 h-10 rounded-full border-[3px] border-white/30 border-t-white animate-spin" aria-hidden="true"></div>
-    <p class="text-sm tracking-[0.2em] uppercase text-gray-200">Loading portfolio</p>
-</div>
-
 <section class="bg-whiteSmoke dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <p class="uppercase text-gunmetal font-semibold mb-4 text-sm tracking-widest">Tom Smith Design</p>
@@ -22,56 +17,5 @@
 </section>
 
 {{ partial "auto-fill-quick-gallery.html" . }}
-
-<script>
-    (function () {
-        const preloader = document.getElementById('quick-portfolio-preloader');
-        if (!preloader) return;
-
-        const hideLoader = () => {
-            preloader.classList.add('opacity-0', 'pointer-events-none');
-            setTimeout(() => preloader.remove(), 400);
-        };
-
-        const mediaElements = document.querySelectorAll('#quick-portfolio-preloader ~ section video, #quick-portfolio-preloader ~ section img, #quick-portfolio-preloader ~ section div[style*="background-image"]');
-        let loadedCount = 0;
-        const total = mediaElements.length || 1;
-
-        const markLoaded = () => {
-            loadedCount += 1;
-            if (loadedCount >= total) {
-                hideLoader();
-            }
-        };
-
-        if (!mediaElements.length) {
-            window.addEventListener('load', hideLoader);
-            return;
-        }
-
-        mediaElements.forEach((el) => {
-            if (el.tagName === 'VIDEO') {
-                if (el.readyState >= 2) {
-                    markLoaded();
-                } else {
-                    el.addEventListener('loadeddata', markLoaded, { once: true });
-                    el.addEventListener('error', markLoaded, { once: true });
-                }
-            } else if (el.tagName === 'IMG') {
-                if (el.complete) {
-                    markLoaded();
-                } else {
-                    el.addEventListener('load', markLoaded, { once: true });
-                    el.addEventListener('error', markLoaded, { once: true });
-                }
-            } else {
-                // background divs: assume already ready
-                markLoaded();
-            }
-        });
-
-        setTimeout(hideLoader, 6000);
-    })();
-</script>
 
 {{ end }}

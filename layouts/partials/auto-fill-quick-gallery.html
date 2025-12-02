@@ -19,7 +19,7 @@
                         {{ $videoSource = or .lightbox .src }}
                     {{ end }}
                     <div>
-                        <a href="{{ .lightbox }}" class="glightbox" data-gallery="portfolio-gallery">
+                        <a href="{{ .lightbox }}" class="glightbox" data-gallery="portfolio-gallery" {{ with .alt }}data-description="{{ htmlEscape . }}"{{ end }}>
                             <div class="w-full rounded-lg relative border border-gunmetal aspect-[1.29] overflow-hidden bg-gunmetal">
                                 {{ if .video }}
                                     <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="{{ $videoSource }}" {{ if $poster }}poster="{{ $poster }}" data-poster="{{ $poster }}"{{ end }} autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>

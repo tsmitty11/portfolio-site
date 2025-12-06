@@ -88,6 +88,7 @@
             let isHovering = false;
             let isAnimating = false;
             let activeSlide = bgContainer.querySelector('.portfolio-card-slide-active');
+            let animationSession = 0;
 
             const renderSlideAt = (targetIndex) => {
                 const slides = bgContainer.querySelectorAll('.portfolio-card-slide');
@@ -112,6 +113,7 @@
             const animateTo = (nextIndex, direction = 'forward') => {
                 if (isAnimating || nextIndex === index) return false;
                 isAnimating = true;
+                const session = animationSession;
 
                 const incoming = createSlide(images[nextIndex]);
                 const entryClass = direction === 'backward' ? '-translate-x-full' : 'translate-x-full';
@@ -121,6 +123,11 @@
 
                 requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
+                        if (session !== animationSession) {
+                            incoming.remove();
+                            isAnimating = false;
+                            return;
+                        }
                         incoming.classList.remove(entryClass);
                         incoming.classList.add('translate-x-0', 'portfolio-card-slide-active');
 
@@ -162,6 +169,7 @@
                     intervalId = null;
                 }
                 isHovering = false;
+                animationSession++;
                 renderSlideAt(0);
             };
 

@@ -1,5 +1,5 @@
 ---
-title: "Tidus Wallet Website Design & Development"
+title: "Tidus Wallet"
 Description: "Website design and development for Tidus Wallet, a mobile crypto wallet."
 ogimage: "/images/tidus-website-og-image.jpg"
 websiteURL: "https://tiduswallet.com/"
@@ -28,6 +28,14 @@ gallery:
   - src: "/images/portfolio/tidus-website-portfolio-04.jpg"
     lightbox: "/images/portfolio/tidus-website-portfolio-04.jpg"
     alt: "Full Tidus Wallet landing page."
+    video: false
+  - src: "/images/portfolio/tidus_games/tidus-games-social-thumbnail.jpg"
+    lightbox: "/images/portfolio/tidus_games/tidus-games-instagram-carousel.jpg"
+    alt: "Tidus Games Instagram Carousel"
+    video: false
+  - src: "/images/portfolio/tidus_games/intract-x-tidus.jpg"
+    lightbox: "/images/portfolio/tidus_games/intract-x-tidus.jpg"
+    alt: "Tidus Games Instagram/X Graphic"
     video: false
 overview: "Tidus Wallet is a user-friendly crypto wallet that's available as a mobile app and Google Chrome browser extension. As part of my suite of deliverables for Tidus, I designed and developed this nifty website for them. The goal was to not only elevate the visual design, but to also streamline and emphasize the core messaging. I revamped the design from the ground-up in Figma, illustrated some whimsical vector graphics in Adobe Illustrator to make the concepts more approachable, and I developed a light-weight, high-performance website using Astro.js and Tailwind CSS."
 features:

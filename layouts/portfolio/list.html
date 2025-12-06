@@ -38,11 +38,11 @@
                 {{ $galleryList := delimit $galleryImages "||" }}
                 <div>
                     <a href="{{ .RelPermalink }}" class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-whiteSmoke dark:focus-visible:ring-offset-gray-900">
-                        <div class="portfolio-card w-full rounded-lg relative border border-gunmetal aspect-[827/640] overflow-hidden bg-gunmetal" data-gallery-images="{{ $galleryList }}">
+                        <div class="portfolio-card w-full rounded-lg relative border border-gunmetal aspect-[827/640] overflow-hidden bg-gunmetal touch-pan-y" data-gallery-images="{{ $galleryList }}">
                             <div class="absolute inset-0 overflow-hidden portfolio-card-bg">
                                 <div class="portfolio-card-slide portfolio-card-slide-active absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out translate-x-0" style="background-image:url('{{ $cover }}');"></div>
                             </div>
-                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
                                 <p class="text-white text-lg font-semibold">{{ .Title }}</p>
                             </div>
                         </div>
@@ -59,10 +59,15 @@
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.portfolio-card');
         const hoverDelay = 400;
+        const swipeThreshold = 30;
+        const isTouchDevice = window.matchMedia('(hover: none)').matches
+            || window.matchMedia('(pointer: coarse)').matches
+            || navigator.maxTouchPoints > 0
+            || ('ontouchstart' in window);
 
         const createSlide = (url) => {
             const slide = document.createElement('div');
-            slide.className = 'portfolio-card-slide absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out translate-x-full';
+            slide.className = 'portfolio-card-slide absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out';
             slide.style.backgroundImage = `url('${url}')`;
             return slide;
         };
@@ -74,51 +79,80 @@
             const images = data.split('||').map((item) => item.trim()).filter(Boolean);
             if (!images.length) return;
 
+            const parentLink = card.closest('a');
+            card.dataset.blockClick = 'false';
+
             let index = 0;
             let intervalId = null;
             let isHovering = false;
-            let activeSlide = null;
+            let isAnimating = false;
+            let activeSlide = bgContainer.querySelector('.portfolio-card-slide-active');
 
-            const renderBaseSlide = () => {
+            const renderSlideAt = (targetIndex) => {
                 const slides = bgContainer.querySelectorAll('.portfolio-card-slide');
                 slides.forEach((slide) => slide.remove());
-                activeSlide = createSlide(images[0]);
-                activeSlide.classList.remove('translate-x-full', '-translate-x-full');
+                activeSlide = createSlide(images[targetIndex]);
                 activeSlide.classList.add('translate-x-0', 'portfolio-card-slide-active');
                 bgContainer.appendChild(activeSlide);
+                index = targetIndex;
+                isAnimating = false;
             };
 
-            renderBaseSlide();
+            if (!activeSlide) {
+                renderSlideAt(0);
+            } else {
+                activeSlide.classList.add('portfolio-card-slide-active');
+                activeSlide.classList.remove('-translate-x-full', 'translate-x-full');
+                activeSlide.classList.add('translate-x-0');
+            }
 
             if (images.length < 2) return;
 
-            const runSlide = () => {
-                const nextIndex = (index + 1) % images.length;
+            const animateTo = (nextIndex, direction = 'forward') => {
+                if (isAnimating || nextIndex === index) return false;
+                isAnimating = true;
+
                 const incoming = createSlide(images[nextIndex]);
+                const entryClass = direction === 'backward' ? '-translate-x-full' : 'translate-x-full';
+                const exitClass = direction === 'backward' ? 'translate-x-full' : '-translate-x-full';
+                incoming.classList.add(entryClass);
                 bgContainer.appendChild(incoming);
 
                 requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
-                        if (!isHovering) {
-                            incoming.remove();
-                            return;
-                        }
-                        incoming.classList.remove('translate-x-full');
+                        incoming.classList.remove(entryClass);
                         incoming.classList.add('translate-x-0', 'portfolio-card-slide-active');
+
                         if (activeSlide) {
-                            activeSlide.classList.remove('portfolio-card-slide-active', 'translate-x-0');
-                            activeSlide.classList.add('-translate-x-full');
                             const slideToRemove = activeSlide;
-                            const handleTransitionEnd = () => {
-                                slideToRemove.removeEventListener('transitionend', handleTransitionEnd);
-                                slideToRemove.remove();
+                            let cleaned = false;
+                            const cleanup = () => {
+                                if (cleaned) return;
+                                cleaned = true;
+                                slideToRemove.removeEventListener('transitionend', cleanup);
+                                if (slideToRemove.parentElement) {
+                                    slideToRemove.remove();
+                                }
+                                isAnimating = false;
                             };
-                            slideToRemove.addEventListener('transitionend', handleTransitionEnd);
+                            slideToRemove.classList.remove('translate-x-0', '-translate-x-full', 'translate-x-full', 'portfolio-card-slide-active');
+                            slideToRemove.classList.add(exitClass);
+                            slideToRemove.addEventListener('transitionend', cleanup);
+                            setTimeout(cleanup, 900);
+                        } else {
+                            isAnimating = false;
                         }
+
                         activeSlide = incoming;
                         index = nextIndex;
                     });
                 });
+
+                return true;
+            };
+
+            const runSlide = () => {
+                animateTo((index + 1) % images.length, 'forward');
             };
 
             const stopCycle = () => {
@@ -126,14 +160,8 @@
                     clearInterval(intervalId);
                     intervalId = null;
                 }
-                if (!isHovering) {
-                    renderBaseSlide();
-                    index = 0;
-                    return;
-                }
                 isHovering = false;
-                index = 0;
-                renderBaseSlide();
+                renderSlideAt(0);
             };
 
             const startCycle = () => {
@@ -143,10 +171,67 @@
                 intervalId = setInterval(runSlide, hoverDelay);
             };
 
-            card.addEventListener('pointerenter', startCycle);
-            card.addEventListener('pointerleave', stopCycle);
-            card.addEventListener('focusin', startCycle);
-            card.addEventListener('focusout', stopCycle);
+            if (!isTouchDevice) {
+                card.addEventListener('pointerenter', startCycle);
+                card.addEventListener('pointerleave', stopCycle);
+                card.addEventListener('focusin', startCycle);
+                card.addEventListener('focusout', stopCycle);
+            } else if (parentLink) {
+                parentLink.addEventListener('click', (evt) => {
+                    if (card.dataset.blockClick === 'true') {
+                        evt.preventDefault();
+                        card.dataset.blockClick = 'false';
+                    }
+                });
+            }
+
+            if (isTouchDevice) {
+                let touchStartX = 0;
+                let touchStartY = 0;
+                let swipeHandled = false;
+
+                const resetBlockedClick = () => {
+                    setTimeout(() => {
+                        card.dataset.blockClick = 'false';
+                    }, 120);
+                };
+
+                card.addEventListener('touchstart', (event) => {
+                    if (event.touches.length !== 1) return;
+                    touchStartX = event.touches[0].clientX;
+                    touchStartY = event.touches[0].clientY;
+                    swipeHandled = false;
+                }, { passive: true });
+
+                card.addEventListener('touchmove', (event) => {
+                    if (event.touches.length !== 1 || swipeHandled) return;
+                    const dx = event.touches[0].clientX - touchStartX;
+                    const dy = event.touches[0].clientY - touchStartY;
+                    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > swipeThreshold) {
+                        const direction = dx < 0 ? 'forward' : 'backward';
+                        const targetIndex = direction === 'forward'
+                            ? (index + 1) % images.length
+                            : (index - 1 + images.length) % images.length;
+                        const started = animateTo(targetIndex, direction);
+                        if (started) {
+                            swipeHandled = true;
+                            card.dataset.blockClick = 'true';
+                            event.preventDefault();
+                        }
+                    }
+                }, { passive: false });
+
+                const handleTouchEnd = () => {
+                    resetBlockedClick();
+                };
+
+                card.addEventListener('touchend', handleTouchEnd);
+                card.addEventListener('touchcancel', handleTouchEnd);
+            } else if (parentLink) {
+                parentLink.addEventListener('click', () => {
+                    card.dataset.blockClick = 'false';
+                });
+            }
         });
     });
 </script>

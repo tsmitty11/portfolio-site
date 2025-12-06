@@ -28,9 +28,9 @@
                 {{ end }}
                 <div>
                     <a href="{{ .RelPermalink }}" class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-whiteSmoke dark:focus-visible:ring-offset-gray-900">
-                        <div class="w-full rounded-lg relative border border-gunmetal aspect-[827/640] overflow-hidden bg-gunmetal transition-transform duration-500 group-hover:-translate-y-1 group-focus-visible:-translate-y-1">
-                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image:url('{{ $cover }}');"></div>
-                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <div class="w-full rounded-lg relative border border-gunmetal aspect-[827/640] overflow-hidden bg-gunmetal">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105" style="background-image:url('{{ $cover }}');"></div>
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                                 <p class="text-white text-lg font-semibold">{{ .Title }}</p>
                             </div>
                         </div>

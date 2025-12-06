@@ -1,13 +1,16 @@
 {{ define "main" }}
 
-<section class="bg-[#121826] min-h-screen py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mb-16">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Selected Work</h1>
-            <p class="text-lg text-gray-300">A minimal, scrollable grid of brand systems, landing pages, and marketing campaigns. Hover any tile to reveal the project title, then click through for the full case study.</p>
-        </div>
+<section class="bg-whiteSmoke dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+        <p class="uppercase text-gunmetal font-semibold mb-4 text-sm tracking-widest">Tom Smith Design</p>
+        <h1 class="mb-4 text-4xl text-gunmetal font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl dark:text-white">Selected Work</h1>
+        <p class="text-gunmetal text-lg font-normal lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">A curated overview of my favorite case studies. Tap any tile for the full story, or jump to the rapid-fire gallery for a quick scroll.</p>
+    </div>
+</section>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4" data-gallery="portfolio-gallery">
+<section class="bg-whiteSmoke dark:bg-gray-900 antialiased">
+    <div class="px-4 mx-auto lg:px-6 pb-8 md:pb-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {{ range .Pages.ByWeight }}
                 {{ $cover := "" }}
                 {{ with .Params.gallery }}
@@ -24,11 +27,12 @@
                     {{ $cover = "/images/portfolio/thumbnails/alaeris-thumbnail.jpg" }}
                 {{ end }}
                 <div>
-                    <a href="{{ .RelPermalink }}" class="group relative block overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 aspect-[4/5] focus:outline-none" data-gallery="portfolio-gallery-item">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image:url('{{ $cover }}');"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-x-0 bottom-0 p-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
-                            <h2 class="text-lg font-semibold text-white">{{ .Title }}</h2>
+                    <a href="{{ .RelPermalink }}" class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-whiteSmoke dark:focus-visible:ring-offset-gray-900">
+                        <div class="w-full rounded-lg relative border border-gunmetal aspect-[827/640] overflow-hidden bg-gunmetal transition-transform duration-500 group-hover:-translate-y-1 group-focus-visible:-translate-y-1">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image:url('{{ $cover }}');"></div>
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <p class="text-white text-lg font-semibold">{{ .Title }}</p>
+                            </div>
                         </div>
                     </a>
                 </div>

@@ -11,10 +11,10 @@
 <section class="bg-whiteSmoke dark:bg-gray-900 antialiased">
     <div class="px-4 mx-auto lg:px-6 pb-8 md:pb-16">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {{ range .Pages.ByWeight }}
+            {{ range $index, $page := .Pages.ByWeight }}
                 {{ $cover := "" }}
                 {{ $galleryImages := slice }}
-                {{ with .Params.gallery }}
+                {{ with $page.Params.gallery }}
                     {{ with index . 0 }}
                         {{ $cover = .src }}
                     {{ end }}
@@ -37,13 +37,13 @@
                 {{ end }}
                 {{ $galleryList := delimit $galleryImages "||" }}
                 <div>
-                    <a href="{{ .RelPermalink }}" class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-whiteSmoke dark:focus-visible:ring-offset-gray-900">
+                    <a href="{{ $page.RelPermalink }}" class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-whiteSmoke dark:focus-visible:ring-offset-gray-900">
                         <div class="portfolio-card w-full rounded-lg relative border border-gunmetal aspect-[827/640] overflow-hidden bg-gunmetal touch-pan-y" data-gallery-images="{{ $galleryList }}">
                             <div class="absolute inset-0 overflow-hidden portfolio-card-bg">
-                                <div class="portfolio-card-slide portfolio-card-slide-active absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out translate-x-0" style="background-image:url('{{ $cover }}');"></div>
+                                <div class="portfolio-card-slide portfolio-card-slide-active absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out translate-x-0" style="background-image:url('{{ $cover }}');"></div>
                             </div>
                             <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
-                                <p class="text-white text-lg font-semibold">{{ .Title }}</p>
+                                <p class="text-white text-lg font-semibold">{{ $page.Title }}</p>
                             </div>
                         </div>
                     </a>
@@ -59,7 +59,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.portfolio-card');
         const hoverDelay = 400;
-        const swipeThreshold = 30;
+        const swipeThreshold = 20;
         const isTouchDevice = window.matchMedia('(hover: none)').matches
             || window.matchMedia('(pointer: coarse)').matches
             || navigator.maxTouchPoints > 0
@@ -67,7 +67,7 @@
 
         const createSlide = (url) => {
             const slide = document.createElement('div');
-            slide.className = 'portfolio-card-slide absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out';
+            slide.className = 'portfolio-card-slide absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out';
             slide.style.backgroundImage = `url('${url}')`;
             return slide;
         };

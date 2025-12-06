@@ -13,9 +13,15 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {{ range .Pages.ByWeight }}
                 {{ $cover := "" }}
+                {{ $galleryImages := slice }}
                 {{ with .Params.gallery }}
                     {{ with index . 0 }}
                         {{ $cover = .src }}
+                    {{ end }}
+                    {{ range . }}
+                        {{ if .src }}
+                            {{ $galleryImages = $galleryImages | append .src }}
+                        {{ end }}
                     {{ end }}
                 {{ end }}
                 {{ if not $cover }}
@@ -26,10 +32,16 @@
                 {{ if not $cover }}
                     {{ $cover = "/images/portfolio/thumbnails/alaeris-thumbnail.jpg" }}
                 {{ end }}
+                {{ if not (gt (len $galleryImages) 0) }}
+                    {{ $galleryImages = slice $cover }}
+                {{ end }}
+                {{ $galleryList := delimit $galleryImages "||" }}
                 <div>
                     <a href="{{ .RelPermalink }}" class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-whiteSmoke dark:focus-visible:ring-offset-gray-900">
-                        <div class="w-full rounded-lg relative border border-gunmetal aspect-[827/640] overflow-hidden bg-gunmetal">
-                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105" style="background-image:url('{{ $cover }}');"></div>
+                        <div class="portfolio-card w-full rounded-lg relative border border-gunmetal aspect-[827/640] overflow-hidden bg-gunmetal" data-gallery-images="{{ $galleryList }}">
+                            <div class="absolute inset-0 overflow-hidden portfolio-card-bg">
+                                <div class="portfolio-card-slide portfolio-card-slide-active absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out translate-x-0" style="background-image:url('{{ $cover }}');"></div>
+                            </div>
                             <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                                 <p class="text-white text-lg font-semibold">{{ .Title }}</p>
                             </div>
@@ -40,5 +52,103 @@
         </div>
     </div>
 </section>
+
+<span class="hidden translate-x-full -translate-x-full"></span>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.portfolio-card');
+        const hoverDelay = 400;
+
+        const createSlide = (url) => {
+            const slide = document.createElement('div');
+            slide.className = 'portfolio-card-slide absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out translate-x-full';
+            slide.style.backgroundImage = `url('${url}')`;
+            return slide;
+        };
+
+        cards.forEach((card) => {
+            const bgContainer = card.querySelector('.portfolio-card-bg');
+            if (!bgContainer) return;
+            const data = card.dataset.galleryImages || '';
+            const images = data.split('||').map((item) => item.trim()).filter(Boolean);
+            if (!images.length) return;
+
+            let index = 0;
+            let intervalId = null;
+            let isHovering = false;
+            let activeSlide = null;
+
+            const renderBaseSlide = () => {
+                const slides = bgContainer.querySelectorAll('.portfolio-card-slide');
+                slides.forEach((slide) => slide.remove());
+                activeSlide = createSlide(images[0]);
+                activeSlide.classList.remove('translate-x-full', '-translate-x-full');
+                activeSlide.classList.add('translate-x-0', 'portfolio-card-slide-active');
+                bgContainer.appendChild(activeSlide);
+            };
+
+            renderBaseSlide();
+
+            if (images.length < 2) return;
+
+            const runSlide = () => {
+                const nextIndex = (index + 1) % images.length;
+                const incoming = createSlide(images[nextIndex]);
+                bgContainer.appendChild(incoming);
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        if (!isHovering) {
+                            incoming.remove();
+                            return;
+                        }
+                        incoming.classList.remove('translate-x-full');
+                        incoming.classList.add('translate-x-0', 'portfolio-card-slide-active');
+                        if (activeSlide) {
+                            activeSlide.classList.remove('portfolio-card-slide-active', 'translate-x-0');
+                            activeSlide.classList.add('-translate-x-full');
+                            const slideToRemove = activeSlide;
+                            const handleTransitionEnd = () => {
+                                slideToRemove.removeEventListener('transitionend', handleTransitionEnd);
+                                slideToRemove.remove();
+                            };
+                            slideToRemove.addEventListener('transitionend', handleTransitionEnd);
+                        }
+                        activeSlide = incoming;
+                        index = nextIndex;
+                    });
+                });
+            };
+
+            const stopCycle = () => {
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+                if (!isHovering) {
+                    renderBaseSlide();
+                    index = 0;
+                    return;
+                }
+                isHovering = false;
+                index = 0;
+                renderBaseSlide();
+            };
+
+            const startCycle = () => {
+                if (isHovering) return;
+                isHovering = true;
+                runSlide();
+                intervalId = setInterval(runSlide, hoverDelay);
+            };
+
+            card.addEventListener('pointerenter', startCycle);
+            card.addEventListener('pointerleave', stopCycle);
+            card.addEventListener('focusin', startCycle);
+            card.addEventListener('focusout', stopCycle);
+        });
+    });
+</script>
 
 {{ end }}

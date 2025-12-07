@@ -5,7 +5,6 @@
         <p class="uppercase text-gunmetal font-semibold mb-4 text-sm tracking-widest">Tom Smith Design</p>
         <h1 class="mb-4 text-4xl text-gunmetal font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl dark:text-white">Portfolio</h1>
         <p class="text-gunmetal mb-4 sm:mb-0 text-lg font-normal lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">This is a small selection of my favorite projects and works, ranging from product design to print design. Like what you see? <a href="/contact/" class="text-primary-500">Get in touch</a>.</p>
-        <p class="text-gunmetal visible sm:hidden text-sm font-normal lg:text-base sm:px-16 xl:px-48 dark:text-gray-400 animate-pulse">Swipe or click to see more.</p>
     </div>
 </section>
 
@@ -42,6 +41,12 @@
                         <div class="portfolio-card w-full rounded-lg relative border border-gunmetal aspect-[827/640] overflow-hidden bg-gunmetal touch-pan-y" data-gallery-images="{{ $galleryList }}">
                             <div class="absolute inset-0 overflow-hidden portfolio-card-bg">
                                 <div class="portfolio-card-slide portfolio-card-slide-active absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out translate-x-0" style="background-image:url('{{ $cover }}');"></div>
+                            </div>
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 bg-black/70 text-white text-xs font-semibold tracking-wide uppercase py-1 px-3 rounded-full shadow md:hidden pointer-events-none">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M8 5l-4 4 4 4M16 9l4 4-4 4" />
+                                </svg>
+                                <span>Swipe</span>
                             </div>
                             <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
                                 <p class="text-white text-lg font-semibold">{{ $page.Title }}</p>

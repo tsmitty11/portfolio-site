@@ -1,6 +1,6 @@
 ---
 title: "Benchmark Report"
-Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+Description: "High-end industry benchmark report for Total Synergy, crafted as a premium downloadable lead magnet that balances executive polish with digestible data storytelling."
 ogimage: "/images/portfolio/benchmark-report/benchmark-report-cover.jpg"
 gallery:
   - src: "/images/portfolio/benchmark-report/page-1.webp"

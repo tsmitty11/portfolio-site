@@ -53,19 +53,18 @@
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
       {{ if .IsHome }}
-        <button
-          type="button"
-          class="hidden md:inline-block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hiretomsmith/minimum-viable-brand-strategy-call'});return false;"
-        >
-          Book Your MVB Strategy Call
-        </button>
-      {{ else }}
         <a
-          href="/"
+          href="/contact/"
           class="hidden md:inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          Get a Brand for Two-Grand
+          Get In Touch
+        </a>
+      {{ else }}
+        <a
+          href="/contact/"
+          class="hidden md:inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Get In Touch
         </a>
       {{ end }}
       <button

@@ -1,5 +1,6 @@
 ---
 title: "Tea.xyz Collateral (Pre-rebrand)"
+weight: 90
 Description: "A suite of collateral for tea.xyz (now tea Protocol)."
 ogimage: "/images/teaxyz-og-image.jpg"
 websiteURL: "https://tea.xyz"

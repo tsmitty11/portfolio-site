@@ -1,5 +1,6 @@
 ---
 title: "Belvedere Grand Logo"
+weight: 20
 Description: "The Belvedere Grand is an Inn and Restaurant in Michigan's Upper Peninsula."
 ogimage: "/images/belvedere-grand-og-image.jpg"
 websiteURL: "https://www.thebelvederegrand.com/"

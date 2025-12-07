@@ -1,5 +1,6 @@
 ---
 title: "Benchmark Report"
+weight: 125
 Description: "High-end industry benchmark report for Total Synergy, crafted as a premium downloadable lead magnet that balances executive polish with digestible data storytelling."
 ogimage: "/images/portfolio/benchmark-report/benchmark-report-cover.jpg"
 gallery:

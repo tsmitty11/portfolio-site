@@ -1,7 +1,7 @@
 ---
 title: "Personal Work"
 weight: 140
-Description: "Selected personal and exploratory concepts spanning illustration, lettering, and mixed-media experiments."
+Description: "Some of the more whimsical personal work I've done over the years, ranging from illustration to apparel."
 ogimage: "/images/portfolio/personal-work/personal-work-cover.jpg"
 gallery:
   - src: "/images/hoodie-lifestyle-mockup-web-cropped.jpg"
@@ -13,12 +13,15 @@ gallery:
   - src: "/images/encouraging-cryptids-mockup.jpg"
     lightbox: "/images/encouraging-cryptids-mockup.jpg"
     alt: "Encouraging Cryptids"
-overview: "A rotating collection of personal pieces that let me test new techniques, color palettes, and visual narratives outside of client work."
+overview: "This is a collection of personal works I've done over the years, ranging from illustration to apparel. While I'm passionate about the work I do for clients, these items give you a peek 'under the hood', so to speak."
 features:
   - "Illustration"
   - "Concept Development"
   - "Mixed Media"
+  - "Animation"
+  - "Vector Illustration"
+  - "Pattern Design"
 videoURL: ""
-background: "Personal work is where I push my craft forward—exploring different tools, styles, and storytelling approaches without external constraints."
-challenge: "Balancing experimentation with polish ensures these pieces stay playful while still reflecting my craft standards."
+background: "I'm an artist at heart. My personal projects are where I really get to spread my creative wings. While you won't find slick UIs or snappy promo animations on this page, my personal work is a fantastic window into who I am as a designer and as an artist."
+challenge: "The challenge with personal work is, well, finding time to do personal work! At the end of a busy day, it's sometimes difficult to find the motivation to create even more... kind of like a chef getting off a shift and eating Hot Pockets. But when I do get around to creating my own stuff, I quickly remember how much fun it can be. Furthermore, in the age of AI, I feel as though personal projects are an integral part of creatives retaining their individual 'voice'."
 ---

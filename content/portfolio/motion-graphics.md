@@ -1,5 +1,6 @@
 ---
 title: "Motion Graphics"
+weight: 60
 Description: "An assortment of Adobe AfterEffects animations (various clients)."
 ogimage: "/images/motion-graphics-og-image.jpg"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"

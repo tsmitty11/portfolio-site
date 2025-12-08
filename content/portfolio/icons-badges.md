@@ -1,5 +1,6 @@
 ---
 title: "Iconography & Badges"
+weight: 50
 Description: "A selection of icon and achievement badge sets from over the years."
 ogimage: "/images/ants-og-image.jpg"
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"

@@ -1,5 +1,6 @@
 ---
 title: "Print Design"
+weight: 80
 Description: "As assortment of print designs for various clients."
 ogimage: "/images/alaeris-og-image.jpg"
 contactURL: "/contact/"

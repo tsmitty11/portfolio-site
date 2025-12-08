@@ -1,5 +1,6 @@
 ---
 title: "Canopy"
+weight: 40
 Description: "MacOS icon for an app that enables real-time GitHub notifications."
 ogimage: "/images/canopy-og-image.jpg"
 websiteURL: "https://mxcl.dev/canopy/"

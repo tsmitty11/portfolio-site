@@ -1,5 +1,6 @@
 ---
 title: "Alaeris"
+weight: 10
 Description: "Alaeris was a web3 concept that aimed to use blockchain technology to incentivize the planting of trees around the world."
 ogimage: "/images/alaeris-og-image.jpg"
 websiteURL: "https://alaeris.com/"

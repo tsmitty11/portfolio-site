@@ -7,13 +7,13 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Information"
-featured_image: "/images/2026-designer-benchmark-assessment-banner.jpg"
-ogimage: "/images/2026-designer-benchmark-assessment-og-image.jpg"
+featured_image: "/images/2026-benchmark-banner.webp"
+ogimage: "/images/2026-benchmark-og-image.webp"
 summary: "A quick benchmark assessment to pressure-test whether your designer is ready for the 2026 marketing and product landscape."
 reading_time: 1
 ---
 
-<img class="rounded-lg" src="/images/5-reasons-og-image.jpg" alt="Tom Smith Design logo plus the word 'you'.">
+<img class="rounded-lg" src="/images/2026-benchmark-og-image.webp" alt="Tom Smith Design logo plus the word 'you'.">
 
 <p class="text-gunmetal">Think of this as a benchmark assessment for your designer or design team. If they can do everything on this page– awesome. If not, maybe it’s time for an upgrade.</p>
 

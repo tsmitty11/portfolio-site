@@ -13,6 +13,9 @@ gallery:
   - src: "/images/encouraging-cryptids-mockup.jpg"
     lightbox: "/images/encouraging-cryptids-mockup.jpg"
     alt: "Encouraging Cryptids"
+  - src: "/images/running-bomb.webp"
+    lightbox: "/images/running-bomb.webp"
+    alt: "Encouraging Cryptids"
 overview: "This is a collection of personal works I've done over the years, ranging from illustration to apparel. While I'm passionate about the work I do for clients, these items give you a peek 'under the hood', so to speak."
 features:
   - "Illustration"

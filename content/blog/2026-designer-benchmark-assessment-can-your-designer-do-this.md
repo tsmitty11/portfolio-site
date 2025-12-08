@@ -87,6 +87,6 @@ reading_time: 1
 
 <p class="text-gunmetal">Did they check all the boxes? Or are there some areas for improvement?</p>
 
-<p class="text-gunmetal">If you think it’s time for an upgrade, or maybe just time to supercharge your design team, then book a call with me (Tom Smith) today.</p>
+<p class="text-gunmetal">If you think it’s time for an upgrade, or maybe just time to supercharge your design team, then <a href="https://calendly.com/hiretomsmith/hiretomsmith">book a call with me</a> (Tom Smith) today.</p>
 
 

@@ -13,80 +13,78 @@ summary: "A quick benchmark assessment to pressure-test whether your designer is
 reading_time: 1
 ---
 
-<img class="rounded-lg" src="/images/2026-benchmark-og-image.webp" alt="Tom Smith Design logo plus the word 'you'.">
+![Tom Smith Design logo plus the word 'you'.](/images/2026-benchmark-og-image.webp)
 
-<p class="text-gunmetal">Think of this as a benchmark assessment for your designer or design team. If they can do everything on this page– awesome. If not, maybe it’s time for an upgrade.</p>
+Think of this as a benchmark assessment for your designer or design team. If they can do everything on this page– awesome. If not, maybe it’s time for an upgrade.
 
-<hr>
+---
 
-<h2 class="text-3xl font-bold text-gunmetal">Can your designer collaborate on GitHub?</h2>
+## Can your designer collaborate on GitHub?
 
-<p class="text-gunmetal">Can they check out branches and make pull-requests? Can they review developer submissions to ensure design adherence? Can they develop their own designs? Not with Webflow or Wordpress, but with an actual lightweight tech stack?</p>
+Can they check out branches and make pull-requests? Can they review developer submissions to ensure design adherence? Can they develop their own designs? Not with Webflow or Wordpress, but with an actual lightweight tech stack?
 
-<p class="text-gunmetal">Tom Smith can collaborate on <a href="https://github.com/tsmitty11">GitHub</a>.</p>
+Tom Smith can collaborate on [GitHub](https://github.com/tsmitty11).
 
-<hr>
+---
 
-<h2 class="text-3xl font-bold text-gunmetal">Can your designer build design systems from scratch and use Figma correctly?</h2>
+## Can your designer build design systems from scratch and use Figma correctly?
 
-<p class="text-gunmetal">Do your designer’s Figma files look more like Adobe Illustrator files from Wish.com? Do they use auto-layouts correctly? Variables and styles? Properly ‘componentized’? Are they built with development in mind (because your designer can also code)?</p>
+Do your designer’s Figma files look more like Adobe Illustrator files from Wish.com? Do they use auto-layouts correctly? Variables and styles? Properly ‘componentized’? Are they built with development in mind (because your designer can also code)?
 
-<p class="text-gunmetal">Tom Smith’s Figma files are slick AF.</p>
+Tom Smith’s Figma files are slick AF.
 
-<hr>
+---
 
-<h2 class="text-3xl font-bold text-gunmetal">Your designer can Vibe Code, but can they deploy? Can they continue to edit outside of Lovable?</h2>
+## Your designer can Vibe Code, but can they deploy? Can they continue to edit outside of Lovable?
 
-<p class="text-gunmetal">Vibe Coding is cute, but it’s only as useful as its ability to be implemented. Without an understanding of the underlying tech stack, or the ability to move beyond the paid platform, your designer is just playing with sideshow alchemy– gold on the outside, tin foil on the inside.</p>
+Vibe Coding is cute, but it’s only as useful as its ability to be implemented. Without an understanding of the underlying tech stack, or the ability to move beyond the paid platform, your designer is just playing with sideshow alchemy– gold on the outside, tin foil on the inside.
 
-<p class="text-gunmetal">Tom Smith can deploy, and manually edit afterwards.</p>
+Tom Smith can deploy, and manually edit afterwards.
 
-<hr>
+---
 
-<h2 class="text-3xl font-bold text-gunmetal">Can your designer write copy? Because their copywriter mother kept them up until 3am?</h2>
+## Can your designer write copy? Because their copywriter mother kept them up until 3am?
 
-<p class="text-gunmetal">Does your designer have a built-in knack for word-smithing because their mother kept them up until 3 in the morning revising an essay until it met her standards?</p>
+Does your designer have a built-in knack for word-smithing because their mother kept them up until 3 in the morning revising an essay until it met her standards?
 
-<p class="text-gunmetal">Tom Smith’s mother kept him up late.</p>
+Tom Smith’s mother kept him up late.
 
-<hr>
+---
 
-<h2 class="text-3xl font-bold text-gunmetal">Those are some cute social graphics? Can your designer animate them?</h2>
+## Those are some cute social graphics? Can your designer animate them?
 
-<p class="text-gunmetal">Static graphics are ‘old hat’. Tik Tok and Instagram attention spans demand motion. Can your designer animate in AfterEffects? No? Sad.</p>
+Static graphics are ‘old hat’. Tik Tok and Instagram attention spans demand motion. Can your designer animate in AfterEffects? No? Sad.
 
-<p class="text-gunmetal"><a href="/portfolio/motion-graphics/">Tom Smith can animate</a>.</p>
+[Tom Smith can animate](/portfolio/motion-graphics/).
 
-<hr>
+---
 
-<h2 class="text-3xl font-bold text-gunmetal">Does your designer augment their output with AI?</h2>
+## Does your designer augment their output with AI?
 
-<p class="text-gunmetal">Do they vibe code tools to batch-optimize images to be less than 150kb WebP files with web-friendly file names? Do they use the Codex plugin for VSCode to navigate their way through a tech stack they only half-understand?</p>
+Do they vibe code tools to batch-optimize images to be less than 150kb WebP files with web-friendly file names? Do they use the Codex plugin for VSCode to navigate their way through a tech stack they only half-understand?
 
-<p class="text-gunmetal">Tom Smith augments with AI.</p>
+Tom Smith augments with AI.
 
-<hr>
+---
 
-<h2 class="text-3xl font-bold text-gunmetal">Can you designer take projects from concept to shipment?</h2>
+## Can you designer take projects from concept to shipment?
 
-<p class="text-gunmetal">Can they build a brand from the ground up? Define the voice and build content? Design a robust marketing suite? Develop and deploy a landing page and define KPIs? Build and hack together an MVP? They can’t? Bummer.</p>
+Can they build a brand from the ground up? Define the voice and build content? Design a robust marketing suite? Develop and deploy a landing page and define KPIs? Build and hack together an MVP? They can’t? Bummer.
 
-<p class="text-gunmetal">Tom Smith can.</p>
+Tom Smith can.
 
-<hr>
+---
 
-<h2 class="text-3xl font-bold text-gunmetal">Is your designer good at designing?</h2>
+## Is your designer good at designing?
 
-<p class="text-gunmetal">Or are they a glorified business consultant with a ‘creative flare’ who went chasing after the UX payday– cannibalizing design systems and sacrificing basic design sensibilities in favor of trends.</p>
+Or are they a glorified business consultant with a ‘creative flare’ who went chasing after the UX payday– cannibalizing design systems and sacrificing basic design sensibilities in favor of trends.
 
-<p class="text-gunmetal">Tom Smith is a designer at his core– trained and tested before the industry lost its soul.</p>
+Tom Smith is a designer at his core– trained and tested before the industry lost its soul.
 
-<hr>
+---
 
-<h2 class="text-3xl font-bold text-gunmetal">So, how did your designer score?</h2>
+## So, how did your designer score?
 
-<p class="text-gunmetal">Did they check all the boxes? Or are there some areas for improvement?</p>
+Did they check all the boxes? Or are there some areas for improvement?
 
-<p class="text-gunmetal">If you think it’s time for an upgrade, or maybe just time to supercharge your design team, then <a href="https://calendly.com/hiretomsmith/hiretomsmith">book a call with me</a> (Tom Smith) today.</p>
-
-
+If you think it’s time for an upgrade, or maybe just time to supercharge your design team, then [book a call with me](https://calendly.com/hiretomsmith/hiretomsmith) (Tom Smith) today.

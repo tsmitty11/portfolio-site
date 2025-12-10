@@ -13,7 +13,7 @@ summary: "Tom Smith is an evergreen talent and 'Jack-of-All-Trades' who can occu
 reading_time: 4
 ---
 
-![Tom Smith Design logo plus the word 'you'.](/images/5-reasons-og-image.jpg)
+<img src="/images/5-reasons-og-image.jpg" alt="Tom Smith Design logo plus the word 'you'." class="rounded-lg">
 
 ## 1. Tom Smith is an evergreen talent; as valuable in 10 years as he is today.
 

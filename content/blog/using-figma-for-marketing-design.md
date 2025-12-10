@@ -13,7 +13,7 @@ summary: "'Figma isn’t just for UI/UX… it’s a powerful tool for marketing 
 reading_time: 8
 ---
 
-![Figma for Marketing Design](/images/figma-marketing-design-og-image.jpg)
+<img src="/images/figma-marketing-design-og-image.jpg" alt="Figma for Marketing Design" class="rounded-lg">
 
 Thought Figma was just for UI/UX?
 
@@ -21,7 +21,7 @@ Think again! While interfaces and website designs are definitely Figma’s bread
 
 I used to keep Figma in its own lane… product design and websites… but now it’s probably one of my most-used apps. Here are a few reasons why you might consider branching out and using Figma for a wider breadth of graphic design tasks.
 
-![Figma used for marketing design - screenshot](/images/figma-screenshot-inline-image.jpg)
+<img src="/images/figma-screenshot-inline-image.jpg" alt="Figma used for marketing design - screenshot" class="rounded-lg">
 
 ## Online Figma collaboration: Enabling non-designers to critique, edit, and export design assets
 

@@ -13,17 +13,17 @@ summary: "Naming your business? This quick business name brainstorming checklist
 reading_time: 8
 ---
 
-![Business Name Brainstorming Checklist](/images/business-name-brainstorming-checklist-og-image.jpg)
+<img src="/images/business-name-brainstorming-checklist-og-image.jpg" alt="Business Name Brainstorming Checklist" class="rounded-lg">
 
 So, you’ve got an idea for the next big thing, and you think you’ve got the perfect name. But have you checked all of your boxes? Follow these steps to make sure your “perfect name” doesn’t shoot you in the foot before you’ve left the gate.
 
-![No trespassing sign (intended to represent trademarking)](/images/business-name-checklist-inline-image-01.jpg)
+<img src="/images/business-name-checklist-inline-image-01.jpg" alt="No trespassing sign (intended to represent trademarking)" class="rounded-lg">
 
 ## 1. Is the name trademarked by someone else?
 
 Does someone else have legal ownership of your business name? Think of this as a pre-flight check; if somebody else owns the trademark for your would-be name, then it’s a non-starter. You can use the [United States Patent and Trademark Office (USPTO)](https://www.uspto.gov/trademarks/search) website to search for your business name for free. Note that your name may come up as “dead” or “abandoned” (in which case, you’re good to go), but if it’s listed as “active,” you’ll need to revisit the drawing board.
 
-![Two people pointing at a laptop screen while looking for a web domain](/images/business-name-checklist-inline-image-02.jpg)
+<img src="/images/business-name-checklist-inline-image-02.jpg" alt="Two people pointing at a laptop screen while looking for a web domain" class="rounded-lg">
 
 ## 2. Is the web domain available?
 
@@ -35,7 +35,7 @@ Also, if somebody else owns the “.com” and you go with “.co,” for exampl
 
 In short, “.com” is still the Kleenex of the tech world.
 
-![Is your business name easy to spell?](/images/business-name-checklist-inline-image-03.jpg)
+<img src="/images/business-name-checklist-inline-image-03.jpg" alt="Is your business name easy to spell?" class="rounded-lg">
 
 ## 3. Is it easy to spell? Or at least sound out?
 
@@ -45,7 +45,7 @@ The solution? Use a recognizable word, or series of simple, recognizable words f
 
 Some notable exceptions to this rule include “Lyft” and “Chipotle.” The former is a clear misspelling of “lift,” and as for the latter, we all have that one aunt who pronounces it “Chi-pottle.” However, “Lyft” is simple enough to be memorable and compensate for its spelling. Chipotle is all brick-and-mortar locations… so people just need to recognize it on the highway, not spell it.
 
-![Are the social media handles for your business name available?](/images/business-name-checklist-inline-image-04.jpg)
+<img src="/images/business-name-checklist-inline-image-04.jpg" alt="Are the social media handles for your business name available?" class="rounded-lg">
 
 ## 4. Are the social media handles available?
 
@@ -55,7 +55,7 @@ For example, if you’re a fashion brand, you should definitely have Instagram a
 
 If handles are taken on other, non-imperative platforms, it’s not the end of the world. But make sure the accounts owned by other people aren’t posting offensive content, or content that your audience would otherwise be turned off by.
 
-![Is the entity name available?](/images/business-name-checklist-inline-image-05.jpg)
+<img src="/images/business-name-checklist-inline-image-05.jpg" alt="Is the entity name available?" class="rounded-lg">
 
 ## 5. Is the entity name available in your state?
 
@@ -71,4 +71,4 @@ If you’ve got your name picked out and you’re ready to bring it to life, [re
 
 Whatever you decide, best of luck with your business endeavors. Until next time!
 
-[![Hire Tom Smith today!](/images/blog-cta-banner.jpg)](https://calendly.com/hiretomsmith/hiretomsmith)
+<a href="https://calendly.com/hiretomsmith/hiretomsmith"><img src="/images/blog-cta-banner.jpg" alt="Hire Tom Smith today!" class="rounded-lg"></a>

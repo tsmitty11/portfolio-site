@@ -13,7 +13,7 @@ summary: "A quick benchmark assessment to pressure-test whether your designer is
 reading_time: 1
 ---
 
-![Tom Smith Design logo plus the word 'you'.](/images/2026-benchmark-og-image.webp)
+<img src="/images/2026-benchmark-og-image.webp" alt="Tom Smith Design logo plus the word 'you'." class="rounded-lg">
 
 Think of this as a benchmark assessment for your designer or design team. If they can do everything on this page– awesome. If not, maybe it’s time for an upgrade.
 

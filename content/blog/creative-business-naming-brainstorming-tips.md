@@ -13,7 +13,7 @@ summary: "Coming up with your business name should be a fun and exciting process
 reading_time: 8
 ---
 
-![An illustration of a light bulb with a '7' inside, representing the seven brainstorming tips.](/images/7-tips-og-image.jpg)
+<img src="/images/7-tips-og-image.jpg" alt="An illustration of a light bulb with a '7' inside, representing the seven brainstorming tips." class="rounded-lg">
 
 Coming up with a good business name is often the most exciting part of any new venture. It’s that quintessential, epiphanic moment that hits you while you’re grabbing a beer with friends or while you’re scrubbing up in the shower. Of course it’s great when it just comes to you, but the creative process is seldom so convenient. Sometimes, you really need to work at and grind on the proverbial drawing board.
 

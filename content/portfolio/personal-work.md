@@ -19,6 +19,9 @@ gallery:
   - src: "/images/tom-smith-design-sneakers.jpg"
     lightbox: "/images/tom-smith-design-sneakers.jpg"
     alt: "Hand-painted Converse sneakers, using POSCA Pens"
+  - src: "/images/hoodie-lifestyle-mockup-web-cropped.webp"
+    lightbox: "/images/hoodie-lifestyle-mockup-web-cropped.webp"
+    alt: "Close-up image of 'Tom Smith Design' signature hoodie."
 overview: "This is a collection of personal works I've done over the years, ranging from illustration to apparel. While I'm passionate about the work I do for clients, these items give you a peek 'under the hood', so to speak."
 features:
   - "Illustration"

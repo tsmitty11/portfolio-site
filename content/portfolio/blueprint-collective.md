@@ -20,6 +20,12 @@ gallery:
   - src: "/images/portfolio/blueprint-collective/blueprint-collective-logos.webp"
     lightbox: "/images/portfolio/blueprint-collective/blueprint-collective-logos.webp"
     alt: "Blueprint Collective logos"
+  - src: "/images/portfolio/blueprint-collective/blueprint-collective-social-assets.webp"
+    lightbox: "/images/portfolio/blueprint-collective/blueprint-collective-social-assets.webp"
+    alt: "Blueprint Collective social assets"
+  - src: "/images/portfolio/blueprint-collective/blueprint-collective-one-pager-mockup.webp"
+    lightbox: "/images/portfolio/blueprint-collective/blueprint-collective-one-pager-mockup.webp"
+    alt: "Blueprint Collective One-Pager"
 overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis, ligula ut pellentesque feugiat, sem mi malesuada augue, sit amet fringilla mi odio ac quam. Suspendisse potenti."
 features:
   - "Brand Strategy"

@@ -20,6 +20,10 @@ gallery:
     lightbox: "/images/portfolio/motion graphics/totalsynergy-x-factor-v5-logo-change.mp4"
     alt: "Total Synergy x Factor promotional motion graphic"
     video: true
+  - src: "/images/2025-wrapped-thumbnail.webp"
+    lightbox: "/images/2025-wrapped-teaser.mp4"
+    alt: "Teaser animation of a '2025 Wrapped' series"
+    video: true
 overview: "Total Synergy is an Australian project management software designed for architects and engineers."
 features:
   - "Art Direction"

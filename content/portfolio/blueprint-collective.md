@@ -14,6 +14,12 @@ gallery:
     lightbox: "/images/portfolio/blueprint-collective/bpc-outro.mp4"
     alt: "Blueprint Collective podcast outro animation"
     video: "true"
+  - src: "/images/portfolio/blueprint-collective/blueprint-collective-logo-primary.webp"
+    lightbox: "/images/portfolio/blueprint-collective/blueprint-collective-logo-primary.webp"
+    alt: "Blueprint Collective logo - primary"
+  - src: "/images/portfolio/blueprint-collective/blueprint-collective-logos.webp"
+    lightbox: "/images/portfolio/blueprint-collective/blueprint-collective-logos.webp"
+    alt: "Blueprint Collective logos"
 overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis, ligula ut pellentesque feugiat, sem mi malesuada augue, sit amet fringilla mi odio ac quam. Suspendisse potenti."
 features:
   - "Brand Strategy"

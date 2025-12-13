@@ -26,7 +26,7 @@ gallery:
   - src: "/images/portfolio/blueprint-collective/blueprint-collective-one-pager-mockup.webp"
     lightbox: "/images/portfolio/blueprint-collective/blueprint-collective-one-pager-mockup.webp"
     alt: "Blueprint Collective One-Pager"
-overview: "Blueprint Collective is a product/subsidiary of Total Synergy, developed as vehicle for thought leadership by their marketing team. As part of my engagement with them, I was tasked with created the brand, as well as accompanying marketing assets."
+overview: "Blueprint Collective is a product/subsidiary of Total Synergy, developed as a vehicle for thought leadership by their marketing team. As part of my engagement with them, I was tasked with creating the brand, as well as accompanying marketing assets."
 features:
   - "Branding Design"
   - "Identity Design"

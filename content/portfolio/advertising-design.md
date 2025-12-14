@@ -12,13 +12,13 @@ gallery:
   - src: "/images/portfolio/advertising-design/advertising-design-02.jpg"
     lightbox: "/images/portfolio/advertising-design/advertising-design-02.jpg"
     alt: "Advertising layout variation"
-overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac lorem ut orci faucibus egestas. Quisque tristique sem enim, a malesuada metus laoreet id."
+overview: "These are graphics and animations I've produced over the years in support of commercial marketing initiatives. 'Advertising Design' is a broad category, but here, you'll find everything from display ads to posters to social media graphics."
 features:
   - "Campaign Design"
   - "Copywriting"
   - "Layout Design"
   - "Art Direction"
 videoURL: ""
-background: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac molestie leo, nec egestas diam. Vivamus vulputate mauris non iaculis dapibus, sed aliquet massa efficitur."
-challenge: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida, libero id hendrerit maximus, lacus lorem posuere leo, at congue arcu risus quis velit."
+background: "I've supported a lot of marketing teams with advertising design. CMOs and Marketing Managers love working with me because I can produce anything they dream up... whether it be a graphic, an animation, a landing page... the sky's the limit. Get in touch to inquire about getting me on retainer to supercharge your marketing and advertising initiatives."
+challenge: "The challenge with advertising design is balancing aesthetics with the goals of the campaign... not to mention the technical constraints associated with different platforms. Each type of deliverable has its own little puzzle."
 ---

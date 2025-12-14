@@ -9,9 +9,9 @@ gallery:
   - src: "/images/marketing-comp.webp"
     lightbox: "/images/marketing-comp.webp"
     alt: "Advertising design hero mockup"
-  - src: "/images/portfolio/advertising-design/advertising-design-02.jpg"
-    lightbox: "/images/portfolio/advertising-design/advertising-design-02.jpg"
-    alt: "Advertising layout variation"
+  - src: "/images/landingpages-comp.jpg"
+    lightbox: "/images/landingpages-comp.jpg"
+    alt: "Assorted landing page designs"
 overview: "These are graphics and animations I've produced over the years in support of commercial marketing initiatives. 'Advertising Design' is a broad category, but here, you'll find everything from display ads to posters to social media graphics."
 features:
   - "Campaign Design"

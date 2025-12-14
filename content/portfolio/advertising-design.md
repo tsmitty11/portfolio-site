@@ -1,0 +1,30 @@
+---
+title: "Advertising Design"
+weight: 160
+Description: "A collection of display ads, posters, social graphics, and motion pieces created to support commercial marketing campaigns."
+ogimage: ""
+websiteURL: ""
+contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
+gallery:
+  - src: "/images/marketing-comp.webp"
+    lightbox: "/images/marketing-comp.webp"
+    alt: "Advertising design hero mockup"
+  - src: "/images/landingpages-comp.jpg"
+    lightbox: "/images/landingpages-comp.jpg"
+    alt: "Assorted landing page designs"
+  - src: "/images/portfolio/tea-hoodie/tea-lisbon-poster.jpg"
+    lightbox: "/images/portfolio/tea-hoodie/tea-lisbon-poster.jpg"
+    alt: "Poster or conference in Lisbon"
+  - src: "/images/portfolio/print-design/tidus-standup-banner.jpg"
+    lightbox: "/images/portfolio/print-design/tidus-standup-banner.jpg"
+    alt: "Standup banner for Tidus Wallet."
+overview: "These are graphics and animations I've produced over the years in support of commercial marketing initiatives. 'Advertising Design' is a broad category, but here, you'll find everything from display ads to posters to social media graphics."
+features:
+  - "Campaign Design"
+  - "Copywriting"
+  - "Layout Design"
+  - "Art Direction"
+videoURL: ""
+background: "I've supported a lot of marketing teams with advertising design. CMOs and Marketing Managers love working with me because I can produce anything they dream up... whether it be a graphic, an animation, a landing page... the sky's the limit. Get in touch to inquire about getting me on retainer to supercharge your marketing and advertising initiatives."
+challenge: "The challenge with advertising design is balancing aesthetics with the goals of the campaign... not to mention the technical constraints associated with different platforms. Each type of deliverable has its own little puzzle."
+---

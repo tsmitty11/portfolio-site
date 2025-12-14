@@ -1,7 +1,7 @@
 ---
 title: "Advertising Design"
 weight: 160
-Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, leo sed gravida efficitur, neque nisi varius lectus, quis semper nisl eros vel ligula."
+Description: "A collection of display ads, posters, social graphics, and motion pieces created to support commercial marketing campaigns."
 ogimage: "/images/portfolio/advertising-design/advertising-design-og-image.jpg"
 websiteURL: ""
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"

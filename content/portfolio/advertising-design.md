@@ -12,6 +12,12 @@ gallery:
   - src: "/images/landingpages-comp.jpg"
     lightbox: "/images/landingpages-comp.jpg"
     alt: "Assorted landing page designs"
+  - src: "/images/portfolio/tea-hoodie/tea-lisbon-poster.jpg"
+    lightbox: "/images/portfolio/tea-hoodie/tea-lisbon-poster.jpg"
+    alt: "Poster or conference in Lisbon"
+  - src: "/images/portfolio/print-design/tidus-standup-banner.jpg"
+    lightbox: "/images/portfolio/print-design/tidus-standup-banner.jpg"
+    alt: "Standup banner for Tidus Wallet."
 overview: "These are graphics and animations I've produced over the years in support of commercial marketing initiatives. 'Advertising Design' is a broad category, but here, you'll find everything from display ads to posters to social media graphics."
 features:
   - "Campaign Design"

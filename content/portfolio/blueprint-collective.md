@@ -1,8 +1,8 @@
 ---
 title: "Blueprint Collective"
 weight: 150
-Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut urna sed justo volutpat gravida vehicula vitae neque."
-ogimage: "/images/portfolio/blueprint-collective/blueprint-collective-og-image.jpg"
+Description: "Brand identity, motion graphics, and marketing collateral created for Blueprint Collective, a thought-leadership spin-off from Total Synergy."
+ogimage: ""
 websiteURL: ""
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:

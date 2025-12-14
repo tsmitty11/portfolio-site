@@ -2,7 +2,7 @@
 title: "Advertising Design"
 weight: 160
 Description: "A collection of display ads, posters, social graphics, and motion pieces created to support commercial marketing campaigns."
-ogimage: "/images/portfolio/advertising-design/advertising-design-og-image.jpg"
+ogimage: ""
 websiteURL: ""
 contactURL: "https://calendly.com/hiretomsmith/hiretomsmith"
 gallery:

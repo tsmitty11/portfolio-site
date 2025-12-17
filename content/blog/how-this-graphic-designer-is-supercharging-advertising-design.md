@@ -79,7 +79,7 @@ When you have someone like Tom Smith handling creative across all marketing chan
 
 ## Make 2026 the year you supercharge your marketing team with a bad-ass, do-anything designer
 
-Tom Smith is available for retainer agreements. Get 40 hours per month for $3,000 USD (per month), which equates to roughly 40-60 tasks per month*.
+Tom Smith is available for retainer agreements. Get 40 hours per month for $3,000 USD (per month).
 
 Again, that’s for world-class design, animation, web development, brand adherence, company-wide editability, etc. Compare that to the cost of piece-mealing freelancers from across the web– not just the labor cost itself, but the cost of your time in vetting them, the cost of squashed/unusable assets, freelancer turnover.
 

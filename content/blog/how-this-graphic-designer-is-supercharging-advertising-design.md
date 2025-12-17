@@ -1,16 +1,16 @@
 ---
 title: "How This Graphic Designer is Supercharging Advertising Design for Marketing Teams in 2026"
-Description: "Use this 2026 benchmark to assess if your designer can span product strategy, systems thinking, and high-velocity production."
+Description: "Tom Smith shares how he partners with CMOs to deliver on-demand advertising design—covering strategy, development, motion, and scalable asset systems."
 date: 2025-12-17T00:00:00Z
 author: "Tom Smith"
 type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Information"
-featured_image: "/images/2026-benchmark-banner.webp"
-ogimage: "/images/2026-benchmark-og-image.webp"
-summary: "A quick benchmark assessment to pressure-test whether your designer is ready for the 2026 marketing and product landscape."
-reading_time: 1
+featured_image: "/images/advertising-design-2026-banner.jpg"
+ogimage: "/images/advertising-design-2026-og-image.jpg"
+summary: "Marketing teams in 2026 need a creative all-rounder. Here’s how Tom Smith runs strategy-led campaigns, builds modular systems, animates everything, and keeps assets editable for marketers on the move."
+reading_time: 6
 ---
 
 The world is moving faster than ever, and with that, marketing teams are needing creative one-stop shops who can churn out assets and bring their campaigns to life as efficiently as possible.
@@ -88,7 +88,6 @@ The TLDR is that Tom saves you time, money, and headaches.
 I never know how to end blog posts eloquently, so just make like Vin Diesel and inject some NOS into your 2026 marketing budget. 
 
 Cheers. 
-
 
 
 

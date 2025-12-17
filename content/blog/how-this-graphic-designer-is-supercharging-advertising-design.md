@@ -23,7 +23,7 @@ Here’s a few examples of how Tom’s been changing the game for marketing team
 
 ## He’s a true one-stop shop, providing marketers with access to design, animation, video production, and web development 
 
-Piece-mealing freelancers together by way of Upwork and Fiverr is cool, but what if one contractor satiated all of your creative needs? 
+Piecemealing freelancers together by way of Upwork and Fiverr is cool, but what if one contractor satiated all of your creative needs? 
 
 Tom Smith wields a truly unmatched grasp over every aspect of the modern creative industry. Need display ads and social graphics? Done. Need an attention-grabbing animation for stories or reels? Also done. Need a targeted landing page designed, developed, and deployed from scratch? Also, also done.
 

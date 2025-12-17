@@ -89,6 +89,8 @@ I never know how to end blog posts eloquently, so just make like Vin Diesel and 
 
 Cheers. 
 
+<img class="rounded-lg" href="https://calendly.com/hiretomsmith/hiretomsmith" src="/images/blog-cta-banner-marketing.webp" alt="Book a 30-minute call with Tom Smith">
+
 
 
 

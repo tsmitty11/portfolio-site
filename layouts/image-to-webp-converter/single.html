@@ -18,7 +18,19 @@
     </div>
 
     <p id="converter-status" class="text-sm text-gray-400 mb-4"></p>
-    <div id="converter-results" class="space-y-4"></div>
+
+    <div id="converter-results-wrapper" class="hidden">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
+            <h2 class="text-lg font-semibold text-whiteSmoke">Results</h2>
+            <div class="flex items-center gap-2">
+                <button id="download-all" type="button" class="inline-flex items-center text-sm font-semibold text-coral hover:text-whiteSmoke transition">Download all</button>
+                <span class="text-gray-600">•</span>
+                <button id="clear-results" type="button" class="inline-flex items-center text-sm font-semibold text-gray-400 hover:text-whiteSmoke transition">Clear results</button>
+            </div>
+        </div>
+        <hr class="border-gray-800 mb-4">
+        <div id="converter-results" class="space-y-4"></div>
+    </div>
 </section>
 
 <script>
@@ -27,7 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropzone = document.getElementById('dropzone');
     const fileInput = document.getElementById('dropzone-file');
     const statusEl = document.getElementById('converter-status');
+    const resultsWrapper = document.getElementById('converter-results-wrapper');
     const resultsEl = document.getElementById('converter-results');
+    const downloadAllBtn = document.getElementById('download-all');
+    const clearBtn = document.getElementById('clear-results');
+    const createdDownloads = new Set();
     let activeTasks = 0;
 
     const slugify = (value) => value
@@ -112,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const tempCard = document.createElement('div');
             tempCard.className = 'rounded-xl border border-gray-800 bg-gray-800/60 p-4 text-sm text-gray-300';
             tempCard.textContent = `Processing ${file.name}…`;
-            resultsEl.prepend(tempCard);
+        resultsWrapper.classList.remove('hidden');
+        resultsEl.prepend(tempCard);
 
             try {
                 const dataUrl = await readFile(file);
@@ -126,13 +143,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 const objectUrl = URL.createObjectURL(optimized.blob);
+                const newName = `${slugify(file.name.replace(/\.[^/.]+$/, ''))}.webp`;
                 tempCard.outerHTML = renderResultCard(file, optimized, objectUrl, optimized.hitTarget);
+                createdDownloads.add({ url: objectUrl, name: newName });
 
-                const downloadLink = resultsEl.querySelector('a[href="' + objectUrl + '"]');
+                const downloadLink = resultsEl.querySelector(`a[href="${objectUrl}"]`);
                 if (downloadLink) {
-                    const cleanup = () => URL.revokeObjectURL(objectUrl);
-                    downloadLink.addEventListener('click', () => setTimeout(cleanup, 2000));
-                    setTimeout(cleanup, 60000);
+                    downloadLink.addEventListener('click', () => {
+                        setTimeout(() => {
+                            URL.revokeObjectURL(objectUrl);
+                            createdDownloads.forEach((item) => {
+                                if (item.url === objectUrl) createdDownloads.delete(item);
+                            });
+                        }, 2000);
+                    });
+                } else {
+                    setTimeout(() => {
+                        URL.revokeObjectURL(objectUrl);
+                        createdDownloads.forEach((item) => {
+                            if (item.url === objectUrl) createdDownloads.delete(item);
+                        });
+                    }, 60000);
                 }
             } catch (error) {
                 console.error(error);
@@ -171,6 +202,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 handleFiles(files);
             }
         });
+    });
+
+    downloadAllBtn.addEventListener('click', () => {
+        if (!createdDownloads.size) return;
+        createdDownloads.forEach(({ url, name }) => {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = name;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    });
+
+    clearBtn.addEventListener('click', () => {
+        resultsEl.innerHTML = '';
+        resultsWrapper.classList.add('hidden');
+        createdDownloads.forEach(({ url }) => URL.revokeObjectURL(url));
+        createdDownloads.clear();
+        setStatus('');
     });
 });
 </script>

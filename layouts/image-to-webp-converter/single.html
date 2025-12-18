@@ -19,7 +19,7 @@
 
     <p id="converter-status" class="text-sm text-gray-400 mb-2"></p>
     <div id="converter-loading" class="hidden mb-4 flex items-center gap-2 text-sm text-gray-300">
-        <svg class="w-5 h-5 animate-spin text-coral" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 animate-spin text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
         </svg>
@@ -29,9 +29,9 @@
     <div id="converter-results-wrapper" class="hidden">
         <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
             <h2 class="text-lg font-semibold text-whiteSmoke">Results</h2>
-            <div class="flex items-center gap-2">
-                <button id="download-all" type="button" class="inline-flex items-center text-sm font-semibold text-coral hover:text-whiteSmoke transition">Download all</button>
-                <span class="text-gray-600">|</span>
+            <div class="flex items-center gap-3">
+                <button id="download-all" type="button" class="inline-flex items-center text-sm font-semibold text-primary-500 hover:text-whiteSmoke transition">Download all</button>
+                <span class="block h-4 w-px bg-gray-700"></span>
                 <button id="clear-results" type="button" class="inline-flex items-center text-sm font-semibold text-gray-400 hover:text-whiteSmoke transition">Clear results</button>
             </div>
         </div>
@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="rounded-xl border border-gray-800 bg-gray-800/80 p-4 shadow flex flex-col gap-4 md:flex-row md:items-center">
                 <img src="${objectUrl}" alt="${newName}" class="w-full max-w-[120px] rounded-lg border border-gray-700 object-cover">
                 <div class="flex-1 space-y-2">
-                    <p class="text-sm text-gray-300"><span class="font-semibold">${file.name}</span> → <code class="text-coral">${newName}</code></p>
-                    <p class="text-sm text-gray-400">Size: ${formatSize(file.size)} → ${formatSize(meta.blob.size)} (${reduction}% smaller)</p>
+                    <p class="text-sm text-gray-300"><span class="font-semibold">${file.name}</span> → <code class="text-primary-500">${newName}</code></p>
+                    <p class="text-sm text-primary-500">Size: ${formatSize(file.size)} → ${formatSize(meta.blob.size)} (${reduction}% smaller)</p>
                     <p class="text-xs text-gray-500">${meta.width} × ${meta.height}px · Quality ${(meta.quality * 100).toFixed(0)}${hitTarget ? '%' : '% (best effort)'}</p>
                 </div>
                 <div class="flex flex-col gap-2">
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tempCard = document.createElement('div');
             tempCard.className = 'rounded-xl border border-gray-800 bg-gray-800/60 p-4 text-sm text-gray-300 flex items-center gap-3';
             tempCard.innerHTML = `
-                <svg class="w-6 h-6 animate-spin text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 animate-spin text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
                 </svg>

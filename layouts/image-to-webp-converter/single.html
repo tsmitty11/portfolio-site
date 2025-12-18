@@ -17,14 +17,21 @@
         </label>
     </div>
 
-    <p id="converter-status" class="text-sm text-gray-400 mb-4"></p>
+    <p id="converter-status" class="text-sm text-gray-400 mb-2"></p>
+    <div id="converter-loading" class="hidden mb-4 flex items-center gap-2 text-sm text-gray-300">
+        <svg class="w-5 h-5 animate-spin text-coral" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+        </svg>
+        <span>Crunching pixels…</span>
+    </div>
 
     <div id="converter-results-wrapper" class="hidden">
         <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
             <h2 class="text-lg font-semibold text-whiteSmoke">Results</h2>
             <div class="flex items-center gap-2">
                 <button id="download-all" type="button" class="inline-flex items-center text-sm font-semibold text-coral hover:text-whiteSmoke transition">Download all</button>
-                <span class="text-gray-600">•</span>
+                <span class="text-gray-600">|</span>
                 <button id="clear-results" type="button" class="inline-flex items-center text-sm font-semibold text-gray-400 hover:text-whiteSmoke transition">Clear results</button>
             </div>
         </div>
@@ -39,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropzone = document.getElementById('dropzone');
     const fileInput = document.getElementById('dropzone-file');
     const statusEl = document.getElementById('converter-status');
+    const loadingEl = document.getElementById('converter-loading');
     const resultsWrapper = document.getElementById('converter-results-wrapper');
     const resultsEl = document.getElementById('converter-results');
     const downloadAllBtn = document.getElementById('download-all');
@@ -100,6 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
         statusEl.textContent = message || '';
     };
 
+    const updateLoading = () => {
+        if (activeTasks > 0) {
+            loadingEl.classList.remove('hidden');
+        } else {
+            loadingEl.classList.add('hidden');
+        }
+    };
+
     const renderResultCard = (file, meta, objectUrl, hitTarget) => {
         const reduction = Math.max(0, 100 - ((meta.blob.size / file.size) * 100)).toFixed(1);
         const newName = `${slugify(file.name.replace(/\.[^/.]+$/, ''))}.webp`;
@@ -123,13 +139,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!files.length) return;
         activeTasks += files.length;
         setStatus('Converting images…');
+        updateLoading();
 
         for (const file of files) {
             const tempCard = document.createElement('div');
-            tempCard.className = 'rounded-xl border border-gray-800 bg-gray-800/60 p-4 text-sm text-gray-300';
-            tempCard.textContent = `Processing ${file.name}…`;
-        resultsWrapper.classList.remove('hidden');
-        resultsEl.prepend(tempCard);
+            tempCard.className = 'rounded-xl border border-gray-800 bg-gray-800/60 p-4 text-sm text-gray-300 flex items-center gap-3';
+            tempCard.innerHTML = `
+                <svg class="w-6 h-6 animate-spin text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                </svg>
+                <span>Processing <span class="font-semibold">${file.name}</span>…</span>
+            `;
+            resultsWrapper.classList.remove('hidden');
+            resultsEl.prepend(tempCard);
 
             try {
                 const dataUrl = await readFile(file);
@@ -173,9 +196,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 activeTasks -= 1;
                 if (activeTasks <= 0) {
                     setStatus('All conversions complete.');
+                    updateLoading();
                     setTimeout(() => setStatus(''), 4000);
                 } else {
                     setStatus(`Converting images… (${activeTasks} remaining)`);
+                    updateLoading();
                 }
             }
         }
@@ -219,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearBtn.addEventListener('click', () => {
         resultsEl.innerHTML = '';
         resultsWrapper.classList.add('hidden');
+        loadingEl.classList.add('hidden');
         createdDownloads.forEach(({ url }) => URL.revokeObjectURL(url));
         createdDownloads.clear();
         setStatus('');

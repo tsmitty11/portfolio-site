@@ -7,11 +7,13 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Information"
-featured_image: "/images/advertising-design-2026-banner.jpg"
-ogimage: "/images/advertising-design-2026-og-image.jpg"
+featured_image: "/images/supercharge-your-marketing-team-banner.webp"
+ogimage: "/images/supercharge-your-marketing-team.webp"
 summary: "Marketing teams in 2026 need a creative all-rounder. Here’s how Tom Smith runs strategy-led campaigns, builds modular systems, animates everything, and keeps assets editable for marketers on the move."
 reading_time: 6
 ---
+
+<img class="rounded-lg" src="/images/supercharge-your-marketing-team.webp" alt="Supercharge Your Marketing Team">
 
 The world is moving faster than ever, and with that, marketing teams are needing creative one-stop shops who can churn out assets and bring their campaigns to life as efficiently as possible.
 

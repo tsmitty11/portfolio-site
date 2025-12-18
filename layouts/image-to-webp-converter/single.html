@@ -2,21 +2,178 @@
 
 <section class="max-w-3xl mx-auto rounded-2xl border border-gray-800 bg-gray-900/60 p-8 shadow-2xl text-whiteSmoke">
     <h1 class="mb-2 text-3xl font-semibold text-whiteSmoke">Free Image to WebP Converter</h1>
-    <p class="mb-6 text-gray-300">Drop an image below and we’ll convert it into a lightweight WebP. Everything runs client-side.</p>
+    <p class="mb-6 text-gray-300">Drop images below and we’ll convert them into lightweight WebPs (≤150 KB) with web-friendly file names. Everything runs client-side.</p>
 
-    <div class="flex items-center justify-center w-full cursor-pointer">
+    <div id="dropzone" class="flex items-center justify-center w-full mb-6 cursor-pointer">
         <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 rounded-2xl border-2 border-dashed border-gray-500 bg-gray-800/80 hover:bg-gray-800 transition">
-            <div class="flex flex-col items-center justify-center pt-5 pb-6 text-gray-300">
+            <div class="flex flex-col items-center justify-center pt-5 pb-6 text-gray-300 pointer-events-none">
                 <svg class="w-10 h-10 mb-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h3a3 3 0 0 0 0-6h-.025a5.56 5.56 0 0 0 .025-.5A5.5 5.5 0 0 0 7.207 9.021C7.137 9.017 7.071 9 7 9a4 4 0 1 0 0 8h2.167M12 19v-9m0 0-2 2m2-2 2 2"/>
                 </svg>
                 <p class="mb-2 text-sm font-semibold text-whiteSmoke">Click to upload or drag & drop</p>
-                <p class="text-xs text-gray-400">PNG, JPG, GIF or SVG</p>
+                <p class="text-xs text-gray-400">PNG, JPG, SVG, GIF, HEIC (≤25 MB)</p>
             </div>
-            <input id="dropzone-file" type="file" class="hidden" />
+            <input id="dropzone-file" type="file" class="hidden" accept="image/*" multiple />
         </label>
     </div>
+
+    <p id="converter-status" class="text-sm text-gray-400 mb-4"></p>
+    <div id="converter-results" class="space-y-4"></div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const MAX_BYTES = 150 * 1024;
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('dropzone-file');
+    const statusEl = document.getElementById('converter-status');
+    const resultsEl = document.getElementById('converter-results');
+    let activeTasks = 0;
+
+    const slugify = (value) => value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .replace(/-{2,}/g, '-') || 'image';
+
+    const formatSize = (bytes) => `${(bytes / 1024).toFixed(1)} KB`;
+
+    const readFile = (file) => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+
+    const canvasToBlob = (canvas, quality) => new Promise((resolve, reject) => {
+        canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error('Unable to create WebP blob.')), 'image/webp', quality);
+    });
+
+    const optimizeImage = async (img) => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        let scale = 1;
+        let best = null;
+
+        while (scale >= 0.25) {
+            const width = Math.max(1, Math.round(img.naturalWidth * scale));
+            const height = Math.max(1, Math.round(img.naturalHeight * scale));
+            canvas.width = width;
+            canvas.height = height;
+            ctx.clearRect(0, 0, width, height);
+            ctx.drawImage(img, 0, 0, width, height);
+
+            let quality = 0.92;
+            while (quality >= 0.35) {
+                const blob = await canvasToBlob(canvas, quality);
+                if (!best || blob.size < best.blob.size) {
+                    best = { blob, width, height, quality };
+                }
+                if (blob.size <= MAX_BYTES) {
+                    return { blob, width, height, quality, hitTarget: true };
+                }
+                quality -= 0.07;
+            }
+            scale -= 0.1;
+        }
+
+        return { ...best, hitTarget: best ? best.blob.size <= MAX_BYTES : false };
+    };
+
+    const setStatus = (message) => {
+        statusEl.textContent = message || '';
+    };
+
+    const renderResultCard = (file, meta, objectUrl, hitTarget) => {
+        const reduction = Math.max(0, 100 - ((meta.blob.size / file.size) * 100)).toFixed(1);
+        const newName = `${slugify(file.name.replace(/\.[^/.]+$/, ''))}.webp`;
+        return `
+            <div class="rounded-xl border border-gray-800 bg-gray-800/80 p-4 shadow flex flex-col gap-4 md:flex-row md:items-center">
+                <img src="${objectUrl}" alt="${newName}" class="w-full max-w-[120px] rounded-lg border border-gray-700 object-cover">
+                <div class="flex-1 space-y-2">
+                    <p class="text-sm text-gray-300"><span class="font-semibold">${file.name}</span> → <code class="text-coral">${newName}</code></p>
+                    <p class="text-sm text-gray-400">Size: ${formatSize(file.size)} → ${formatSize(meta.blob.size)} (${reduction}% smaller)</p>
+                    <p class="text-xs text-gray-500">${meta.width} × ${meta.height}px · Quality ${(meta.quality * 100).toFixed(0)}${hitTarget ? '%' : '% (best effort)'}</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="${objectUrl}" download="${newName}" class="inline-flex items-center justify-center rounded-lg bg-whiteSmoke px-4 py-2 text-sm font-semibold text-gunmetal hover:bg-platinum transition">Download</a>
+                    ${hitTarget ? '' : '<span class="text-[10px] uppercase tracking-wide text-amber-300 text-center">Couldn’t reach 150 KB</span>'}
+                </div>
+            </div>
+        `;
+    };
+
+    const handleFiles = async (files) => {
+        if (!files.length) return;
+        activeTasks += files.length;
+        setStatus('Converting images…');
+
+        for (const file of files) {
+            const tempCard = document.createElement('div');
+            tempCard.className = 'rounded-xl border border-gray-800 bg-gray-800/60 p-4 text-sm text-gray-300';
+            tempCard.textContent = `Processing ${file.name}…`;
+            resultsEl.prepend(tempCard);
+
+            try {
+                const dataUrl = await readFile(file);
+                const img = new Image();
+                img.src = dataUrl;
+                await img.decode();
+
+                const optimized = await optimizeImage(img);
+                if (!optimized || !optimized.blob) {
+                    throw new Error('Unable to optimize this image.');
+                }
+
+                const objectUrl = URL.createObjectURL(optimized.blob);
+                tempCard.outerHTML = renderResultCard(file, optimized, objectUrl, optimized.hitTarget);
+
+                const downloadLink = resultsEl.querySelector('a[href="' + objectUrl + '"]');
+                if (downloadLink) {
+                    const cleanup = () => URL.revokeObjectURL(objectUrl);
+                    downloadLink.addEventListener('click', () => setTimeout(cleanup, 2000));
+                    setTimeout(cleanup, 60000);
+                }
+            } catch (error) {
+                console.error(error);
+                tempCard.textContent = `Failed to convert ${file.name}: ${error.message}`;
+                tempCard.classList.add('text-red-400');
+            } finally {
+                activeTasks -= 1;
+                if (activeTasks <= 0) {
+                    setStatus('All conversions complete.');
+                    setTimeout(() => setStatus(''), 4000);
+                } else {
+                    setStatus(`Converting images… (${activeTasks} remaining)`);
+                }
+            }
+        }
+    };
+
+    fileInput.addEventListener('change', (event) => {
+        handleFiles(Array.from(event.target.files || []));
+        event.target.value = '';
+    });
+
+    const label = dropzone.querySelector('label');
+    ['dragenter', 'dragover'].forEach((type) => {
+        dropzone.addEventListener(type, (event) => {
+            event.preventDefault();
+            label.classList.add('border-white/70');
+        });
+    });
+    ['dragleave', 'drop'].forEach((type) => {
+        dropzone.addEventListener(type, (event) => {
+            event.preventDefault();
+            label.classList.remove('border-white/70');
+            if (type === 'drop') {
+                const files = Array.from(event.dataTransfer.files || []).filter((file) => file.type.startsWith('image/'));
+                handleFiles(files);
+            }
+        });
+    });
+});
+</script>
 
 
 {{ end }}

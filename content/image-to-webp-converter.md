@@ -1,5 +1,5 @@
 ---
-title: "Image to Webp Converter"
+title: "Free Online Image Compression Tool"
 Description: "Free online image compression tool. Convert images to WebP files with web-friendly names that are under 150kb."
 type: "image-to-webp-converter"
 ---

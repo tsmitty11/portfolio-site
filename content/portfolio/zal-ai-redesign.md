@@ -15,9 +15,10 @@ gallery:
   - src: "/images/portfolio/zal-ai/frame-3.webp"
     lightbox: "/images/portfolio/zal-ai/frame-3.webp"
     alt: "Components in Figma"
-  - src: "/images/portfolio/gui/gui-post-04.jpg"
-    lightbox: "/images/portfolio/gui/gui-post-04.jpg"
-    alt: "The package details screens for the OSSAPP."
+  - src: "/images/portfolio/zal-ai/frame-4.webp"
+    lightbox: "/images/portfolio/zal-ai/zal-ai-form-prototype-figma.mp4"
+    alt: "Zal.ai form redesign - Figma prototype"
+    video: true
 overview: "A redesign concept for Zal.ai. Project details coming soon."
 features:
   - "Product Design"

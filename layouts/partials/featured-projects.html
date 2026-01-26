@@ -1,0 +1,38 @@
+<section class="bg-gray-900 py-16 lg:py-24">
+    <div class="px-4 mx-auto max-w-screen-xl">
+        <div class="text-center mb-12 lg:mb-16">
+            <p class="uppercase text-coral font-semibold mb-4 text-sm tracking-widest">
+                Featured Work
+            </p>
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+                End-to-End Creative Solutions
+            </h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                From concept to deployment. These projects showcase the full creative and technical pipeline.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+            {{ $featured := where (where .Site.RegularPages "Section" "portfolio") ".Params.featured" true }}
+            {{ range sort $featured ".Params.featuredOrder" }}
+            <article class="group bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-coral transition-colors duration-300">
+                <a href="{{ .RelPermalink }}" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        {{ $image := .Params.ogimage | default (index .Params.gallery 0).src }}
+                        <img src="{{ $image }}" alt="{{ .Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-coral transition-colors">{{ .Title }}</h3>
+                        <p class="text-gray-400 mb-4 line-clamp-2">{{ .Params.Description }}</p>
+                        <div class="flex flex-wrap gap-2">
+                            {{ range first 4 .Params.features }}
+                            <span class="text-xs bg-gray-700 text-gray-300 px-3 py-1 rounded-full">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>

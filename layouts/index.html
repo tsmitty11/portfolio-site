@@ -1,12 +1,33 @@
 {{ define "main" }}
 
+{{/* 1. Hero Section */}}
+{{ partial "hero.html" . }}
+
+{{/* 2. Client Logos Carousel */}}
+{{ partial "logo-carousel.html" . }}
+
+{{/* 3. Featured Projects */}}
+{{ partial "featured-projects.html" . }}
+
+{{/* 4. Skills Matrix - 6 Pillars */}}
+{{ partial "feature-bullets.html" . }}
+
+{{/* 5. AI/Development Section */}}
+{{ partial "ai-development.html" . }}
+
+{{/* 6. X Factors / Differentiators */}}
+{{ partial "features.html" . }}
+
+{{/* 7. Testimonials */}}
+{{ partial "testimonials.html" . }}
+
+{{/* 8. Full Portfolio Grid */}}
 {{ $portfolio := site.GetPage "section" "portfolio" }}
 {{ if $portfolio }}
     {{ partial "portfolio-list.html" $portfolio }}
-{{ else }}
-    <section class="py-24 text-center">
-        <p class="text-lg text-gunmetal">Portfolio section not found.</p>
-    </section>
 {{ end }}
+
+{{/* 9. Final CTA */}}
+{{ partial "simple-cta.html" . }}
 
 {{ end }}

@@ -1,6 +1,6 @@
 baseURL = "https://tomsmith.design/"
 languageCode = "en-us"
-title = "Tom Smith Design"
+title = "Tom Smith | Full-Stack Creative"
 
 [markup]
   [markup.goldmark]

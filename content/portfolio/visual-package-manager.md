@@ -1,6 +1,8 @@
 ---
 title: "Visual Package Manager"
 weight: 130
+featured: true
+featuredOrder: 2
 Description: "A desktop app that empowers casual users to interact with the terminal and install open source software."
 ogimage: "/images/gui-og-image.jpg"
 websiteURL: "https://www.producthunt.com/products/pkgx"

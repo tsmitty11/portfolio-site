@@ -3,6 +3,7 @@ title: "Personal Work"
 weight: 140
 Description: "Some of the more whimsical personal work I've done over the years, ranging from illustration to apparel."
 ogimage: "/images/portfolio/personal-work/personal-work-cover.jpg"
+websiteURL: "https://shop.tomsmith.design/"
 gallery:
   - src: "/images/hoodie-lifestyle-mockup-web-cropped.jpg"
     lightbox: "/images/hoodie-lifestyle-mockup-web-cropped.jpg"

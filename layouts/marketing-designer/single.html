@@ -1,0 +1,489 @@
+{{ define "main" }}
+
+<div class="dark">
+
+<!-- Hero Section -->
+
+<section class="bg-white dark:bg-gray-900 pt-[68px]">
+    <div class="grid max-w-screen-xl px-4 pt-8 pb-16 mx-auto lg:gap-8 xl:gap-0 lg:py-32 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+            <p class="uppercase mb-4 text-white font-medium tracking-widest">For Marketing Teams</p>
+            <h1 class="max-w-2xl mb-4 text-5xl font-extrabold tracking-tight leading-none xl:text-6xl dark:text-white">Extra creative and technical horsepower — without adding headcount.</h1>
+            <p class="max-w-2xl mb-6 font-normal text-gray-500 lg:mb-8 text-lg lg:text-xl dark:text-gray-400">I work as an embedded creative partner for marketing teams — combining design, animation, and front-end development in one role. I design and build landing pages, campaigns, and site updates directly in code, so your team ships faster and never gets stuck waiting on engineering.</p>
+            <button class="inline-flex items-center justify-center px-10 py-3 mr-3 text-base font-medium text-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 rounded-full mb-4" type="button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hiretomsmith/call'});return false;">
+                Book a Call
+                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+            <a href="#how-it-works" class="inline-flex items-center justify-center px-10 py-3 text-base font-medium text-center text-gunmetal border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mb-4">
+                See How It Works
+            </a>
+        </div>
+        <div class="hidden lg:flex lg:col-span-5 lg:justify-end lg:items-center">
+            <img src="/images/tom-headshot-web.jpg" alt="Tom Smith" class="rounded-lg w-full">
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Grid -->
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center sm:py-24 lg:px-6">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Why marketing teams bring me on.</h2>
+        <p class="text-gray-500 text-xl dark:text-gray-400 mb-2">One retainer. Design, code, and motion — handled.</p>
+        <div class="mt-8 lg:mt-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-12 md:space-y-0">
+            <div>
+                <svg class="w-12 h-12 text-gray-800 mx-auto mb-4 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7h.01m3.486 1.513h.01m-6.978 0h.01M6.99 12H7m9 4h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 3.043 12.89 9.1 9.1 0 0 0 8.2 20.1a8.62 8.62 0 0 0 3.769.9 2.013 2.013 0 0 0 2.03-2v-.857A2.036 2.036 0 0 1 16 16Z"/>
+                </svg>
+                <h3 class="mb-2 text-xl text-gunmetal font-bold dark:text-white">All-in-One</h3>
+                <p class="text-gray-500 dark:text-gray-400">Design, front-end development, and animation in a single seat. No more coordinating between three different freelancers.</p>
+            </div>
+            <div>
+                <svg class="w-12 h-12 mb-4 mx-auto text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.484 9.166 15 7h5m0 0-3-3m3 3-3 3M4 17h4l1.577-2.253M4 7h4l7 10h5m0 0-3 3m3-3-3-3"/>
+                </svg>
+                <h3 class="mb-2 text-xl text-gunmetal font-bold dark:text-white">Ship Faster</h3>
+                <p class="text-gray-500 dark:text-gray-400">I build landing pages and campaigns directly in code. Your team stops waiting on engineering queues and starts launching on your timeline.</p>
+            </div>
+            <div>
+                <svg class="w-12 h-12 mx-auto mb-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v15a1 1 0 0 0 1 1h15M8 16l2.5-5.5 3 3L17.273 7 20 9.667"/>
+                </svg>
+                <h3 class="mb-2 text-xl text-gunmetal font-bold dark:text-white">Marketing-Minded</h3>
+                <p class="text-gray-500 dark:text-gray-400">I understand funnels, conversion goals, and campaign timelines. You won't have to translate marketing speak into designer speak.</p>
+            </div>
+            <div>
+                <svg class="w-12 h-12 mx-auto mb-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 4h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3m0 3h6m-6 5h6m-6 4h6M10 3v4h4V3h-4Z"/>
+                </svg>
+                <h3 class="mb-2 text-xl text-gunmetal font-bold dark:text-white">Collaborative Tools</h3>
+                <p class="text-gray-500 dark:text-gray-400">I work in Figma and Canva alongside your existing team. No new tools, no learning curves — just seamless integration.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+
+<section id="how-it-works" class="bg-whiteSmoke dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto space-y-12 max-w-screen-xl lg:space-y-20 sm:py-16 lg:px-6">
+
+        <!-- Row 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
+            <img
+                class="block w-full rounded-lg mb-2 lg:mb-0 order-1 lg:order-2"
+                src="/images/landingpages-comp.jpg"
+                alt="Landing page design examples">
+
+            <div class="text-gray-500 sm:text-lg dark:text-gray-400 order-2 lg:order-1">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">An Embedded Creative Partner</h2>
+                <p class="mb-8 text-normal lg:text-xl">I work with teams on a monthly retainer — 50 hours of dedicated creative and technical support. Think of it as having an in-house designer-developer on call, without the overhead of a full-time hire.</p>
+
+                <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">50 hours/month of design, development &amp; animation</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Predictable monthly cost — no surprise invoices</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Flexible allocation across projects each month</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Cancel or adjust anytime — no long-term lock-in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
+            <img
+                class="block w-full rounded-lg mb-2 lg:mb-0 order-1 lg:order-1"
+                src="/images/logos-comp.webp"
+                alt="Brand and logo design examples">
+
+            <div class="text-gray-500 sm:text-lg dark:text-gray-400 order-2 lg:order-2">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Built for Speed</h2>
+                <p class="mb-8 text-normal lg:text-xl">Because I design and build in code, there are no handoff bottlenecks. A landing page doesn't sit in a design queue, then an engineering queue — it goes from concept to live in one workflow.</p>
+
+                <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Landing pages, microsites, and campaign pages</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Site updates and A/B test variants</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Promo animations and social media assets</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Email templates and digital ads</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
+            <img
+                class="block w-full rounded-lg mb-2 lg:mb-0 order-1 lg:order-2"
+                src="/images/marketing-comp.jpg"
+                alt="Marketing design examples">
+
+            <div class="text-gray-500 sm:text-lg dark:text-gray-400 order-2 lg:order-1">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gunmetal dark:text-white">Your Team's Creative Extension</h2>
+                <p class="mb-8 text-normal lg:text-xl">I plug into your existing workflows and tools. Whether you're running campaigns out of a shared Figma file or spinning up assets in Canva, I meet your team where they already work.</p>
+
+                <ul role="list" class="pt-8 my-7 space-y-5 border-t border-gray-200 dark:border-gray-700">
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Collaborative design in Figma and Canva</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Async-friendly — Slack, Loom, or your preferred tools</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Supports launches, experiments, and ongoing brand execution</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        <span class="text-base font-medium leading-tight text-gunmetal dark:text-white">Weekly check-ins to align on priorities</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Mid-page CTA -->
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-16 px-4 mx-auto max-w-screen-xl sm:py-24 lg:px-6">
+        <div class="mx-auto max-w-screen-sm text-center">
+            <h2 class="mb-4 text-3xl tracking-tight font-extrabold leading-tight text-gray-900 dark:text-white">If your roadmap depends on moving quickly, we'll probably get along.</h2>
+            <p class="mb-8 font-normal text-gray-500 dark:text-gray-400 md:text-lg">Let's talk about what your team needs and whether I'm the right fit.</p>
+            <button
+                type="button"
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hiretomsmith/call'});return false;"
+                class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-full text-sm px-8 py-3 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                Book a Call
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial -->
+
+<section class="bg-whiteSmoke dark:bg-gray-900">
+    <div class="max-w-screen-xl px-4 py-16 mx-auto text-center lg:px-6">
+        <h2 class="sr-only">Testimonials</h2>
+        <figure class="max-w-screen-md mx-auto">
+            <svg class="h-12 mx-auto mb-3 text-gunmetal dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+            </svg>
+            <blockquote>
+                <p class="text-2xl font-medium text-gunmetal dark:text-white">"Thomas is a 10/10 designer! Crazy talented!"</p>
+            </blockquote>
+            <figcaption class="flex items-center justify-center mt-6 space-x-3">
+                <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                    <div class="pr-3 font-medium text-gunmetal dark:text-white">Todd Stewart</div>
+                    <div class="pl-3 text-sm font-normal text-gray-500 dark:text-gray-400">CMO at Total Synergy</div>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- Masonry Gallery -->
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center sm:py-24 lg:px-6">
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="grid gap-4">
+                <div class="gallery-card rounded-lg" style="--aspect: 135%; background-image:url('/images/portfolio/pkgx/pkgx-portfolio-02.jpg');" role="img" aria-label="PKGX brand design"></div>
+                <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 180%;" aria-label="Tidus Website Walkthrough">
+                    <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/tidus-website-portfolio.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+                </div>
+                <div class="gallery-card rounded-lg" style="--aspect: 125%; background-image:url('/images/portfolio/universitea/mockup.jpg');" role="img" aria-label="Universitea web mockup"></div>
+            </div>
+            <div class="grid gap-4">
+                <div class="gallery-card rounded-lg" style="--aspect: 105%; background-image:url('/images/portfolio/alaeris/alaeris-portfolio-01.jpg');" role="img" aria-label="Alaeris financial branding"></div>
+                <div class="gallery-card rounded-lg" style="--aspect: 165%; background-image:url('/images/boadroom-lunch-series.jpg');" role="img" aria-label="Boardroom Lunch Series design"></div>
+                <div class="gallery-card rounded-lg" style="--aspect: 130%; background-image:url('/images/logos-comp.webp');" role="img" aria-label="Logo design compilation"></div>
+            </div>
+            <div class="grid gap-4">
+                <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 170%;" aria-label="Tea Website Scroll">
+                    <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/tea-website-portfolio-02.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+                </div>
+                <div class="gallery-card rounded-lg" style="--aspect: 115%; background-image:url('/images/portfolio/belvedere-grand/belvedere-grand-logo-green-gold.jpg');" role="img" aria-label="Belvedere Grand luxury branding"></div>
+                <div class="gallery-card rounded-lg overflow-hidden" style="--aspect: 145%;" aria-label="G2 Spring Animation">
+                    <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/portfolio/motion%20graphics/G2-Spring-Animation-V2.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+                </div>
+            </div>
+            <div class="grid gap-4">
+                <div class="gallery-card rounded-lg" style="--aspect: 120%; background-image:url('/images/portfolio/canopy/canopy-ig-03.jpg');" role="img" aria-label="Canopy social media design"></div>
+                <div class="gallery-card rounded-lg" style="--aspect: 175%; background-position: top; background-image:url('/images/become-remote-landing-page-reduced-size.webp');" role="img" aria-label="Landing page design"></div>
+                <div class="gallery-card rounded-lg" style="--aspect: 130%; background-image:url('/images/marketing-comp.jpg');" role="img" aria-label="Marketing design examples"></div>
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <a href="/quick-view-portfolio/" class="inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300 transition-colors duration-200" target="_blank">
+                View Full Portfolio
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <h2 class="mb-6 lg:mb-8 text-3xl lg:text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Frequently asked questions</h2>
+        <div class="mx-auto max-w-screen-md">
+            <div id="accordion-flush">
+                <h2 id="accordion-flush-heading-1">
+                    <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-900 bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                        <span>What does 50 hours per month look like?</span>
+                        <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-1" class="accordion-panel" aria-hidden="false" aria-labelledby="accordion-flush-heading-1">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">It depends on the mix, but as a rough guide: 50 hours could cover 2–3 landing pages, a batch of social media assets, and a short promo animation in a given month. Or it could be dedicated to a single larger project like a microsite build. We'll plan the allocation together at the start of each month based on your priorities.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-flush-heading-2">
+                    <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                        <span>What tools and tech stack do you use?</span>
+                        <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-2" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-2">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">For design I work primarily in Figma, with Canva for teams that prefer it. On the development side I build with HTML, CSS (Tailwind), and JavaScript — deployed on fast, modern hosting like Netlify or Vercel. For animation I use After Effects and Lottie for web-native motion. I'm flexible and happy to adapt to your team's existing toolchain.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-flush-heading-3">
+                    <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                        <span>How do you integrate with our existing team?</span>
+                        <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-3" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-3">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">I operate like an extension of your team. I'll join your Slack (or preferred messaging tool), attend a weekly sync, and pick up tasks from your project board. Most of my clients give me a shared Figma workspace and a list of priorities — from there I'm self-directed. I'm async-friendly and comfortable working across time zones.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-flush-heading-4">
+                    <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-4" aria-expanded="false" aria-controls="accordion-flush-body-4">
+                        <span>What types of projects are included?</span>
+                        <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-4" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-4">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Anything in the design, web, or motion space that supports your marketing goals. Common deliverables include landing pages, campaign microsites, site updates, social media graphics, display ads, email templates, pitch decks, brand assets, and short promo animations. If it's visual and it helps your team sell, it's probably in scope.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-flush-heading-5">
+                    <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-5" aria-expanded="false" aria-controls="accordion-flush-body-5">
+                        <span>How does billing work?</span>
+                        <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-5" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-5">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">You're invoiced at the start of each month for the retainer. Payments can be made via ACH bank transfer, credit card, or USDC. There's no long-term contract — the retainer renews monthly and you can pause or cancel with 30 days' notice.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-flush-heading-6">
+                    <button type="button" class="flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-6" aria-expanded="false" aria-controls="accordion-flush-body-6">
+                        <span>Who is Tom Smith?</span>
+                        <svg data-accordion-icon="" class="w-6 h-6 shrink-0 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-6" class="accordion-panel" aria-hidden="true" aria-labelledby="accordion-flush-heading-6">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">I'm a SCAD alumni with over a decade of experience helping startups, agencies, and marketing teams build brands and ship digital products. My focus is simple: helping teams move fast without sacrificing quality. I've worked with over a hundred clients across six continents.</p>
+                        <a href="/about" class="text-primary-600 dark:text-primary-500 hover:underline" target="_blank">Learn more about me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-24 px-4 mx-auto max-w-screen-xl sm:py-48 lg:px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="cta-steam-bg rounded-3xl shadow-sm px-8 py-16 sm:px-16 sm:py-20 transition-colors duration-300">
+                <div class="mx-auto max-w-screen-sm text-center">
+                    <h2 class="mb-6 text-3xl md:text-3xl tracking-tight font-extrabold leading-tight text-gray-900 dark:text-white">Let's see if we're a good fit.</h2>
+                    <p class="mb-4 font-extrabold text-lg text-gray-500 dark:text-white">Monthly Retainer &middot; 50 Hours</p>
+                    <p class="mb-8 font-normal text-gray-500 dark:text-gray-400 md:text-lg">Book a quick call and I'll walk you through how the retainer works, what 50 hours looks like for your team, and whether I'm the right person for the job.</p>
+                    <button
+                        type="button"
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hiretomsmith/call'});return false;"
+                        class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-full text-sm px-8 py-3 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                        Book a Call
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+<style>
+    body{
+        padding-top: 0px !important;
+    }
+</style>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+<script>
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            navbar.classList.add('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
+            navbar.classList.remove('border-transparent');
+        } else {
+            navbar.classList.remove('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
+            navbar.classList.add('border-transparent');
+        }
+    });
+</script>
+
+<script>
+    (function () {
+        const accordion = document.getElementById('accordion-flush');
+        if (!accordion) return;
+
+        const buttons = accordion.querySelectorAll('[data-accordion-target]');
+        const panels = accordion.querySelectorAll('.accordion-panel');
+
+        const updateIcon = (button, isOpen) => {
+            const icon = button.querySelector('[data-accordion-icon]');
+            if (!icon) return;
+            icon.classList.toggle('rotate-180', isOpen);
+        };
+
+        const closePanel = (button, panel) => {
+            panel.style.maxHeight = 0;
+            panel.setAttribute('aria-hidden', 'true');
+            panel.classList.remove('open');
+            button.setAttribute('aria-expanded', 'false');
+            updateIcon(button, false);
+        };
+
+        const openPanel = (button, panel) => {
+            panels.forEach((otherPanel) => {
+                if (otherPanel === panel) return;
+                const otherButton = accordion.querySelector(
+                    `[data-accordion-target="#${otherPanel.id}"]`
+                );
+                if (otherButton && otherPanel.getAttribute('aria-hidden') === 'false') {
+                    closePanel(otherButton, otherPanel);
+                }
+            });
+            panel.setAttribute('aria-hidden', 'false');
+            panel.classList.add('open');
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+            button.setAttribute('aria-expanded', 'true');
+            updateIcon(button, true);
+        };
+
+        buttons.forEach((button) => {
+            const selector = button.getAttribute('data-accordion-target');
+            const panel = selector ? document.querySelector(selector) : null;
+            if (!panel) return;
+
+            if (button.getAttribute('aria-expanded') === 'true') {
+                panel.classList.add('open');
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                panel.setAttribute('aria-hidden', 'false');
+                updateIcon(button, true);
+            } else {
+                panel.style.maxHeight = 0;
+                panel.setAttribute('aria-hidden', 'true');
+                updateIcon(button, false);
+            }
+
+            button.addEventListener('click', () => {
+                if (button.getAttribute('aria-expanded') === 'true') {
+                    closePanel(button, panel);
+                } else {
+                    openPanel(button, panel);
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            panels.forEach((panel) => {
+                if (panel.getAttribute('aria-hidden') === 'false') {
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                }
+            });
+        });
+    })();
+</script>
+
+<script>
+    (function () {
+        const videos = document.querySelectorAll('.lazy-motion');
+        if (!videos.length) return;
+
+        const loadVideo = (video) => {
+            if (video.dataset.loaded === 'true') return;
+            const src = video.dataset.src;
+            if (!src) return;
+            video.src = src;
+            video.dataset.loaded = 'true';
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(() => {});
+            }
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        loadVideo(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '100px' });
+
+            videos.forEach((video) => observer.observe(video));
+        } else {
+            videos.forEach(loadVideo);
+        }
+    })();
+</script>
+
+{{ end }}

@@ -7,8 +7,8 @@ type: "post"
 author_image: "/images/avatar-top.png"
 author_bio: "Creative Director & Designer"
 category: "Process"
-featured_image: "/images/generalistfigma-marketing-design-banner.jpg"
-ogimage: "/images/figma-marketing-design-og-image.jpg"
+featured_image: "/images/process-post-banner.jpg"
+ogimage: "/images/process-post-og-image.jpg"
 summary: "Keeping my portfolio up-to-date as a practicing creative is a fool's errand. This is something of a process journal, where I'll periodically add Loom videos and short blurbs about what I'm working on on any given day."
 reading_time: 8
 ---
@@ -19,16 +19,18 @@ Maintaining a portfolio is basically a full-time job... which becomes problemati
 
 <hr>
 
-### June 22, 2026
+<div class="mb-8" style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/2570cde08fed48029d8795b1b089427d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### June 23, 2026
 
 #### What was worked on
 
-- Table design in Figma for blog post
 - Worked on Figma wire-frames for a blog/library list page
+- Sales One-Pager
 - Worked on AfterEffects animation promoting a benchmark report
 
 #### Description
 
-Today, started with a table design for a "developer scorecard" that's intended as an inline image in my client's upcoming blog post. Next, I did some Figma work on the redesign of blog list page. This is a larger task and I'm currently implementing the second round of revisions. Lastly, I moved over to AfterEffects and made a promotional animation for the release of another client's benchmark (the design of which I just finished last week).
+Started with Figma revisions to a library/blog page, wherein I prototyped the behavior for a tag/category paradigm to better "chunk" the content. Next, was a sales one-pager for one my client's service offerings. I designed this in Figma as well because it wasn't going to be printed, and because auto-layout rocks. Finally, I finished the day in AfterEffects where I animated a short motion graphic for a SaaS client promoting the release of their benchmark report.
 
 <hr>

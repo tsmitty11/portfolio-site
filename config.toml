@@ -40,7 +40,7 @@ title = "Tom Smith Design"
    [[menu.main]]
     identifier = "resume"
     name = "Resume"
-    url = "/media/thomas%20smith%20resum%C3%A9%202025.pdf"
+    url = "/media/Thomas%20Smith%20Resum%C3%A9%202026.pdf"
     weight = 5
 
   [[menu.main]]

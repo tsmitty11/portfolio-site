@@ -86,3 +86,20 @@
     transform: rotate(360deg);
   }
 }
+
+@layer components {
+  /* Infinite client-logo marquee: two identical tracks slide left by their own width */
+  .logo-marquee {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+  .logo-marquee-track {
+    animation: logo-marquee 28s linear infinite;
+  }
+}
+
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}

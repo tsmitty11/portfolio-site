@@ -51,6 +51,16 @@ Every raster image shown on the site must be served as a resized WebP thumbnail 
    | Full-width banners | `(slice 1024 2048)` | `100vw` |
    | Avatars / headshots | `(slice 320)` | n/a |
 
+### Autoplay video loops
+
+For short decorative loops (e.g. the Motion Graphics card on `/for-agencies/`), never autoplay a full portfolio MP4. Make a trimmed, downscaled copy in `static/images/loops/`. Aim for 6–10 seconds, about 640px wide, roughly 1MB or less. If Homebrew `ffmpeg` is broken, the built-in macOS tool works:
+
+```bash
+avconvert -s "static/images/portfolio/…/source.mp4" -p Preset640x480 -o static/images/loops/name-loop.mp4 --start 0 --duration 8
+```
+
+Render it as `<video muted loop playsinline preload="none" poster="…" data-autoplay-src="/images/loops/name-loop.mp4">`. Pass the poster through `img-sources.html`. The page's script sets `src` and plays the video only while it's on screen, and leaves the poster in place for reduced-motion users. Don't add `data-preload` or `media-frame`, because the poster covers the loading state. The script currently lives at the bottom of `layouts/for-agencies/single.html`. Move it to `baseof.html` if a second page needs it.
+
 ### Adding images through front matter
 
 Portfolio pages (`content/portfolio/*.md`), the quick-view page and blog posts already route their images through the partials. Just add entries using the existing format:

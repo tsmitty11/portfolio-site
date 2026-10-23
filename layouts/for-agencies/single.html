@@ -4,7 +4,7 @@
 
 <!-- Hero Section -->
 
-<section class="bg-base-100">
+<section class="relative overflow-hidden bg-base-100">
     <div class="grid max-w-screen-xl px-4 pt-10 pb-16 mx-auto sm:px-6 lg:gap-12 lg:py-24 lg:px-10 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-7">
             <p class="section-eyebrow mb-4">For Agency Owners</p>
@@ -18,9 +18,23 @@
                 <a href="#pricing" class="btn-line h-12 min-h-12 px-8 text-base">See Pricing</a>
             </div>
         </div>
-        <div class="hidden lg:flex lg:col-span-5 lg:justify-end lg:items-center">
-            <div class="media-frame w-full rounded-3xl overflow-hidden shadow-airbnb bg-base-200">
-                {{ partial "img.html" (dict "src" "/images/tom-headshot-web.jpg" "alt" "Tom Smith" "widths" (slice 600 1200) "sizes" "(min-width: 1024px) 40vw, 100vw" "eager" true "class" "block w-full") }}
+        <div class="relative mt-16 lg:mt-0 lg:col-span-5 lg:pl-12 xl:pl-20">
+            <!-- Soft color glow pulled from the work samples -->
+            <div aria-hidden="true" class="pointer-events-none absolute -inset-10">
+                <div class="absolute -top-4 right-0 h-64 w-64 rounded-full bg-[#4f46e5]/30 blur-3xl"></div>
+                <div class="absolute bottom-0 -left-4 h-64 w-64 rounded-full bg-[#22c55e]/30 blur-3xl"></div>
+                <div class="absolute top-1/2 left-1/3 h-48 w-48 rounded-full bg-[#ff9a00]/20 blur-3xl"></div>
+            </div>
+            <div class="relative mx-auto max-w-sm lg:max-w-none">
+                <div class="media-frame w-full rounded-3xl overflow-hidden shadow-airbnb bg-base-200">
+                    {{ partial "img.html" (dict "src" "/images/tom-headshot-web.jpg" "alt" "Tom Smith" "widths" (slice 600 1200) "sizes" "(min-width: 1024px) 40vw, 100vw" "eager" true "class" "block w-full") }}
+                </div>
+                <div class="media-frame absolute -left-4 bottom-8 w-32 sm:-left-10 sm:w-44 aspect-square -rotate-6 rounded-2xl overflow-hidden ring-1 ring-black/10 shadow-airbnb bg-base-200">
+                    {{ partial "img.html" (dict "src" "/images/portfolio/print-design/xmas-party-flyer.jpg" "alt" "Carnaval de Barrio flyer" "widths" (slice 360) "sizes" "176px" "eager" true "class" "absolute inset-0 w-full h-full object-cover") }}
+                </div>
+                <div class="media-frame absolute -right-4 top-8 w-32 sm:-right-8 sm:w-40 aspect-[4/3] rotate-6 rounded-2xl overflow-hidden ring-1 ring-black/10 shadow-airbnb bg-base-200">
+                    {{ partial "img.html" (dict "src" "/images/portfolio/blueprint-collective/blueprint-collective-social-assets-v2.webp" "alt" "Blueprint Collective social assets" "widths" (slice 320) "sizes" "160px" "eager" true "class" "absolute inset-0 w-full h-full object-cover object-top") }}
+                </div>
             </div>
         </div>
     </div>
@@ -31,15 +45,31 @@
 <section class="bg-base-100 border-t border-base-300">
     <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-10">
         <p class="mb-8 text-center text-sm font-semibold text-base-content/60">Past clients include</p>
-        <ul class="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 lg:justify-between" aria-label="Past clients">
-            <li><img src="/images/pkgx-logo.svg" alt="PKGX" class="h-7 w-auto" loading="lazy"></li>
-            <li><img src="/images/total-synergy-logo.svg" alt="Total Synergy" class="h-10 w-auto" loading="lazy"></li>
-            <li><img src="/images/tidus-logo.svg" alt="Tidus" class="h-10 w-auto" loading="lazy"></li>
-            <li><img src="/images/verizon-logo.svg" alt="Verizon" class="h-7 w-auto" loading="lazy"></li>
-            <li><img src="/images/vivitar-logo.svg" alt="Vivitar" class="h-7 w-auto" loading="lazy"></li>
-            <li><img src="/images/candor-logo.svg" alt="Candor" class="h-10 w-auto" loading="lazy"></li>
-            <li><img src="/images/tea-logo.svg" alt="tea" class="h-7 w-auto" loading="lazy"></li>
+        {{ $clients := slice
+            (dict "src" "/images/pkgx-logo.svg" "alt" "PKGX" "class" "h-7")
+            (dict "src" "/images/total-synergy-logo.svg" "alt" "Total Synergy" "class" "h-10")
+            (dict "src" "/images/tidus-logo.svg" "alt" "Tidus" "class" "h-10")
+            (dict "src" "/images/verizon-logo.svg" "alt" "Verizon" "class" "h-7")
+            (dict "src" "/images/vivitar-logo.svg" "alt" "Vivitar" "class" "h-6")
+            (dict "src" "/images/candor-logo.svg" "alt" "Candor" "class" "h-10")
+            (dict "src" "/images/tea-logo.svg" "alt" "tea" "class" "h-7")
+        }}
+        <!-- Static row on desktop (and for reduced-motion users) -->
+        <ul class="hidden flex-wrap items-center justify-center gap-x-10 gap-y-8 motion-reduce:flex lg:flex lg:justify-between" aria-label="Past clients">
+            {{ range $clients }}
+            <li><img src="{{ .src }}" alt="{{ .alt }}" class="{{ .class }} w-auto" loading="lazy"></li>
+            {{ end }}
         </ul>
+        <!-- Infinite marquee on smaller screens; the second track is a duplicate for a seamless loop -->
+        <div class="logo-marquee flex overflow-hidden motion-reduce:hidden lg:hidden">
+            {{ range $track := slice 1 2 }}
+            <ul class="logo-marquee-track flex shrink-0 items-center gap-12 pr-12"{{ if eq $track 1 }} aria-label="Past clients"{{ else }} aria-hidden="true"{{ end }}>
+                {{ range $clients }}
+                <li class="shrink-0"><img src="{{ .src }}" alt="{{ if eq $track 1 }}{{ .alt }}{{ end }}" class="{{ .class }} w-auto max-w-none" loading="lazy"></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </div>
     </div>
 </section>
 
@@ -52,8 +82,11 @@
             <p class="text-base-content/70 text-xl">Hand off the brief and get back polished, on-brand work, ready to present.</p>
         </div>
         <div class="grid gap-6 md:grid-cols-3">
-            <div class="rounded-xl border border-base-300 p-8 transition-shadow hover:shadow-airbnb">
-                <svg class="w-10 h-10 mb-4 text-base-content" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7h.01m3.486 1.513h.01m-6.978 0h.01M6.99 12H7m9 4h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 3.043 12.89 9.1 9.1 0 0 0 8.2 20.1a8.62 8.62 0 0 0 3.769.9 2.013 2.013 0 0 0 2.03-2v-.857A2.036 2.036 0 0 1 16 16Z"/></svg>
+            <div class="overflow-hidden rounded-xl border border-base-300">
+                <div class="media-frame aspect-[16/10] overflow-hidden bg-base-200">
+                    {{ partial "img.html" (dict "src" "/images/portfolio/total-synergy/total-synergy-portfolio-01.jpg" "alt" "Total Synergy social media post designs" "widths" (slice 480 960) "sizes" "(min-width: 768px) 33vw, 100vw" "class" "w-full h-full object-cover object-top") }}
+                </div>
+                <div class="p-8">
                 <h3 class="mb-1 text-xl font-bold text-base-content">Graphic Design</h3>
                 <p class="mb-4 text-sm font-semibold text-base-content/60">Print &amp; Digital</p>
                 <p class="mb-6 text-base-content/70">Campaign assets and brand collateral built to your client's guidelines and delivered print- or production-ready.</p>
@@ -63,9 +96,15 @@
                     <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Logos and brand identity</li>
                     <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Flyers, posters, and print collateral</li>
                 </ul>
+                </div>
             </div>
-            <div class="rounded-xl border border-base-300 p-8 transition-shadow hover:shadow-airbnb">
-                <svg class="w-10 h-10 mb-4 text-base-content" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 6H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1Zm7 11-6-2V9l6-2v10Z"/></svg>
+            <div class="overflow-hidden rounded-xl border border-base-300">
+                <div class="aspect-[16/10] overflow-hidden bg-base-200">
+                    {{/* Short, downscaled loop of the 2025 Wrapped teaser (red section only); the full video lives on the motion graphics page */}}
+                    {{ $poster := (partial "img-sources.html" (dict "src" "/images/2025-wrapped-thumbnail.webp" "widths" (slice 800))).src }}
+                    <video class="w-full h-full object-cover" poster="{{ $poster }}" data-autoplay-src="/images/loops/2025-wrapped-loop.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Total Synergy 2025 Wrapped animation"></video>
+                </div>
+                <div class="p-8">
                 <h3 class="mb-1 text-xl font-bold text-base-content">Motion Graphics</h3>
                 <p class="mb-4 text-sm font-semibold text-base-content/60">Animation &amp; Video</p>
                 <p class="mb-6 text-base-content/70">Animated content that gives your clients' campaigns movement, from storyboard to final export.</p>
@@ -75,9 +114,13 @@
                     <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Logo reveals and animated badges</li>
                     <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Video editing and product demos</li>
                 </ul>
+                </div>
             </div>
-            <div class="rounded-xl border border-base-300 p-8 transition-shadow hover:shadow-airbnb">
-                <svg class="w-10 h-10 mb-4 text-base-content" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"/></svg>
+            <div class="overflow-hidden rounded-xl border border-base-300">
+                <div class="media-frame aspect-[16/10] overflow-hidden bg-base-200">
+                    {{ partial "img.html" (dict "src" "/images/portfolio/tidus-website-portfolio-01.jpg" "alt" "Tidus Wallet website" "widths" (slice 480 960) "sizes" "(min-width: 768px) 33vw, 100vw" "class" "w-full h-full object-cover") }}
+                </div>
+                <div class="p-8">
                 <h3 class="mb-1 text-xl font-bold text-base-content">Web Design &amp; Development</h3>
                 <p class="mb-4 text-sm font-semibold text-base-content/60">Design &amp; Code</p>
                 <p class="mb-6 text-base-content/70">Sites designed in Figma and built in code, so there's no handoff gap between the mockup and what goes live.</p>
@@ -87,8 +130,33 @@
                     <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Email templates</li>
                     <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>WordPress, Webflow, or hand-coded builds</li>
                 </ul>
+                </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+
+<section class="bg-base-100 border-t border-base-300">
+    <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+        <div class="max-w-2xl mx-auto mb-12 text-center">
+            <h2 class="mb-4 text-4xl tracking-tight font-bold text-base-content">How it works</h2>
+            <p class="text-base-content/70 text-xl">From first call to final files, without adding to your team's workload.</p>
+        </div>
+        <ol class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {{ range $i, $step := site.Data.agency_process }}
+            <li class="relative">
+                <!-- Connector line between steps on desktop -->
+                {{ if lt (add $i 1) (len site.Data.agency_process) }}
+                <div aria-hidden="true" class="hidden lg:block absolute top-6 left-14 right-0 h-px bg-base-300"></div>
+                {{ end }}
+                <div class="relative flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-content font-heading text-lg font-bold">{{ add $i 1 }}</div>
+                <h3 class="mt-5 mb-2 text-xl font-bold text-base-content">{{ $step.title }}</h3>
+                <p class="text-base-content/70">{{ $step.body }}</p>
+            </li>
+            {{ end }}
+        </ol>
     </div>
 </section>
 
@@ -171,36 +239,90 @@
 <!-- Testimonials -->
 
 {{ $testimonials := slice
-    (dict "quote" "Thomas is a 10/10 designer! Crazy talented!" "name" "Todd Stewart" "role" "CMO at Total Synergy")
-    (dict "quote" "Working with Thomas was like working with a professional graphics department and a front-end UI shop all in one." "name" "Jeremy Corey" "role" "4Core LLC")
-    (dict "quote" "Tom is an amazing designer! Great work ethic, understands the goals, communicates effectively and will help up your design game significantly!" "name" "Upwork Client" "role" "Dental Tech Executive")
-    (dict "quote" "Not the first time working with Tom and won't be the last. His attention to detail and fast turn around makes him one of my favorite freelancers. Great all around. Thank you!" "name" "Upwork Client" "role" "Ecommerce Executive")
-    (dict "quote" "Thomas is hands down one of the most competent designers on Upwork. Get him on your project before someone else does!" "name" "Upwork Client" "role" "Entrepreneur")
-    (dict "quote" "Thomas was beyond amazing. He did exactly what I asked him to do and even improved upon it. I could not recommend him enough. I will definitely be hiring him again 1000%." "name" "Upwork Client" "role" "Entrepreneur")
-    (dict "quote" "Tom is great: professional, thoughful, and a creative collaborator. Really enjoyed working with him." "name" "Upwork Client" "role" "Sales Executive")
-    (dict "quote" "Excellent work. Very easy to work with. Thank you!" "name" "Upwork Client" "role" "Co-Founder and CTO")
+    (dict "quote" "Thomas is a 10/10 designer! Crazy talented!" "name" "Todd Stewart" "role" "CMO at Total Synergy" "initials" "TS")
+    (dict "quote" "Working with Thomas was like working with a professional graphics department and a front-end UI shop all in one." "name" "Jeremy Corey" "role" "4Core LLC" "initials" "JC")
 }}
 <section class="bg-base-100 border-t border-base-300">
-    <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+    <div class="max-w-screen-lg px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
         <div class="max-w-2xl mx-auto mb-12 text-center">
             <h2 class="mb-4 text-4xl tracking-tight font-bold text-base-content">What clients say</h2>
             <p class="text-base-content/70 text-xl">Tom’s worked with over a hundred clients across six continents.</p>
         </div>
-        <div class="columns-1 md:columns-2 lg:columns-3 gap-6">
+        <div class="grid gap-6 md:grid-cols-2">
             {{ range $testimonials }}
-            <figure class="mb-6 break-inside-avoid rounded-xl border border-base-300 p-6">
-                <svg class="h-6 mb-4 text-primary" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
-                </svg>
-                <blockquote>
-                    <p class="text-base leading-relaxed text-base-content">{{ .quote }}</p>
-                </blockquote>
-                <figcaption class="mt-5">
-                    <div class="text-sm font-semibold text-base-content">{{ .name }}</div>
-                    <div class="text-sm text-base-content/60">{{ .role }}</div>
+            <figure class="flex flex-col justify-between rounded-2xl bg-base-200 p-8 sm:p-10">
+                <div>
+                    <svg class="h-8 mb-6 text-primary" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+                    </svg>
+                    <blockquote>
+                        <p class="font-heading text-2xl font-medium leading-snug tracking-tight text-base-content">{{ .quote }}</p>
+                    </blockquote>
+                </div>
+                <figcaption class="mt-8 flex items-center gap-4 border-t border-base-300 pt-6">
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-sm font-bold text-primary-content" aria-hidden="true">{{ .initials }}</span>
+                    <span>
+                        <span class="block font-semibold text-base-content">{{ .name }}</span>
+                        <span class="block text-sm text-base-content/60">{{ .role }}</span>
+                    </span>
                 </figcaption>
             </figure>
             {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+
+<section class="bg-base-100 border-t border-base-300">
+    <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+        <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+            <!-- Credentials card -->
+            <div class="lg:col-span-5">
+                <div class="relative overflow-hidden rounded-3xl bg-primary px-8 py-12 text-center text-primary-content">
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+                        <div class="absolute -top-20 -right-16 h-64 w-64 rounded-full bg-[#4f46e5]/30 blur-3xl"></div>
+                        <div class="absolute -bottom-20 -left-16 h-64 w-64 rounded-full bg-[#22c55e]/20 blur-3xl"></div>
+                    </div>
+                    <div class="relative">
+                        <a href="https://scad.edu" class="inline-block">
+                            <img src="/images/scad-alumni-badge.png" alt="SCAD Alumni Society emblem" class="mx-auto w-40 sm:w-44" loading="lazy">
+                        </a>
+                        <p class="mt-4 text-sm text-primary-content/70">BFA, Savannah College of Art and Design</p>
+                        <dl class="mt-10 grid grid-cols-3 divide-x divide-primary-content/20 border-t border-primary-content/20 pt-8">
+                            <div>
+                                <dt class="sr-only">Experience</dt>
+                                <dd class="font-heading text-3xl font-bold">10+</dd>
+                                <dd class="mt-1 text-xs text-primary-content/70">Years experience</dd>
+                            </div>
+                            <div>
+                                <dt class="sr-only">Clients</dt>
+                                <dd class="font-heading text-3xl font-bold">100+</dd>
+                                <dd class="mt-1 text-xs text-primary-content/70">Clients</dd>
+                            </div>
+                            <div>
+                                <dt class="sr-only">Reach</dt>
+                                <dd class="font-heading text-3xl font-bold">6</dd>
+                                <dd class="mt-1 text-xs text-primary-content/70">Continents</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- Story -->
+            <div class="lg:col-span-7">
+                <p class="section-eyebrow mb-4">About Me</p>
+                <h2 class="mb-6 text-4xl tracking-tight font-bold text-base-content">A designer who's sat on both sides of the table.</h2>
+                <div class="space-y-4 text-lg leading-relaxed text-base-content/70">
+                    <p>I earned my BFA at the Savannah College of Art and Design, then started my career designing for corporate clients in New York before going freelance and working remotely as a digital nomad.</p>
+                    <p>Since then, I've served as Creative Director at a SaaS startup through its acquisition, run a creative agency of my own, and joined <i>tea</i> Protocol as one of its first ten employees. That mix means I understand both sides of the agency relationship: what your clients expect, and the pressure of delivering it on deadline.</p>
+                    <p>Today I partner with agencies and marketing teams who need experienced design capacity without the overhead of another hire.</p>
+                </div>
+                <a href="/about/" class="mt-8 btn-line h-12 min-h-12 px-6">
+                    More about me
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -230,20 +352,20 @@
                 <a href="/contact/" class="btn-line h-12 min-h-12 w-full mt-auto text-base">Get in Touch</a>
             </div>
             <!-- Retainer -->
-            <div class="relative flex flex-col rounded-xl border-2 border-base-content bg-base-100 p-8 shadow-airbnb">
-                <span class="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-content">Best value</span>
-                <h3 class="text-xl font-bold text-base-content">Monthly Retainer</h3>
-                <p class="mt-2 text-base-content/70">For agencies with steady overflow who want a designer on call.</p>
+            <div class="relative flex flex-col rounded-xl bg-primary text-primary-content p-8 shadow-airbnb">
+                <span class="absolute -top-3 left-8 rounded-full bg-base-100 px-3 py-1 text-xs font-semibold text-base-content shadow-airbnb-sm">Best value</span>
+                <h3 class="text-xl font-bold text-primary-content">Monthly Retainer</h3>
+                <p class="mt-2 text-primary-content/70">For agencies with steady overflow who want a designer on call.</p>
                 <p class="mt-6 flex items-baseline gap-1">
-                    <span class="font-heading text-5xl font-bold tracking-tight text-base-content">$3,000</span>
-                    <span class="text-base-content/60">/ month</span>
+                    <span class="font-heading text-5xl font-bold tracking-tight text-primary-content">$3,000</span>
+                    <span class="text-primary-content/60">/ month</span>
                 </p>
-                <ul class="mt-8 mb-8 space-y-3 text-base-content">
+                <ul class="mt-8 mb-8 space-y-3 text-primary-content">
                     <li class="flex gap-3"><svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>40 hours of design each month</li>
                     <li class="flex gap-3"><svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Effective rate of $75/hour</li>
                     <li class="flex gap-3"><svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Split hours across clients and projects</li>
                 </ul>
-                <button type="button" onclick="Calendly.initPopupWidget({url: '{{ $calendly }}'});return false;" class="btn btn-primary h-12 min-h-12 w-full mt-auto text-base">Book a Call</button>
+                <button type="button" onclick="Calendly.initPopupWidget({url: '{{ $calendly }}'});return false;" class="btn h-12 min-h-12 w-full mt-auto text-base border-0 bg-base-100 text-base-content hover:bg-base-200">Book a Call</button>
             </div>
         </div>
     </div>
@@ -284,22 +406,93 @@
     </div>
 </section>
 
+<!-- FAQ -->
+
+<section class="bg-base-100 border-t border-base-300">
+    <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+        <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div class="lg:col-span-4">
+                <h2 class="mb-4 text-4xl tracking-tight font-bold text-base-content">Frequently asked questions</h2>
+                <p class="mb-6 text-base-content/70 text-lg">Don't see your question here? Ask me directly.</p>
+                <a href="/contact/" class="btn-line h-12 min-h-12 px-6">Get in Touch</a>
+            </div>
+            <div class="lg:col-span-8 border-t border-base-300">
+                {{ range $i, $item := site.Data.agency_faq }}
+                <details class="collapse collapse-plus rounded-none border-b border-base-300" name="faq"{{ if eq $i 0 }} open{{ end }}>
+                    <summary class="collapse-title px-0 pr-10 text-lg font-medium text-base-content">{{ $item.question }}</summary>
+                    <div class="collapse-content px-0 text-base-content/70 leading-relaxed space-y-3">
+                        {{ $item.answer | markdownify }}
+                    </div>
+                </details>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Final CTA -->
 
 <section class="bg-base-100">
     <div class="max-w-screen-xl px-4 pb-24 mx-auto sm:px-6 sm:pb-32 lg:px-10">
-        <div class="rounded-3xl bg-base-200 px-8 py-16 sm:px-16 sm:py-20">
-            <div class="mx-auto max-w-screen-sm text-center">
-                <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-bold leading-tight text-base-content">Let's take something off your plate.</h2>
-                <p class="mb-8 text-base-content/70 md:text-lg">Tell me about your pipeline and the work piling up, and I'll let you know how I can help.</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-3">
-                    <a href="/contact/" class="btn btn-primary h-12 min-h-12 px-8 text-base">Get in Touch</a>
-                    <button type="button" onclick="Calendly.initPopupWidget({url: '{{ $calendly }}'});return false;" class="btn-line h-12 min-h-12 px-8 text-base">Book a Call</button>
+        <div class="relative overflow-hidden rounded-3xl bg-primary text-primary-content px-8 pt-14 pb-16 sm:px-16 sm:pb-20">
+            <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+                <div class="absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-[#4f46e5]/30 blur-3xl"></div>
+                <div class="absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-[#22c55e]/20 blur-3xl"></div>
+            </div>
+            <div class="relative">
+                <div class="mb-12 flex justify-center">
+                    <div class="media-frame relative hidden sm:block w-24 sm:w-32 aspect-[4/5] -mx-2 rounded-xl overflow-hidden ring-1 ring-white/25 shadow-airbnb bg-base-200 -rotate-12 translate-y-4 transition-transform duration-300 hover:-translate-y-2">
+                        {{ partial "img.html" (dict "src" "/images/portfolio/belvedere-grand/belvedere-grand-logo-green-gold.jpg" "alt" "Belvedere Grand logo" "widths" (slice 256) "sizes" "128px" "class" "absolute inset-0 w-full h-full object-cover") }}
+                    </div>
+                    <div class="media-frame relative w-24 sm:w-32 aspect-[4/5] -mx-2 rounded-xl overflow-hidden ring-1 ring-white/25 shadow-airbnb bg-base-200 -rotate-6 translate-y-1 transition-transform duration-300 hover:-translate-y-2">
+                        {{ partial "img.html" (dict "src" "/images/portfolio/tea-hoodie/comic.jpg" "alt" "tea comic" "widths" (slice 256) "sizes" "128px" "class" "absolute inset-0 w-full h-full object-cover") }}
+                    </div>
+                    <div class="media-frame relative w-24 sm:w-32 aspect-[4/5] -mx-2 rounded-xl overflow-hidden ring-1 ring-white/25 shadow-airbnb bg-base-200 rotate-0 z-10 transition-transform duration-300 hover:-translate-y-2">
+                        {{ partial "img.html" (dict "src" "/images/portfolio/universitea/mockup.jpg" "alt" "Universi'tea mockup" "widths" (slice 256) "sizes" "128px" "class" "absolute inset-0 w-full h-full object-cover") }}
+                    </div>
+                    <div class="media-frame relative w-24 sm:w-32 aspect-[4/5] -mx-2 rounded-xl overflow-hidden ring-1 ring-white/25 shadow-airbnb bg-base-200 rotate-6 translate-y-1 transition-transform duration-300 hover:-translate-y-2">
+                        {{ partial "img.html" (dict "src" "/images/portfolio/print-design/halloween-flyer.jpg" "alt" "Halloween party flyer" "widths" (slice 256) "sizes" "128px" "class" "absolute inset-0 w-full h-full object-cover") }}
+                    </div>
+                    <div class="media-frame relative hidden sm:block w-24 sm:w-32 aspect-[4/5] -mx-2 rounded-xl overflow-hidden ring-1 ring-white/25 shadow-airbnb bg-base-200 rotate-12 translate-y-4 transition-transform duration-300 hover:-translate-y-2">
+                        {{ partial "img.html" (dict "src" "/images/portfolio/alaeris/alaeris-03.jpg" "alt" "Alaeris branding" "widths" (slice 256) "sizes" "128px" "class" "absolute inset-0 w-full h-full object-cover") }}
+                    </div>
+                </div>
+                <div class="mx-auto max-w-screen-sm text-center">
+                    <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-bold leading-tight">Let's take something off your plate.</h2>
+                    <p class="mb-8 text-primary-content/70 md:text-lg">Tell me about your pipeline and the work piling up, and I'll let you know how I can help.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-3">
+                        <a href="/contact/" class="btn h-12 min-h-12 px-8 text-base border-0 bg-base-100 text-base-content hover:bg-base-200">Get in Touch</a>
+                        <button type="button" onclick="Calendly.initPopupWidget({url: '{{ $calendly }}'});return false;" class="btn btn-outline h-12 min-h-12 px-8 text-base border-primary-content/40 text-primary-content hover:bg-primary-content hover:text-primary hover:border-primary-content">Book a Call</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    // Autoplay loops only while on screen; skip entirely for reduced-motion users (poster stays)
+    (function () {
+        const videos = document.querySelectorAll('video[data-autoplay-src]');
+        if (!videos.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const play = (video) => {
+            if (!video.getAttribute('src')) video.src = video.dataset.autoplaySrc;
+            const promise = video.play();
+            if (promise && typeof promise.catch === 'function') promise.catch(() => {});
+        };
+        if (!('IntersectionObserver' in window)) {
+            videos.forEach(play);
+            return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) play(entry.target);
+                else if (entry.target.getAttribute('src')) entry.target.pause();
+            });
+        }, { rootMargin: '200px' });
+        videos.forEach((video) => observer.observe(video));
+    })();
+</script>
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>

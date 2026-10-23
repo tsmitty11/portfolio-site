@@ -13,11 +13,11 @@ npm install
 ```
 
 ## Development
-Run Hugo with Tailwind watching CSS changes:
+Start the Hugo dev server and the Tailwind CSS watcher together:
 ```bash
-npm run build:css -- --watch &
-hugo server -D
+npm run dev
 ```
+Template and CSS changes rebuild automatically. Press Ctrl+C to stop both.
 Visit http://localhost:1313 to preview changes.
 
 ## Production Build

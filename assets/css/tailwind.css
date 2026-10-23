@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-base-100 text-base-content font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    letter-spacing: -0.02em;
+  }
+
+  .prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Primary actions use the logo color */
+  .btn-primary {
+    border: 0;
+  }
+  .btn-primary:hover {
+    background-color: #0d1418;
+  }
+
+  /* Outlined secondary action: black hairline, white fill */
+  .btn-line {
+    @apply btn bg-base-100 border-base-content text-base-content hover:bg-base-200 hover:border-base-content;
+  }
+
+  /* Small text link with Airbnb-style underline */
+  .link-ink {
+    @apply font-semibold underline underline-offset-4 decoration-1 hover:decoration-2;
+  }
+
+  /* Rounded listing photo, as on Airbnb cards */
+  .listing-photo {
+    @apply rounded-xl overflow-hidden bg-base-200;
+  }
+
+  .section-eyebrow {
+    @apply text-sm font-semibold uppercase tracking-widest text-primary;
+  }
+}

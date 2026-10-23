@@ -10,9 +10,9 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <script>
-        document.head.insertAdjacentHTML("afterbegin", '<link rel="stylesheet" type="text/css" href="https://unpkg.com/flowbite-typography@1.0.3/dist/typography.min.css">');
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Mona+Sans:wght@400..800&display=swap" rel="stylesheet">
     <!-- Meta Description -->
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}Tom Smith is a 'Jack-of-All-Trades', Full-Stack Designer– capable of shipping products and solving abstract creative problems.{{ end }}">
     <!-- Open Graph Meta Tags -->
@@ -21,7 +21,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:image" content="{{ with .Params.ogimage }}{{ . }}{{ else }}/images/default-og-image.jpg{{ end }}">
-    <meta name="theme-color" content="#F2F4F3">
+    <meta name="theme-color" content="#FFFFFF">
 
     <!-- Prevent AI Training -->
 
@@ -61,40 +61,19 @@
             position:fixed;
             bottom:1rem;
             left:1rem;
-            background:rgba(15,23,42,0.8);
-            color:#fff;
-            border:none;
+            background:#fff;
+            color:#222;
+            border:1px solid #ddd;
+            box-shadow:0 6px 16px rgba(0,0,0,0.12);
             border-radius:999px;
             padding:0.4rem 1.2rem;
             font-size:0.85rem;
+            font-weight:500;
             cursor:pointer;
             z-index:900;
         }
-        .dark .cookie-manage-btn{
-            background:rgba(243,244,246,0.8);
-            color:#111827;
-        }
         .cookie-manage-btn.hidden{
             display:none;
-        }
-        html,body{
-            background-color:#121826;
-            color:#f5f6fb;
-        }
-        main{
-            padding-top:0 !important;
-        }
-        .date-picker-white::-webkit-calendar-picker-indicator{
-            filter:invert(1);
-        }
-        .accordion-panel{
-            overflow:hidden;
-            max-height:0;
-            opacity:0;
-            transition:max-height 0.4s ease, opacity 0.3s ease;
-        }
-        .accordion-panel.open{
-            opacity:1;
         }
         .gallery-card{
             display:block;
@@ -106,49 +85,12 @@
             overflow:hidden;
             padding-bottom:var(--aspect,130%);
         }
-        .cta-steam-bg{
-            background-color:#f7f9fc;
-            background-image:
-                radial-gradient(circle at 20% 15%, rgba(255,255,255,0.9), rgba(247,249,252,0) 55%),
-                radial-gradient(circle at 80% 0%, rgba(255,255,255,0.8), rgba(247,249,252,0) 60%),
-                radial-gradient(circle at 50% 90%, rgba(255,255,255,0.7), rgba(247,249,252,0) 55%);
-        }
-        .dark .cta-steam-bg{
-            background-color:#111827;
-            background-image:
-                radial-gradient(circle at 20% 15%, rgba(255,255,255,0.12), rgba(17,24,39,0) 55%),
-                radial-gradient(circle at 80% 5%, rgba(255,255,255,0.08), rgba(17,24,39,0) 60%),
-                radial-gradient(circle at 50% 95%, rgba(255,255,255,0.1), rgba(17,24,39,0) 50%);
-        }
-        .dark .bg-white,
-        .dark .bg-whiteSmoke,
-        .dark .bg-gray-50,
-        .dark .bg-gray-100,
-        .dark .bg-gray-200{
-            background-color:#111827 !important;
-        }
-        .dark .text-gunmetal,
-        .dark .text-gray-900,
-        .dark .text-gray-800,
-        .dark .text-black{
-            color:#f5f6fb !important;
-        }
-        .dark .text-gray-700,
-        .dark .text-gray-600,
-        .dark .text-gray-500{
-            color:#d1d5db !important;
-        }
-        .dark .border-gray-200,
-        .dark .border-gray-300,
-        .dark .border-gunmetal{
-            border-color:#374151 !important;
-        }
         /* GLightbox description tweaks */
         .glightbox-container .gdesc-inner,
         .glightbox-container .gdesc-inner .gslide-desc,
         .glightbox-container .gdesc-inner .gslide-title{
-            background:#121826 !important;
-            color:#fff !important;
+            background:#fff !important;
+            color:#222 !important;
             box-shadow:none !important;
         }
     </style>

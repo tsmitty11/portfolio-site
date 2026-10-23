@@ -1,30 +1,30 @@
 {{ define "main" }}
-<section class="py-12 px-4">
-    <div class="mx-auto text-center mb-10 mb-8">
-        <h1 class="text-4xl font-extrabold text-whiteSmoke mb-3">Free Online Image Compression Tool</h1>
-        <p class="text-gray-300 text-lg ">Optimize your PNGs, JPGs, GIFs, and more into 150 KB WebPs with clean file names... right in your browser.</p>
+<section class="py-12 px-4 lg:py-20">
+    <div class="mx-auto max-w-3xl text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-base-content mb-4">Free Online Image Compression Tool</h1>
+        <p class="text-base-content/70 text-lg">Optimize your PNGs, JPGs, GIFs, and more into 150 KB WebPs with clean file names... right in your browser.</p>
     </div>
     <div class="gap-16 items-center mx-auto max-w-screen-xl lg:px-6 mb-8">
-        <div class="max-w-3xl mx-auto rounded-2xl border border-gray-800 bg-gray-900/60 p-8 shadow-2xl text-whiteSmoke">
-            <h2 class="mb-2 text-2xl font-semibold text-whiteSmoke text-center">One-Click, Web-Ready Images</h2>
-            <p class="mb-6 text-gray-300 text-center">Drop images below to start converting.</p>
+        <div class="max-w-3xl mx-auto rounded-3xl border border-base-300 bg-base-100 p-6 sm:p-8 shadow-airbnb text-base-content">
+            <h2 class="mb-2 text-2xl font-semibold text-base-content text-center">One-Click, Web-Ready Images</h2>
+            <p class="mb-6 text-base-content/70 text-center">Drop images below to start converting.</p>
         
             <div id="dropzone" class="flex items-center justify-center w-full mb-6 cursor-pointer">
-                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 rounded-2xl border-2 border-dashed border-gray-500 bg-gray-800/80 hover:bg-gray-800 transition">
-                    <div class="flex flex-col items-center justify-center pt-5 pb-6 text-gray-300 pointer-events-none">
-                        <svg class="w-10 h-10 mb-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 rounded-xl border-2 border-dashed border-base-300 bg-base-200 hover:border-base-content/40 transition">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6 text-base-content/70 pointer-events-none">
+                        <svg class="w-10 h-10 mb-4 text-base-content/60" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h3a3 3 0 0 0 0-6h-.025a5.56 5.56 0 0 0 .025-.5A5.5 5.5 0 0 0 7.207 9.021C7.137 9.017 7.071 9 7 9a4 4 0 1 0 0 8h2.167M12 19v-9m0 0-2 2m2-2 2 2"/>
                         </svg>
-                        <p class="mb-2 text-sm font-semibold text-whiteSmoke">Click to upload or drag & drop</p>
-                        <p class="text-xs text-gray-400">PNG, JPG, SVG, GIF, HEIC (≤25 MB)</p>
+                        <p class="mb-2 text-sm font-semibold text-base-content">Click to upload or drag & drop</p>
+                        <p class="text-xs text-base-content/60">PNG, JPG, SVG, GIF, HEIC (≤25 MB)</p>
                     </div>
                     <input id="dropzone-file" type="file" class="hidden" accept="image/*" multiple />
                 </label>
             </div>
         
-            <p id="converter-status" class="text-sm text-gray-400 mb-2"></p>
-            <div id="converter-loading" class="hidden mb-4 flex items-center gap-2 text-sm text-gray-300">
-                <svg class="w-5 h-5 animate-spin text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <p id="converter-status" class="text-sm text-base-content/70 mb-2"></p>
+            <div id="converter-loading" class="hidden mb-4 flex items-center gap-2 text-sm text-base-content/70">
+                <svg class="w-5 h-5 animate-spin text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
                 </svg>
@@ -33,20 +33,20 @@
         
             <div id="converter-results-wrapper" class="hidden">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
-                    <h2 class="text-lg font-semibold text-whiteSmoke">Results</h2>
+                    <h2 class="text-lg font-semibold text-base-content">Results</h2>
                     <div class="flex items-center gap-3">
-                        <button id="download-all" type="button" class="inline-flex items-center text-sm font-semibold text-primary-500 hover:text-whiteSmoke transition">Download all</button>
-                        <span class="block h-4 w-px bg-gray-700"></span>
-                        <button id="clear-results" type="button" class="inline-flex items-center text-sm font-semibold text-gray-400 hover:text-whiteSmoke transition">Clear results</button>
+                        <button id="download-all" type="button" class="inline-flex items-center text-sm link-ink text-base-content">Download all</button>
+                        <span class="block h-4 w-px bg-base-300"></span>
+                        <button id="clear-results" type="button" class="inline-flex items-center text-sm font-semibold text-base-content/60 hover:text-base-content underline underline-offset-4 transition">Clear results</button>
                     </div>
                 </div>
-                <hr class="border-gray-800 mb-4">
+                <hr class="border-base-300 mb-4">
                 <div id="converter-results" class="space-y-4"></div>
             </div>
         </div>
     </div>
     <a href="/">
-        <img class="max-w-[720px] rounded mx-auto mb-8 w-full" src="/images/tsd-720x90.webp" alt="Tom Smith Design Banner">
+        <img class="max-w-[720px] rounded-xl mx-auto mb-8 w-full" src="/images/tsd-720x90.webp" alt="Tom Smith Design Banner">
     </a>
 </section>
 
@@ -130,16 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const reduction = Math.max(0, 100 - ((meta.blob.size / file.size) * 100)).toFixed(1);
         const newName = `${slugify(file.name.replace(/\.[^/.]+$/, ''))}.webp`;
         return `
-            <div class="rounded-xl border border-gray-800 bg-gray-800/80 p-4 shadow flex flex-col gap-4 md:flex-row md:items-center">
-                <img src="${objectUrl}" alt="${newName}" class="w-full max-w-[120px] rounded-lg border border-gray-700 object-cover">
+            <div class="rounded-xl border border-base-300 bg-base-100 p-4 flex flex-col gap-4 md:flex-row md:items-center">
+                <img src="${objectUrl}" alt="${newName}" class="w-full max-w-[120px] rounded-lg border border-base-300 object-cover">
                 <div class="flex-1 space-y-2">
-                    <p class="text-sm text-gray-300"><span class="font-semibold">${file.name}</span> → <code class="text-green-500">${newName}</code></p>
-                    <p class="text-sm text-green-500">Size: ${formatSize(file.size)} → ${formatSize(meta.blob.size)} (${reduction}% smaller)</p>
-                    <p class="text-xs text-gray-500">${meta.width} × ${meta.height}px · Quality ${(meta.quality * 100).toFixed(0)}${hitTarget ? '%' : '% (best effort)'}</p>
+                    <p class="text-sm text-base-content/80"><span class="font-semibold">${file.name}</span> → <code class="text-success">${newName}</code></p>
+                    <p class="text-sm text-success">Size: ${formatSize(file.size)} → ${formatSize(meta.blob.size)} (${reduction}% smaller)</p>
+                    <p class="text-xs text-base-content/60">${meta.width} × ${meta.height}px · Quality ${(meta.quality * 100).toFixed(0)}${hitTarget ? '%' : '% (best effort)'}</p>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <a href="${objectUrl}" download="${newName}" class="inline-flex items-center justify-center rounded-lg bg-whiteSmoke px-4 py-2 text-sm font-semibold text-gunmetal hover:bg-platinum transition">Download</a>
-                    ${hitTarget ? '' : '<span class="text-[10px] uppercase tracking-wide text-amber-300 text-center">Couldn’t reach 150 KB</span>'}
+                    <a href="${objectUrl}" download="${newName}" class="btn btn-neutral btn-sm">Download</a>
+                    ${hitTarget ? '' : '<span class="text-[10px] uppercase tracking-wide text-warning text-center">Couldn’t reach 150 KB</span>'}
                 </div>
             </div>
         `;
@@ -153,9 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (const file of files) {
             const tempCard = document.createElement('div');
-            tempCard.className = 'rounded-xl border border-gray-800 bg-gray-800/60 p-4 text-sm text-gray-300 flex items-center gap-3';
+            tempCard.className = 'rounded-xl border border-base-300 bg-base-200 p-4 text-sm text-base-content/70 flex items-center gap-3';
             tempCard.innerHTML = `
-                <svg class="w-6 h-6 animate-spin text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 animate-spin text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
                 </svg>
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (error) {
                 console.error(error);
                 tempCard.textContent = `Failed to convert ${file.name}: ${error.message}`;
-                tempCard.classList.add('text-red-400');
+                tempCard.classList.add('text-error');
             } finally {
                 activeTasks -= 1;
                 if (activeTasks <= 0) {
@@ -225,13 +225,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ['dragenter', 'dragover'].forEach((type) => {
         dropzone.addEventListener(type, (event) => {
             event.preventDefault();
-            label.classList.add('border-white/70');
+            label.classList.add('border-base-content/60');
         });
     });
     ['dragleave', 'drop'].forEach((type) => {
         dropzone.addEventListener(type, (event) => {
             event.preventDefault();
-            label.classList.remove('border-white/70');
+            label.classList.remove('border-base-content/60');
             if (type === 'drop') {
                 const files = Array.from(event.dataTransfer.files || []).filter((file) => file.type.startsWith('image/'));
                 handleFiles(files);

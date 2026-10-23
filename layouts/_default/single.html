@@ -1,50 +1,50 @@
 {{ define "main" }}
-<main class="pb-16 lg:pb-24 bg-whiteSmoke dark:bg-gray-900 antialiased">
-  <header class="py-12">
+<div class="pb-16 lg:pb-24 bg-base-100">
+  <header class="pt-12 pb-10 lg:pt-16">
     <div class="px-4 mx-auto w-full max-w-screen-xl text-center">
-      <span class="block mb-4 font-semibold text-gunmetal dark:text-gray-400">
-        Published <time class="font-normal text-gunmetal dark:text-gray-400" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" pubdate>{{ .Date.Format "January 2, 2006" }}</time>
+      <span class="block mb-4 text-sm font-semibold text-base-content">
+        Published <time class="font-normal text-base-content/70" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" pubdate>{{ .Date.Format "January 2, 2006" }}</time>
       </span>
-      <h1 class="mx-auto mb-4 max-w-3xl text-2xl font-extrabold leading-none text-gunmetal sm:text-3xl lg:text-4xl">{{ .Title }}</h1>
-      <p class="text-lg font-normal max-w-[720px] mx-auto text-gunmetal dark:text-gray-400">{{ .Description }}</p>
+      <h1 class="mx-auto mb-4 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-base-content sm:text-4xl lg:text-5xl">{{ .Title }}</h1>
+      <p class="text-lg max-w-[720px] mx-auto text-base-content/70">{{ .Description }}</p>
     </div>
   </header>
-  <div class="flex relative z-20 justify-between px-4 mx-auto max-w-screen-xl bg-whiteSmoke dark:bg-gray-900 rounded">
-    <article class="xl:w-[828px] w-full max-w-none format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-      <div class="flex flex-col lg:flex-row justify-between lg:items-center py-6 border-t border-b border-gray-200 dark:border-gray-700">
-        <span class="text-base mb-4 lg:mb-0 font-normal text-gunmetal dark:text-gray-400">
-          By <a href="#" rel="author" class="font-bold text-gunmetal dark:text-white no-underline hover:underline">{{ .Params.author }}</a> in <a href="#" class="font-normal text-gunmetal dark:text-gray-400 no-underline hover:underline">{{ .Params.category }}</a>
+  <div class="flex relative z-20 justify-between gap-12 px-4 mx-auto max-w-screen-xl sm:px-6 lg:px-10">
+    <article class="xl:w-[828px] w-full max-w-none">
+      <div class="flex flex-col lg:flex-row justify-between lg:items-center py-4 border-t border-b border-base-300">
+        <span class="text-base mb-3 lg:mb-0 text-base-content/80">
+          By <a href="#" rel="author" class="font-semibold text-base-content hover:underline">{{ .Params.author }}</a> in <a href="#" class="text-base-content/80 hover:underline">{{ .Params.category }}</a>
         </span>
-        <aside aria-label="Share social media">
-          <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center py-2 px-6 mr-2 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-            <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+        <aside aria-label="Share social media" class="-ml-3 lg:ml-0 flex flex-wrap items-center">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm gap-2 font-semibold underline underline-offset-4">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
               <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
             </svg>
             Share
           </a>
-          <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}&via=YourTwitterHandle" target="_blank" rel="noopener noreferrer" class="inline-flex items-center py-2 px-6 mr-2 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-            <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}&via=YourTwitterHandle" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm gap-2 font-semibold underline underline-offset-4">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path fill="currentColor" d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"/>
             </svg>
             Tweet
           </a>
-          <button onclick="copyToClipboard('{{ .Permalink }}')" type="button" class="inline-flex items-center py-2 px-6 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-            <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19">
+          <button onclick="copyToClipboard('{{ .Permalink }}')" type="button" class="btn btn-ghost btn-sm gap-2 font-semibold underline underline-offset-4">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.013 7.962a3.519 3.519 0 0 0-4.975 0l-3.554 3.554a3.518 3.518 0 0 0 4.975 4.975l.461-.46m-.461-4.515a3.518 3.518 0 0 0 4.975 0l3.553-3.554a3.518 3.518 0 0 0-4.974-4.975L10.3 3.7"/>
             </svg>
             Copy link
           </button>
         </aside>
       </div>
-      <div class="prose text-gunmetal py-5">
+      <div class="prose prose-lg max-w-none text-gunmetal py-8 prose-headings:font-heading prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary-600 prose-img:rounded-xl">
         {{ .Content }}
       </div>
       <script>
         document.querySelectorAll('iframe[src*="loom.com/embed"]').forEach(function(iframe) {
           var wrapper = iframe.parentElement;
           var loader = document.createElement('div');
-          loader.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border-radius:8px;z-index:1;overflow:hidden;background:#1a1f2e;';
-          loader.innerHTML = '<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.06) 50%,transparent 100%);background-size:200% 100%;animation:loom-shimmer 1.6s ease-in-out infinite;"></div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:12px;"><div style="width:48px;height:48px;border:3px solid rgba(255,255,255,0.15);border-top-color:rgba(255,255,255,0.7);border-radius:50%;animation:loom-spin 0.8s linear infinite;"></div><span style="color:rgba(255,255,255,0.45);font-size:13px;font-family:sans-serif;letter-spacing:0.02em;">Loading video…</span></div>';
+          loader.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;z-index:1;overflow:hidden;background:#f7f7f7;';
+          loader.innerHTML = '<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent 0%,rgba(0,0,0,0.04) 50%,transparent 100%);background-size:200% 100%;animation:loom-shimmer 1.6s ease-in-out infinite;"></div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:12px;"><div style="width:48px;height:48px;border:3px solid rgba(0,0,0,0.08);border-top-color:#22333b;border-radius:50%;animation:loom-spin 0.8s linear infinite;"></div><span style="color:#717171;font-size:13px;font-family:Inter,sans-serif;letter-spacing:0.02em;">Loading video…</span></div>';
           if (!document.getElementById('loom-loader-styles')) {
             var style = document.createElement('style');
             style.id = 'loom-loader-styles';
@@ -55,22 +55,22 @@
           iframe.addEventListener('load', function() { loader.remove(); });
         });
       </script>
-      <div class="flex justify-between items-center py-6 border-t border-b border-gray-200 dark:border-gray-700">
-        <aside aria-label="Share social media">
-          <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center py-2 px-6 mr-2 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-            <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+      <div class="flex justify-between items-center py-4 border-t border-b border-base-300">
+        <aside aria-label="Share social media" class="-ml-3 flex flex-wrap items-center">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm gap-2 font-semibold underline underline-offset-4">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
               <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
             </svg>
             Share
           </a>
-          <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}&via=YourTwitterHandle" target="_blank" rel="noopener noreferrer" class="inline-flex items-center py-2 px-6 mr-2 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-            <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}&via=YourTwitterHandle" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm gap-2 font-semibold underline underline-offset-4">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path fill="currentColor" d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"/>
             </svg>
             Tweet
           </a>
-          <button onclick="copyToClipboard('{{ .Permalink }}')" type="button" class="inline-flex items-center py-2 px-6 text-xs font-medium text-gunmetal no-underline bg-white rounded-lg border border-gunmetal focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-            <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19">
+          <button onclick="copyToClipboard('{{ .Permalink }}')" type="button" class="btn btn-ghost btn-sm gap-2 font-semibold underline underline-offset-4">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.013 7.962a3.519 3.519 0 0 0-4.975 0l-3.554 3.554a3.518 3.518 0 0 0 4.975 4.975l.461-.46m-.461-4.515a3.518 3.518 0 0 0 4.975 0l3.553-3.554a3.518 3.518 0 0 0-4.974-4.975L10.3 3.7"/>
             </svg>
             Copy link
@@ -89,21 +89,17 @@
             }
           </script>
         </aside>
-        <div class="not-format">
-          <button onclick="saveArticle()" data-tooltip-target="tooltip-save" class="hidden sm:inline-flex border border-gunmetal items-center p-2 text-sm font-medium text-gunmetal bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-gray-400 focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600" type="button">
+        <div class="tooltip tooltip-left hidden sm:inline-block" data-tip="Save this article">
+          <button onclick="saveArticle()" class="btn btn-ghost btn-sm gap-2 font-semibold" type="button" aria-label="Save this article">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m13 19-6-5-6 5V2a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17Z"/>
             </svg>
           </button>
-          <div id="tooltip-save" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
-            Save this article
-            <div class="tooltip-arrow" data-popper-arrow></div>
-          </div>
         </div>
       </div>
     </article>
     <aside class="hidden xl:block" aria-labelledby="sidebar-label">
-      <div class="xl:w-[336px] sticky top-[88px]">
+      <div class="xl:w-[336px] sticky top-28">
         <h3 id="sidebar-label" class="sr-only">Sidebar</h3>
         <!--
         <div class="p-4 mb-6 rounded-lg border border-gunmetal dark:border-gray-700">
@@ -124,33 +120,33 @@
           </form>
         </div>
         -->
-        <div class="p-4 mb-6 rounded-lg border border-gunmetal dark:border-gray-700">
-          <h4 class="mb-4 text-sm font-bold text-gunmetal dark:text-gray-400 uppercase">Latest posts</h4>
+        <div class="p-6 mb-6 rounded-xl border border-base-300 shadow-airbnb">
+          <h4 class="mb-5 text-lg font-semibold text-base-content">Latest posts</h4>
           {{ $latestPosts := first 3 (where .Site.RegularPages "Type" "post") }}
           {{ if $latestPosts }}
             {{ range $latestPosts }}
-              <div class="mb-6">
-                <h5 class="mb-2 text-lg font-bold leading-tight text-gunmetal dark:text-gray-400">{{ .Title }}</h5>
-                <p class="mb-2 text-gunmetal dark:text-gray-400">{{ .Summary }}</p>
-                <a href="{{ .Permalink }}" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
+              <div class="mb-6 pb-6 border-b border-base-300 last:mb-0 last:pb-0 last:border-0">
+                <h5 class="mb-2 text-base font-semibold leading-snug text-base-content">{{ .Title }}</h5>
+                <p class="mb-3 text-sm text-base-content/70 line-clamp-3">{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" class="text-sm link-ink text-base-content">
                   Read in {{ .ReadingTime }} minutes
                 </a>
               </div>
             {{ end }}
           {{ else }}
-            <p class="text-gunmetal dark:text-gray-400">No recent posts available.</p>
+            <p class="text-base-content/70">No recent posts available.</p>
           {{ end }}
         </div>
         <div>
-          <div class="flex justify-center items-center mb-3 w-full h-48 border border-gunmetal bg-gray-100 rounded-lg dark:bg-gray-800">
-            <svg aria-hidden="true" class="w-8 h-8 text-gunmetal" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <div class="flex justify-center items-center mb-3 w-full h-48 bg-base-200 rounded-xl">
+            <svg aria-hidden="true" class="w-8 h-8 text-base-content/40" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
             </svg>
           </div>
-          <p class="mb-2 text-sm text-gunmetal dark:text-gray-400">I'm gonna advertise one of my side hustles here. Hang tight.</p>
+          <p class="mb-2 text-sm text-base-content/70">I'm gonna advertise one of my side hustles here. Hang tight.</p>
         </div>
       </div>
     </aside>
   </div>
-</main>
+</div>
 {{ end }}

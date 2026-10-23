@@ -5,7 +5,7 @@
       <span class="block mb-4 text-sm font-semibold text-base-content">
         Published <time class="font-normal text-base-content/70" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" pubdate>{{ .Date.Format "January 2, 2006" }}</time>
       </span>
-      <h1 class="mx-auto mb-4 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-base-content sm:text-4xl lg:text-5xl">{{ .Title }}</h1>
+      <h1 class="mx-auto mb-4 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-base-content sm:text-4xl lg:text-5xl">{{ .Title }}</h1>
       <p class="text-lg max-w-[720px] mx-auto text-base-content/70">{{ .Description }}</p>
     </div>
   </header>
@@ -36,7 +36,7 @@
           </button>
         </aside>
       </div>
-      <div class="prose prose-lg max-w-none text-gunmetal py-8 prose-headings:font-heading prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary-600 prose-img:rounded-xl">
+      <div class="prose prose-lg max-w-none text-gunmetal py-8 prose-headings:font-heading prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary-600 prose-img:rounded-xl">
         {{ .Content }}
       </div>
       <script>
@@ -121,12 +121,12 @@
         </div>
         -->
         <div class="p-6 mb-6 rounded-xl border border-base-300 shadow-airbnb">
-          <h4 class="mb-5 text-lg font-semibold text-base-content">Latest posts</h4>
+          <h4 class="mb-5 text-lg font-bold text-base-content">Latest posts</h4>
           {{ $latestPosts := first 3 (where .Site.RegularPages "Type" "post") }}
           {{ if $latestPosts }}
             {{ range $latestPosts }}
               <div class="mb-6 pb-6 border-b border-base-300 last:mb-0 last:pb-0 last:border-0">
-                <h5 class="mb-2 text-base font-semibold leading-snug text-base-content">{{ .Title }}</h5>
+                <h5 class="mb-2 text-base font-bold leading-snug text-base-content">{{ .Title }}</h5>
                 <p class="mb-3 text-sm text-base-content/70 line-clamp-3">{{ .Summary }}</p>
                 <a href="{{ .Permalink }}" class="text-sm link-ink text-base-content">
                   Read in {{ .ReadingTime }} minutes

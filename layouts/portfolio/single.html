@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="bg-base-100">
     <div class="max-w-screen-xl px-4 pt-8 pb-16 mx-auto sm:px-6 lg:px-10 lg:pb-24">
-      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-base-content">{{ .Title }}</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-base-content">{{ .Title }}</h1>
 
       {{ with .Params.banner }}
       <div class="mt-6">
@@ -47,7 +47,7 @@
           <!-- Overview Section: Only display if overview is provided -->
           {{ with .Params.overview }}
           <div class="pb-8">
-            <h3 class="text-2xl font-semibold text-base-content">
+            <h3 class="text-2xl font-bold text-base-content">
               Overview
             </h3>
             <p class="mt-3 text-base leading-relaxed text-base-content/80">
@@ -85,7 +85,7 @@
           <!-- Background Section: Only display if background is provided -->
           {{ with .Params.background }}
           <div class="py-8">
-            <h3 class="text-2xl font-semibold text-base-content">
+            <h3 class="text-2xl font-bold text-base-content">
               Background
             </h3>
             <p class="mt-3 text-base leading-relaxed text-base-content/80">
@@ -97,7 +97,7 @@
           <!-- Challenge Section: Only display if challenge is provided -->
           {{ with .Params.challenge }}
           <div class="py-8">
-            <h3 class="text-2xl font-semibold text-base-content">
+            <h3 class="text-2xl font-bold text-base-content">
               The Challenge
             </h3>
             <p class="mt-3 text-base leading-relaxed text-base-content/80">
@@ -110,7 +110,7 @@
         <!-- Action card -->
         <aside class="order-first lg:order-none lg:col-span-5">
           <div class="lg:sticky lg:top-28 rounded-xl border border-base-300 bg-base-100 p-6 shadow-airbnb">
-            <p class="text-xl font-semibold font-heading text-base-content">{{ .Title }}</p>
+            <p class="text-xl font-bold font-heading text-base-content">{{ .Title }}</p>
             <div class="mt-5 flex flex-col gap-3">
               <a href="/contact/" class="btn btn-primary w-full">
                 Get in touch

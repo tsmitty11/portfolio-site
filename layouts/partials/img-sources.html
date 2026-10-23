@@ -1,12 +1,13 @@
 {{/*
   Returns resized WebP sources for a site image.
   Usage: {{ $img := partial "img-sources.html" (dict "src" "/images/foo.jpg" "widths" (slice 480 960)) }}
-  Result: dict with "src" (smallest variant) and "srcset" (empty when the file can't be processed,
-  e.g. SVG, GIF, or a missing file — "src" then falls back to the original path).
+  Result: dict with "src" (smallest variant), "srcset", and "width"/"height" of the largest variant.
+  When the file can't be processed (SVG, GIF, missing file) "src" falls back to the original path
+  and the other keys are empty.
 */}}
 {{ $src := .src }}
 {{ $widths := .widths | default (slice 480 960) }}
-{{ $out := dict "src" $src "srcset" "" }}
+{{ $out := dict "src" $src "srcset" "" "width" 0 "height" 0 }}
 {{ $path := strings.TrimPrefix "/" (replace $src "%20" " ") }}
 {{ $ext := lower (path.Ext $path) }}
 {{ if in (slice ".jpg" ".jpeg" ".png" ".webp") $ext }}
@@ -14,6 +15,7 @@
     {{ $orig := . }}
     {{ $set := slice }}
     {{ $first := "" }}
+    {{ $last := $orig }}
     {{ range $widths }}
       {{ $w := . }}
       {{ if gt $w $orig.Width }}{{ $w = $orig.Width }}{{ end }}
@@ -21,8 +23,9 @@
       {{ $entry := printf "%s %dw" $r.RelPermalink $r.Width }}
       {{ if not (in $set $entry) }}{{ $set = $set | append $entry }}{{ end }}
       {{ if not $first }}{{ $first = $r.RelPermalink }}{{ end }}
+      {{ $last = $r }}
     {{ end }}
-    {{ $out = dict "src" $first "srcset" (delimit $set ", ") }}
+    {{ $out = dict "src" $first "srcset" (delimit $set ", ") "width" $last.Width "height" $last.Height }}
   {{ end }}
 {{ end }}
 {{ return $out }}

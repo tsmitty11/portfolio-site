@@ -1,0 +1,30 @@
+# Estimated time investment per deliverable, shown on /for-agencies/.
+# PLACEHOLDER VALUES — replace with real estimates before publishing.
+# Ad hoc cost and share of the retainer are calculated from `hours` in the template.
+- deliverable: "Social media post set (5 posts)"
+  category: "Graphic Design"
+  hours: 3
+- deliverable: "Display ad set (5 sizes)"
+  category: "Graphic Design"
+  hours: 4
+- deliverable: "Print flyer or one-page ad"
+  category: "Graphic Design"
+  hours: 3
+- deliverable: "Pitch deck (10–15 slides)"
+  category: "Graphic Design"
+  hours: 10
+- deliverable: "Logo design"
+  category: "Graphic Design"
+  hours: 12
+- deliverable: "Email template"
+  category: "Web Design & Development"
+  hours: 4
+- deliverable: "Landing page (design + build)"
+  category: "Web Design & Development"
+  hours: 20
+- deliverable: "Animated social post (15s)"
+  category: "Motion Graphics"
+  hours: 5
+- deliverable: "Promo animation (30–60s)"
+  category: "Motion Graphics"
+  hours: 15

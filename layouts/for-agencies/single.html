@@ -1,0 +1,307 @@
+{{ define "main" }}
+
+{{ $calendly := "https://calendly.com/hiretomsmith/hiretomsmith" }}
+
+<!-- Hero Section -->
+
+<section class="bg-base-100">
+    <div class="grid max-w-screen-xl px-4 pt-10 pb-16 mx-auto sm:px-6 lg:gap-12 lg:py-24 lg:px-10 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+            <p class="section-eyebrow mb-4">For Agency Owners</p>
+            <h1 class="max-w-2xl mb-5 text-5xl font-semibold tracking-tight leading-[1.05] xl:text-6xl text-base-content">More work than hands? I'll take the overflow.</h1>
+            <p class="max-w-2xl mb-8 text-base-content/70 text-lg lg:text-xl">I'm a designer with over a decade of experience who plugs into your agency when the work outpaces your team. Print, digital, motion, and web; delivered to your client's brand standards and your deadlines, without adding headcount.</p>
+            <div class="flex flex-wrap gap-3">
+                <button class="btn btn-primary h-12 min-h-12 px-8 text-base" type="button" onclick="Calendly.initPopupWidget({url: '{{ $calendly }}'});return false;">
+                    Book a Call
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <a href="#pricing" class="btn-line h-12 min-h-12 px-8 text-base">See Pricing</a>
+            </div>
+        </div>
+        <div class="hidden lg:flex lg:col-span-5 lg:justify-end lg:items-center">
+            <div class="media-frame w-full rounded-3xl overflow-hidden shadow-airbnb bg-base-200">
+                {{ partial "img.html" (dict "src" "/images/tom-headshot-web.jpg" "alt" "Tom Smith" "widths" (slice 600 1200) "sizes" "(min-width: 1024px) 40vw, 100vw" "eager" true "class" "block w-full") }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Proof -->
+
+<section class="bg-base-100 border-t border-base-300">
+    <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-10">
+        <p class="mb-8 text-center text-sm font-semibold text-base-content/60">Past clients include</p>
+        <ul class="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 lg:justify-between" aria-label="Past clients">
+            <li><img src="/images/pkgx-logo.svg" alt="PKGX" class="h-7 w-auto" loading="lazy"></li>
+            <li><img src="/images/total-synergy-logo.svg" alt="Total Synergy" class="h-10 w-auto" loading="lazy"></li>
+            <li><img src="/images/tidus-logo.svg" alt="Tidus" class="h-10 w-auto" loading="lazy"></li>
+            <li><img src="/images/verizon-logo.svg" alt="Verizon" class="h-7 w-auto" loading="lazy"></li>
+            <li><img src="/images/vivitar-logo.svg" alt="Vivitar" class="h-7 w-auto" loading="lazy"></li>
+            <li><img src="/images/candor-logo.svg" alt="Candor" class="h-10 w-auto" loading="lazy"></li>
+            <li><img src="/images/tea-logo.svg" alt="tea" class="h-7 w-auto" loading="lazy"></li>
+        </ul>
+    </div>
+</section>
+
+<!-- What I Do -->
+
+<section class="bg-base-100 border-t border-base-300">
+    <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+        <div class="max-w-2xl mx-auto mb-12 text-center">
+            <h2 class="mb-4 text-4xl tracking-tight font-semibold text-base-content">One designer. Every format your clients need.</h2>
+            <p class="text-base-content/70 text-xl">Hand off the brief and get back polished, on-brand work, ready to present.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+            <div class="rounded-xl border border-base-300 p-8 transition-shadow hover:shadow-airbnb">
+                <svg class="w-10 h-10 mb-4 text-base-content" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7h.01m3.486 1.513h.01m-6.978 0h.01M6.99 12H7m9 4h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 3.043 12.89 9.1 9.1 0 0 0 8.2 20.1a8.62 8.62 0 0 0 3.769.9 2.013 2.013 0 0 0 2.03-2v-.857A2.036 2.036 0 0 1 16 16Z"/></svg>
+                <h3 class="mb-1 text-xl font-semibold text-base-content">Graphic Design</h3>
+                <p class="mb-4 text-sm font-semibold text-base-content/60">Print &amp; Digital</p>
+                <p class="mb-6 text-base-content/70">Campaign assets and brand collateral built to your client's guidelines and delivered print- or production-ready.</p>
+                <ul class="space-y-2 text-sm text-base-content">
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Social media and display ads</li>
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Pitch decks and presentations</li>
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Logos and brand identity</li>
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Flyers, posters, and print collateral</li>
+                </ul>
+            </div>
+            <div class="rounded-xl border border-base-300 p-8 transition-shadow hover:shadow-airbnb">
+                <svg class="w-10 h-10 mb-4 text-base-content" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 6H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1Zm7 11-6-2V9l6-2v10Z"/></svg>
+                <h3 class="mb-1 text-xl font-semibold text-base-content">Motion Graphics</h3>
+                <p class="mb-4 text-sm font-semibold text-base-content/60">Animation &amp; Video</p>
+                <p class="mb-6 text-base-content/70">Animated content that gives your clients' campaigns movement, from storyboard to final export.</p>
+                <ul class="space-y-2 text-sm text-base-content">
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Promo and explainer animations</li>
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Animated social content</li>
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Logo reveals and animated badges</li>
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Video editing and product demos</li>
+                </ul>
+            </div>
+            <div class="rounded-xl border border-base-300 p-8 transition-shadow hover:shadow-airbnb">
+                <svg class="w-10 h-10 mb-4 text-base-content" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"/></svg>
+                <h3 class="mb-1 text-xl font-semibold text-base-content">Web Design &amp; Development</h3>
+                <p class="mb-4 text-sm font-semibold text-base-content/60">Design &amp; Code</p>
+                <p class="mb-6 text-base-content/70">Sites designed in Figma and built in code, so there's no handoff gap between the mockup and what goes live.</p>
+                <ul class="space-y-2 text-sm text-base-content">
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Landing pages and microsites</li>
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Marketing site updates</li>
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Email templates</li>
+                    <li class="flex gap-2"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>WordPress, Webflow, or hand-coded builds</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tools -->
+
+{{ $adobe := slice
+    (dict "name" "Photoshop" "abbr" "Ps" "bg" "#001E36" "fg" "#31A8FF")
+    (dict "name" "Illustrator" "abbr" "Ai" "bg" "#330000" "fg" "#FF9A00")
+    (dict "name" "InDesign" "abbr" "Id" "bg" "#49021F" "fg" "#FF3366")
+    (dict "name" "After Effects" "abbr" "Ae" "bg" "#00005B" "fg" "#9999FF")
+    (dict "name" "Premiere Pro" "abbr" "Pr" "bg" "#00005B" "fg" "#9999FF")
+}}
+{{ $tools := slice
+    (dict "name" "Figma" "icon" "figma")
+    (dict "name" "Canva" "icon" "canva")
+    (dict "name" "GitHub" "icon" "github")
+    (dict "name" "VS Code" "icon" "vscode")
+    (dict "name" "Notion" "icon" "notion")
+    (dict "name" "Slack" "icon" "slack")
+}}
+<section class="bg-base-200 border-t border-base-300">
+    <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+        <div class="max-w-2xl mx-auto mb-12 text-center">
+            <h2 class="mb-4 text-4xl tracking-tight font-semibold text-base-content">Works in your stack.</h2>
+            <p class="text-base-content/70 text-xl">No new tools for your team to learn. I work in the same software and channels you already use.</p>
+        </div>
+        <ul class="flex flex-wrap justify-center gap-4" aria-label="Design software and collaboration tools">
+            {{ range $adobe }}
+            <li class="flex w-[calc(50%-0.5rem)] sm:w-40 flex-col items-center gap-3 rounded-xl bg-base-100 border border-base-300 px-4 py-6">
+                <svg class="w-12 h-12" viewBox="0 0 48 48" role="img" aria-label="Adobe {{ .name }} logo">
+                    <rect width="48" height="48" rx="10" fill="{{ .bg }}"/>
+                    <text x="24" y="31.5" text-anchor="middle" font-family="Mona Sans, Inter, Arial, sans-serif" font-weight="600" font-size="20" fill="{{ .fg }}">{{ .abbr }}</text>
+                </svg>
+                <span class="text-sm font-semibold text-center text-base-content">{{ .name }}</span>
+            </li>
+            {{ end }}
+            {{ range $tools }}
+            <li class="flex w-[calc(50%-0.5rem)] sm:w-40 flex-col items-center gap-3 rounded-xl bg-base-100 border border-base-300 px-4 py-6">
+                <img src="/images/tools/{{ .icon }}.svg" alt="{{ .name }} logo" class="w-12 h-12" loading="lazy">
+                <span class="text-sm font-semibold text-center text-base-content">{{ .name }}</span>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
+
+<!-- Gallery -->
+
+<section class="bg-base-100 border-t border-base-300">
+    <div class="max-w-screen-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+        <div class="max-w-2xl mx-auto mb-12 text-center">
+            <h2 class="mb-4 text-4xl tracking-tight font-semibold text-base-content">Recent work</h2>
+            <p class="text-base-content/70 text-xl">A sample of projects from my portfolio.</p>
+        </div>
+        <div class="columns-2 md:columns-3 lg:columns-4 gap-4">
+            {{ with site.GetPage "section" "portfolio" }}
+                {{ range .Pages.ByWeight }}
+                    {{ $page := . }}
+                    {{ with $page.Params.gallery }}
+                        {{/* Use the second image when available so the gallery doesn't repeat the homepage covers */}}
+                        {{ $item := index . 0 }}
+                        {{ if ge (len .) 2 }}{{ $item = index . 1 }}{{ end }}
+                        <a href="{{ $page.RelPermalink }}" class="group listing-photo media-frame block mb-4 break-inside-avoid">
+                            {{ partial "img.html" (dict "src" $item.src "alt" ($item.alt | default $page.Title) "widths" (slice 480 960) "sizes" "(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" "class" "block w-full h-auto transition duration-300 group-hover:brightness-90") }}
+                            <span class="absolute bottom-3 left-3 z-[2] rounded-full bg-base-100 px-3 py-1 text-xs font-semibold text-base-content shadow-airbnb-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">{{ $page.Title }}</span>
+                        </a>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+        <div class="mt-12 text-center">
+            <a href="/portfolio/" class="btn-line h-12 min-h-12 px-6">
+                View Full Portfolio
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+
+{{ $testimonials := slice
+    (dict "quote" "Thomas is a 10/10 designer! Crazy talented!" "name" "Todd Stewart" "role" "CMO at Total Synergy")
+    (dict "quote" "Working with Thomas was like working with a professional graphics department and a front-end UI shop all in one." "name" "Jeremy Corey" "role" "4Core LLC")
+    (dict "quote" "Tom is an amazing designer! Great work ethic, understands the goals, communicates effectively and will help up your design game significantly!" "name" "Upwork Client" "role" "Dental Tech Executive")
+    (dict "quote" "Not the first time working with Tom and won't be the last. His attention to detail and fast turn around makes him one of my favorite freelancers. Great all around. Thank you!" "name" "Upwork Client" "role" "Ecommerce Executive")
+    (dict "quote" "Thomas is hands down one of the most competent designers on Upwork. Get him on your project before someone else does!" "name" "Upwork Client" "role" "Entrepreneur")
+    (dict "quote" "Thomas was beyond amazing. He did exactly what I asked him to do and even improved upon it. I could not recommend him enough. I will definitely be hiring him again 1000%." "name" "Upwork Client" "role" "Entrepreneur")
+    (dict "quote" "Tom is great: professional, thoughful, and a creative collaborator. Really enjoyed working with him." "name" "Upwork Client" "role" "Sales Executive")
+    (dict "quote" "Excellent work. Very easy to work with. Thank you!" "name" "Upwork Client" "role" "Co-Founder and CTO")
+}}
+<section class="bg-base-100 border-t border-base-300">
+    <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+        <div class="max-w-2xl mx-auto mb-12 text-center">
+            <h2 class="mb-4 text-4xl tracking-tight font-semibold text-base-content">What clients say</h2>
+            <p class="text-base-content/70 text-xl">Tom’s worked with over a hundred clients across six continents.</p>
+        </div>
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-6">
+            {{ range $testimonials }}
+            <figure class="mb-6 break-inside-avoid rounded-xl border border-base-300 p-6">
+                <svg class="h-6 mb-4 text-primary" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+                </svg>
+                <blockquote>
+                    <p class="text-base leading-relaxed text-base-content">{{ .quote }}</p>
+                </blockquote>
+                <figcaption class="mt-5">
+                    <div class="text-sm font-semibold text-base-content">{{ .name }}</div>
+                    <div class="text-sm text-base-content/60">{{ .role }}</div>
+                </figcaption>
+            </figure>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+
+<section id="pricing" class="bg-base-200 border-t border-base-300 scroll-mt-20">
+    <div class="max-w-screen-lg px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+        <div class="max-w-2xl mx-auto mb-12 text-center">
+            <h2 class="mb-4 text-4xl tracking-tight font-semibold text-base-content">Simple, transparent pricing.</h2>
+            <p class="text-base-content/70 text-xl">Pick the model that fits your pipeline.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2">
+            <!-- Ad Hoc -->
+            <div class="flex flex-col rounded-xl border border-base-300 bg-base-100 p-8">
+                <h3 class="text-xl font-semibold text-base-content">Ad Hoc</h3>
+                <p class="mt-2 text-base-content/70">For one-off projects and occasional spikes in workload.</p>
+                <p class="mt-6 flex items-baseline gap-1">
+                    <span class="font-heading text-5xl font-semibold tracking-tight text-base-content">$100</span>
+                    <span class="text-base-content/60">/ hour</span>
+                </p>
+                <ul class="mt-8 mb-8 space-y-3 text-base-content">
+                    <li class="flex gap-3"><svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Pay only for the hours you use</li>
+                    <li class="flex gap-3"><svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>No monthly commitment</li>
+                    <li class="flex gap-3"><svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Time estimate before work begins</li>
+                </ul>
+                <a href="/contact/" class="btn-line h-12 min-h-12 w-full mt-auto text-base">Get in Touch</a>
+            </div>
+            <!-- Retainer -->
+            <div class="relative flex flex-col rounded-xl border-2 border-base-content bg-base-100 p-8 shadow-airbnb">
+                <span class="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-content">Best value</span>
+                <h3 class="text-xl font-semibold text-base-content">Monthly Retainer</h3>
+                <p class="mt-2 text-base-content/70">For agencies with steady overflow who want a designer on call.</p>
+                <p class="mt-6 flex items-baseline gap-1">
+                    <span class="font-heading text-5xl font-semibold tracking-tight text-base-content">$3,000</span>
+                    <span class="text-base-content/60">/ month</span>
+                </p>
+                <ul class="mt-8 mb-8 space-y-3 text-base-content">
+                    <li class="flex gap-3"><svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>40 hours of design each month</li>
+                    <li class="flex gap-3"><svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Effective rate of $75/hour</li>
+                    <li class="flex gap-3"><svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Split hours across clients and projects</li>
+                </ul>
+                <button type="button" onclick="Calendly.initPopupWidget({url: '{{ $calendly }}'});return false;" class="btn btn-primary h-12 min-h-12 w-full mt-auto text-base">Book a Call</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Time Estimates -->
+
+<section class="bg-base-100 border-t border-base-300">
+    <div class="max-w-screen-lg px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:px-10">
+        <div class="max-w-2xl mx-auto mb-12 text-center">
+            <h2 class="mb-4 text-4xl tracking-tight font-semibold text-base-content">How far your hours go</h2>
+            <p class="text-base-content/70 text-xl">Typical time investment for common deliverables. Every project is different, so I'll confirm an estimate before starting.</p>
+        </div>
+        <div class="overflow-x-auto rounded-xl border border-base-300">
+            <table class="table">
+                <thead>
+                    <tr class="border-base-300 bg-base-200 text-sm text-base-content">
+                        <th>Deliverable</th>
+                        <th class="hidden md:table-cell">Category</th>
+                        <th class="text-right">Est. hours</th>
+                        <th class="text-right">Ad hoc cost</th>
+                        <th class="hidden sm:table-cell text-right">Share of retainer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range site.Data.agency_estimates }}
+                    <tr class="border-base-300">
+                        <td class="font-medium text-base-content">{{ .deliverable }}</td>
+                        <td class="hidden md:table-cell text-base-content/70">{{ .category }}</td>
+                        <td class="text-right tabular-nums">{{ .hours }}</td>
+                        <td class="text-right tabular-nums">${{ lang.FormatNumberCustom 0 (mul .hours 100) }}</td>
+                        <td class="hidden sm:table-cell text-right tabular-nums text-base-content/70">{{ math.Round (mul (div (float .hours) 40) 100) }}%</td>
+                    </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+
+<section class="bg-base-100">
+    <div class="max-w-screen-xl px-4 pb-24 mx-auto sm:px-6 sm:pb-32 lg:px-10">
+        <div class="rounded-3xl bg-base-200 px-8 py-16 sm:px-16 sm:py-20">
+            <div class="mx-auto max-w-screen-sm text-center">
+                <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-semibold leading-tight text-base-content">Let's take something off your plate.</h2>
+                <p class="mb-8 text-base-content/70 md:text-lg">Tell me about your pipeline and the work piling up, and I'll let you know how I can help.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3">
+                    <a href="/contact/" class="btn btn-primary h-12 min-h-12 px-8 text-base">Get in Touch</a>
+                    <button type="button" onclick="Calendly.initPopupWidget({url: '{{ $calendly }}'});return false;" class="btn-line h-12 min-h-12 px-8 text-base">Book a Call</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+{{ end }}

@@ -3,4 +3,4 @@
   Params: src, alt, class, sizes, widths, eager (bool), style
 */}}
 {{ $img := partial "img-sources.html" (dict "src" .src "widths" .widths) }}
-<img src="{{ $img.src }}"{{ with $img.srcset }} srcset="{{ . }}" sizes="{{ $.sizes | default "100vw" }}"{{ end }} alt="{{ .alt }}" class="{{ .class }}"{{ with .style }} style="{{ . | safeCSS }}"{{ end }} {{ if .eager }}loading="eager" fetchpriority="high"{{ else }}loading="lazy"{{ end }} decoding="async" data-preload>
+<img src="{{ $img.src }}"{{ with $img.srcset }} srcset="{{ . }}" sizes="{{ $.sizes | default "100vw" }}"{{ end }} alt="{{ .alt }}"{{ with $img.width }} width="{{ . }}" height="{{ $img.height }}"{{ end }} class="{{ .class }}"{{ with .style }} style="{{ . | safeCSS }}"{{ end }} {{ if .eager }}loading="eager" fetchpriority="high"{{ else }}loading="lazy"{{ end }} decoding="async" data-preload>

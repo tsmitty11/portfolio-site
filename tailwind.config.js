@@ -24,27 +24,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Airbnb-inspired "Rausch" scale. DEFAULT/content defer to the daisyUI theme
+        // Logo-color ("gunmetal") scale. DEFAULT/content defer to the daisyUI theme
         // so `btn-primary`, `bg-primary`, etc. stay in sync with the theme below.
         primary: {
           DEFAULT: 'var(--fallback-p,oklch(var(--p)/<alpha-value>))',
           content: 'var(--fallback-pc,oklch(var(--pc)/<alpha-value>))',
-          "50":"#fff1f3",
-          "100":"#ffe0e5",
-          "200":"#ffc2cd",
-          "300":"#ff94a8",
-          "400":"#ff5a79",
-          "500":"#ff385c",
-          "600":"#e31c5f",
-          "700":"#d70466",
-          "800":"#bd1e59",
-          "900":"#92174d",
-          "950":"#5c0a2c"
+          "50":"#f4f6f7",
+          "100":"#e3e8ea",
+          "200":"#c9d2d6",
+          "300":"#a3b2b9",
+          "400":"#4a5f69",
+          "500":"#22333b",
+          "600":"#22333b",
+          "700":"#1c2a31",
+          "800":"#172228",
+          "900":"#0d1418",
+          "950":"#080c0f"
         },
         // Legacy brand tokens, remapped for the light theme. Markdown content still uses these.
         gunmetal: '#222222',
         whiteSmoke: '#F7F7F7',
-        coral: '#FF385C',
+        coral: '#22333B',
         platinum: '#DDDDDD',
       },
       aspectRatio: {
@@ -69,11 +69,11 @@ module.exports = {
     themes: [
       {
         tomsmith: {
-          'primary': '#ff385c',
+          'primary': '#22333b',
           'primary-content': '#ffffff',
           'secondary': '#222222',
           'secondary-content': '#ffffff',
-          'accent': '#ff385c',
+          'accent': '#22333b',
           'accent-content': '#ffffff',
           'neutral': '#222222',
           'neutral-content': '#ffffff',

@@ -19,13 +19,12 @@
 }
 
 @layer components {
-  /* Airbnb-style gradient on primary actions */
+  /* Primary actions use the logo color */
   .btn-primary {
-    background-image: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
     border: 0;
   }
   .btn-primary:hover {
-    background-image: linear-gradient(to right, #d70466 0%, #bd1e59 100%);
+    background-color: #0d1418;
   }
 
   /* Outlined secondary action: black hairline, white fill */

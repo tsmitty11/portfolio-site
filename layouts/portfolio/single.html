@@ -14,7 +14,9 @@
 
       <!-- Gallery Section: Only display if there are gallery images -->
       {{ with .Params.gallery }}
-        {{ if ge (len .) 5 }}
+        {{ $count := len . }}
+        {{/* Only use the mosaic when the images after the first five fill complete 3-column rows */}}
+        {{ if and (ge $count 5) (eq (mod (sub $count 5) 3) 0) }}
           <!-- Airbnb-style photo mosaic for the first five images -->
           <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 rounded-xl overflow-hidden">
             {{ range $i, $item := first 5 . }}
@@ -29,7 +31,7 @@
           </div>
           {{ end }}
         {{ else }}
-          <div class="mt-6 grid grid-cols-2 gap-2 rounded-xl overflow-hidden">
+          <div class="mt-6 grid grid-cols-2 {{ if eq (mod $count 3) 0 }}md:grid-cols-3{{ end }} gap-2 rounded-xl overflow-hidden">
             {{ range . }}
               {{ partial "portfolio-gallery-tile.html" (dict "item" . "class" "aspect-[4/3]") }}
             {{ end }}

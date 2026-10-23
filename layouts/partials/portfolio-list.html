@@ -46,7 +46,7 @@
                     {{ end }}
                     {{ range . }}
                         {{ if .src }}
-                            {{ $galleryImages = $galleryImages | append .src }}
+                            {{ $galleryImages = $galleryImages | append (partial "img-sources.html" (dict "src" .src "widths" (slice 800))).src }}
                         {{ end }}
                     {{ end }}
                 {{ end }}
@@ -58,15 +58,16 @@
                 {{ if not $cover }}
                     {{ $cover = "/images/portfolio/thumbnails/alaeris-thumbnail.jpg" }}
                 {{ end }}
+                {{ $coverThumb := (partial "img-sources.html" (dict "src" $cover "widths" (slice 800))).src }}
                 {{ if not (gt (len $galleryImages) 0) }}
-                    {{ $galleryImages = slice $cover }}
+                    {{ $galleryImages = slice $coverThumb }}
                 {{ end }}
                 {{ $galleryList := delimit $galleryImages "||" }}
                 <div>
                     <a href="{{ $page.RelPermalink }}" class="group block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content focus-visible:ring-offset-4">
-                        <div class="portfolio-card listing-photo w-full relative aspect-[827/640] touch-pan-y" data-gallery-images="{{ $galleryList }}">
+                        <div class="portfolio-card media-frame listing-photo w-full relative aspect-[827/640] touch-pan-y" data-gallery-images="{{ $galleryList }}">
                             <div class="absolute inset-0 overflow-hidden portfolio-card-bg">
-                                <div class="portfolio-card-slide portfolio-card-slide-active absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out translate-x-0" style="background-image:url('{{ $cover }}');"></div>
+                                <img src="{{ $coverThumb }}" alt="{{ $page.Title }}" class="portfolio-card-slide portfolio-card-slide-active absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out translate-x-0" {{ if lt $index 4 }}loading="eager" fetchpriority="high"{{ else }}loading="lazy"{{ end }} decoding="async" data-preload>
                             </div>
                             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-base-100/95 text-base-content text-xs font-semibold py-1 px-3 rounded-full shadow-airbnb-sm md:hidden pointer-events-none">
                                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -112,9 +113,11 @@
             || ('ontouchstart' in window);
 
         const createSlide = (url) => {
-            const slide = document.createElement('div');
-            slide.className = 'portfolio-card-slide absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out';
-            slide.style.backgroundImage = `url('${url}')`;
+            const slide = document.createElement('img');
+            slide.className = 'portfolio-card-slide absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out';
+            slide.src = url;
+            slide.alt = '';
+            slide.decoding = 'async';
             return slide;
         };
 
@@ -154,6 +157,16 @@
             }
 
             if (images.length < 2) return;
+
+            // Warm the cache for the hover/swipe slideshow so slides don't arrive staggered
+            let warmed = false;
+            const warmImages = () => {
+                if (warmed) return;
+                warmed = true;
+                images.forEach((url) => { const img = new Image(); img.src = url; });
+            };
+            card.addEventListener('pointerenter', warmImages, { once: true });
+            card.addEventListener('touchstart', warmImages, { once: true, passive: true });
 
             const animateTo = (nextIndex, direction = 'forward') => {
                 if (isAnimating || nextIndex === index) return false;

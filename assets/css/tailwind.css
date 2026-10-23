@@ -46,3 +46,43 @@
     @apply text-sm font-semibold uppercase tracking-widest text-primary;
   }
 }
+
+@layer components {
+  /* Image preloader: a spinner sits in the frame until the media inside it has loaded */
+  .media-frame {
+    position: relative;
+  }
+  .media-frame::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: -0.75rem 0 0 -0.75rem;
+    border-radius: 9999px;
+    border: 2px solid rgb(34 51 59 / 0.12);
+    border-top-color: #22333b;
+    animation: media-spin 0.7s linear infinite;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .media-frame.is-loaded::after {
+    opacity: 0;
+    animation: none;
+  }
+  .media-frame [data-preload] {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .media-frame.is-loaded [data-preload] {
+    opacity: 1;
+  }
+}
+
+@keyframes media-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

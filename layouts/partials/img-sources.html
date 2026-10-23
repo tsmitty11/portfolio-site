@@ -1,0 +1,28 @@
+{{/*
+  Returns resized WebP sources for a site image.
+  Usage: {{ $img := partial "img-sources.html" (dict "src" "/images/foo.jpg" "widths" (slice 480 960)) }}
+  Result: dict with "src" (smallest variant) and "srcset" (empty when the file can't be processed,
+  e.g. SVG, GIF, or a missing file — "src" then falls back to the original path).
+*/}}
+{{ $src := .src }}
+{{ $widths := .widths | default (slice 480 960) }}
+{{ $out := dict "src" $src "srcset" "" }}
+{{ $path := strings.TrimPrefix "/" (replace $src "%20" " ") }}
+{{ $ext := lower (path.Ext $path) }}
+{{ if in (slice ".jpg" ".jpeg" ".png" ".webp") $ext }}
+  {{ with resources.Get $path }}
+    {{ $orig := . }}
+    {{ $set := slice }}
+    {{ $first := "" }}
+    {{ range $widths }}
+      {{ $w := . }}
+      {{ if gt $w $orig.Width }}{{ $w = $orig.Width }}{{ end }}
+      {{ $r := $orig.Resize (printf "%dx webp" $w) }}
+      {{ $entry := printf "%s %dw" $r.RelPermalink $r.Width }}
+      {{ if not (in $set $entry) }}{{ $set = $set | append $entry }}{{ end }}
+      {{ if not $first }}{{ $first = $r.RelPermalink }}{{ end }}
+    {{ end }}
+    {{ $out = dict "src" $first "srcset" (delimit $set ", ") }}
+  {{ end }}
+{{ end }}
+{{ return $out }}

@@ -5,9 +5,8 @@
 
       {{ with .Params.banner }}
       <div class="mt-6">
-        <a href="{{ .lightbox }}" class="glightbox block listing-photo" data-gallery="banner">
-          <div class="w-full h-[427px] sm:h-[790px] bg-cover bg-center" style="background-image: url('{{ .src }}');">
-          </div>
+        <a href="{{ .lightbox }}" class="glightbox block listing-photo media-frame h-[427px] sm:h-[790px]" data-gallery="banner">
+          {{ partial "img.html" (dict "src" .src "alt" "" "widths" (slice 1024 2048) "sizes" "100vw" "eager" true "class" "w-full h-full object-cover") }}
         </a>
       </div>
       {{ end }}
@@ -20,7 +19,11 @@
           <!-- Airbnb-style photo mosaic for the first five images -->
           <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 rounded-xl overflow-hidden">
             {{ range $i, $item := first 5 . }}
-              {{ partial "portfolio-gallery-tile.html" (dict "item" $item "class" (cond (eq $i 0) "col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto" "aspect-[4/3]")) }}
+              {{ if eq $i 0 }}
+                {{ partial "portfolio-gallery-tile.html" (dict "item" $item "class" "col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto" "widths" (slice 800 1600) "sizes" "(min-width: 768px) 50vw, 100vw" "eager" true) }}
+              {{ else }}
+                {{ partial "portfolio-gallery-tile.html" (dict "item" $item "class" "aspect-[4/3]" "sizes" "(min-width: 768px) 25vw, 50vw" "eager" true) }}
+              {{ end }}
             {{ end }}
           </div>
           {{ with after 5 . }}
@@ -32,8 +35,8 @@
           {{ end }}
         {{ else }}
           <div class="mt-6 grid grid-cols-2 {{ if eq (mod $count 3) 0 }}md:grid-cols-3{{ end }} gap-2 rounded-xl overflow-hidden">
-            {{ range . }}
-              {{ partial "portfolio-gallery-tile.html" (dict "item" . "class" "aspect-[4/3]") }}
+            {{ range $i, $item := . }}
+              {{ partial "portfolio-gallery-tile.html" (dict "item" $item "class" "aspect-[4/3]" "widths" (slice 640 1280) "sizes" (cond (eq (mod $count 3) 0) "(min-width: 768px) 33vw, 50vw" "50vw") "eager" (lt $i 4)) }}
             {{ end }}
           </div>
         {{ end }}

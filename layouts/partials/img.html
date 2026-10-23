@@ -1,0 +1,6 @@
+{{/*
+  Renders a lazy-loading, preloader-aware <img> using resized WebP sources.
+  Params: src, alt, class, sizes, widths, eager (bool), style
+*/}}
+{{ $img := partial "img-sources.html" (dict "src" .src "widths" .widths) }}
+<img src="{{ $img.src }}"{{ with $img.srcset }} srcset="{{ . }}" sizes="{{ $.sizes | default "100vw" }}"{{ end }} alt="{{ .alt }}" class="{{ .class }}"{{ with .style }} style="{{ . | safeCSS }}"{{ end }} {{ if .eager }}loading="eager" fetchpriority="high"{{ else }}loading="lazy"{{ end }} decoding="async" data-preload>

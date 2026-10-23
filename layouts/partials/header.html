@@ -25,16 +25,11 @@
 
       <!-- Mobile menu (Airbnb-style pill) -->
       <details class="dropdown dropdown-end lg:hidden" id="mobile-menu">
-        <summary class="flex items-center gap-3 rounded-full border border-base-300 pl-3.5 pr-1.5 py-1.5 cursor-pointer list-none hover:shadow-airbnb-sm transition-shadow [&::-webkit-details-marker]:hidden">
+        <summary class="flex items-center justify-center w-11 h-11 rounded-full border border-base-300 cursor-pointer list-none hover:shadow-airbnb-sm transition-shadow [&::-webkit-details-marker]:hidden">
           <span class="sr-only">Open menu</span>
           <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
-          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-neutral text-neutral-content">
-            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.42 0-8 2.24-8 5v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-2.76-3.58-5-8-5Z"/>
-            </svg>
-          </span>
         </summary>
         <ul class="menu dropdown-content mt-3 w-60 rounded-xl bg-base-100 p-2 shadow-airbnb border border-base-300 z-50">
           {{ range .Site.Menus.main }}

@@ -42,6 +42,25 @@
             })();
         </script>
         <script>
+            // Image preloader: reveal media and hide the frame's spinner once it has loaded
+            (function () {
+                const markLoaded = (el) => {
+                    const frame = el.closest('.media-frame');
+                    if (frame) frame.classList.add('is-loaded');
+                };
+                document.querySelectorAll('[data-preload]').forEach((el) => {
+                    if (el.tagName === 'VIDEO') {
+                        if (el.readyState >= 2) return markLoaded(el);
+                        el.addEventListener('loadeddata', () => markLoaded(el), { once: true });
+                    } else {
+                        if (el.complete) return markLoaded(el);
+                        el.addEventListener('load', () => markLoaded(el), { once: true });
+                    }
+                    el.addEventListener('error', () => markLoaded(el), { once: true });
+                });
+            })();
+        </script>
+        <script>
             (function () {
                 const banner = document.getElementById('cookie-banner');
                 const manageBtn = document.getElementById('cookie-manage');

@@ -48,3 +48,17 @@ title = "Tom Smith Design"
     name = "Contact"
     url = "/contact/"
     weight = 7
+
+# Expose static/images to Hugo's image pipeline so templates can generate
+# resized thumbnails. The originals are still published from static/ as-is.
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static/images"
+    target = "assets/images"
+
+[imaging]
+  quality = 78
+  resampleFilter = "Lanczos"

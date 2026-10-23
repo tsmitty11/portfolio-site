@@ -182,10 +182,9 @@ bg-no-repeat bg-right-bottom">
       
           <!-- Row 1 -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
-            <img
-              class="block w-full rounded-xl mb-2 lg:mb-0 order-1 lg:order-2"
-              src="/images/logos-comp.webp"
-              alt="office feature image">
+            <div class="media-frame rounded-xl overflow-hidden bg-base-200 mb-2 lg:mb-0 order-1 lg:order-2">
+              {{ partial "img.html" (dict "src" "/images/logos-comp.webp" "alt" "office feature image" "widths" (slice 800 1600) "sizes" "(min-width: 1024px) 50vw, 100vw" "class" "block w-full") }}
+            </div>
       
             <div class="text-base-content/70 sm:text-lg order-2 lg:order-1">
               <h2 class="mb-4 text-4xl tracking-tight font-semibold text-base-content">Minimum Viable Brand</h2>
@@ -222,10 +221,9 @@ bg-no-repeat bg-right-bottom">
       
           <!-- Row 2 -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
-            <img
-              class="block w-full rounded-xl mb-2 lg:mb-0 order-1 lg:order-1"
-              src="/images/landingpages-comp.jpg"
-              alt="Landing Page Designs">
+            <div class="media-frame rounded-xl overflow-hidden bg-base-200 mb-2 lg:mb-0 order-1 lg:order-1">
+              {{ partial "img.html" (dict "src" "/images/landingpages-comp.jpg" "alt" "Landing Page Designs" "widths" (slice 800 1600) "sizes" "(min-width: 1024px) 50vw, 100vw" "class" "block w-full") }}
+            </div>
       
             <div class="text-base-content/70 sm:text-lg order-2 lg:order-2">
               <h2 class="mb-4 text-4xl tracking-tight font-semibold text-base-content">Landing Page</h2>
@@ -260,10 +258,9 @@ bg-no-repeat bg-right-bottom">
       
           <!-- Row 3 -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center xl:gap-16">
-            <img
-              class="block w-full rounded-xl mb-2 lg:mb-0 order-1 lg:order-2"
-              src="/images/marketing-comp.jpg"
-              alt="Marketing Design Examples">
+            <div class="media-frame rounded-xl overflow-hidden bg-base-200 mb-2 lg:mb-0 order-1 lg:order-2">
+              {{ partial "img.html" (dict "src" "/images/marketing-comp.jpg" "alt" "Marketing Design Examples" "widths" (slice 800 1600) "sizes" "(min-width: 1024px) 50vw, 100vw" "class" "block w-full") }}
+            </div>
       
             <div class="text-base-content/70 sm:text-lg order-2 lg:order-1">
               <h2 class="mb-4 text-4xl tracking-tight font-semibold text-base-content">Marketing Kit</h2>
@@ -362,31 +359,49 @@ bg-no-repeat bg-right-bottom">
 
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
   <div class="grid gap-4">
-      <div class="gallery-card rounded-xl" style="--aspect: 135%; background-image:url('/images/portfolio/pkgx/pkgx-portfolio-02.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-xl overflow-hidden" style="--aspect: 180%;" aria-label="Tidus Website Walkthrough">
-        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/tidus-website-portfolio.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+      <div class="gallery-card rounded-xl media-frame bg-base-200" style="--aspect: 135%;" aria-hidden="true">
+        {{ partial "img.html" (dict "src" "/images/portfolio/pkgx/pkgx-portfolio-02.jpg" "alt" "" "widths" (slice 480 960) "sizes" "(min-width: 768px) 25vw, 50vw" "class" "absolute inset-0 w-full h-full object-cover") }}
       </div>
-      <div class="gallery-card rounded-xl" style="--aspect: 125%; background-image:url('/images/portfolio/universitea/mockup.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card media-frame rounded-xl overflow-hidden bg-base-200" style="--aspect: 180%;" aria-label="Tidus Website Walkthrough">
+        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-preload data-src="/images/tidus-website-portfolio.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+      </div>
+      <div class="gallery-card rounded-xl media-frame bg-base-200" style="--aspect: 125%;" aria-hidden="true">
+        {{ partial "img.html" (dict "src" "/images/portfolio/universitea/mockup.jpg" "alt" "" "widths" (slice 480 960) "sizes" "(min-width: 768px) 25vw, 50vw" "class" "absolute inset-0 w-full h-full object-cover") }}
+      </div>
   </div>
   <div class="grid gap-4">
-      <div class="gallery-card rounded-xl" style="--aspect: 105%; background-image:url('/images/portfolio/alaeris/alaeris-portfolio-01.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-xl" style="--aspect: 165%; background-image:url('/images/boadroom-lunch-series.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-xl" style="--aspect: 130%; background-image:url('/images/logos-comp.webp');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-xl media-frame bg-base-200" style="--aspect: 105%;" aria-hidden="true">
+        {{ partial "img.html" (dict "src" "/images/portfolio/alaeris/alaeris-portfolio-01.jpg" "alt" "" "widths" (slice 480 960) "sizes" "(min-width: 768px) 25vw, 50vw" "class" "absolute inset-0 w-full h-full object-cover") }}
+      </div>
+      <div class="gallery-card rounded-xl media-frame bg-base-200" style="--aspect: 165%;" aria-hidden="true">
+        {{ partial "img.html" (dict "src" "/images/boadroom-lunch-series.jpg" "alt" "" "widths" (slice 480 960) "sizes" "(min-width: 768px) 25vw, 50vw" "class" "absolute inset-0 w-full h-full object-cover") }}
+      </div>
+      <div class="gallery-card rounded-xl media-frame bg-base-200" style="--aspect: 130%;" aria-hidden="true">
+        {{ partial "img.html" (dict "src" "/images/logos-comp.webp" "alt" "" "widths" (slice 480 960) "sizes" "(min-width: 768px) 25vw, 50vw" "class" "absolute inset-0 w-full h-full object-cover") }}
+      </div>
   </div>
   <div class="grid gap-4">
     <!-- this one -->
-      <div class="gallery-card rounded-xl overflow-hidden" style="--aspect: 170%;" aria-label="Tea Website Scroll">
-        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/tea-website-portfolio-02.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+      <div class="gallery-card media-frame rounded-xl overflow-hidden bg-base-200" style="--aspect: 170%;" aria-label="Tea Website Scroll">
+        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-preload data-src="/images/tea-website-portfolio-02.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
       </div>
-      <div class="gallery-card rounded-xl" style="--aspect: 115%; background-image:url('/images/portfolio/belvedere-grand/belvedere-grand-logo-green-gold.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-xl overflow-hidden" style="--aspect: 145%;" aria-label="G2 Spring Animation">
-        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="/images/portfolio/motion%20graphics/G2-Spring-Animation-V2.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+      <div class="gallery-card rounded-xl media-frame bg-base-200" style="--aspect: 115%;" aria-hidden="true">
+        {{ partial "img.html" (dict "src" "/images/portfolio/belvedere-grand/belvedere-grand-logo-green-gold.jpg" "alt" "" "widths" (slice 480 960) "sizes" "(min-width: 768px) 25vw, 50vw" "class" "absolute inset-0 w-full h-full object-cover") }}
+      </div>
+      <div class="gallery-card media-frame rounded-xl overflow-hidden bg-base-200" style="--aspect: 145%;" aria-label="G2 Spring Animation">
+        <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-preload data-src="/images/portfolio/motion%20graphics/G2-Spring-Animation-V2.mp4" autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
       </div>
   </div>
   <div class="grid gap-4">
-      <div class="gallery-card rounded-xl" style="--aspect: 120%; background-image:url('/images/portfolio/canopy/canopy-ig-03.jpg');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-xl" style="--aspect: 175%; background-position: top; background-image:url('/images/become-remote-landing-page-reduced-size.webp');" role="img" aria-hidden="true"></div>
-      <div class="gallery-card rounded-xl" style="--aspect: 130%; background-image:url('/images/become-remote-gallery.jpg');" role="img" aria-hidden="true"></div>
+      <div class="gallery-card rounded-xl media-frame bg-base-200" style="--aspect: 120%;" aria-hidden="true">
+        {{ partial "img.html" (dict "src" "/images/portfolio/canopy/canopy-ig-03.jpg" "alt" "" "widths" (slice 480 960) "sizes" "(min-width: 768px) 25vw, 50vw" "class" "absolute inset-0 w-full h-full object-cover") }}
+      </div>
+      <div class="gallery-card rounded-xl media-frame bg-base-200" style="--aspect: 175%;" aria-hidden="true">
+        {{ partial "img.html" (dict "src" "/images/become-remote-landing-page-reduced-size.webp" "alt" "" "widths" (slice 480 960) "sizes" "(min-width: 768px) 25vw, 50vw" "class" "absolute inset-0 w-full h-full object-cover object-top") }}
+      </div>
+      <div class="gallery-card rounded-xl media-frame bg-base-200" style="--aspect: 130%;" aria-hidden="true">
+        {{ partial "img.html" (dict "src" "/images/become-remote-gallery.jpg" "alt" "" "widths" (slice 480 960) "sizes" "(min-width: 768px) 25vw, 50vw" "class" "absolute inset-0 w-full h-full object-cover") }}
+      </div>
   </div>
 </div>
 

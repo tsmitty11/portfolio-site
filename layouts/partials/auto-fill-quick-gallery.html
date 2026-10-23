@@ -20,11 +20,11 @@
                     {{ end }}
                     <div>
                         <a href="{{ .lightbox }}" class="glightbox group block" data-gallery="portfolio-gallery" {{ with .alt }}data-description="{{ htmlEscape . }}"{{ end }}>
-                            <div class="listing-photo w-full relative aspect-[1.29]">
+                            <div class="listing-photo media-frame w-full relative aspect-[1.29]">
                                 {{ if .video }}
-                                    <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="{{ $videoSource }}" {{ if $poster }}poster="{{ $poster }}" data-poster="{{ $poster }}"{{ end }} autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+                                    <video class="absolute inset-0 w-full h-full object-cover lazy-motion" data-src="{{ $videoSource }}" {{ with $poster }}{{ $p := (partial "img-sources.html" (dict "src" . "widths" (slice 800))).src }}poster="{{ $p }}" data-poster="{{ $p }}"{{ else }}data-preload{{ end }} autoplay loop muted playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
                                 {{ else }}
-                                    <div class="absolute inset-0 bg-cover bg-center transition duration-300 group-hover:brightness-90" style="background-image: url('{{ .src }}');"></div>
+                                    {{ partial "img.html" (dict "src" .src "alt" (.alt | default "") "widths" (slice 480 960) "sizes" "(min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw" "class" "absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:brightness-90") }}
                                 {{ end }}
                             </div>
                         </a>

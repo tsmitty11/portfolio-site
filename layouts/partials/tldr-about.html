@@ -3,7 +3,9 @@
         <!-- Profile card -->
         <div class="lg:col-span-4">
             <div class="lg:sticky lg:top-28 rounded-3xl bg-base-100 p-8 shadow-airbnb border border-base-300 text-center">
-                <img src="/images/tom-headshot-web.jpg" alt="Tom Smith Headshot" class="mx-auto mb-6 w-40 h-40 rounded-full object-cover">
+                <div class="media-frame mx-auto mb-6 w-40 h-40 rounded-full overflow-hidden bg-base-200">
+                    {{ partial "img.html" (dict "src" "/images/tom-headshot-web.jpg" "alt" "Tom Smith Headshot" "widths" (slice 320) "eager" true "class" "w-full h-full object-cover") }}
+                </div>
                 <a href="/media/Thomas Smith resumé 2025.pdf" class="btn btn-primary w-full">
                     Download resumé
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>

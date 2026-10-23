@@ -1,0 +1,12 @@
+{{ $item := .item }}
+<a href="{{ $item.lightbox }}" class="glightbox group relative block overflow-hidden bg-base-200 {{ .class }}" data-gallery="gallery">
+  <div class="absolute inset-0 bg-cover bg-center transition duration-300 group-hover:brightness-90" style="background-image: url('{{ $item.src }}');"></div>
+  {{ if $item.video }}
+    <!-- Play button overlay if it's a video -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="flex items-center justify-center bg-primary/95 rounded-full w-16 h-16 shadow-airbnb">
+        <img class="w-5 h-5 ml-[5px]" src="/images/play-button.svg" alt="play-button">
+      </div>
+    </div>
+  {{ end }}
+</a>

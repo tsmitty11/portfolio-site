@@ -1,41 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" data-theme="tomsmith" class="scroll-smooth">
     {{ partial "head.html" . }}
-    <body class="bg-[#121826] text-white pt-[68px]">
+    <body class="bg-base-100 text-base-content font-sans">
         {{ partial "header.html" . }}
-        <main class="pt-0">
+        <main>
             {{ block "main" . }}{{ end }}
         </main>
         {{ partial "footer.html" . }}
-        <div id="cookie-banner" class="fixed bottom-0 left-0 z-50 w-full bg-gray-900 text-white border-t border-gray-800 shadow-2xl hidden">
-            <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row md:items-center gap-4 p-4 md:p-5">
+        <div id="cookie-banner" class="fixed bottom-0 left-0 z-50 w-full p-4 hidden">
+            <div class="max-w-screen-lg mx-auto flex flex-col md:flex-row md:items-center gap-4 p-5 md:p-6 bg-base-100 border border-base-300 rounded-xl shadow-airbnb">
                 <div class="flex-1">
                     <h3 class="text-lg font-semibold mb-1">Privacy &amp; Cookies</h3>
-                    <p class="text-sm text-gray-200">We use essential cookies to make this site work. With your consent we use additional cookies for analytics. Review our <a href="/privacy-policy/" class="text-primary-300 underline">Privacy Policy</a>.</p>
+                    <p class="text-sm text-base-content/70">We use essential cookies to make this site work. With your consent we use additional cookies for analytics. Review our <a href="/privacy-policy/" class="link-ink text-base-content">Privacy Policy</a>.</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <button id="cookie-decline" type="button" class="text-sm px-4 py-2 rounded-full border border-gray-500 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600">Decline</button>
-                    <button id="cookie-accept" type="button" class="text-sm px-4 py-2 rounded-full bg-primary-600 hover:bg-primary-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-400">Accept</button>
+                    <button id="cookie-decline" type="button" class="btn-line btn-sm h-10 min-h-10 px-5">Decline</button>
+                    <button id="cookie-accept" type="button" class="btn btn-neutral btn-sm h-10 min-h-10 px-5">Accept</button>
                 </div>
             </div>
         </div>
         <button id="cookie-manage" class="cookie-manage-btn hidden" type="button">Cookie Preferences</button>
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
         <script>
             (function () {
                 const navbar = document.getElementById('navbar');
                 if (!navbar) return;
                 const apply = () => {
-                    if (window.scrollY > 10) {
-                        navbar.classList.add('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
-                        navbar.classList.remove('border-transparent');
-                    } else {
-                        navbar.classList.remove('bg-whiteSmoke', 'dark:bg-gray-900', 'border-gunmetal', 'dark:border-gray-600');
-                        navbar.classList.add('border-transparent');
-                    }
+                    navbar.classList.toggle('shadow-airbnb-sm', window.scrollY > 10);
                 };
                 apply();
-                window.addEventListener('scroll', apply);
+                window.addEventListener('scroll', apply, { passive: true });
+
+                // Close the mobile menu when clicking outside of it
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                    document.addEventListener('click', (event) => {
+                        if (mobileMenu.open && !mobileMenu.contains(event.target)) {
+                            mobileMenu.removeAttribute('open');
+                        }
+                    });
+                }
             })();
         </script>
         <script>

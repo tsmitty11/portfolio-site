@@ -1,95 +1,64 @@
 {{ define "main" }}
-<section class="bg-whiteSmoke dark:bg-gray-900">
-    <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
-      <div class="text-center">
-        <h1 class="text-4xl font-bold text-gunmetal">{{ .Title }}</h1>
-        <div class="flex items-center justify-center gap-4 mt-4 sm:mt-5 sm:gap-8 flex-row">
-          {{ with .Params.websiteURL }}
-          <a href="{{ . }}" title="" target="_blank"
-            class="inline-flex items-center text-base font-semibold leading-tight text-primary-600 hover:underline dark:text-primary-500">
-            Visit the website
-            <svg aria-hidden="true" class="w-4 h-4 ml-1.5" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-            </svg>
-          </a>
-          {{ end }}
-
-          <a href="/contact/" title=""
-            class="inline-flex items-center text-base font-semibold leading-tight text-primary-600 hover:underline dark:text-primary-500">
-            Get in touch
-            <svg aria-hidden="true" class="w-4 h-4 ml-1.5" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
+<section class="bg-base-100">
+    <div class="max-w-screen-xl px-4 pt-8 pb-16 mx-auto sm:px-6 lg:px-10 lg:pb-24">
+      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-base-content">{{ .Title }}</h1>
 
       {{ with .Params.banner }}
-      <div class="max-w-5xl mx-auto mt-8 lg:mt-16">
-        <a href="{{ .lightbox }}" class="glightbox" data-gallery="banner">
-          <div class="h-64 w-full border border-gray-200 rounded-lg h-[427px] sm:h-[790px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center;">
+      <div class="mt-6">
+        <a href="{{ .lightbox }}" class="glightbox block listing-photo" data-gallery="banner">
+          <div class="w-full h-[427px] sm:h-[790px] bg-cover bg-center" style="background-image: url('{{ .src }}');">
           </div>
         </a>
       </div>
-     {{ end }}   
+      {{ end }}
 
       <!-- Gallery Section: Only display if there are gallery images -->
       {{ with .Params.gallery }}
-      <div class="max-w-5xl mx-auto mt-8 lg:mt-16 grid grid-cols-2 gap-2">
-        {{ range . }}
-          <a href="{{ .lightbox }}" class="glightbox" data-gallery="gallery">
-            <div class="relative h-64 w-full border border-gunmetal rounded-lg h-[132px] sm:h-[392px]" style="background-image: url('{{ .src }}'); background-size: cover; background-position: center; max-width: 508px;">
-              {{ if .video }}
-                <!-- Play button overlay if it's a video -->
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <!-- Blue circle background -->
-                  <div class="flex items-center justify-center bg-[#00b3ff] bg-opacity-95 rounded-full w-16 h-16">
-                    <!-- Play button SVG with rounded corners -->
-                    <img class="w-5 h-5 ml-[5px]" src="/images/play-button.svg" alt="play-button">
-                  </div>
-                </div>
-              {{ end }}
-            </div>
-          </a>
+        {{ if ge (len .) 5 }}
+          <!-- Airbnb-style photo mosaic for the first five images -->
+          <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 rounded-xl overflow-hidden">
+            {{ range $i, $item := first 5 . }}
+              {{ partial "portfolio-gallery-tile.html" (dict "item" $item "class" (cond (eq $i 0) "col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto" "aspect-[4/3]")) }}
+            {{ end }}
+          </div>
+          {{ with after 5 . }}
+          <div class="mt-2 grid grid-cols-2 md:grid-cols-3 gap-2">
+            {{ range . }}
+              {{ partial "portfolio-gallery-tile.html" (dict "item" . "class" "aspect-[4/3] rounded-xl") }}
+            {{ end }}
+          </div>
+          {{ end }}
+        {{ else }}
+          <div class="mt-6 grid grid-cols-2 gap-2 rounded-xl overflow-hidden">
+            {{ range . }}
+              {{ partial "portfolio-gallery-tile.html" (dict "item" . "class" "aspect-[4/3]") }}
+            {{ end }}
+          </div>
         {{ end }}
-      </div>
-    {{ end }}
-    
-     
+      {{ end }}
 
-      <div class="grid grid-cols-1 gap-8 mt-8 lg:gap-16 lg:grid-cols-2 lg:mt-16">
-        <div>
+      <div class="grid grid-cols-1 gap-10 mt-10 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-7 divide-y divide-base-300">
           <!-- Overview Section: Only display if overview is provided -->
           {{ with .Params.overview }}
-          <div>
-            <h3 class="text-2xl font-extrabold text-gunmetal dark:text-white">
+          <div class="pb-8">
+            <h3 class="text-2xl font-semibold text-base-content">
               Overview
             </h3>
-            <p class="mt-2 text-lg font-normal text-gunmetal dark:text-gray-400">
+            <p class="mt-3 text-base leading-relaxed text-base-content/80">
               {{ . }}
             </p>
           </div>
           {{ end }}
-  
+
           <!-- Features Section: Only display if features exist and are non-empty -->
           {{ with .Params.features }}
-          <ul class="grid grid-cols-1 mt-8 sm:grid-cols-2 gap-x-4 gap-y-3">
+          <ul class="grid grid-cols-1 py-8 sm:grid-cols-2 gap-x-6 gap-y-4">
             {{ range . }}
               {{ if . }}
-              <li class="flex items-center gap-2.5">
-                <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                  fill="currentColor">
-                  <path fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span class="text-base font-normal text-gunmetal dark:text-gray-400">
+              <li class="flex items-center gap-3">
+                <svg class="w-6 h-6 shrink-0 text-base-content" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                <span class="text-base text-base-content">
                   {{ . }}
                 </span>
               </li>
@@ -100,40 +69,62 @@
 
           <!-- Video Section: Only display if a video URL is provided -->
           {{ with .Params.videoURL }}
-          <video class="w-full h-auto max-w-full border border-gray-200 rounded-lg dark:border-gray-700 mt-8" controls>
-              <source src="{{ . }}" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
+          <div class="py-8">
+            <video class="w-full h-auto max-w-full rounded-xl border border-base-300" controls>
+                <source src="{{ . }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+          </div>
           {{ end }}
 
-        </div>
-  
-        <div class="space-y-8">
           <!-- Background Section: Only display if background is provided -->
           {{ with .Params.background }}
-          <div>
-            <h3 class="text-2xl font-extrabold text-gunmetal dark:text-white">
+          <div class="py-8">
+            <h3 class="text-2xl font-semibold text-base-content">
               Background
             </h3>
-            <p class="mt-2 text-lg font-normal text-gunmetal dark:text-gray-400">
-              {{ . }}
-            </p>
-          </div>
-          {{ end }}
-  
-          <!-- Challenge Section: Only display if challenge is provided -->
-          {{ with .Params.challenge }}
-          <div>
-            <h3 class="text-2xl font-extrabold text-gunmetal dark:text-white">
-              The Challenge
-            </h3>
-            <p class="mt-2 text-lg font-normal text-gunmetal dark:text-gray-400">
+            <p class="mt-3 text-base leading-relaxed text-base-content/80">
               {{ . }}
             </p>
           </div>
           {{ end }}
 
+          <!-- Challenge Section: Only display if challenge is provided -->
+          {{ with .Params.challenge }}
+          <div class="py-8">
+            <h3 class="text-2xl font-semibold text-base-content">
+              The Challenge
+            </h3>
+            <p class="mt-3 text-base leading-relaxed text-base-content/80">
+              {{ . }}
+            </p>
+          </div>
+          {{ end }}
         </div>
+
+        <!-- Action card -->
+        <aside class="order-first lg:order-none lg:col-span-5">
+          <div class="lg:sticky lg:top-28 rounded-xl border border-base-300 bg-base-100 p-6 shadow-airbnb">
+            <p class="text-xl font-semibold font-heading text-base-content">{{ .Title }}</p>
+            <div class="mt-5 flex flex-col gap-3">
+              <a href="/contact/" class="btn btn-primary w-full">
+                Get in touch
+                <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              </a>
+              {{ with .Params.websiteURL }}
+              <a href="{{ . }}" target="_blank" class="btn-line w-full">
+                Visit the website
+                <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+              </a>
+              {{ end }}
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

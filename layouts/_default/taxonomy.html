@@ -1,11 +1,13 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
-    <ul>
+<section class="py-12 px-4 mx-auto max-w-screen-md sm:px-6 lg:py-20">
+    <h1 class="mb-8 text-4xl font-semibold tracking-tight">{{ .Title }}</h1>
+    <ul class="divide-y divide-base-300">
         {{ range .Pages }}
-            <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <li class="py-4">
+                <a href="{{ .RelPermalink }}" class="link-ink">{{ .Title }}</a>
                 <p>{{ .Summary }}</p>
             </li>
         {{ end }}
     </ul>
+</section>
 {{ end }}
